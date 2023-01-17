@@ -53,7 +53,7 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback text-white" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -73,11 +73,11 @@
                             <div class="col-md-4">
                             </div>
                             <div class="col-md-2">
-                                <input type="radio" id="individual" class="form-check-input" name="role" value="individual" checked>
+                                <input type="radio" id="individual" class="form-check-input" name="user_type" value="individual" checked>
                                 <label for="individual" class="text-white form-check-label">Individual</label><br>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" id="company" name="role"  class="form-check-input" value="company">
+                                <input type="radio" id="company" name="user_type"  class="form-check-input" value="company">
                                 <label for="company" class="text-white form-check-label">Company</label><br>
                             </div>
 

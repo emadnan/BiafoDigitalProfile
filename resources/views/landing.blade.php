@@ -76,7 +76,7 @@ html {
                             @guest
                             @if (Route::has('login'))
                             <a class="btn btn-yellow rounded-pill px-5 py-2"
-                                href="{{ route('login') }}">{{ __('Login') }}</a>
+                                href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
                             <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
                                 href="{{ route('register') }}"><b>{{ __('Create Card') }}</b></a>
                             @endif
@@ -134,7 +134,7 @@ html {
                 <div class="col-md-4 mt-2"></div>
                     <div class="col-md-4 mt-5">
                       <!-- <div style="background-color:#ff9d00"> -->
-                        <h1 class="text-center mt-3 rounded-pill px-5 py-2" style="background-color:#ff9d00">ABOUT US </h1>
+                        <h1 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00">ABOUT US </h1>
 <!-- </div> -->
                     </div>
                     <div class="col-md-4"></div>
