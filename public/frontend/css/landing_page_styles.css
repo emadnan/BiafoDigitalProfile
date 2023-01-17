@@ -89,16 +89,19 @@
   height: 480px;
   width: 650px;
 }
-
+.ml-4{margin-left:1rem}
 
 /* Main Content Statrted */
 /* Seection Features */
 .bg_main_content {
-  background-color: #F7F7F7;
+  background-color: white;
 }
 
 .bg_main_content_yellowish {
   background-color: var(--pinkish);
+}
+.about_content {
+  background-color: #ad021c;
 }
 
 .header_background_text h1 {
