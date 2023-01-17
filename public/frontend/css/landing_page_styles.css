@@ -76,7 +76,13 @@
   background-size: cover;
   background-color: white;
 }
-
+.about_curved_bg {
+  background-image: url(../img/bg_4.png);
+  height: 600px;
+  background-repeat: round;
+  background-size: cover;
+  background-color: white;
+}
 .customize__absolute__text p {
   padding-right: 150px;
   margin-top: 20px;

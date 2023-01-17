@@ -128,18 +128,22 @@ html {
     <!-- <svg viewBox="0 0 1440 319">
         <path fill="#ad021c" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
       </svg> -->
-        <section class="about_content mt-5" id="about_us">
+        <section class="about_curved_bg mt-3" id="about">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="text-center text-white mt-3">About Us </h1>
+                <div class="col-md-4"></div>
+                    <div class="col-md-3">
+                      <!-- <div style="background-color:#ff9d00"> -->
+                        <h1 class="text-center mt-3 rounded-pill px-5 py-2" style="background-color:#ff9d00">ABOUT US </h1>
+<!-- </div> -->
                     </div>
+                    <div class="col-md-4"></div>
                 </div>
 
                 <div class="row mt-3">
-                    <div class="col-md-6">
+                    <div class="col-md-6 mt-5">
                         <div>
-                            <img src="{{asset('frontend/img/about_3.png')}}" alt="" width="500" height="600">
+                            <img src="{{asset('frontend/img/about_3.png')}}" class="mt-5"alt="" width="300" height="400">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -162,9 +166,6 @@ html {
                                 qui suavitate sententiae an. Ius unum primis oportere ex, his id paulo graece tacimates,
                                 Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius unum primis oportere ex,
                                 his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
-                                qui suavitate sententiae an. Ius unum primis oportere ex, his id paulo graece tacimates,
-                                Lorem ipsum dolor sit amet, qui suavitate sententiae an.
                             </p>
                            
                         </div>

@@ -7,9 +7,9 @@
 }
     </style>
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-5">
         <div class="col-md-8 mt-5">
-            <div class="card mt-5 rounded-pill px-5 py-2" style="background-color: #ad021c;">
+        <div class="card mt-5" style="background-color: #ad021c; border-radius: 25px;">
 
                 <div class="card-body ">
                 <div  align="center"class="image">
@@ -58,7 +58,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
+                        <div class="row mb-4">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-yellow rounded-pill px-5 py-2">
                                     {{ __('Login') }}
