@@ -131,8 +131,8 @@ html {
         <section class="about_curved_bg mt-3" id="about">
             <div class="container">
                 <div class="row">
-                <div class="col-md-4"></div>
-                    <div class="col-md-3">
+                <div class="col-md-4 mt-2"></div>
+                    <div class="col-md-4 mt-5">
                       <!-- <div style="background-color:#ff9d00"> -->
                         <h1 class="text-center mt-3 rounded-pill px-5 py-2" style="background-color:#ff9d00">ABOUT US </h1>
 <!-- </div> -->
@@ -141,7 +141,7 @@ html {
                 </div>
 
                 <div class="row mt-3">
-                    <div class="col-md-6 mt-5">
+                    <div class="col-md-6 mt-3">
                         <div>
                             <img src="{{asset('frontend/img/about_3.png')}}" class="mt-5"alt="" width="300" height="400">
                         </div>
@@ -164,8 +164,6 @@ html {
                                 his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
                                 Ius unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
                                 qui suavitate sententiae an. Ius unum primis oportere ex, his id paulo graece tacimates,
-                                Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius unum primis oportere ex,
-                                his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
                             </p>
                            
                         </div>
