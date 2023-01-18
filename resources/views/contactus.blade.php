@@ -98,7 +98,7 @@ html {
                             </div>
                             @endguest
                             <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
-                                href="{{ route('register') }}"><b>{{ __('Create Card') }}</b></a>
+                                href="{{ route('pricing') }}"><b>{{ __('Create Card') }}</b></a>
                         </form>
                     </div>
                 </div>
