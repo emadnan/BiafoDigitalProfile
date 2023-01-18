@@ -75,30 +75,15 @@ html {
                             @if (Route::has('login'))
                             <a class="btn btn-yellow rounded-pill px-5 py-2"
                                 href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
+                                href="{{ route('pricing') }}"><b>{{ __('Create Card') }}</b></a>
                             @endif
                             @else
-                            <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('home') }}">
-                                    {{ __('Dashboard') }}
-                                </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i
-                                        class="fa-solid fa-right-from-bracket"></i>&nbsp;
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                            @endguest
-                            <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
+                            <a class="btn btn-yellow rounded-pill px-5 py-2 "
                                 href="{{ route('pricing') }}"><b>{{ __('Create Card') }}</b></a>
+                                <a class="btn btn-yellow ml-4"
+                                href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
+                            @endguest
                         </form>
                     </div>
                 </div>
@@ -186,17 +171,30 @@ html {
                                 @enderror
                             </div>
                         </div> -->
-                          <div class="form-outline mb-3 w-50" style="margin-left: 34%; margin-top: -2%">
+                        <div class="row mb-3">
+                            <label for="phone_number" class="col-md-4 col-form-label text-md-end text-white">{{ __('Message') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" required autocomplete="phone_number"></textarea>
+
+                                @error('Phone Number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                          <!-- <div class="form-outline mb-3 w-50" style="margin-left: 34%; margin-top: -2%">
                             <label for="email" class="text-md-end text-white" style="margin-left: -23%">{{ __('Message') }}</label>
                             <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                          </div>
+                          </div> -->
                         <!-- <div class="form-outline w-50">
                           <textarea class="form-control" id="textAreaExample1" rows="4"></textarea>
                           <label class="form-label" for="textAreaExample">Message</label>
                         </div> -->
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-5" style="margin-top:2px;">
+                        <div class="row mb-5">
+                            <div class="col-md-6 offset-md-5 mt-3" style="margin-top:3px;">
                                 <button type="submit" class="btn btn-yellow rounded-pill px-5 py-2">
                                     {{ __('Submit') }}
                                 </button>
