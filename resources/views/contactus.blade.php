@@ -56,8 +56,8 @@ html {
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#subscription">
-                                    Subscription
+                                <a class="nav-link text-white text-center" href="/pricing">
+                                    Pricing
                                 </a>
                             </li>
                             <!-- <li class="nav-item">
