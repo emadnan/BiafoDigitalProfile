@@ -39,19 +39,19 @@ html {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center active" aria-current="page" href="#"
+                                <a class="nav-link text-white text-center" aria-current="page" href="/"
                                     style="position: relative;">
                                     Home
                                     <!-- <div class="overlay_menu"></div> -->
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#feature" data-name="feature">
+                                <a class="nav-link text-white text-center" href="/#feature" data-name="feature">
                                     Features
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#about">
+                                <a class="nav-link text-white text-center" href="/#about">
                                     About Us
                                 </a>
                             </li>
@@ -66,7 +66,7 @@ html {
                         </a>
                       </li> -->
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="/ContactUs" class="active">Contact Us</a>
+                                <a class="nav-link text-white text-center active" href="/contact-us" class="active">Contact Us</a>
                             </li>
                         </ul>
                         <form class="d-flex ms-5 customize_mob_menu">
@@ -75,8 +75,6 @@ html {
                             @if (Route::has('login'))
                             <a class="btn btn-yellow rounded-pill px-5 py-2"
                                 href="{{ route('login') }}">{{ __('Login') }}</a>
-                            <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
-                                href="{{ route('register') }}"><b>{{ __('Create Card') }}</b></a>
                             @endif
                             @else
                             <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button"
@@ -99,6 +97,8 @@ html {
                                 </form>
                             </div>
                             @endguest
+                            <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
+                                href="{{ route('register') }}"><b>{{ __('Create Card') }}</b></a>
                         </form>
                     </div>
                 </div>
@@ -120,15 +120,15 @@ html {
     <div class="container" style="margin-top: 10%; margin-bottom: 9.1%;">
     <div class="row justify-content-center">
         <div class="col-md-8">
-        <div class="card mt-5 rounded-pill px-5 py-2" style="background-color: #ad021c;">
+        <div class="card mt-5" style="background-color: #ad021c; border-radius: 25px;">
 
                 <div class="card-body">
                     <div style="text-align: center;">
                         <a class="navbar-brand text-white fs-3" href="#">
-                        <h2><u>Contact Us</u></h2>
+                        <h2>Contact Us</h2>
                     </a>
                     </div>
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="#">
                         @csrf
 
                         <div class="row mb-3">
@@ -196,7 +196,7 @@ html {
                         </div> -->
 
                         <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4" style="margin-top:2px;">
+                            <div class="col-md-6 offset-md-5" style="margin-top:2px;">
                                 <button type="submit" class="btn btn-yellow rounded-pill px-5 py-2">
                                     {{ __('Submit') }}
                                 </button>
@@ -224,9 +224,9 @@ html {
     <link href="{{ asset('frontend\css\jquery.multiselect.css') }}" rel="stylesheet">
 </body>
 <footer>
-    <section class="text-white text-center bg_main_content_yellowish mt-5" style="padding: 15px;">
+    <section class="text-white text-center bg_main_content_yellowish mt-5" style="padding: 20px;">
       
-      <div class="container">
+      <div class="container ">
         <div class="d-flex justify-content-between text-white">
           <div class="py-2">
             <a href="#contact" class="text-white text-decoration-none">Contact us</a> <span style="color:#304367">|</span> <a

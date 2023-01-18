@@ -66,7 +66,7 @@ html {
                         </a>
                       </li> -->
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#contact">
+                                <a class="nav-link text-white text-center" href="/contact-us">
                                     Contact Us
                                 </a>
                             </li>
@@ -77,9 +77,6 @@ html {
                             @if (Route::has('login'))
                             <a class="btn btn-yellow rounded-pill px-5 py-2"
                                 href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
-                            <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
-                                href="{{ route('register') }}"><b>{{ __('Create Card') }}</b></a>
-                            @endif
                             @else
                             <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -102,6 +99,9 @@ html {
                             </div>
                             @endguest
                         </form>
+                        <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
+                                href="{{ route('register') }}"><b>{{ __('Create Card') }}</b></a>
+                            @endif
                     </div>
                 </div>
             </nav>
