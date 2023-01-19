@@ -16,6 +16,7 @@ class CardController extends Controller
                 $image->move(public_path().'/card_images/', $image_path);
             }
         $card = new Card();
+        $card->user_id= auth()->user()->id;
         $card->name= $request->name;
         $card->email = $request->email;
         $card->phone = $request->phone;
@@ -29,6 +30,5 @@ class CardController extends Controller
         $card->image_path = $image_path;
         $card->save();
         return redirect('/home');
-
     }
 }
