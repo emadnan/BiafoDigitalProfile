@@ -27,19 +27,21 @@
                     </div>
                 </a>
             </div>
+            @foreach ($cards as $card)
             <div class="col-md-2">
                 <a style="text-decoration: none;" href="#" class="anchor">
-                    <div class="card"
-                        style="margin-top:50px; height:350px;; color:#ad021;border-radius:7%">
-                        <img src="{{asset('frontend/img/avatar.jpg')}}" class="card-img-top" alt="..." style="border-top-left-radius:7%;border-top-right-radius:7%">
+                    <div class="card" style="margin-top:50px; height:350px; color:#ad021;border-radius:7%">
+                        <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
+                            style="border-top-left-radius:7%;border-top-right-radius:7%;height:250px;">
                         <div class="card-body">
                             <div class="justify-content-center text-center">
-                                <h3>Name Here....</h3>
+                                <h3>{{$card->name}}</h3>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
+            @endforeach
         </div>
     </div>
     <!-- add card Model -->
@@ -50,14 +52,19 @@
                 <div class="modal-body">
                     <form id="add_card" action="/add_card" method="POST" enctype="multipart/form-data">
                         @csrf
-                            <!-- //image -->
-                            <div class="form-group">
-                                <label for="image">Image:</label>
-                                <input type="file" class="form-control" name="image" id="image" placeholder="Enter Image">
-                            </div>
-                            <div  class="mt-2 d-flex justify-content-center">
-                            <img src="{{asset('frontend/img/insert-image-here.jpg')}}" alt="image preview" id="image_preview" style="width: 120px; height: 100px;">
-                           </div>
+                        <!-- //image -->
+                        <div>
+                            <h5><u>Add Card Here</u></h5>
+                        </div>
+                        <div class="mt-5 d-flex justify-content-center">
+                            <img src="{{asset('frontend/img/your-image-here.jpg')}}" alt="image preview"
+                                id="image_preview"
+                                style="width: 200px; height: 200px; border-radius:50%;border: 5px solid;">
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Image:</label>
+                            <input type="file" class="form-control" name="image" id="image" placeholder="Enter Image">
+                        </div>
                         <div class="form-group">
                             <label for="name">Full Name:</label>
                             <input type="text" class="form-control" name="name" id="name" value="{{Auth::user()->name}}"
@@ -74,11 +81,13 @@
                         </div>
                         <div class="form-group">
                             <label for="company">Company:</label>
-                            <input type="text" class="form-control" name="company" id="company" placeholder="Enter Company">
+                            <input type="text" class="form-control" name="company" id="company"
+                                placeholder="Enter Company">
                         </div>
                         <div class="form-group">
                             <label for="designation">Designation:</label>
-                            <input type="text" class="form-control" name="designation" id="designation" placeholder="Enter Designation">
+                            <input type="text" class="form-control" name="designation" id="designation"
+                                placeholder="Enter Designation">
                         </div>
                         <div class="form-group">
                             <label for="address">Address:</label>
@@ -104,9 +113,9 @@
                             <input type="text" class="form-control" name="website" id="website"
                                 placeholder="Enter Website">
                         </div>
-                        
 
-                    
+
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
