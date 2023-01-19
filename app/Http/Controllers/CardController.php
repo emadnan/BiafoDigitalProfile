@@ -31,4 +31,11 @@ class CardController extends Controller
         $card->save();
         return redirect('/home');
     }
+
+    function getcard($card_id){
+
+        $card = Card::where('id', $card_id)->first();
+        $data =compact($card);
+        return view('card_view')->with($data);
+    }
 }
