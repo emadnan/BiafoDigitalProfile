@@ -114,20 +114,28 @@ html {
         </div>
     </section> -->
 </header>
-
+//background-color: #ad021c;
 <body>
-    <div  style="background-color:rgba(205, 24, 0, 1);">
-        <div class="card-ll mt-5" style="background-color: #ad021c; border-radius: 25px;">
+    <div>
+        <div class="card-ll mt-5" style=" border-radius: 25px;">
         <div class="container p-5">
             <div class="row">
                 <div class="col-lg-6 mb-4" style="margin-top: 9%;">
                   <div class="card h-100 shadow-lg">
                     <div class="card-body">
                         <div class="text-center p-3">
-                            <h3 class="card-title">Free</h3>
+                        <div class="card-body text-center">
+                    <button type="submit" class="btn btn-yellow rounded-pill px-5 py-2">
+                        <a class="nav-link text-black text-center" href="/register" data-name="feature">
+                            <b>
+                                Free
+                            </b>
+                        </a>
+                    </button>
+                </div>
                             <small>Individual</small>
                             <br><br>
-                            <span class="h2">$8</span>/month
+                            <span class="h2">$0</span>/month
                             <br><br>
                         </div>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -144,7 +152,7 @@ html {
                   </svg> Vestibulum at eros</li>
                 </ul>
                 <div class="card-body text-center">
-                    <button type="submit" class="btn btn-yellow rounded-pill px-5 py-2">
+                    <button type="submit" class="rounded-pill px-5 py-2" style="background-color: #ad021c">
                         <a class="nav-link text-white text-center" href="/register" data-name="feature">
                             <b>
                                 SignUp
@@ -158,7 +166,15 @@ html {
           <div class="card h-100 shadow-lg">
             <div class="card-body">
               <div class="text-center p-3">
-                <h5 class="card-title">Standard</h5>
+              <div class="card-body text-center">
+                    <button type="submit" class="btn btn-yellow  rounded-pill px-5 py-2">
+                        <a class="nav-link text-black text-center" href="/register" data-name="feature">
+                            <b>
+                                Standerd
+                            </b>
+                        </a>
+                    </button>
+                </div>
                 <small>Small Business</small>
                 <br><br>
                 <span class="h2">$20</span>/month 
@@ -178,7 +194,7 @@ html {
               </svg> Vestibulum at eros</li>
             </ul>
             <div class="card-body text-center">
-                    <button type="submit" class="btn btn-yellow rounded-pill px-5 py-2">
+                    <button type="submit" class="rounded-pill px-5 py-2" style="background-color: #ad021c">
                         <a class="nav-link text-white text-center" href="/register" data-name="feature">
                             <b>
                                 SignUp
