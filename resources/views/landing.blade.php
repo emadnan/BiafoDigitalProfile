@@ -251,6 +251,38 @@ html {
     <link href="{{ asset('frontend\css\fontawesome\css\all.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend\css\jquery.multiselect.css') }}" rel="stylesheet">
 </body>
+<style>
+    .card {
+      border:none;
+    }
+
+    .card::after {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+      -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .card:hover {
+
+      transform: scale(1.02, 1.02);
+      -webkit-transform: scale(1.02, 1.02);
+      backface-visibility: hidden; 
+      will-change: transform;
+      box-shadow: 0 1rem 3rem rgba(0,0,0,.75) !important;
+    }
+
+    .card:hover::after {
+      opacity: 1;
+    }
+
+    .card:hover .btn-outline-primary{
+      color:white;
+      background:#007bff;
+    }
+
+  </style>
 <script>
 // Add active class to the current button (highlight it)
 var header = document.getElementById("navbarSupportedContent");
