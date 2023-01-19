@@ -41,6 +41,8 @@
     <script type="text/javascript" src="{{asset('frontend/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontend/js/jquery.multiselect.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontend/js/additional-methods.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('frontend/qrcodejs/qrcode.js')}}"></script>
+    <script type="text/javascript" src="{{asset('frontend/qrcodejs/qrcode.min.js')}}"></script>
     <script type="text/javascript">
     jQuery.validator.setDefaults({
         errorElement: 'span',

@@ -25,7 +25,7 @@ class CardController extends Controller
         $card->address = $request->address;
         $card->country = $request->country;
         $card->city = $request->city;
-        $card->linkedin = $request->linkedin;
+        $card->linkedin = $request->linkiden;
         $card->website = $request->website;
         $card->image_path = $image_path;
         $card->save();
@@ -35,7 +35,7 @@ class CardController extends Controller
     function getcard($card_id){
 
         $card = Card::where('id', $card_id)->first();
-        $data =compact($card);
+        $data =compact('card');
         return view('card_view')->with($data);
     }
 }
