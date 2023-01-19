@@ -156,7 +156,7 @@ html {
                     <button type="submit" class="btn btn-yellow  rounded-pill px-5 py-2">
                         <a class="nav-link text-black text-center" href="/register" data-name="feature">
                             <b>
-                                Standerd
+                                Standard
                             </b>
                         </a>
                     </button>
