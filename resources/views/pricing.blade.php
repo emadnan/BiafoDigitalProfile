@@ -72,30 +72,16 @@ html {
                         @if (Route::has('login'))
                         <a class="btn btn-yellow rounded-pill px-5 py-2"
                             href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
+                            href="{{ route('register') }}"><b>{{ __('Create Card') }}</b></a>
                         @endif
                         @else
-                        <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('home') }}">
-                                {{ __('Dashboard') }}
-                            </a>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();"><i
-                                    class="fa-solid fa-right-from-bracket"></i>&nbsp;
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
+                        <a class="btn btn-yellow rounded-pill px-5 py-2 "
+                                href="{{ route('pricing') }}"><b>{{ __('Create Card') }}</b></a>
+                                <a class="btn btn-yellow ml-4"
+                                href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                         @endguest
-                        <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
-                            href="{{ route('register') }}"><b>{{ __('Create Card') }}</b></a>
+                        
                     </form>
                 </div>
             </div>
