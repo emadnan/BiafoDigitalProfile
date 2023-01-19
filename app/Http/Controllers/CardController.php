@@ -38,4 +38,10 @@ class CardController extends Controller
         $data =compact('card');
         return view('card_view')->with($data);
     }
+
+    function delete_card(){
+        $id = \Request::input('id');
+        $card = Card::where('id',$id)->delete();
+        return redirect('/home');
+    }
 }
