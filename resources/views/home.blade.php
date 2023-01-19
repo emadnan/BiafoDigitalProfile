@@ -48,7 +48,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form id="add_card" action="#" method="POST">
+                    <form id="add_card" action="/add_card" method="POST" enctype="multipart/form-data">
                         @csrf
                             <!-- //image -->
                             <div class="form-group">
@@ -106,12 +106,13 @@
                         </div>
                         
 
-                    </form>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>

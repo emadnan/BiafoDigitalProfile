@@ -25,4 +25,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'contact_us'])->name('contact-us');
 Route::get('/pricing', [App\Http\Controllers\PricingController::class, 'pricing'])->name('pricing');
-Route::post('/add_card',[CardController::class,'add_card'])->name('add_card');
+Route::post('/add_card',[CardController::class,'addCard'])->name('add_card');

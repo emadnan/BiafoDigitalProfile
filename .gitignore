@@ -1,4 +1,5 @@
 /node_modules
+/public/card_images
 /public/hot
 /public/storage
 /storage/*.key
