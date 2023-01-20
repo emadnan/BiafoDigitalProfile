@@ -58,8 +58,8 @@
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link text-white"
-                        href="#"><i class="nav-icon fa-solid fa-user-gear"></i>
+                    <a class="{{ request()->routeIs('profiles') ? 'nav-link active' : 'nav-link text-white' }}"
+                        href="{{ route('profiles') }}"><i class="nav-icon fa-solid fa-user-gear"></i>
                         <p >
                             Profiles
                         </p>

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\PricingController;
 use App\Http\Controllers\CardController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,4 +31,6 @@ Route::get('/view_card/{card_id}/{type}', [CardController::class, 'getcard'])->n
 Route::get('/delete_card/{id}',[CardController::class, 'delete_card'])->name('view_card');
 Route::get('/delete_card/{id}',[CardController::class, 'delete_card'])->name('delete_card');
 Route::post('/update_card/{id}',[CardController::class, 'update_card'])->name('update_card');
+Route::get('/profiles', [ProfileController::class,'index'])->name('profiles');
+Route::get('/add_profile', [ProfileController::class,'addProfile'])->name('add_profile');
 
