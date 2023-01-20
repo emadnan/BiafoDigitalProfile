@@ -32,10 +32,11 @@ class CardController extends Controller
         return redirect('/home');
     }
 
-    function getcard($card_id){
+    function getcard($card_id,$type){
 
         $card = Card::where('id', $card_id)->first();
-        $data =compact('card');
+        $type=$type;
+        $data =compact('card','type');
         return view('card_view')->with($data);
     }
 

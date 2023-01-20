@@ -17,7 +17,10 @@
                 <div class="red">
                     <div class="head">
                         <div>
+                            @if($type=="work")
                             <h2>{{$card->company}}</h2>
+                            @endif
+
                             <!-- <p>Tagline goes here</p> -->
                         </div>
                     </div>
@@ -28,7 +31,9 @@
                             style="height: 120px; width: 120px; border-radius: 25%" />
                     </div>
                     <p class="mt-2">{{$card->name}}</p>
+                    @if($type=="work")
                     <p>{{$card->designation}}</p>
+                    @endif
                 </div>
 
                 <!-- Info code start from here -->

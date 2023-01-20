@@ -26,6 +26,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'contact_us'])->name('contact-us');
 Route::get('/pricing', [App\Http\Controllers\PricingController::class, 'pricing'])->name('pricing');
 Route::post('/add_card',[CardController::class,'addCard'])->name('add_card');
-Route::get('/view_card/{card_id}', [CardController::class, 'getcard'])->name('view_card');
+Route::get('/view_card/{card_id}/{type}', [CardController::class, 'getcard'])->name('view_card');
 Route::get('/delete_card/{id}',[CardController::class, 'delete_card'])->name('view_card');
 

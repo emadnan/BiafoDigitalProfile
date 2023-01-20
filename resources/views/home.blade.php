@@ -29,13 +29,28 @@
             </div>
             @foreach ($cards as $card)
             <div class="col-md-2">
-                <a style="text-decoration: none;" href="/view_card/{{$card->id}}" class="anchor">
+                <a style="text-decoration: none;" href="/view_card/{{$card->id}}/personal" class="anchor">
                     <div class="card" style="margin-top:50px; margin-left:20px;height:350px; color:#ad021;border-radius:7%">
                         <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
                             style="border-top-left-radius:7%;border-top-right-radius:7%;height:250px;">
                         <div class="card-body">
                             <div class="justify-content-center text-center">
-                                <h3>{{$card->name}}</h3>
+                                <h3 style="font-family:Palatino;font-weight:bold;">{{$card->name}}</h3>
+                                <h5 style="font-family:Optima;font-weight:bold;">Personal</h5>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
+                    <div class="card" style="margin-top:50px; margin-left:20px;height:350px; color:#ad021;border-radius:7%">
+                        <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
+                            style="border-top-left-radius:7%;border-top-right-radius:7%;height:250px;">
+                        <div class="card-body">
+                            <div class="justify-content-center text-center">
+                                <h3 style="font-family:Palatino;font-weight:bold;">{{$card->name}}</h3>
+                                <h5 style="font-family:Optima;font-weight:bold;">Workspace</h5>
                             </div>
                         </div>
                     </div>
