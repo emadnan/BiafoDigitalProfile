@@ -13,7 +13,7 @@ class CreateInterestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('_interests', function (Blueprint $table) {
+        Schema::create('interests', function (Blueprint $table) {
             $table->id();
             $table->integer('profile_id');
             $table->string('interest_name');
@@ -28,6 +28,6 @@ class CreateInterestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_interests');
+        Schema::dropIfExists('interests');
     }
 }
