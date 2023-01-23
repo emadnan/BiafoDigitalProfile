@@ -14,4 +14,9 @@ class ProfileController extends Controller
     {
         return view('add_profile');
     }
+    public function insertProfile(Request $request)
+    {
+        echo "<pre>";
+        print_r($request->all());
+    }
 }

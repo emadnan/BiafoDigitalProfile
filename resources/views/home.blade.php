@@ -1,62 +1,52 @@
 @extends('layouts.admin')
 @section('content')
 <div class="content-wrapper">
+    <div class="container">
     <section class="content-header">
         <div class='container-fluid'>
             <div class='row'>
                 <div class='col-md-8'></div>
                 <div class='col-md-4'>
+                    <a type="button" href="#" id="add_card" class="anchor btn btn-primary float-right">
+                        Add Card
+                    </a>
                 </div>
             </div>
         </div>
     </section>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-                <a style="text-decoration: none;" href="#" id="add_card" class="anchor mt-5">
-                    <div class="card"
-                        style="margin-top:50px;margin-left:20px; background-color: rgba(173, 2, 28, 0.1); color:#ad021;border-radius:7%">
-                        <div class="card-body">
-                            <div class="justify-content-center text-center">
-                                <i style="font-size:65px;" class="fa-solid fa-plus"></i>
-                            </div>
-                            <div class="text-center mt-2">
-                                <h5 style="color:#ad021;">Add Card</h5>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @foreach ($cards as $card)
-            <div class="col-md-2">
-                <a style="text-decoration: none;" href="/view_card/{{$card->id}}/personal" class="anchor">
-                    <div class="card" style="margin-top:50px; margin-left:20px; color:#ad021;border-radius:7%">
-                        <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
-                            style="border-top-left-radius:7%;border-top-right-radius:7%;height:250px;">
-                        <div class="card-body">
-                            <div class="justify-content-center text-center">
-                                <h3 style="font-family:Palatino;font-weight:bold;">{{$card->name}}</h3>
-                                <h5 style="font-family:Optima;font-weight:bold;">Personal</h5>
+            <div class="row">
+                @foreach ($cards as $card)
+                <div class="col-md-3">
+                    <a style="text-decoration: none;" href="/view_card/{{$card->id}}/personal" class="anchor">
+                        <div class="card" style="color:#ad021;border-radius:7%">
+                            <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
+                                style="border-top-left-radius:7%;border-top-right-radius:7%;height:250px;">
+                            <div class="card-body">
+                                <div class="justify-content-center text-center">
+                                    <h3 style="font-family:Palatino;font-weight:bold;">{{$card->name}}</h3>
+                                    <h5 style="font-family:Optima;font-weight:bold;">Personal</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
-                    <div class="card" style="margin-top:50px; margin-left:20px;color:#ad021;border-radius:7%">
-                        <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
-                            style="border-top-left-radius:7%;border-top-right-radius:7%;height:250px;">
-                        <div class="card-body">
-                            <div class="justify-content-center text-center">
-                                <h3 style="font-family:Palatino;font-weight:bold;">{{$card->name}}</h3>
-                                <h5 style="font-family:Optima;font-weight:bold;">Workspace</h5>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
+                        <div class="card" style="color:#ad021;border-radius:7%">
+                            <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
+                                style="border-top-left-radius:7%;border-top-right-radius:7%;height:250px;">
+                            <div class="card-body">
+                                <div class="justify-content-center text-center">
+                                    <h3 style="font-family:Palatino;font-weight:bold;">{{$card->name}}</h3>
+                                    <h5 style="font-family:Optima;font-weight:bold;">Workspace</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
     </div>
     <!-- add card Model -->

@@ -33,4 +33,5 @@ Route::get('/delete_card/{id}',[CardController::class, 'delete_card'])->name('de
 Route::post('/update_card/{card_id}',[CardController::class, 'update_card'])->name('update_card');
 Route::get('/profiles', [ProfileController::class,'index'])->name('profiles');
 Route::get('/add_profile', [ProfileController::class,'addProfile'])->name('add_profile');
+Route::post('/insert_profile', [ProfileController::class,'insertProfile'])->name('insert_profile');
 

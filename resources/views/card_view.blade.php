@@ -53,7 +53,7 @@
                             <p>{{$card->phone}}</p>
                         </div>
                     </div>
-
+                    @if($type=="work")
                     <!-- Logo for website -->
                     <div>
                         <i class="fa-solid fa-globe"></i>
@@ -68,6 +68,7 @@
                             <p>{{$card->linkedin}}</p>
                         </div>
                     </div>
+                    @endif
                     <div>
                         <!-- Logo of current location -->
                         <i class="fa-solid fa-map-marker-alt"></i>

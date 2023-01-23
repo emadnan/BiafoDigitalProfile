@@ -25,7 +25,7 @@
                                     id="image_preview"
                                     style="width: 150px; height: 150px; border-radius:25%;border: 2px solid;">
                             </div>
-                            <form id="add_profile">
+                            <form id="add_profile" action="/insert_profile" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-5">
@@ -196,7 +196,7 @@ $(document).ready(function() {
     var i = 1;
     $('#add_experience').click(function() {
         i++;
-        $('#experiences').append('<div class="col-md-6" id="experice_row_company' + i + '"><div class="form-group"><label for="company">Company:</label><input type="text" class="form-control" id="company" name="company[]" placeholder="Enter Your Company"></div></div><div class="col-md-6" id="experice_row_position' + i + '"><div class="form-group"><label for="position">Position:</label><input type="text" class="form-control" id="position" name="position[]" placeholder="Enter Your Position"></div></div><div class="col-md-6" id="experice_row_start_date' + i + '"><div class="form-group"><label for="start_date">Start Date:</label><input type="date" class="form-control" id="start_date" name="start_date[]" placeholder="Enter Your Start Date"></div></div><div class="col-md-6" id="experice_row_end_date' + i + '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date" name="end_date[]" placeholder="Enter Your End Date"><a  class="btn btn-danger btn-sm float-right mt-3" id="' + i + '" style="float:right;" onclick="removeExperience(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>');
+        $('#experiences').append('<div class="col-md-6" id="experice_row_company' + i + '"><div class="form-group"><label for="company">Company:</label><input type="text" class="form-control" id="company" name="company[]" placeholder="Enter Your Company"></div></div><div class="col-md-6" id="experice_row_position' + i + '"><div class="form-group"><label for="position">Position:</label><input type="text" class="form-control" id="position" name="position[]" placeholder="Enter Your Position"></div></div><div class="col-md-6" id="experice_row_start_date' + i + '"><div class="form-group"><label for="start_date">Start Date:</label><input type="date" class="form-control" id="start_date_exp" name="start_date_exp[]" placeholder="Enter Your Start Date"></div></div><div class="col-md-6" id="experice_row_end_date' + i + '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date_exp" name="end_date_exp[]" placeholder="Enter Your End Date"><a  class="btn btn-danger btn-sm float-right mt-3" id="' + i + '" style="float:right;" onclick="removeExperience(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>');
     });
     removeExperience = (id) => {
         $('#experice_row_company' + id).remove();
