@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Language extends Model
+class Expireance extends Model
 {
     use HasFactory;
-    protected $table="languages";
+    protected $table="experience";
     protected $primarykey="id";
 }

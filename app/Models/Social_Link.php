@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Social_Link extends Model
 {
     use HasFactory;
+    protected $table="social_links";
+    protected $primarykey="id";
 }
