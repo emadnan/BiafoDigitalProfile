@@ -13,11 +13,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                <a style="text-decoration: none;" href="#" id="add_card" class="anchor">
+                <a style="text-decoration: none;" href="#" id="add_card" class="anchor mt-5">
                     <div class="card"
-                        style="margin-top:50px;margin-left:20px; height:350px; background-color: rgba(173, 2, 28, 0.1); color:#ad021;border-radius:7%">
+                        style="margin-top:50px;margin-left:20px; background-color: rgba(173, 2, 28, 0.1); color:#ad021;border-radius:7%">
                         <div class="card-body">
-                            <div class="justify-content-center text-center" style="margin-top:90px;">
+                            <div class="justify-content-center text-center">
                                 <i style="font-size:65px;" class="fa-solid fa-plus"></i>
                             </div>
                             <div class="text-center mt-2">
@@ -30,7 +30,7 @@
             @foreach ($cards as $card)
             <div class="col-md-2">
                 <a style="text-decoration: none;" href="/view_card/{{$card->id}}/personal" class="anchor">
-                    <div class="card" style="margin-top:50px; margin-left:20px;height:350px; color:#ad021;border-radius:7%">
+                    <div class="card" style="margin-top:50px; margin-left:20px; color:#ad021;border-radius:7%">
                         <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
                             style="border-top-left-radius:7%;border-top-right-radius:7%;height:250px;">
                         <div class="card-body">
