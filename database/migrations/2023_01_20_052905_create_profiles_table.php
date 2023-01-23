@@ -23,6 +23,7 @@ class CreateProfilesTable extends Migration
             $table->string('city');
             $table->string('country');
             $table->string('description');
+            $table->string('image_path');
             $table->timestamps();
         });
     }
