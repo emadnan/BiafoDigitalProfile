@@ -11,7 +11,7 @@ class CardController extends Controller
     function addCard(Request $request){
             if($request->hasFile('image'))
             {
-            $image = $request->file('image');
+                $image = $request->file('image');
                 $image_path = time().$image->getClientOriginalName();
                 $image->move(public_path().'/card_images/', $image_path);
             }
@@ -45,5 +45,30 @@ class CardController extends Controller
         return redirect('/home');
     }
 
-    
+    function update_card($card_id){
+        $card = Card::where('id',$card_id)
+        $image_path=$card->image_path;
+        if( hasFile('image') && $request->file('image')->isValid()) {
+
+            $image = \Request::file('image');
+            $image_path = time().$image->getClientOriginalName();
+            $image->move(public_path().'/card_images/', $image_path);
+        }
+
+        ->update([
+            'name' => \Request::input('name'),
+            'email' => \Request::input('email'),
+            'phone' => \Request::input('phone'),
+            'company' => \Request::input('company'),
+            'designation' => \Request::input('designation'),
+            'address' => \Request::input('address'),
+            'country' => \Request::input('country'),
+            'city' => \Request::input('city'),
+            'linkedin' => \Request::input('linkedin'),
+            'website' => \Request::input('website'),
+            'image_path' => \Request::input('image_path')
+        ]);
+
+        return response('card_view/card_id');
+    }
 }
