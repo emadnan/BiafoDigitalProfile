@@ -44,7 +44,7 @@
             </div>
             <div class="col-md-2">
                 <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
-                    <div class="card" style="margin-top:50px; margin-left:20px;height:350px; color:#ad021;border-radius:7%">
+                    <div class="card" style="margin-top:50px; margin-left:20px;color:#ad021;border-radius:7%">
                         <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
                             style="border-top-left-radius:7%;border-top-right-radius:7%;height:250px;">
                         <div class="card-body">
