@@ -15,6 +15,14 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
+            $table->integer('card_id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('address');
+            $table->string('city');
+            $table->string('country');
+            $table->string('description');
             $table->timestamps();
         });
     }
