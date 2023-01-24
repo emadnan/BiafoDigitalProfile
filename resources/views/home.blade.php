@@ -17,6 +17,7 @@
     <div class="container-fluid">
             <div class="row">
                 @foreach ($cards as $card)
+                @if(Auth::user()->user_type=='individual')
                 <div class="col-md-3">
                     <a style="text-decoration: none;" href="/view_card/{{$card->id}}/personal" class="anchor">
                         <div class="card" style="color:#ad021;border-radius:7%">
@@ -31,6 +32,7 @@
                         </div>
                     </a>
                 </div>
+                @endif
                 <div class="col-md-3">
                     <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
                         <div class="card" style="color:#ad021;border-radius:7%">
@@ -39,7 +41,11 @@
                             <div class="card-body">
                                 <div class="justify-content-center text-center">
                                     <h3 style="font-family:Palatino;font-weight:bold;">{{$card->name}}</h3>
+                                    @if(Auth::user()->user_type=='individual')
                                     <h5 style="font-family:Optima;font-weight:bold;">Workspace</h5>
+                                    @else
+                                    <h5 style="font-family:Optima;font-weight:bold;">{{$card->designation}}</h5>
+                                    @endif
                                 </div>
                             </div>
                         </div>

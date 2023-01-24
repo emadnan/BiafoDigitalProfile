@@ -7,8 +7,10 @@
             <div class='row'>
                 <div class='col-md-8'></div>
                 <div class='col-md-4'>
-                <a href="/add_profile/{{$card->id}}" class="btn btn-primary" style="float:right;margin-top:10px;">Add
+                    @if(empty($profile))
+                <a href="/add_profile/{{$card->id}}/{{$type}}" class="btn btn-primary" style="float:right;margin-top:10px;">Add
                             Profile</a>
+                            @endif
                 </div>
             </div>
         </div>
@@ -89,7 +91,7 @@
                 <div class="top">
                 </div>
                 <div class="qricon">
-                <a class="qr_anchor" href="https://www.google.com">
+                <a class="qr_anchor" href="/view_profile/{{$card->id}}">
                     <div id="qrcode">
                     </div>
 </a>
@@ -217,7 +219,7 @@
     $('#modaldeletecard').attr('href', '/delete_card/' + $(this).attr('data-delete-card-id'))
 });
 var qrcode = new QRCode("qrcode", {
-    text: "www.google.com",
+    text: "{{route('view_profile', $card->id)}}",
     width: 80,
     height: 80,
     colorDark: "#000000",

@@ -28,6 +28,7 @@
                             <form id="add_profile" action="/insert_profile" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="card_id" value="{{$card->id}}">
+                                <input type="hidden" name="type" value="{{$type}}">
                                 <div class="row">
                                     <div class="col-md-5">
                                     </div>
