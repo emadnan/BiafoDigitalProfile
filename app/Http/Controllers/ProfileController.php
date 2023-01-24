@@ -10,9 +10,11 @@ class ProfileController extends Controller
     {
         return view('profiles');
     }
-    public function addProfile()
+    public function addProfile($card_id)
     {
-        return view('add_profile');
+        $card_id=$card_id;
+        $data=compact('card_id');
+        return view('add_profile')->with($card_id);
     }
     public function insertProfile(Request $request)
     {
