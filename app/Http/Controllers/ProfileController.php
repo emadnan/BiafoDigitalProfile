@@ -18,10 +18,10 @@ class ProfileController extends Controller
     {
         return view('profiles');
     }
-    public function addProfile($card_id)
+    public function addProfile($card_id,$type)
     {
         $card=Card::where('id',$card_id)->first();
-        $data=compact('card','card_id');
+        $data=compact('card','card_id','type');
         return view('add_profile')->with($data);
     }
     public function insertProfile(Request $request)
@@ -32,6 +32,7 @@ class ProfileController extends Controller
         // exit;
         $card=Card::where('id',$request->card_id)->first();
         $image_path = $card->image_path;
+        $type=$request->type;
         if($request->hasFile('image'))
         {
             $image = $request->file('image');
@@ -139,7 +140,14 @@ class ProfileController extends Controller
                 $interest->save();
             }
         }
-        return redirect()->route('profiles');
+        return redirect('view_card/'.$card_id.'/'.$type);
 
+    }
+    public function viewProfile($card_id)
+    {
+        $card=Card::where('id',$card_id)->first();
+        $profile=Profile::with('social_links','educations','experiences','skills','languages','interests')->where('card_id',$card_id)->first();
+        $data=compact('card','profile');
+        return view('view_profile')->with($data);
     }
 }

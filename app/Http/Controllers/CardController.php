@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Card;
+use App\Models\Profile;
 
 class CardController extends Controller
 {
@@ -36,7 +37,8 @@ class CardController extends Controller
 
         $card = Card::where('id', $card_id)->first();
         $type=$type;
-        $data =compact('card','type');
+        $profile=Profile::where('card_id',$card_id)->first();
+        $data =compact('card','type','profile');
         return view('card_view')->with($data);
     }
 
