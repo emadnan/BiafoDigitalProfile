@@ -116,7 +116,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form id="add_card" action="/add_card" method="POST" enctype="multipart/form-data">
+                    <form id="add_card" action="/update_card/{{$card->id}}/{{$type}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <!-- //image -->
                         <div>

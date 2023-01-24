@@ -21,12 +21,13 @@
                                 <h3 style="font-family:Palatino;font-weight:bold;">Add Profile</h3>
                             </div>
                             <div class="d-flex justify-content-center mt-3">
-                                <img src="{{asset('frontend/img/your-image-here.jpg')}}" alt="image preview"
+                                <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="image preview"
                                     id="image_preview"
                                     style="width: 150px; height: 150px; border-radius:25%;border: 2px solid;">
                             </div>
-                            <form id="add_profile" action="/insert_profile" method="post">
+                            <form id="add_profile" action="/insert_profile" method="post" enctype="multipart/form-data">
                                 @csrf
+                                <input type="hidden" name="card_id" value="{{$card->id}}">
                                 <div class="row">
                                     <div class="col-md-5">
                                     </div>
@@ -43,42 +44,42 @@
                                         <div class="form-group">
                                             <label for="name">Full Name:</label>
                                             <input type="text" class="form-control" id="name" name="name"
-                                                placeholder="Enter Your Full Name">
+                                                placeholder="Enter Your Full Name" value="{{$card->name}}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="email">Email:</label>
                                             <input type="email" class="form-control" id="email" name="email"
-                                                placeholder="Enter Your Email">
+                                                placeholder="Enter Your Email" value="{{$card->email}}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="phone">Phone No:</label>
                                             <input type="phone" class="form-control" id="phone" name="phone"
-                                                placeholder="Enter Your Phone No">
+                                                placeholder="Enter Your Phone No" value="{{$card->phone}}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="address">Address:</label>
                                             <input type="text" class="form-control" id="address" name="address"
-                                                placeholder="Enter Your Address">
+                                                placeholder="Enter Your Address" value="{{$card->address}}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="city">City:</label>
                                             <input type="text" class="form-control" id="city" name="city"
-                                                placeholder="Enter Your City">
+                                                placeholder="Enter Your City" value="{{$card->city}}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="country">Country:</label>
                                             <input type="text" class="form-control" id="country" name="country"
-                                                placeholder="Enter Your Country">
+                                                placeholder="Enter Your Country" value="{{$card->country}}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -305,5 +306,174 @@ $(document).ready(function() {
         $('#interest_row_level' + id).remove();
     }
 });
+//form validation of add_profile
+$(document).ready(function() {
+    $('#add_profile').validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 3,
+                maxlength: 50
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            phone: {
+                required: true,
+                minlength: 11,
+                maxlength: 15
+            },
+            address: {
+                required: true,
+                minlength: 3,
+                maxlength: 50
+            },
+            city: {
+                required: true,
+                minlength: 3,
+                maxlength: 50
+            },
+            country: {
+                required: true,
+                minlength: 3,
+                maxlength: 50
+            },
+            description: {
+                required: true,
+                minlength: 3,
+                maxlength: 500
+            },
+            company: {
+                required: true,
+                minlength: 3,
+                maxlength: 50
+            },
+            position:{
+                required: true,
+                minlength: 3,
+                maxlength: 50
+            },
+            start_date_exp: {
+                required: true,
+            },
+            school: {
+                required: true,
+                minlength: 3,
+                maxlength: 50
+            },
+            degree: {
+                required: true,
+                minlength: 3,
+                maxlength: 50
+            },
+            start_date: {
+                required: true,
+            },
+            social_name: {
+                required: true,
+            },
+            social_link: {
+                required: true,
+            },
+            language_name: {
+                required: true,
+                minlength: 3,
+                maxlength: 50
+            },
+            language_level: {
+                required: true,
+            },
+            interest_name: {
+                required: true,
+                minlength: 3,
+                maxlength: 50
+            },
+        },
+        messages: {
+            name: {
+                required: "Please enter your name",
+                minlength: "Your name must be at least 3 characters long",
+                maxlength: "Your name must be at most 50 characters long"
+            },
+            email: {
+                required: "Please enter your email",
+                email: "Please enter a valid email address",
+            },
+            phone: {
+                required: "Please enter your phone number",
+                minlength: "Your phone number must be at least 11 characters long",
+                maxlength: "Your phone number must be at most 15 characters long"
+            },
+            address: {
+                required: "Please enter your address",
+                minlength: "Your address must be at least 3 characters long",
+            },
+            city: {
+                required: "Please enter your city",
+                minlength: "Your city must be at least 3 characters long",
+            },
+            country: {
+                required: "Please enter your country",
+                minlength: "Your country must be at least 3 characters long",
+            },
+            description: {
+                required: "Please enter your description",
+                minlength: "Your description must be at least 3 characters long",
+            },
+            company: {
+                required: "Please enter your company",
+                minlength: "Your company must be at least 3 characters long",
+            },
+            position: {
+                required: "Please enter your position",
+                minlength: "Your position must be at least 3 characters long",
+            },
+            start_date_exp: {
+                required: "Please enter your start date",
+            },
+            school: {
+                required: "Please enter your school",
+                minlength: "Your school must be at least 3 characters long",
+            },
+            degree: {
+                required: "Please enter your degree",
+                minlength: "Your degree must be at least 3 characters long",
+            },
+            start_date: {
+                required: "Please enter your start date",
+            },
+            social_name: {
+                required: "Please enter your social name",
+            },
+            social_link: {
+                required: "Please enter your social link",
+            },
+            language_name: {
+                required: "Please enter your language name",
+                minlength: "Your language name must be at least 3 characters long",
+            },
+            language_level: {
+                required: "Please enter your language level",
+            },
+            interest_name: {
+                required: "Please enter your interest name",
+                minlength: "Your interest name must be at least 3 characters long",
+            },
+        },
+        errorElement: 'span',
+        errorPlacement: function(error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+        },
+        highlight: function(element, errorClass, validClass) {
+            $(element).addClass('is-invalid');
+        },
+        unhighlight: function(element, errorClass, validClass, error) {
+            $(element).removeClass('is-invalid');
+        }
+    });
+});
+
 </script>
 @endsection
