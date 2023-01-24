@@ -45,8 +45,8 @@ class CardController extends Controller
         return redirect('/home');
     }
 
-    function update_card($card_id,Request $request){
-        $card = Card::where('id',$card_id);
+    function update_card($card_id,$type,Request $request){
+        $card = Card::where('id',$card_id)->first();
         $image_path=$card->image_path;
         if( $request->hasFile('image')) {
 
@@ -54,8 +54,6 @@ class CardController extends Controller
             $image_path = time().$image->getClientOriginalName();
             $image->move(public_path().'/card_images/', $image_path);
         }
-
-        $card = new Card();
         $card->user_id= auth()->user()->id;
         $card->name= $request->name;
         $card->email = $request->email;
@@ -70,6 +68,6 @@ class CardController extends Controller
         $card->image_path = $image_path;
         $card->save();
 
-        return redirect('card_view/'.$card_id);
+        return redirect('view_card/'.$card_id.'/'.$type);
     }
 }
