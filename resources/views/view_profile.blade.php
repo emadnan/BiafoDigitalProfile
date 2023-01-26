@@ -82,8 +82,10 @@ html {
                             @endif
                             @else
                             <a class="btn btn-yellow rounded-pill px-5 py-2 "
-                                href="{{ route('pricing') }}"><b>{{ __('Create Card') }}</b></a>
-                            <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
+                            @if($profile->user_id == Auth::user()->id)
+                               <a href=""><b><i class="fa-solid fa-pen-to-square"></i> Edit Profile</b></a>
+                            @endif
+                            <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b><i class="fa-solid fa-house-chimney"></i> {{ __('Dashboard') }}</b></a>
                             @endguest
                         </form>
                     </div>

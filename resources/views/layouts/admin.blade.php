@@ -147,7 +147,7 @@
 
         @include('layouts.header')
         @include('layouts.sidebar')
-
+        @include('toastr')
         @yield('content')
         @include('layouts.footer')
         
