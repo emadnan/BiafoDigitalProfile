@@ -113,7 +113,7 @@ html {
                         <div class="col-md-2">
                             @foreach($profile->social_links as $link)
                             <a href="{{$link->social_link}}" target="_blank" class="btn btn-primary mt-3 float-right"
-                                style="width: 130px; height: 40px; border-radius: 10px; font-size: 15px; font-weight: bold;">
+                                style="width: 130px; height: 40px; border-radius: 10px; font-size: 15px; font-weight: bold; float:right;">
                                 @if($link->social_name == 'facebook')
                                 <i class="fa-brands fa-facebook"></i>&nbsp;Facebook
                                 @elseif($link->social_name == 'github')
