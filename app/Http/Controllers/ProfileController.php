@@ -154,4 +154,11 @@ class ProfileController extends Controller
         $data=compact('card','profile');
         return view('view_profile')->with($data);
     }
+    public function editProfile($card_id)
+    {
+        $card=Card::where('id',$card_id)->first();
+        $profile=Profile::with('social_links','educations','experiences','skills','languages','interests')->where('card_id',$card_id)->first();
+        $data=compact('card','profile');
+        return view('edit_profile')->with($data);
+    }
 }
