@@ -140,7 +140,7 @@ class ProfileController extends Controller
                 $interest->save();
             }
         }
-        return redirect('view_card/'.$card_id.'/'.$type);
+        return redirect('view_card/'.$request->card_id.'/'.$type);
 
     }
     public function viewProfile($card_id)
