@@ -147,6 +147,10 @@ class ProfileController extends Controller
     {
         $card=Card::where('id',$card_id)->first();
         $profile=Profile::with('social_links','educations','experiences','skills','languages','interests')->where('card_id',$card_id)->first();
+        if(empty($profile))
+        {
+            return redirect('view_card/'.$card_id.'/work')->with('error','Please add your profile first');
+        }
         $data=compact('card','profile');
         return view('view_profile')->with($data);
     }
