@@ -101,31 +101,43 @@
                                     </div>
                                 </div>
                                 <div class="row" id="socials">
-                                </div>
-                                <div class="border-top my-3"></div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                    <h5 style="font-family:Palatino;font-weight:bold;">Check to Delete Social Links</h5>
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Social Name</th>
-                                                    <th scope="col">Social Link</th>
-                                                    <th scope="col">Delete</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($profile->social_links as $social)
-                                                <tr>
-                                                    <td>{{$social->social_name}}</td>
-                                                    <td>{{$social->social_link}}</td>
-                                                    <td><input type="checkbox" name="delete_social_links[]" value="{{$social->id}}">
-                                                    </td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
+                                    @if($profile->social_links)
+                                    @foreach($profile->social_links as $social)
+                                    <div class="col-md-6" id="exist_social_name_{{$social->id}}">
+                                        <div class="form-group"><label for="social">Social Name:</label><select
+                                                class="form-select" id="social_name" name="social_name[]"
+                                                aria-label="Default select example">
+                                                @if($social->social_name == 'website')
+                                                <option value="website" selected>Website</option>
+                                                @else
+                                                <option value="website">Website</option>
+                                                @endif
+                                                @if($social->social_name == 'github')
+                                                <option value="github" selected>Github</option>
+                                                @else
+                                                <option value="github">Github</option>
+                                                @endif
+                                                @if($social->social_name == 'linkedin')
+                                                <option value="linkedin" selected>Linkedin</option>
+                                                @else
+                                                <option value="linkedin">Linkedin</option>
+                                                @endif
+                                                @if($social->social_name == 'facebook')
+                                                <option value="facebook" selected>Facebook</option>
+                                                @else
+                                                <option value="facebook">Facebook</option>
+                                                @endif
+                                            </select></div>
                                     </div>
+                                    <div class="col-md-6" id="exist_social_link_{{$social->id}}">
+                                        <div class="form-group"><label for="social_link">Social Link:</label><input
+                                                type="text" class="form-control" id="social_link" name="social_link[]"
+                                                placeholder="Enter Your Social Link" value="{{$social->social_link}}"><a
+                                                class="btn btn-danger btn-sm float-right mt-3" id="{{$social->id}}" style="float:right;" onclick="removeSocialexist(this.id)"><i class="fa-solid fa-trash"></i></a>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    @endif
                                 </div>
                                 <div class="border-top my-3"></div>
                                 <div class="row">
@@ -297,6 +309,10 @@ $(document).ready(function() {
         $('#social_row_link' + id).remove();
     }
 });
+removeSocialexist = (id) => {
+    $('#exist_social_name_' + id).remove();
+    $('#exist_social_link_' + id).remove();
+}
 //add language
 $(document).ready(function() {
     var i = 1;
