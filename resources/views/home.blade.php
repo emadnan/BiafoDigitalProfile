@@ -61,7 +61,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form id="add_card" action="/add_card" method="POST" enctype="multipart/form-data">
+                    <form id="add_card_form" action="/add_card" method="POST" enctype="multipart/form-data">
                         @csrf
                         <!-- //image -->
                         <div>
@@ -157,5 +157,67 @@ $(document).ready(function() {
         reader.readAsDataURL(this.files[0]);
     });
 });
+//form validate for add_card
+    $('#add_card_form').validate({
+        rules: {
+            image: {
+                required: true,
+            },
+            name: {
+                required: true,
+            },
+            email: {
+                required: true,
+                email: true,
+            },
+            phone: {
+                required: true,
+            },
+            address: {
+                required: true,
+            },
+            country: {
+                required: true,
+            },
+            city: {
+                required: true,
+            }
+        },
+        messages: {
+            image: {
+                required: "Please Select Image",
+            },
+            name: {
+                required: "Please Enter Name",
+            },
+            email: {
+                required: "Please Enter Email",
+                email: "Please Enter Valid Email",
+            },
+            phone: {
+                required: "Please Enter Phone",
+            },
+            address: {
+                required: "Please Enter Address",
+            },
+            country: {
+                required: "Please Enter Country",
+            },
+            city: {
+                required: "Please Enter City",
+            }
+        },
+        errorElement: 'span',
+        errorPlacement: function(error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+        },
+        highlight: function(element, errorClass, validClass) {
+            $(element).addClass('is-invalid');
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).removeClass('is-invalid');
+        }
+    });
 </script>
 @endsection
