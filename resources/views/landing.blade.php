@@ -254,7 +254,7 @@ html {
                 <div class="card-ll mt-5" style=" border-radius: 25px;">
                     <div class="container p-5">
                         <div class="row">
-                            <div class="col-lg-6 mb-4">
+                            <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
                                     <div class="card-body">
                                         <div class="text-center p-3">
@@ -268,7 +268,7 @@ html {
                                                     </a>
                                                 </button>
                                             </div>
-                                            <small>Individual</small>
+                                            <small>1 User</small>
                                             <br><br>
                                             <span class="h2">$0</span>/month
                                             <br><br>
@@ -289,9 +289,16 @@ html {
                                             </svg> Dapibus ac facilisis in</li>
                                         <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                 height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                            </svg> Vestibulum at eros</li>
+                                                </svg> Vestibulum at eros</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                </svg> Custom colors</li>
+                                            <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                </svg> Personalized card link</li>
+                                            <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                </svg> Additional card designs</li>
                                     </ul>
                                     <div class="card-body text-center">
                                         <button type="submit" class="rounded-pill px-5 py-2"
@@ -306,7 +313,7 @@ html {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 mb-4">
+                            <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
                                     <div class="card-body">
                                         <div class="text-center p-3">
@@ -315,14 +322,75 @@ html {
                                                     <a class="nav-link text-black text-center" href="/register"
                                                         data-name="feature">
                                                         <b>
-                                                            Standard
+                                                            Professional
                                                         </b>
                                                     </a>
                                                 </button>
                                             </div>
-                                            <small>Small Business</small>
+                                            <small>2 User</small>
                                             <br><br>
-                                            <span class="h2">$20</span>/month
+                                            <span class="h2">$5</span>/month
+                                            <br><br>
+                                        </div>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Cras justo odio</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Dapibus ac facilisis in</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                                </svg> Vestibulum at eros</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                </svg> Custom colors</li>
+                                            <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                </svg> Personalized card link</li>
+                                            <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                </svg> Additional card designs</li>
+                                    </ul>
+                                    <div class="card-body text-center">
+                                        <button type="submit" class="rounded-pill px-5 py-2"
+                                            style="background-color: #ad021c">
+                                            <a class="nav-link text-white text-center" href="/register"
+                                                data-name="feature">
+                                                <b>
+                                                    SignUp
+                                                </b>
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 mb-4">
+                                <div class="card h-100 shadow-lg">
+                                    <div class="card-body">
+                                        <div class="text-center p-3">
+                                            <div class="card-body text-center">
+                                                <button type="submit" class="btn btn-yellow  rounded-pill px-5 py-2">
+                                                    <a class="nav-link text-black text-center" href="/register"
+                                                        data-name="feature">
+                                                        <b>
+                                                            Business
+                                                        </b>
+                                                    </a>
+                                                </button>
+                                            </div>
+                                            <small>10 Users</small>
+                                            <br><br>
+                                            <span class ="h4"><b>Contact Sales</b></span>                                            
                                             <br><br>
                                         </div>
                                         <p class="card-text">Some quick example text to build on the card title and make
@@ -344,6 +412,84 @@ html {
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Vestibulum at eros</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Custom colors</li>
+                                            <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                </svg> Personalized card link</li>
+                                            <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                </svg> Additional card designs</li>
+                                    </ul>
+                                    <div class="card-body text-center">
+                                        <button type="submit" class="rounded-pill px-5 py-2"
+                                            style="background-color: #ad021c">
+                                            <a class="nav-link text-white text-center" href="/register"
+                                                data-name="feature">
+                                                <b>
+                                                    SignUp
+                                                </b>
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-lg-3 mb-4">
+                                <div class="card h-100 shadow-lg">
+                                    <div class="card-body">
+                                        <div class="text-center p-3">
+                                            <div class="card-body text-center">
+                                                <button type="submit" class="btn btn-yellow  rounded-pill px-5 py-2">
+                                                    <a class="nav-link text-black text-center" href="/register"
+                                                        data-name="feature">
+                                                        <b>
+                                                            Enterprise
+                                                        </b>
+                                                    </a>
+                                                </button>
+                                            </div>
+                                            <small>100+ Users</small>
+                                            <br><br>
+                                            <span class ="h4"><b>Contact Sales</b></span>                                            
+                                            <br><br>
+                                        </div>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Cras justo odio</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Dapibus ac facilisis in</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Vestibulum at eros</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Custom colors</li>
+                                            <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Personalized card link</li>
+                                            <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Additional card designs</li>
                                     </ul>
                                     <div class="card-body text-center">
                                         <button type="submit" class="rounded-pill px-5 py-2"
@@ -358,7 +504,6 @@ html {
                                     </div>
                                 </div>
                             </div>
-
 
                         </div>
                     </div>
