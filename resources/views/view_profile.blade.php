@@ -39,24 +39,24 @@ html {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center active" aria-current="page" href="#"
+                                <a class="nav-link text-white text-center active" aria-current="page" href="/"
                                     style="position: relative;">
                                     Home
                                     <!-- <div class="overlay_menu"></div> -->
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#feature" data-name="feature">
+                                <a class="nav-link text-white text-center" href="/#feature" data-name="feature">
                                     Features
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#about">
+                                <a class="nav-link text-white text-center" href="/#about">
                                     About Us
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="/pricing">
+                                <a class="nav-link text-white text-center" href="/#pricing">
                                     Pricing
                                 </a>
                             </li>
@@ -66,7 +66,7 @@ html {
                         </a>
                       </li> -->
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="/contact-us">
+                                <a class="nav-link text-white text-center" href="/#contact_us">
                                     Contact Us
                                 </a>
                             </li>
@@ -104,11 +104,13 @@ html {
                         </div>
                         <div class="col-md-7">
                             <h1 style="font-family:Palatino;font-weight:bold;">{{$profile->name}}</h1>
-                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;">{{$profile->address}}, {{$profile->city}}, {{$profile->country}}</h5>
-                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;">{{$profile->email}}</h5>
-                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;">{{$profile->phone}}</h5>
+                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-map-location-dot"></i>&nbsp; {{$profile->address}}, {{$profile->city}}, {{$profile->country}}</h5>
+                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-envelope"></i>&nbsp; {{$profile->email}}</h5>
+                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-mobile-button"></i>&nbsp; {{$profile->phone}}</h5>
+                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-calendar-day"></i>&nbsp; {{$profile->dob}}</h5>
                             <div class="border-top my-3"></div>
-                            <p style="font-family:Palatino;font-weight:bold;">{{$profile->description}}</p>
+                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;">Description:</h5>
+                            <p style="font-family:Palatino;">{{$profile->description}}</p>
                         </div>
                         <div class="col-md-2">
                             @foreach($profile->social_links as $link)

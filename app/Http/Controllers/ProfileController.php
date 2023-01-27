@@ -49,6 +49,7 @@ class ProfileController extends Controller
         $profile->city = $request->city;
         $profile->country = $request->country;
         $profile->description = $request->description;
+        $profile->dob = $request->dob;
         $profile->image_path = $image_path;
         $profile->save();
         $profile_id = $profile->id;
@@ -192,6 +193,7 @@ class ProfileController extends Controller
         $profile->city = $request->city;
         $profile->country = $request->country;
         $profile->description = $request->description;
+        $profile->dob = $request->dob;
         $profile->image_path = $image_path;
         $profile->save();
         $profile_id = $profile->id;
@@ -284,6 +286,6 @@ class ProfileController extends Controller
             }
         }
         $data=compact('card','profile');
-        return view('view_profile')->with($data)->with('success','Profile Updated Successfully');
+        return redirect('/view_profile/'.$card->id)->with('success','Profile Updated Successfully');
     }
 }
