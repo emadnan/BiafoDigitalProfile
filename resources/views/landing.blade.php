@@ -96,10 +96,8 @@ html {
                 <div class="container">
                     <div class="position-relative">
                         <div class="position-absolute text-white customize__absolute__text" style="z-index: 99;">
-                            <h1>Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius unum primis oportere ex,
-                                his id paulo graece tacimates,</h1>
-                            <p>Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius unum primis oportere ex, his
-                                id paulo graece tacimates,.</p>
+                            <h1>Digital Business Card,</h1>
+                            <p>A digital business card (also referred to as a QR code business card, virtual business card, electronic business card or mobile business card) is a profile that connects all your digital contact information. They give people the ability to share who they are, with anyone, wherever they go.</p>
                         </div>
                         <img src="{{asset('frontend/img/hero_img_6.png')}}" alt=""
                             class="position-absolute customize__absolute__img">
@@ -127,64 +125,41 @@ html {
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                                <h1 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
-                                    <strong><i class="bi bi-border-all"></i></strong>
-                                </h1>
-                                <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet,
-                                    qui suavitate sententiae an.
-                                    Ius unum primis oportere ex, his
-                                    id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                    Ius
-                                    unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
-                                    qui</p>
+                                <h4 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                    <strong>Create Digital Business Card</strong>
+                                </h4>
+                                <p class=" text-white" style="font-size:18px;"> Create and customize stylish digital business cards. <br>It stores the data of the user <br>once you scan the QR code <br> it will show the profile of the <br> user.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                                <h1 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
-                                    <strong><i class="bi bi-border-all"></i></strong>
-                                </h1>
-                                <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet,
-                                    qui suavitate sententiae an.
-                                    Ius unum primis oportere ex, his
-                                    id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                    Ius
-                                    unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
-                                    qui</p>
+                                <h4 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                    <strong>Sharing Your Business Card</strong>
+                                </h4>
+                                <p class="text-white" style="font-size:18px;"> Share your virtual business card using a QR code or send it through email, text, social media, and more. Anyone can receive your digital card, even if they don't have the app.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                                <h1 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
-                                    <strong><i class="bi bi-border-all"></i></strong>
-                                </h1>
-                                <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet,
-                                    qui suavitate sententiae an.
-                                    Ius unum primis oportere ex, his
-                                    id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                    Ius
-                                    unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
-                                    qui</p>
+                                <h4 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                    <strong>Address Book<br>Card</strong>
+                                </h4>
+                                <p class="text-white" style="font-size:18px;"> When you share your digital business card via QR code, <br> the recipient's contact 
+                                    <br> information will automatically <br>be added to your digital <br>address book.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                                <h1 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
-                                    <strong><i class="bi bi-border-all"></i></strong>
-                                </h1>
-                                <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet,
-                                    qui suavitate sententiae an.
-                                    Ius unum primis oportere ex, his
-                                    id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                    Ius
-                                    unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
-                                    qui</p>
+                                <h4 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                    <strong>Virtual Background<br>Card</strong>
+                                </h4>
+                                <p class="text-white" style="font-size:18px;"> Use virtual backgrounds. Your virtual background can display information from your digital business card, such as your QR code, name, pronouns, preferred name, title, company, and logo.</p>
                             </div>
                         </div>
                     </div>
@@ -253,20 +228,22 @@ html {
                 </div>
                 <div class="card-ll mt-5" style=" border-radius: 25px;">
                     <div class="container p-5">
+
                         <div class="row">
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
+                                    <button type="submit" class="btn btn-yellow">
+                                        <a class="nav-link text-black text-center" href="/register"
+                                            data-name="feature">
+                                            <b>
+                                                Free
+                                            </b>
+                                        </a>
+                                    </button>
                                     <div class="card-body">
                                         <div class="text-center p-3">
                                             <div class="card-body text-center">
-                                                <button type="submit" class="btn btn-yellow rounded-pill px-5 py-2">
-                                                    <a class="nav-link text-black text-center" href="/register"
-                                                        data-name="feature">
-                                                        <b>
-                                                            Free
-                                                        </b>
-                                                    </a>
-                                                </button>
+                                                
                                             </div>
                                             <small>1 User</small>
                                             <br><br>
@@ -315,17 +292,18 @@ html {
                             </div>
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
+                                    <button type="submit" class="btn btn-yellow ">
+                                        <a class="nav-link text-black text-center" href="/register"
+                                            data-name="feature">
+                                            <b>
+                                                Professional
+                                            </b>
+                                        </a>
+                                    </button>
                                     <div class="card-body">
                                         <div class="text-center p-3">
                                             <div class="card-body text-center">
-                                                <button type="submit" class="btn btn-yellow  rounded-pill px-5 py-2">
-                                                    <a class="nav-link text-black text-center" href="/register"
-                                                        data-name="feature">
-                                                        <b>
-                                                            Professional
-                                                        </b>
-                                                    </a>
-                                                </button>
+                                                
                                             </div>
                                             <small>2 User</small>
                                             <br><br>
@@ -376,17 +354,18 @@ html {
                             </div>
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
+                                    <button type="submit" class="btn btn-yellow">
+                                        <a class="nav-link text-black text-center" href="/register"
+                                            data-name="feature">
+                                            <b>
+                                                Business
+                                            </b>
+                                        </a>
+                                    </button>
                                     <div class="card-body">
                                         <div class="text-center p-3">
                                             <div class="card-body text-center">
-                                                <button type="submit" class="btn btn-yellow  rounded-pill px-5 py-2">
-                                                    <a class="nav-link text-black text-center" href="/register"
-                                                        data-name="feature">
-                                                        <b>
-                                                            Business
-                                                        </b>
-                                                    </a>
-                                                </button>
+                                                
                                             </div>
                                             <small>10 Users</small>
                                             <br><br>
@@ -439,17 +418,18 @@ html {
                             </div> 
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
+                                    <button type="submit" class="btn btn-yellow  " s>
+                                        <a class="nav-link text-black text-center" href="/register"
+                                            data-name="feature">
+                                            <b>
+                                                Enterprise
+                                            </b>
+                                        </a>
+                                    </button>
                                     <div class="card-body">
                                         <div class="text-center p-3">
                                             <div class="card-body text-center">
-                                                <button type="submit" class="btn btn-yellow  rounded-pill px-5 py-2">
-                                                    <a class="nav-link text-black text-center" href="/register"
-                                                        data-name="feature">
-                                                        <b>
-                                                            Enterprise
-                                                        </b>
-                                                    </a>
-                                                </button>
+                                                
                                             </div>
                                             <small>100+ Users</small>
                                             <br><br>
