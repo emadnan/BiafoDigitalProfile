@@ -56,7 +56,7 @@ html {
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="/pricing">
+                                <a class="nav-link text-white text-center" href="#pricing">
                                     Pricing
                                 </a>
                             </li>
@@ -66,7 +66,7 @@ html {
                         </a>
                       </li> -->
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="/contact-us">
+                                <a class="nav-link text-white text-center" href="#contact_us">
                                     Contact Us
                                 </a>
                             </li>
@@ -81,10 +81,9 @@ html {
                                 href="{{ route('pricing') }}"><b>{{ __('Create Card') }}</b></a>
                             @endif
                             @else
-                                <a class="btn btn-yellow rounded-pill px-5 py-2 "
+                            <a class="btn btn-yellow rounded-pill px-5 py-2 "
                                 href="{{ route('pricing') }}"><b>{{ __('Create Card') }}</b></a>
-                                <a class="btn btn-yellow ml-4"
-                                href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
+                            <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                             @endguest
                         </form>
                     </div>
@@ -117,8 +116,7 @@ html {
                     <div class="col-md-4 mt-2"></div>
                     <div class="col-md-4 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h1 class="text-center mt-3 rounded-pill px-4 py-2"
-                            style="background-color:#ff9d00;">Features
+                        <h1 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">Features
                         </h1>
 
                         <!-- </div> -->
@@ -129,50 +127,71 @@ html {
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                            <h1 class="text-center"  style="background-color:#ff9d00;border-radius: 100px;"><strong><i class="bi bi-border-all"></i></strong></h1>
-                            <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex, his
-                                id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius
-                                unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui</p>
+                                <h1 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                    <strong><i class="bi bi-border-all"></i></strong>
+                                </h1>
+                                <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet,
+                                    qui suavitate sententiae an.
+                                    Ius unum primis oportere ex, his
+                                    id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
+                                    Ius
+                                    unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
+                                    qui</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                            <h1 class="text-center"  style="background-color:#ff9d00;border-radius: 100px;"><strong><i class="bi bi-border-all"></i></strong></h1>
-                            <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex, his
-                                id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius
-                                unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui</p>
+                                <h1 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                    <strong><i class="bi bi-border-all"></i></strong>
+                                </h1>
+                                <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet,
+                                    qui suavitate sententiae an.
+                                    Ius unum primis oportere ex, his
+                                    id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
+                                    Ius
+                                    unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
+                                    qui</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                            <h1 class="text-center"  style="background-color:#ff9d00;border-radius: 100px;"><strong><i class="bi bi-border-all"></i></strong></h1>
-                            <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex, his
-                                id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius
-                                unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui</p>
+                                <h1 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                    <strong><i class="bi bi-border-all"></i></strong>
+                                </h1>
+                                <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet,
+                                    qui suavitate sententiae an.
+                                    Ius unum primis oportere ex, his
+                                    id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
+                                    Ius
+                                    unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
+                                    qui</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                            <h1 class="text-center"  style="background-color:#ff9d00;border-radius: 100px;"><strong><i class="bi bi-border-all"></i></strong></h1>
-                            <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex, his
-                                id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius
-                                unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui</p>
+                                <h1 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                    <strong><i class="bi bi-border-all"></i></strong>
+                                </h1>
+                                <p class="text-center text-white" style="font-size:18px;"> Lorem ipsum dolor sit amet,
+                                    qui suavitate sententiae an.
+                                    Ius unum primis oportere ex, his
+                                    id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
+                                    Ius
+                                    unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
+                                    qui</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- ABOUT US -->
         <section class="about_curved_bg mt-5" id="about">
             <div class="container">
                 <div class="row">
@@ -218,6 +237,263 @@ html {
                 </div>
             </div>
         </section>
+        <!-- Pricing -->
+        <section id="pricing">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mt-2"></div>
+                    <div class="col-md-4 mt-5">
+                        <!-- <div style="background-color:#ff9d00"> -->
+                        <h1 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">PRICING
+                        </h1>
+
+                        <!-- </div> -->
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="card-ll mt-5" style=" border-radius: 25px;">
+                    <div class="container p-5">
+                        <div class="row">
+                            <div class="col-lg-6 mb-4">
+                                <div class="card h-100 shadow-lg">
+                                    <div class="card-body">
+                                        <div class="text-center p-3">
+                                            <div class="card-body text-center">
+                                                <button type="submit" class="btn btn-yellow rounded-pill px-5 py-2">
+                                                    <a class="nav-link text-black text-center" href="/register"
+                                                        data-name="feature">
+                                                        <b>
+                                                            Free
+                                                        </b>
+                                                    </a>
+                                                </button>
+                                            </div>
+                                            <small>Individual</small>
+                                            <br><br>
+                                            <span class="h2">$0</span>/month
+                                            <br><br>
+                                        </div>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Cras justo odio</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Dapibus ac facilisis in</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Vestibulum at eros</li>
+                                    </ul>
+                                    <div class="card-body text-center">
+                                        <button type="submit" class="rounded-pill px-5 py-2"
+                                            style="background-color: #ad021c">
+                                            <a class="nav-link text-white text-center" href="/register"
+                                                data-name="feature">
+                                                <b>
+                                                    SignUp
+                                                </b>
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="card h-100 shadow-lg">
+                                    <div class="card-body">
+                                        <div class="text-center p-3">
+                                            <div class="card-body text-center">
+                                                <button type="submit" class="btn btn-yellow  rounded-pill px-5 py-2">
+                                                    <a class="nav-link text-black text-center" href="/register"
+                                                        data-name="feature">
+                                                        <b>
+                                                            Standard
+                                                        </b>
+                                                    </a>
+                                                </button>
+                                            </div>
+                                            <small>Small Business</small>
+                                            <br><br>
+                                            <span class="h2">$20</span>/month
+                                            <br><br>
+                                        </div>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Cras justo odio</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Dapibus ac facilisis in</li>
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg> Vestibulum at eros</li>
+                                    </ul>
+                                    <div class="card-body text-center">
+                                        <button type="submit" class="rounded-pill px-5 py-2"
+                                            style="background-color: #ad021c">
+                                            <a class="nav-link text-white text-center" href="/register"
+                                                data-name="feature">
+                                                <b>
+                                                    SignUp
+                                                </b>
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+        </section>
+        <!-- Contract US-->
+        <section id="contact_us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mt-2"></div>
+                    <div class="col-md-4 mt-5">
+                        <!-- <div style="background-color:#ff9d00"> -->
+                        <h1 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">CONTACT
+                            US
+                        </h1>
+
+                        <!-- </div> -->
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-body">
+                    <div class="section-content">
+                  <div class="row py-4 section-contact">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                      <div class="contact_form">
+                        <h3 class="mb-5 fw-bolder">JUST SAY HELLO</h3>
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <label for="name">Full name</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <label for="email">Email address</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <!-- Phone number input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <label for="phone">Phone number</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                            <!-- Message input-->
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">Message</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
+                            <button id="submitButton" type="submit" class="btn rounded-pill btn-yellow text-white w-50 fw-bold">Send Messages</button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <div class="contat_info">
+                        <h3 class="mb-1 fw-bolder">CONTACT INFO</h3>
+                        <p>You Can Contact Us From Following Details</p>
+                        <div class="d-flex">
+                          <div class="icons_contact_info ms-2">
+                            <i class="fa-solid fa-envelope fs-3 mt-4 p-3"></i>
+                          </div>
+                          <div class="mt-3 ms-3">
+                            <p class="mb-0 pb-0 text-black fw-bold text-uppercase">email</p>
+                            <small class="text-muted">example@example.com</small>
+                          </div>
+                        </div>
+                        <div class="d-flex mt-1">
+                          <div class="icons_contact_info ms-2">
+                            <i class="fa-solid fa-phone fs-3 mt-4 p-3"></i>
+                          </div>
+                          <div class="mt-3 ms-3">
+                            <p class="mb-0 pb-0 text-black fw-bold text-uppercase">phone</p>
+                            <small class="d-block text-muted">+9202302222</small>
+                            <small class="text-muted">+93232344433</small>
+                          </div>
+                        </div>
+                        <div class="d-flex mt-1">
+                          <div class="icons_contact_info ms-2">
+                            <i class="fa-solid fa-map-location-dot fs-3 mt-4 p-3"></i>
+                          </div>
+                          <div class="mt-3 ms-3">
+                            <p class="mb-0 pb-0 text-black fw-bold text-uppercase">Address</p>
+                            <small class="d-block text-muted">Adress here</small>
+                          </div>
+                        </div>
+                        <div class="d-flex mt-4">
+                        </div>
+                        <div class="social_icons mt-4">
+                          <p>Visit our social profile and get connected.</p>
+                          <div class="d-flex mt-2">
+                            <a href="#">
+                              <i class="fa-brands fa-facebook-f fs-3 me-2 mt-2" style="padding: 8px 12px !important;"></i>
+                            </a>
+                            <a href="#">
+                              <i class="fa-brands fa-instagram fs-3 p-2 me-2 mt-2"></i>
+                            </a>
+                            <a href="#">
+                              <i class="fa-brands fa-linkedin-in fs-3 p-2 me-2 mt-2"></i>
+                            </a>
+                            <a href="#">
+                              <i class="fa-brands fa-youtube fs-3 p-2 me-2 mt-2"></i>
+                            </a>
+                            <a href="#">
+                              <i class="fa-brands fa-twitter fs-3 p-2 me-2 mt-2"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -252,37 +528,36 @@ html {
     <link href="{{ asset('frontend\css\jquery.multiselect.css') }}" rel="stylesheet">
 </body>
 <style>
-    .card {
-      border:none;
-    }
+.card {
+    border: none;
+}
 
-    .card::after {
-      position: absolute;
-      z-index: -1;
-      opacity: 0;
-      -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
+.card::after {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
-    .card:hover {
+.card:hover {
 
-      transform: scale(1.02, 1.02);
-      -webkit-transform: scale(1.02, 1.02);
-      backface-visibility: hidden; 
-      will-change: transform;
-      box-shadow: 0 1rem 3rem rgba(0,0,0,.75) !important;
-    }
+    transform: scale(1.02, 1.02);
+    -webkit-transform: scale(1.02, 1.02);
+    backface-visibility: hidden;
+    will-change: transform;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .75) !important;
+}
 
-    .card:hover::after {
-      opacity: 1;
-    }
+.card:hover::after {
+    opacity: 1;
+}
 
-    .card:hover .btn-outline-primary{
-      color:white;
-      background:#007bff;
-    }
-
-  </style>
+.card:hover .btn-outline-primary {
+    color: white;
+    background: #007bff;
+}
+</style>
 <script>
 // Add active class to the current button (highlight it)
 var header = document.getElementById("navbarSupportedContent");

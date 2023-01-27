@@ -39,24 +39,24 @@ html {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center active" aria-current="page" href="#"
+                                <a class="nav-link text-white text-center active" aria-current="page" href="/"
                                     style="position: relative;">
                                     Home
                                     <!-- <div class="overlay_menu"></div> -->
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#feature" data-name="feature">
+                                <a class="nav-link text-white text-center" href="/#feature" data-name="feature">
                                     Features
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#about">
+                                <a class="nav-link text-white text-center" href="/#about">
                                     About Us
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="/pricing">
+                                <a class="nav-link text-white text-center" href="/#pricing">
                                     Pricing
                                 </a>
                             </li>
@@ -66,7 +66,7 @@ html {
                         </a>
                       </li> -->
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="/contact-us">
+                                <a class="nav-link text-white text-center" href="/#contact_us">
                                     Contact Us
                                 </a>
                             </li>
