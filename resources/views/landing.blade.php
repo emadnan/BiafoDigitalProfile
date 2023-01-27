@@ -125,9 +125,9 @@ html {
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                                <h4 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
-                                    <strong>Create Digital Business Card</strong>
-                                </h4>
+                                <h6 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                    <strong>Create Digital Business <br>Card</strong>
+                                </h6>
                                 <p class=" text-white" style="font-size:18px;"> Create and customize stylish digital business cards. <br>It stores the data of the user <br>once you scan the QR code <br> it will show the profile of the <br> user.</p>
                             </div>
                         </div>
@@ -135,9 +135,9 @@ html {
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                                <h4 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
-                                    <strong>Sharing Your Business Card</strong>
-                                </h4>
+                                <h6 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                    <strong>Sharing Your Business <br>Card</strong>
+                                </h6>
                                 <p class="text-white" style="font-size:18px;"> Share your virtual business card using a QR code or send it through email, text, social media, and more. Anyone can receive your digital card, even if they don't have the app.</p>
                             </div>
                         </div>
@@ -145,9 +145,9 @@ html {
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                                <h4 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                <h6 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
                                     <strong>Address Book<br>Card</strong>
-                                </h4>
+                                </h6>
                                 <p class="text-white" style="font-size:18px;"> When you share your digital business card via QR code, <br> the recipient's contact 
                                     <br> information will automatically <br>be added to your digital <br>address book.</p>
                             </div>
@@ -156,9 +156,9 @@ html {
                     <div class="col-md-3">
                         <div class="card" style="background-color: #ad021c; border-radius: 50px;">
                             <div class="card-body">
-                                <h4 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                                <h6 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
                                     <strong>Virtual Background<br>Card</strong>
-                                </h4>
+                                </h6>
                                 <p class="text-white" style="font-size:18px;"> Use virtual backgrounds. Your virtual background can display information from your digital business card, such as your QR code, name, pronouns, preferred name, title, company, and logo.</p>
                             </div>
                         </div>
