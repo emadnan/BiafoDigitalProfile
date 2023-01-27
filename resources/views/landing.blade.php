@@ -95,11 +95,11 @@ html {
             <div class="hero_bg_img">
                 <div class="container">
                     <div class="position-relative">
-                        <div class="position-absolute text-white customize__absolute__text" style="z-index: 99;">
+                        <div class="position-absolute text-white customize__absolute__text">
                             <h1>Digital Business Card,</h1>
                             <p>A digital business card (also referred to as a QR code business card, virtual business card, electronic business card or mobile business card) is a profile that connects all your digital contact information. They give people the ability to share who they are, with anyone, wherever they go.</p>
                         </div>
-                        <img src="{{asset('frontend/img/hero_img_6.png')}}" alt=""
+                        <img src="{{asset('frontend/img/landing_pic.png')}}" alt=""
                             class="position-absolute customize__absolute__img">
                     </div>
                 </div>

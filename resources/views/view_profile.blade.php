@@ -107,7 +107,7 @@ html {
                             <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-map-location-dot"></i>&nbsp; {{$profile->address}}, {{$profile->city}}, {{$profile->country}}</h5>
                             <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-envelope"></i>&nbsp; {{$profile->email}}</h5>
                             <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-mobile-button"></i>&nbsp; {{$profile->phone}}</h5>
-                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-calendar-day"></i>&nbsp; {{$profile->dob}}</h5>
+                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-cake-candles"></i>&nbsp; {{$profile->dob}}</h5>
                             <div class="border-top my-3"></div>
                             <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;">Description:</h5>
                             <p style="font-family:Palatino;">{{$profile->description}}</p>
