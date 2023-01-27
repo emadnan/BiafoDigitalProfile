@@ -111,15 +111,15 @@ html {
         <section id="feature">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 mt-2"></div>
-                    <div class="col-md-4 mt-5">
+                    <div class="col-md-5 mt-2"></div>
+                    <div class="col-md-2 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h1 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">Features
-                        </h1>
+                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">Features
+                        </h3>
 
                         <!-- </div> -->
                     </div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-5"></div>
                 </div>
                 <div class="row mt-5">
                     <div class="col-md-3">
@@ -170,14 +170,14 @@ html {
         <section class="about_curved_bg mt-5" id="about">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 mt-2"></div>
-                    <div class="col-md-4 mt-5">
+                    <div class="col-md-5 mt-2"></div>
+                    <div class="col-md-2 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h1 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00">ABOUT US
-                        </h1>
+                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00">ABOUT US
+                        </h3>
                         <!-- </div> -->
                     </div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-5"></div>
                 </div>
 
                 <div class="row mt-3">
@@ -216,15 +216,15 @@ html {
         <section id="pricing">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 mt-2"></div>
-                    <div class="col-md-4 mt-5">
+                    <div class="col-md-5 mt-2"></div>
+                    <div class="col-md-2 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h1 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">PRICING
-                        </h1>
+                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">PRICING
+                        </h3>
 
                         <!-- </div> -->
                     </div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-5"></div>
                 </div>
                 <div class="card-ll mt-5" style=" border-radius: 25px;">
                     <div class="container p-5">
@@ -492,16 +492,16 @@ html {
         <section id="contact_us">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 mt-2"></div>
-                    <div class="col-md-4 mt-5">
+                    <div class="col-md-5 mt-2"></div>
+                    <div class="col-md-2 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h1 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">CONTACT
+                        <h3 class="text-center mt-3 rounded-pill px-6 py-2" style="background-color:#ff9d00;">CONTACT
                             US
-                        </h1>
+                        </h3>
 
                         <!-- </div> -->
                     </div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-5"></div>
                 </div>
                 <div class="card mt-5">
                     <div class="card-body">
