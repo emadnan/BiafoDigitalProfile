@@ -83,7 +83,14 @@
                                                 placeholder="Enter Your Country" value="{{$card->country}}">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="dob">Date of Birth:</label>
+                                            <input type="date" class="form-control" id="dob" name="dob"
+                                                placeholder="Enter Your Date of Birth">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="description">Description:</label>
                                             <textarea class="form-control" id="description" name="description" rows="1"
@@ -390,6 +397,9 @@ $(document).ready(function() {
                 minlength: 3,
                 maxlength: 50
             },
+            dob:{
+                required:true,
+            }
         },
         messages: {
             name: {
@@ -461,6 +471,9 @@ $(document).ready(function() {
                 required: "Please enter your interest name",
                 minlength: "Your interest name must be at least 3 characters long",
             },
+            dob:{
+                required:"Please enter your date of birth",
+            }
         },
         errorElement: 'span',
         errorPlacement: function(error, element) {

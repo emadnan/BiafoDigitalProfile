@@ -83,7 +83,14 @@
                                                 placeholder="Enter Your Country" value="{{$profile->country}}">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="dob">Date of Birth:</label>
+                                            <input type="date" class="form-control" id="dob" name="dob"
+                                                placeholder="Enter Your Date of Birth" value="{{$profile->dob}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="description">Description:</label>
                                             <textarea class="form-control" id="description" name="description" rows="1"
