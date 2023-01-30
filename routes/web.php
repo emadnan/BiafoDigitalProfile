@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\PricingController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FaqController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,4 +38,5 @@ Route::post('/insert_profile', [ProfileController::class,'insertProfile'])->name
 Route::get('/view_profile/{card_id}', [ProfileController::class,'viewProfile'])->name('view_profile');
 Route::get('/edit_profile/{card_id}', [ProfileController::class,'editProfile'])->name('edit_profile');
 Route::post('/update_profile', [ProfileController::class,'updateProfile'])->name('update_profile');
+Route::get('/faq', [FaqController::class,'faq'])->name('faq');
 

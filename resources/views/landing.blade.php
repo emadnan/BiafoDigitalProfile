@@ -70,6 +70,11 @@ html {
                                     Contact Us
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white text-center" href="/faq">
+                                    FAQ
+                                </a>
+                            </li>
                         </ul>
                         <form class="d-flex ms-5 customize_mob_menu">
                             {{-- <a class="btn btn-yellow rounded-pill px-5 py-2" >Login</a> --}}
@@ -95,11 +100,11 @@ html {
             <div class="hero_bg_img">
                 <div class="container">
                     <div class="position-relative">
-                        <div class="position-absolute text-white customize__absolute__text">
+                        <div class="position-absolute text-white customize__absolute__text" style="z-index: 99;">
                             <h1>Digital Business Card,</h1>
                             <p>A digital business card (also referred to as a QR code business card, virtual business card, electronic business card or mobile business card) is a profile that connects all your digital contact information. They give people the ability to share who they are, with anyone, wherever they go.</p>
                         </div>
-                        <img src="{{asset('frontend/img/landing_pic.png')}}" alt=""
+                        <img src="{{asset('frontend/img/hero_img_6.png')}}" alt=""
                             class="position-absolute customize__absolute__img">
                     </div>
                 </div>
@@ -123,43 +128,43 @@ html {
                 </div>
                 <div class="row mt-5">
                     <div class="col-md-3">
-                        <div class="card" style="background-color: #ad021c; border-radius: 50px;">
-                            <div class="card-body">
-                                <h6 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                        <div class="card" style="background-color: #ad021c; ">
+                            <div class="card-body card h-100 shadow-lg">
+                                <h6 class="text-center" style="background-color:#ff9d00;">
                                     <strong>Create Digital Business <br>Card</strong>
                                 </h6>
-                                <p class=" text-white" style="font-size:18px;"> Create and customize stylish digital business cards. <br>It stores the data of the user <br>once you scan the QR code <br> it will show the profile of the <br> user.</p>
+                                <pstyle="font-size:18px;"> Create and customize stylish digital business cards. <br>It stores the data of the user <br>once you scan the QR code <br> it will show the profile of the <br> user.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card" style="background-color: #ad021c; border-radius: 50px;">
-                            <div class="card-body">
-                                <h6 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                        <div class="card" style="background-color: #ad021c; ">
+                            <div class="card-body card h-100 shadow-lg">
+                                <h6 class="text-center" style="background-color:#ff9d00;">
                                     <strong>Sharing Your Business <br>Card</strong>
                                 </h6>
-                                <p class="text-white" style="font-size:18px;"> Share your virtual business card using a QR code or send it through email, text, social media, and more. Anyone can receive your digital card, even if they don't have the app.</p>
+                                <p style="font-size:18px;"> Share your virtual business card using a QR code or send it through email, text, social media, and more. Anyone can receive your digital card, even if they don't have the app.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card" style="background-color: #ad021c; border-radius: 50px;">
-                            <div class="card-body">
-                                <h6 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                        <div class="card" style="background-color: #ad021c;">
+                            <div class="card-body card h-100 shadow-lg">
+                                <h6 class="text-center" style="background-color:#ff9d00;">
                                     <strong>Address Book<br>Card</strong>
                                 </h6>
-                                <p class="text-white" style="font-size:18px;"> When you share your digital business card via QR code, <br> the recipient's contact 
+                                <p style="font-size:18px;"> When you share your digital business card via QR code, <br> the recipient's contact 
                                     <br> information will automatically <br>be added to your digital <br>address book.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card" style="background-color: #ad021c; border-radius: 50px;">
-                            <div class="card-body">
-                                <h6 class="text-center" style="background-color:#ff9d00;border-radius: 100px;">
+                        <div class="card">
+                            <div class="card-body card h-100 shadow-lg">
+                                <h6 class="text-center" style="background-color:#ff9d00;">
                                     <strong>Virtual Background<br>Card</strong>
                                 </h6>
-                                <p class="text-white" style="font-size:18px;"> Use virtual backgrounds. Your virtual background can display information from your digital business card, such as your QR code, name, pronouns, preferred name, title, company, and logo.</p>
+                                <p style="font-size:18px;"> Use virtual backgrounds. Your virtual background can display information from your digital business card, such as your QR code, name, pronouns, preferred name, title, company, and logo.</p>
                             </div>
                         </div>
                     </div>
@@ -189,23 +194,10 @@ html {
                     </div>
                     <div class="col-md-6">
                         <div class="about_content_text">
-                            <h4 class="text-center text-white">Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex,
-                                his id paulo graece tacimates,</h4>
-                            <p class="text-center text-white"> Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex, his
-                                id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius
-                                unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui
-                                suavitate sententiae an. Ius unum primis oportere ex, his id paulo graece tacimates,
-                                Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius unum primis oportere ex,
-                                his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
-                                qui suavitate sententiae an. Ius unum primis oportere ex, his id paulo graece tacimates,
-                                Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius unum primis oportere ex,
-                                his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
-                                qui suavitate sententiae an. Ius unum primis oportere ex, his id paulo graece tacimates,
-                            </p>
+                            <h3 class="text-center text-white">Biafo is a nearly 67 km long glacier in the Karakoram Mountain range of Pakistan and is part of the world’s longest glacial system outside the polar regions. This is our namesake, a technology company that feels the need at heart to be rooted in the values of the land and nature we surround ourselves in, an ethical company that believes in putting our community, our employees and our customers first.,
+                            </h3>
+                            <h6 class="text-center text-white"> Biafotech came into existence as a need when it soon became apparent that there was a lack of specific expertise available in the country, we banded together a team of consultants and business analysts willing to learn everything. We rescued a project in a record 4 months and gave birth to a company with a vision to do things better and more professionally,
+                            </h6>
 
                         </div>
                     </div>
