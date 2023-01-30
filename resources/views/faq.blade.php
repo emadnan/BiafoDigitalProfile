@@ -65,6 +65,11 @@ html {
                         <li class="nav-item">
                             <a class="nav-link text-white text-center" href="/contact-us">Contact Us</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-center" href="/faq">
+                                FAQ
+                            </a>
+                        </li>
                     </ul>
                     <form class="d-flex ms-5 customize_mob_menu">
                         {{-- <a class="btn btn-yellow rounded-pill px-5 py-2" >Login</a> --}}
@@ -103,7 +108,7 @@ html {
 
 <body>
 
-    
+
 <footer>
     <section class="text-white text-center bg_main_content_yellowish mt-5" style="padding: 20px; margin-right: -30%; margin-left: -30%;">
       

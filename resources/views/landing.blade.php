@@ -70,6 +70,11 @@ html {
                                     Contact Us
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white text-center" href="/faq">
+                                    FAQ
+                                </a>
+                            </li>
                         </ul>
                         <form class="d-flex ms-5 customize_mob_menu">
                             {{-- <a class="btn btn-yellow rounded-pill px-5 py-2" >Login</a> --}}
