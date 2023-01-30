@@ -189,23 +189,10 @@ html {
                     </div>
                     <div class="col-md-6">
                         <div class="about_content_text">
-                            <h4 class="text-center text-white">Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex,
-                                his id paulo graece tacimates,</h4>
-                            <p class="text-center text-white"> Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex, his
-                                id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius
-                                unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui
-                                suavitate sententiae an. Ius unum primis oportere ex, his id paulo graece tacimates,
-                                Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius unum primis oportere ex,
-                                his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
-                                qui suavitate sententiae an. Ius unum primis oportere ex, his id paulo graece tacimates,
-                                Lorem ipsum dolor sit amet, qui suavitate sententiae an. Ius unum primis oportere ex,
-                                his id paulo graece tacimates, Lorem ipsum dolor sit amet, qui suavitate sententiae an.
-                                Ius unum primis oportere ex, his id paulo graece tacimates, Lorem ipsum dolor sit amet,
-                                qui suavitate sententiae an. Ius unum primis oportere ex, his id paulo graece tacimates,
-                            </p>
+                            <h3 class="text-center text-white">Biafo is a nearly 67 km long glacier in the Karakoram Mountain range of Pakistan and is part of the world’s longest glacial system outside the polar regions. This is our namesake, a technology company that feels the need at heart to be rooted in the values of the land and nature we surround ourselves in, an ethical company that believes in putting our community, our employees and our customers first.,
+                            </h3>
+                            <h6 class="text-center text-white"> Biafotech came into existence as a need when it soon became apparent that there was a lack of specific expertise available in the country, we banded together a team of consultants and business analysts willing to learn everything. We rescued a project in a record 4 months and gave birth to a company with a vision to do things better and more professionally,
+                            </h6>
 
                         </div>
                     </div>
