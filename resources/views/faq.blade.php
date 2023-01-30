@@ -107,6 +107,122 @@ html {
 </header>
 
 <body>
+    <div style="margin-top:7%; margin-left:30%;">
+        <h1 class="heading-7">Frequently Asked Questions</h1>
+        <br><br>
+    </div>
+    <div style ="margin-left:10%">
+    
+        <h2>Contents</h2>
+        <p>
+            <a style="text-decoration:none;" href="#general">General</a>
+        </p>
+        <p>
+            <a style="text-decoration:none;" href="Creating your digital business cards">Creating your digital business cards</a>
+        </p>
+        <p>
+            <a style="text-decoration:none;" href="Sharing your digital business cards">Sharing your digital business cards</a>
+        </p>
+        <p>
+            <a style="text-decoration:none;" href="Address Book">Address Book</a>
+        </p>
+        <p>
+            <a style="text-decoration:none;" href="Virtual backgrounds">Virtual backgrounds</a>
+        </p>
+    
+    </div>
+    <br><br>
+    <div style ="margin-left:10%">
+    <section id="general">
+        <h1 class="heading-23">General</h1>
+        <div id="Where-can-I-get-HiHello">
+            <h5>
+                <a style="text-decoration:none;" href="#" class="linkmobile">
+                    <p>
+                    Where can I get BiafoTech?
+                    </p>
+                </a>
+            </h5>
+            <p >
+            You can get BiafoTech on the web.
+            </p>
+        
+
+        <div id="How-much-does-BiafoTech-cost">
+            <h5>
+                <a style="text-decoration:none;" href="#" class="linkmobile">
+                    <p class="bold-text-10">
+                    How much does BiafoTech cost?
+                    </p>
+                </a>
+            </h5>
+            <p class="text-block-12">
+            BiafoTech allows you to create and share your digital business card for free. For a more premium experience, we offer digital business card subscriptions with additional features for individuals and businesses.
+            </p>
+
+        <div id="Is-BiafoTech-active-on-social-media">
+            <h5>
+                <a style="text-decoration:none;" href="#" class="linkmobile">
+                    <p class="bold-text-15">
+                    Is BiafoTech active on social media?
+                    </p>
+                </a>
+            </h5>
+            <p class="text-block-12">
+            Yes! We regularly post on our social platforms. Follow us to keep up with the latest product updates.
+</p>
+
+        <div id="How-do-I-contact-customer-support">
+            <h5>
+                <a style="text-decoration:none;" href="#" class="linkmobile">
+                    <p class="bold-text-15">
+                    How do I contact customer support?
+                    </p>
+                </a>
+            </h5>
+            <p class="text-block-12">
+            Oh no! We’re sorry you’re encountering an issue. If you can’t find the answer on this FAQ page, we recommend contacting us through <br> the  BiafoTech app for the most efficient support experience. If you’re unable to do so, visit our Contact Us page or email us at support@ BiafoTech.me.
+            </p>
+        
+        <div id="I’m-interested-in-writing-about-BiafoTech-Who-should-I-contact">
+            <h5>
+                <a style="text-decoration:none;" href="#" class="linkmobile">
+                    <p class="bold-text-15">
+                    I’m interested in writing about BiafoTech. Who should I contact?
+                    </p>
+                </a>
+            </h5>
+            <p class="text-block-12">
+            If you’d like to write an article about BiafoTech, please contact press@ BiafoTech.me, and we’ll get back to you as soon as we can. In the meantime,<br> check out our Press page.
+            </p>
+
+        <div id="I’m-interested-in-joining-the-BiafoTech-team-are-you-hiring?">
+            <h5>
+                <a style="text-decoration:none;" href="#" class="linkmobile">
+                    <p>
+                    I’m interested in joining the BiafoTech team, are you hiring?
+                    </p>
+                </a>
+            </h5>
+            <p class="text-block-12">
+            We’re flattered you’re interested in joining our team—check out our current openings! If you don’t see anything that’s a fit, feel free to drop us an <br> email at jobs@ BiafoTech.me, and we’ll let you know if we think it’s a match.
+            </p>
+            
+            <div id="I-forgot-my-password-Can-I-reset-it">
+            <h5>
+                <a style="text-decoration:none;" href="#" class="linkmobile">
+                    <p class="bold-text-10">
+                    I forgot my password. Can I reset it?
+                    </p>
+                </a>
+            </h5>
+            <p class="text-block-12">
+            You can reset your password.
+            </p>
+
+    </section>
+
+</body>
 
 
 <footer>
