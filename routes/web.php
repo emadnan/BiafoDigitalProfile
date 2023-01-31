@@ -7,6 +7,7 @@ use App\Http\Controllers\PricingController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\MailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +30,6 @@ Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'con
 Route::get('/pricing', [App\Http\Controllers\PricingController::class, 'pricing'])->name('pricing');
 Route::post('/add_card',[CardController::class,'addCard'])->name('add_card');
 Route::get('/view_card/{card_id}/{type}', [CardController::class, 'getcard'])->name('view_card');
-Route::get('/delete_card/{id}',[CardController::class, 'delete_card'])->name('view_card');
 Route::get('/delete_card/{id}',[CardController::class, 'delete_card'])->name('delete_card');
 Route::post('/update_card',[CardController::class, 'update_card'])->name('update_card');
 Route::get('/profiles', [ProfileController::class,'index'])->name('profiles');
@@ -39,4 +39,5 @@ Route::get('/view_profile/{card_id}', [ProfileController::class,'viewProfile'])-
 Route::get('/edit_profile/{card_id}', [ProfileController::class,'editProfile'])->name('edit_profile');
 Route::post('/update_profile', [ProfileController::class,'updateProfile'])->name('update_profile');
 Route::get('/faq', [FaqController::class,'faq'])->name('faq');
+Route::get('/send', [MailController::class, 'index']);
 
