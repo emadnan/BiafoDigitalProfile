@@ -39,5 +39,5 @@ Route::get('/view_profile/{card_id}', [ProfileController::class,'viewProfile'])-
 Route::get('/edit_profile/{card_id}', [ProfileController::class,'editProfile'])->name('edit_profile');
 Route::post('/update_profile', [ProfileController::class,'updateProfile'])->name('update_profile');
 Route::get('/faq', [FaqController::class,'faq'])->name('faq');
-Route::get('/send', [MailController::class, 'index']);
+Route::get('/send', [MailController::class, 'index'])->name('send-email');
 
