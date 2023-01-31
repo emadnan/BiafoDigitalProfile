@@ -44,6 +44,7 @@
     <script type="text/javascript" src="{{asset('frontend/qrcodejs/qrcode.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontend/qrcodejs/qrcode.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.7/dist/cropper.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
     <script type="text/javascript">
     jQuery.validator.setDefaults({
         errorElement: 'span',
