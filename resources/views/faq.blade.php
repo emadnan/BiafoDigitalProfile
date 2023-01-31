@@ -217,7 +217,7 @@
                                             </h5>
                                             <p class="text-block-12">
                                                 If you found a bug, we’d love to fix it. Please contact support through:
-                                                <pre style="margin-left: -41%">
+                                                <pre class="text-block-12" style="margin-left: -47%">
                                                      Web: Click on your name at the top right and select Contact Support.
                                                     -Mobile: Tap settings and scroll down to the Contact Support page
                                                     -Mail: Contact us at support@v.card.me
@@ -320,7 +320,307 @@
                                                 You can seamlessly create and share digital business cards on your computer with the V.Card web app. Switching from the web to the iOS or 
                                                 Android app allows you to take your digital business card with you wherever you go. 
                                             </p>
+
+
+                                            <div id="How-many-digital-business-cards-can-I-create?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        How many digital business cards can I create?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                You can make up to four different digital business cards with a free account. If you want 
+                                                more than that,you’ll need to upgrade to a subscription plan.
+                                            </p>
+
+                                            <div id="What-different-cards-do-you-recommend?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        What different cards do you recommend?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p>
+                                                Everyone has their preferences, but we recommend having cards 
+                                                for personal use and Company workspace.
+                                            </p>
+
+                                            <div id="What-information-should-I-put-on-my-business-cards?">
+
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        What information should I put on my business cards?
+
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                You can add your phone number(s), email(s), any social media handles, 
+                                                your company logo, payment, messaging apps, and more.
+                                            </p>
+
+            
+
+                                            <div id="What-is-the-ideal-image-size?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        What is the ideal image size?
+
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                The ideal size of image is 25 kb.
+                                            </p>
+
+
+                                            <div id="Is-it-okay-to-put-social-media-handles-on-my-digital-business-card?-Is-that-unprofessional?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        Is it okay to put social media handles on my digital business card? Is that unprofessional?
+
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                Sharing social media pages is a great networking tool to maintain your connections.
+                                            </p>
+
+
+                                            <div id="How-do-I-change-the-color-of-my-digital-business-cards?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        How do I change the color of my digital business cards?
+
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                The free version of V.Card gives you five colors to choose from while customizing your card. 
+                                                If you want to customize your card's color(s) further, you’ll need to sign up for one of our
+                                                digital business card subscription plans.
+                                            </p>
+
+
+                                            <div id="Any-recommendations-on-what-I-should-write-in-my-business-card-headline?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        Any recommendations on what I should write in my business card headline?
+
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                It depends on the type of card you’re creating. If it’s a networking card, 
+                                                perhaps list out your core skills and work history.If it’s a personal card, 
+                                                maybe make it a little more fun and write a bit about who you are outside of 
+                                                work! The headline can be a maximum of 280 characters. 
+                                            </p>
+
+
+                                            <div id="How-do-I-choose-a-different-card-design?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        How do I choose a different card design?
+
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                            Choose from our three distinct design options with a V.Card Professional, 
+                                            Business, or Enterprise plan. At this time, card designs can only be updated 
+                                            on the V.Card web app. (Don’t worry—as soon as you save your card with the new design, 
+                                            it will automatically appear on your mobile app.)
+                                            </p>
+
                                     </section>
+
+
+                                    <section id="sharing-your-digital-business-cards" style=" padding:10%;">
+                                        <h1 class="heading-23">Sharing Your Digital Business Cards</h1>
+                                        <div id="How-do-I-share-my-card?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        How do I share my card?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                There are a few ways to share your digital business card. We recommend sharing it using 
+                                                your unique QR code, but you can also text, email, and share the link to your card. To 
+                                                share your card,simply double-tap the card you’d like to share and select your preferred 
+                                                sharing method.
+                                            </p>
+
+
+                                            <div id="Can-I-share-my-v.card-with-someone-who-doesn’t-have-the-app?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        Can I share my HiHello card with someone who doesn’t have the app?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                Yes! You can share your  v.card with anyone—even if they don’t 
+                                                have the app—via your QR code, email, text message, and link sharing. 
+                                                Once received, anyone can save your contact information by emailing or texting your 
+                                                card to themselves or downloading it as a virtual contact file.
+                                            </p>
+
+
+                                            <div id="How-do-I-share-my-card-using-my-QR-code?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        How do I share my card using my QR code?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                Every digital business card has its unique QR code. Double-tap
+                                                the card you’d like to share and show your V.Card QR code to the
+                                                person with whom you’re sharing your card.They’ll have the option
+                                                to save your card by texting or emailing it to themselves or downloading 
+                                                it as a virtual contact file.
+                                            </p>
+
+
+                                            <div id="What-is-a-QR-code?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        What-is-a-QR-code?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                QR stands for Quick Response. A QR code acts like a barcode you’d see at a grocery store. 
+                                                When scanned with a smartphone, it’ll pull up the encoded information.
+                                            </p>
+
+                                    </section>
+
+
+
+
+                                    <section id="address-Book" style=" padding:10%;">
+                                        <h1 class="heading-23">Address Book</h1>
+
+                                        <div id="What-is-a-digital-business-card-address-book?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        What is a digital business card address book?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                A digital business card address book is an electronic database that stores
+                                                and organizes digital business cards.
+                                            </p>
+
+
+                                            <div id="How-do-I-add-digital-business-cards-to-my-address-book?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        How do I add digital business cards to my address book?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                You can add digital business cards to your address book by scanning QR Code, 
+                                                it will Show you the profile of user.
+                                            </p>
+
+                                            <div id="Can-I-store-multiple-digital-business-cards-in-one-address-book?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                      Can I store multiple digital business cards in one address book?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                Yes, most V.Card business card address books allow you to store multiple 
+                                                digital business cards in Address Book.
+                                            </p>
+
+                                            <div id="Can-I-search-for-a-specific-digital-business-card-in-my-address-book?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        Can I search for a specific digital business card in my address book?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                Yes, V.card digital business card address books have a search feature that allows you 
+                                                to search for a specific contact by name, company, or other information.
+                                            </p>
+                                    
+
+                                    </section>
+
+
+
+                                    
+                                    <section id="virtual-backgrounds" style=" padding:10%;">
+                                        <h1 class="heading-23">Virtual Background</h1>
+
+                                        <div id="how-can-i-add-virtual-background?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        How can i add virtual background?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                  When you are designing your digital business card, you can add an image that you would like to use as your background.                              
+                                            </p>
+
+
+                                            <div id="can-i-upload-an-image?">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                        Can i upload an image?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                                 Yes you can upload an image while creating your digital business cards.
+
+                                            <div id="what-was-the-image-size">
+                                            <h5>
+                                                <a style="text-decoration:none;" href="#" class="linkmobile">
+                                                    <p>
+                                                      What was the image size?
+                                                    </p>
+                                                </a>
+                                            </h5>
+                                            <p >
+                                               The ideal size of image is 2 Mb.
+                                            </p>
+
+                                    
+
+                                    </section>
+
+
+
                                     
                                 </div>
                             </div>
