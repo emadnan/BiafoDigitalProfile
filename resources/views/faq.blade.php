@@ -217,7 +217,7 @@
                                             </h5>
                                             <p class="text-block-12">
                                                 If you found a bug, we’d love to fix it. Please contact support through:
-                                                <pre class="text-block-12" style="margin-left: -47%">
+                                                <pre style="margin-left: -41%">
                                                      Web: Click on your name at the top right and select Contact Support.
                                                     -Mobile: Tap settings and scroll down to the Contact Support page
                                                     -Mail: Contact us at support@v.card.me
