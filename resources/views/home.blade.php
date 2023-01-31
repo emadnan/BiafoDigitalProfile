@@ -2,19 +2,19 @@
 @section('content')
 <div class="content-wrapper">
     <div class="container">
-    <section class="content-header">
-        <div class='container-fluid'>
-            <div class='row'>
-                <div class='col-md-8'></div>
-                <div class='col-md-4'>
-                    <a type="button" href="#" id="add_card" class="anchor btn btn-primary float-right">
-                        Add Card
-                    </a>
+        <section class="content-header">
+            <div class='container-fluid'>
+                <div class='row'>
+                    <div class='col-md-8'></div>
+                    <div class='col-md-4'>
+                        <a type="button" href="#" id="add_card" class="anchor btn btn-primary float-right">
+                            Add Card
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <div class="container-fluid">
+        </section>
+        <div class="container-fluid">
             <div class="row">
                 @foreach ($cards as $card)
                 @if(Auth::user()->user_type=='individual')
@@ -68,9 +68,11 @@
                             <h5><u>Add Card Here</u></h5>
                         </div>
                         <div class="mt-5 d-flex justify-content-center">
+                            <div>
                             <img src="{{asset('frontend/img/your-image-here.jpg')}}" alt="image preview"
                                 id="image_preview"
-                                style="width: 200px; height: 200px; border-radius:50%;border: 5px solid;">
+                                style="width: 200px; height: 200px; border-radius:20%;border: 5px solid;">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="image">Image:</label>
@@ -128,11 +130,39 @@
 
 
                 </div>
+                </form>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" id="saveButton" class="btn btn-primary">Save changes</button>
                 </div>
-                </form>
+                
+            </div>
+        </div>
+    </div>
+    <!-- //image crop modal -->
+    <div class="modal fade" id="image_crop_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Crop Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex " style=" width: 600px;height: 600px;">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-10 mt-4">
+                            <img id="to_be_cropped_image" style=" width: 600px;height: 600px;" />
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cropButton" class="btn btn-primary"><i class="fa-solid fa-crop"></i> Crop</button>
+                </div>
             </div>
         </div>
     </div>
@@ -149,15 +179,100 @@ $(document).ready(function() {
 });
 //show image in image preview
 $(document).ready(function() {
+    const fileInput = document.getElementById("fileInput");
+    const image = document.getElementById("to_be_cropped_image");
+    const cropButton = document.getElementById("cropButton");
+    const downloadButton = document.getElementById("downloadButton");
+    const croppedImageContainer = document.getElementById("image_preview");
+    const saveButton = document.getElementById("saveButton");
+    let cropper;
     $('#image').change(function() {
-        let reader = new FileReader();
-        reader.onload = (e) => {
-            $('#image_preview').attr('src', e.target.result);
-        }
-        reader.readAsDataURL(this.files[0]);
+        //open image crop modal and show image
+        $('#image_crop_modal').modal('show');
+        const reader = new FileReader();
+        reader.onload = function() {
+            //set image widht and height
+            image.width = 560;
+            image.height = 500;
+            image.src = reader.result;
+            cropper = new Cropper(image, {
+                aspectRatio: 1,
+                crop(event) {
+                    console.log(event.detail.x);
+                    console.log(event.detail.y);
+                    console.log(event.detail.width);
+                    console.log(event.detail.height);
+                    console.log(event.detail.rotate);
+                    console.log(event.detail.scaleX);
+                    console.log(event.detail.scaleY);
+                },
+                //cropper size set
+                viewMode: 1,
+                minContainerWidth: 560,
+                minContainerHeight: 500,
+                minCanvasWidth: 560,
+                minCanvasHeight: 500,
+            });
+        };
+        reader.readAsDataURL(event.target.files[0]);
     });
-});
-//form validate for add_card
+    //crop button click
+    cropButton.addEventListener("click", () => {
+        //get cropped image
+        const croppedImage = cropper.getCroppedCanvas().toDataURL();
+        //show cropped image in image preview
+        croppedImageContainer.src = croppedImage;
+        //hide image crop modal
+        $('#image_crop_modal').modal('hide');
+    });
+    //save button click
+    saveButton.addEventListener("click", () => {
+        //if form validate true then save data
+        if ($('#add_card_form').valid()) {
+            //get cropped image
+            const croppedImage = cropper.getCroppedCanvas().toDataURL();
+            //show cropped image in image preview
+            croppedImageContainer.src = croppedImage;
+            //hide image crop modal
+            $('#image_crop_modal').modal('hide');
+            var data= new FormData();
+            data.append('_token','{{ csrf_token() }}');
+            data.append('image',croppedImage);
+            data.append('name',$('#name').val());
+            data.append('email',$('#email').val());
+            data.append('phone',$('#phone').val());
+            data.append('address',$('#address').val());
+            data.append('city',$('#city').val());
+            data.append('country',$('#country').val());
+            data.append('website',$('#website').val());
+            data.append('company',$('#company').val());
+            data.append('designation',$('#designation').val());
+            data.append('linkiden',$('#linkiden').val());
+
+            //ajax request
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('add_card') }}",
+                data: data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    //hide add card modal
+                    $('#add_card_modal').modal('hide');
+                    //show success message
+                    toastr.success('Card Added Successfully');
+                    //reload page
+                    location.reload();
+                },
+                error: function(data) {
+                    //show error message
+                    toastr.error('Something Went Wrong');
+                }
+            });
+        }
+    });
+    //form validate for add_card
     $('#add_card_form').validate({
         rules: {
             image: {
@@ -219,5 +334,6 @@ $(document).ready(function() {
             $(element).removeClass('is-invalid');
         }
     });
+});
 </script>
 @endsection

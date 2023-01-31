@@ -12,7 +12,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-
+    <link  href="https://cdn.jsdelivr.net/npm/cropperjs@1.5.7/dist/cropper.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('frontend/plugins/fontawesome-free/css/all.min.css') }}">
     {{-- <--Theme style --> --}}
     <link rel="stylesheet" href="{{ asset('frontend/dist/css/adminlte.min.css') }}">
@@ -43,6 +43,7 @@
     <script type="text/javascript" src="{{asset('frontend/js/additional-methods.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontend/qrcodejs/qrcode.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontend/qrcodejs/qrcode.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.7/dist/cropper.min.js"></script>
     <script type="text/javascript">
     jQuery.validator.setDefaults({
         errorElement: 'span',
