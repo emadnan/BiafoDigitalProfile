@@ -262,14 +262,38 @@
   $('.delete-card').click(function(e) {
     $('#modaldeletecard').attr('href', '/delete_card/' + $(this).attr('data-delete-card-id'))
 });
-var qrcode = new QRCode("qrcode", {
-    text: "{{route('view_profile', $card->id)}}",
-    width: 80,
-    height: 80,
-    colorDark: "#000000",
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.H,
-});
+// var qrcode = new QRCode("qrcode", {
+//     text: "{{route('view_profile', $card->id)}}",
+//     width: 80,
+//     height: 80,
+//     colorDark: "#000000",
+//     colorLight: "#ffffff",
+//     correctLevel: QRCode.CorrectLevel.H,
+// });
+const qrCode = new QRCodeStyling({
+        width: 120,
+        height: 120,
+        type: "canvas",
+        data: "{{route('view_profile', $card->id)}}",
+        image: "{{asset('frontend/img/qr_logo.svg')}}",
+        dotsOptions: {
+            color: "black",
+            type: "classy-rounded"
+        },
+        backgroundOptions: {
+            color: "#ffffff",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 0,
+            imageSize: 0.7,
+        },
+        qrOptions: {
+            errorCorrectionLevel: "H",
+        },
+    });
+
+    qrCode.append(document.getElementById("qrcode"));
 $('#update_card').click(function() {
         $('#update_card_modal').modal('show');
     });
