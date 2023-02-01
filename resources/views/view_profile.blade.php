@@ -140,7 +140,7 @@ html {
                             @if(!empty($skills))
                             @foreach($skills as $skill)
                             <a target="_blank" class="btn btn-yellow float-right mt-2 ml-4"
-                                style="width: 100px; height: 40px; border-radius: 10px; font-size: 15px; font-weight: bold;">
+                                style="height: 40px; border-radius: 10px; font-size: 15px; font-weight: bold;">
                                 {{$skill}}
                             </a>
                             @endforeach
@@ -220,7 +220,7 @@ html {
                             @if(!empty($languages))
                             @foreach($languages as $language)
                             <a target="_blank" class="btn btn-yellow float-right mt-2 ml-4"
-                                style="width: 100px; height: 40px; border-radius: 10px; font-size: 15px; font-weight: bold;">
+                                style="height: 40px; border-radius: 10px; font-size: 15px; font-weight: bold;">
                                 {{$language}}
                             </a>
                             @endforeach

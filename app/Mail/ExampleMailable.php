@@ -31,6 +31,6 @@ class ExampleMailable extends Mailable
      */
     public function build()
     {
-        return $this->subject("Example Email")->view("emails.example");
+        return $this->subject("Card Created")->view("emails.example");
     }
 }

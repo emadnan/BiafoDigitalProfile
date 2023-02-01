@@ -11,6 +11,9 @@ use App\Models\Experience;
 use App\Models\Skill;
 use App\Models\Language;
 use App\Models\Interest;
+use App\Events\ExampleEmailEvent;
+use App\Mail\ExampleMailable;
+use Illuminate\Support\Facades\Mail;
 
 class ProfileController extends Controller
 {
@@ -98,6 +101,13 @@ class ProfileController extends Controller
                 $experience_loop++;
             }
         }
+        $mail = [
+            "title" => "Check your profile",
+            "body" => 'Dear .'.$request->name.' your profile has been created successfully. Please Update your profile by clicking on the link below',
+            "link" => route('edit_profile',$request->card_id),
+        ];
+        Mail::to($request->email)->send(new ExampleMailable($mail));
+
         return redirect('view_card/'.$request->card_id.'/'.$type);
 
     }
@@ -141,7 +151,7 @@ class ProfileController extends Controller
         $card=Card::where('id',$request->card_id)->first();
         $profile=Profile::find($request->profile_id);
         $profile->card_id=$request->card_id;
-        $profile->user_id = auth()->user()->id;
+        // $profile->user_id = auth()->user()->id;
         $profile->name = $request->name;
         $profile->email = $request->email;
         $profile->phone = $request->phone;
