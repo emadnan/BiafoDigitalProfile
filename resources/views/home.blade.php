@@ -146,7 +146,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalLabel">Crop Image</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -179,7 +179,6 @@ $(document).ready(function() {
 });
 //show image in image preview
 $(document).ready(function() {
-    var fileInput = document.getElementById("fileInput");
     var image = document.getElementById("to_be_cropped_image");
     var cropButton = document.getElementById("cropButton");
     var downloadButton = document.getElementById("downloadButton");
@@ -195,6 +194,10 @@ $(document).ready(function() {
             image.width = 560;
             image.height = 500;
             image.src = reader.result;
+            //destroy previous cropper
+            if (cropper) {
+            cropper.destroy();
+             }
             cropper = new Cropper(image, {
                 aspectRatio: 1,
                 crop(event) {
