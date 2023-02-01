@@ -23,7 +23,7 @@
                             <div class="d-flex justify-content-center mt-3">
                                 <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="image preview"
                                     id="image_preview"
-                                    style="width: 150px; height: 150px; border-radius:25%;border: 2px solid;">
+                                    style="width: 200px; height: 200px; border-radius:25%;border: 2px solid;">
                             </div>
                             <form id="add_profile" action="/insert_profile" method="post" enctype="multipart/form-data">
                                 @csrf
@@ -34,10 +34,10 @@
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group mt-2">
-                                            <input type="file" class="form-control" id="image" name="image">
+                                            <!-- <input type="file" class="form-control" id="image" name="image"> -->
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-5 mt-3">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -116,11 +116,15 @@
                                         <h3 style="font-family:Palatino;font-weight:bold;">Skills</h3>
                                     </div>
                                     <div class="col-md-6">
-                                        <a class="btn btn-primary float-right" id="add_skill" style="float:right;"><i
-                                                class="fa-solid fa-plus"></i></a>
+                                        <!-- <a class="btn btn-primary float-right" id="add_skill" style="float:right;"><i
+                                                class="fa-solid fa-plus"></i></a> -->
                                     </div>
                                 </div>
                                 <div class="row" id="skills">
+                                    <div class="form-group">
+                                        <label for="skill">Enter your Skills:</label>
+                                        <input type="text" class="form-control" name="skills" id="skills">
+                                    </div>
                                 </div>
                                 <div class="border-top my-3"></div>
                                 <div class="row mt-3">
@@ -152,11 +156,15 @@
                                         <h3 style="font-family:Palatino;font-weight:bold;">Languages</h3>
                                     </div>
                                     <div class="col-md-6">
-                                        <a class="btn btn-primary float-right" id="add_language" style="float:right;"><i
-                                                class="fa-solid fa-plus"></i></a>
+                                        <!-- <a class="btn btn-primary float-right" id="add_language" style="float:right;"><i
+                                                class="fa-solid fa-plus"></i></a> -->
                                     </div>
                                 </div>
                                 <div class="row" id="languages">
+                                    <div class="form-group">
+                                        <label for="language">Enter your Languages:</label>
+                                        <input type="text" class="form-control" name="languages" id="languages">
+                                        </div>
                                 </div>
                                 <div class="border-top my-3"></div>
                                 <div class="row mt-3">
@@ -164,11 +172,15 @@
                                         <h3 style="font-family:Palatino;font-weight:bold;">Interests</h3>
                                     </div>
                                     <div class="col-md-6">
-                                        <a class="btn btn-primary float-right" id="add_interest" style="float:right;"><i
-                                                class="fa-solid fa-plus"></i></a>
+                                        <!-- <a class="btn btn-primary float-right" id="add_interest" style="float:right;"><i
+                                                class="fa-solid fa-plus"></i></a> -->
                                     </div>
                                 </div>
                                 <div class="row" id="interests">
+                                    <div class="form-group">
+                                        <label for="interest">Enter your Interests:</label>
+                                        <input type="text" class="form-control" name="interests" id="interests">
+                                    </div>
                                 </div>
                                 <div class="border-top mt-3"></div>
                                 <div class="float-right mt-3">
@@ -198,21 +210,31 @@ $(document).ready(function() {
 });
 //add skill with delete whole row button
 $(document).ready(function() {
-    var i = 1;
-    $('#add_skill').click(function() {
-        i++;
-        $('#skills').append('<div class="col-md-6" id="skill_row_name' + i +
-            '"><div class="form-group"><label for="skill">Skill:</label><input type="text" class="form-control" id="skill" name="skill[]" placeholder="Enter Your Skill"></div></div><div class="col-md-6" id="skill_row_level' +
-            i +
-            '"><div class="form-group"><label for="skill">Skill Level:</label><select class="form-select" id="skill_level" name="skill_level[]" aria-label="Default select example"><option value="beginner" selected>Beginner</option><option value="intermediate">Intermediate</option><option value="advance">Advance</option></select><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
-            i +
-            '" style="float:right;" onclick="removeSkill(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
-            );
+    // var i = 1;
+    // $('#add_skill').click(function() {
+    //     i++;
+    //     $('#skills').append('<div class="col-md-6" id="skill_row_name' + i +
+    //         '"><div class="form-group"><label for="skill">Skill:</label><input type="text" class="form-control" id="skill" name="skill[]" placeholder="Enter Your Skill"></div></div><div class="col-md-6" id="skill_row_level' +
+    //         i +
+    //         '"><div class="form-group"><label for="skill">Skill Level:</label><select class="form-select" id="skill_level" name="skill_level[]" aria-label="Default select example"><option value="beginner" selected>Beginner</option><option value="intermediate">Intermediate</option><option value="advance">Advance</option></select><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
+    //         i +
+    //         '" style="float:right;" onclick="removeSkill(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
+    //     );
+    // });
+    // removeSkill = (id) => {
+    //     $('#skill_row_name' + id).remove();
+    //     $('#skill_row_level' + id).remove();
+    // }
+    $('input[name="skills"]').amsifySuggestags({
+        type: 'amsify',
+        suggestions: [
+            @foreach($skills as $skill)
+            '{{$skill->skill_name}}',
+            @endforeach
+        ],
+        defaultTagClass: 'bg-warning',
+        // whiteList: true
     });
-    removeSkill = (id) => {
-        $('#skill_row_name' + id).remove();
-        $('#skill_row_level' + id).remove();
-    }
 });
 //add experience
 $(document).ready(function() {
@@ -229,7 +251,7 @@ $(document).ready(function() {
             '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date_exp" name="end_date_exp[]" placeholder="Enter Your End Date"><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
             i +
             '" style="float:right;" onclick="removeExperience(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
-            );
+        );
     });
     removeExperience = (id) => {
         $('#experice_row_company' + id).remove();
@@ -253,7 +275,7 @@ $(document).ready(function() {
             '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date" name="end_date[]" placeholder="Enter Your End Date"><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
             i +
             '" style="float:right;" onclick="removeEduction(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
-            );
+        );
         removeEduction = (id) => {
             $('#school_row' + id).remove();
             $('#degree_row' + id).remove();
@@ -273,7 +295,7 @@ $(document).ready(function() {
             '"><div class="form-group"><label for="social_link">Social Link:</label><input type="text" class="form-control" id="social_link" name="social_link[]" placeholder="Enter Your Social Link"><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
             i +
             '" style="float:right;" onclick="removeSocial(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
-            );
+        );
     });
     removeSocial = (id) => {
         $('#social_row_name' + id).remove();
@@ -282,37 +304,57 @@ $(document).ready(function() {
 });
 //add language
 $(document).ready(function() {
-    var i = 1;
-    $('#add_language').click(function() {
-        i++;
-        $('#languages').append('<div class="col-md-6" id="language_row_name' + i +
-            '"><div class="form-group"><label for="language">Language Name:</label><input type="text" class="form-control" id="language_name" name="language_name[]" placeholder="Enter Your Language Name"></div></div><div class="col-md-6" id="language_row_level' +
-            i +
-            '"><div class="form-group"><label for="language_level">Language Level:</label><select class="form-select" id="language_level" name="language_level[]" aria-label="Default select example"><option value="beginner" selected>Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
-            i +
-            '" style="float:right;" onclick="removeLanguage(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
-            );
+    // var i = 1;
+    // $('#add_language').click(function() {
+    //     i++;
+    //     $('#languages').append('<div class="col-md-6" id="language_row_name' + i +
+    //         '"><div class="form-group"><label for="language">Language Name:</label><input type="text" class="form-control" id="language_name" name="language_name[]" placeholder="Enter Your Language Name"></div></div><div class="col-md-6" id="language_row_level' +
+    //         i +
+    //         '"><div class="form-group"><label for="language_level">Language Level:</label><select class="form-select" id="language_level" name="language_level[]" aria-label="Default select example"><option value="beginner" selected>Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
+    //         i +
+    //         '" style="float:right;" onclick="removeLanguage(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
+    //     );
+    // });
+    // removeLanguage = (id) => {
+    //     $('#language_row_name' + id).remove();
+    //     $('#language_row_level' + id).remove();
+    // }
+    $('input[name="languages"]').amsifySuggestags({
+        type: 'amsify',
+        suggestions: [
+            @foreach($languages as $language)
+            '{{$language->language_name}}',
+            @endforeach
+        ],
+        defaultTagClass: 'bg-warning',
+        // whiteList: true
     });
-    removeLanguage = (id) => {
-        $('#language_row_name' + id).remove();
-        $('#language_row_level' + id).remove();
-    }
 });
 //add interest
 $(document).ready(function() {
-    var i = 1;
-    $('#add_interest').click(function() {
-        i++;
-        $('#interests').append('<div class="col-md-6" id="interest_row_name' + i +
-            '"><div class="form-group"><label for="interest">Interest Name:</label><input type="text" class="form-control" id="interest_name" name="interest_name[]" placeholder="Enter Your Interest Name"></div></div><div class="col-md-6" id="interest_row_level' +
-            i + '"><a  class="btn btn-danger btn-sm float-right mt-4" id="' + i +
-            '" style="float:right;" onclick="removeInterest(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
-            );
+    // var i = 1;
+    // $('#add_interest').click(function() {
+    //     i++;
+    //     $('#interests').append('<div class="col-md-6" id="interest_row_name' + i +
+    //         '"><div class="form-group"><label for="interest">Interest Name:</label><input type="text" class="form-control" id="interest_name" name="interest_name[]" placeholder="Enter Your Interest Name"></div></div><div class="col-md-6" id="interest_row_level' +
+    //         i + '"><a  class="btn btn-danger btn-sm float-right mt-4" id="' + i +
+    //         '" style="float:right;" onclick="removeInterest(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
+    //     );
+    // });
+    // removeInterest = (id) => {
+    //     $('#interest_row_name' + id).remove();
+    //     $('#interest_row_level' + id).remove();
+    // }
+    $('input[name="interests"]').amsifySuggestags({
+        type: 'amsify',
+        suggestions: [
+            @foreach($interests as $interest)
+            '{{$interest->interest_name}}',
+            @endforeach
+        ],
+        defaultTagClass: 'bg-warning',
+        // whiteList: true
     });
-    removeInterest = (id) => {
-        $('#interest_row_name' + id).remove();
-        $('#interest_row_level' + id).remove();
-    }
 });
 //form validation of add_profile
 $(document).ready(function() {
@@ -357,7 +399,7 @@ $(document).ready(function() {
                 minlength: 3,
                 maxlength: 50
             },
-            position:{
+            position: {
                 required: true,
                 minlength: 3,
                 maxlength: 50
@@ -397,8 +439,8 @@ $(document).ready(function() {
                 minlength: 3,
                 maxlength: 50
             },
-            dob:{
-                required:true,
+            dob: {
+                required: true,
             }
         },
         messages: {
@@ -471,8 +513,8 @@ $(document).ready(function() {
                 required: "Please enter your interest name",
                 minlength: "Your interest name must be at least 3 characters long",
             },
-            dob:{
-                required:"Please enter your date of birth",
+            dob: {
+                required: "Please enter your date of birth",
             }
         },
         errorElement: 'span',
@@ -488,6 +530,5 @@ $(document).ready(function() {
         }
     });
 });
-
 </script>
 @endsection

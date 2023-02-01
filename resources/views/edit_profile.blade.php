@@ -23,7 +23,7 @@
                             <div class="d-flex justify-content-center mt-3">
                                 <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="image preview"
                                     id="image_preview"
-                                    style="width: 150px; height: 150px; border-radius:25%;border: 2px solid;">
+                                    style="width: 200px; height: 200px; border-radius:25%;border: 2px solid;">
                             </div>
                             <form id="add_profile" action="/update_profile" method="post" enctype="multipart/form-data">
                                 @csrf
@@ -34,10 +34,10 @@
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group mt-2">
-                                            <input type="file" class="form-control" id="image" name="image">
+                                            <!-- <input type="file" class="form-control" id="image" name="image"> -->
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-5 mt-3">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -160,40 +160,10 @@
                                     </div>
                                 </div>
                                 <div class="row" id="skills">
-                                    @if($profile->skills)
-                                    @foreach($profile->skills as $skill)
-                                    <div class="col-md-6" id="exist_skill_name_{{$skill->id}}">
-                                        <div class="form-group"><label for="skill">Skill:</label><input type="text"
-                                                class="form-control" id="skill" name="skill[]"
-                                                placeholder="Enter Your Skill" value="{{$skill->skill_name}}"></div>
+                                <div class="form-group">
+                                        <label for="skill">Enter your Skills:</label>
+                                        <input type="text" class="form-control" name="skills" id="skills" value="{{$profile->skills}}">
                                     </div>
-                                    <div class="col-md-6" id="exist_skill_level_{{$skill->id}}">
-                                        <div class="form-group"><label for="skill">Skill Level:</label><select
-                                                class="form-select" id="skill_level" name="skill_level[]"
-                                                aria-label="Default select example">
-                                                @if($skill->skill_level == 'beginner')
-                                                <option value="beginner" selected>Beginner</option>
-                                                @else
-                                                <option value="beginner">Beginner</option>
-                                                @endif
-                                                @if($skill->skill_level == 'intermediate')
-                                                <option value="intermediate" selected>Intermediate</option>
-                                                @else
-                                                <option value="intermediate">Intermediate</option>
-                                                @endif
-                                                @if($skill->skill_level == 'advance')
-                                                <option value="advance" selected>Advance</option>
-                                                @else
-                                                <option value="advance">Advance</option>
-                                                @endif
-                                            </select>
-                                        </div>
-                                        <a class="btn btn-danger btn-sm float-right mt-3" id="{{$skill->id}}"
-                                            style="float:right;" onclick="removeSkillexist(this.id)"><i
-                                                class="fa-solid fa-trash"></i></a>
-                                    </div>
-                                    @endforeach
-                                    @endif
                                 </div>
                                 <div class="border-top my-3"></div>
                                 <div class="row mt-3">
@@ -287,40 +257,10 @@
                                     </div>
                                 </div>
                                 <div class="row" id="languages">
-                                    @if($profile->languages)
-                                    @foreach($profile->languages as $language)
-                                    <div class="col-md-6" id="exist_language_name_{{$language->id}}">
-                                        <div class="form-group"><label for="language">Language Name:</label><input
-                                                type="text" class="form-control" id="language_name"
-                                                name="language_name[]" placeholder="Enter Your Language Name"
-                                                value="{{$language->language_name}}"></div>
-                                    </div>
-                                    <div class="col-md-6" id="exist_language_level_{{$language->id}}">
-                                        <div class="form-group"><label for="language_level">Language
-                                                Level:</label><select class="form-select" id="language_level"
-                                                name="language_level[]" aria-label="Default select example">
-                                                @if($language->language_level == 'beginner')
-                                                <option value="beginner" selected>Beginner</option>
-                                                @else
-                                                <option value="beginner">Beginner</option>
-                                                @endif
-                                                @if($language->language_level == 'intermediate')
-                                                <option value="intermediate" selected>Intermediate</option>
-                                                @else
-                                                <option value="intermediate">Intermediate</option>
-                                                @endif
-                                                @if($language->language_level == 'advanced')
-                                                <option value="advanced" selected>Advanced</option>
-                                                @else
-                                                <option value="advanced">Advanced</option>
-                                                @endif
-                                            </select><a class="btn btn-danger btn-sm float-right mt-3"
-                                                id="{{$language->id}}" style="float:right;"
-                                                onclick="removeLanguage_exist(this.id)"><i
-                                                    class="fa-solid fa-trash"></i></a></div>
-                                    </div>
-                                    @endforeach
-                                    @endif
+                                <div class="form-group">
+                                        <label for="language">Enter your Languages:</label>
+                                        <input type="text" class="form-control" name="languages" id="languages" value="{{$profile->languages}}">
+                                        </div>
                                 </div>
                                 <div class="border-top my-3"></div>
                                 <div class="row mt-3">
@@ -333,21 +273,10 @@
                                     </div>
                                 </div>
                                 <div class="row" id="interests">
-                                    @if($profile->interests)
-                                    @foreach($profile->interests as $interest)
-                                    <div class="col-md-6" id="exist_interest_name_{{$interest->id}}">
-                                        <div class="form-group"><label for="interest">Interest Name:</label><input
-                                                type="text" class="form-control" id="interest_name"
-                                                name="interest_name[]" placeholder="Enter Your Interest Name"
-                                                value="{{$interest->interest_name}}"></div>
+                                <div class="form-group">
+                                        <label for="interest">Enter your Interests:</label>
+                                        <input type="text" class="form-control" name="interests" id="interests" value="{{$profile->interests}}">
                                     </div>
-                                    <div class="col-md-6" id="exist_interest_btn_{{$interest->id}}">
-                                       <a class="btn btn-danger btn-sm float-right mt-5" id="{{$interest->id}}"
-                                            style="float:right;" onclick="removeInterest_exist(this.id)"><i
-                                                class="fa-solid fa-trash"></i></a>
-                                    </div>
-                                    @endforeach
-                                    @endif
                                 </div>
                                 <div class="border-top mt-3"></div>
                                 <div class="float-right mt-3">
@@ -377,26 +306,36 @@ $(document).ready(function() {
 });
 //add skill with delete whole row button
 $(document).ready(function() {
-    var i = 1;
-    $('#add_skill').click(function() {
-        i++;
-        $('#skills').append('<div class="col-md-6" id="skill_row_name' + i +
-            '"><div class="form-group"><label for="skill">Skill:</label><input type="text" class="form-control" id="skill" name="skill[]" placeholder="Enter Your Skill"></div></div><div class="col-md-6" id="skill_row_level' +
-            i +
-            '"><div class="form-group"><label for="skill">Skill Level:</label><select class="form-select" id="skill_level" name="skill_level[]" aria-label="Default select example"><option value="beginner" selected>Beginner</option><option value="intermediate">Intermediate</option><option value="advance">Advance</option></select><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
-            i +
-            '" style="float:right;" onclick="removeSkill(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
-        );
+    // var i = 1;
+    // $('#add_skill').click(function() {
+    //     i++;
+    //     $('#skills').append('<div class="col-md-6" id="skill_row_name' + i +
+    //         '"><div class="form-group"><label for="skill">Skill:</label><input type="text" class="form-control" id="skill" name="skill[]" placeholder="Enter Your Skill"></div></div><div class="col-md-6" id="skill_row_level' +
+    //         i +
+    //         '"><div class="form-group"><label for="skill">Skill Level:</label><select class="form-select" id="skill_level" name="skill_level[]" aria-label="Default select example"><option value="beginner" selected>Beginner</option><option value="intermediate">Intermediate</option><option value="advance">Advance</option></select><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
+    //         i +
+    //         '" style="float:right;" onclick="removeSkill(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
+    //     );
+    // });
+    // removeSkill = (id) => {
+    //     $('#skill_row_name' + id).remove();
+    //     $('#skill_row_level' + id).remove();
+    // }
+    $('input[name="skills"]').amsifySuggestags({
+        type: 'amsify',
+        suggestions: [
+            @foreach($skills as $skill)
+            '{{$skill->skill_name}}',
+            @endforeach
+        ],
+        defaultTagClass: 'bg-warning',
+        // whiteList: true
     });
-    removeSkill = (id) => {
-        $('#skill_row_name' + id).remove();
-        $('#skill_row_level' + id).remove();
-    }
 });
-removeSkillexist = (id) => {
-    $('#exist_skill_name_' + id).remove();
-    $('#exist_skill_level_' + id).remove();
-}
+// removeSkillexist = (id) => {
+//     $('#exist_skill_name_' + id).remove();
+//     $('#exist_skill_level_' + id).remove();
+// }
 //add experience
 $(document).ready(function() {
     var i = 1;
@@ -481,46 +420,66 @@ removeSocialexist = (id) => {
 }
 //add language
 $(document).ready(function() {
-    var i = 1;
-    $('#add_language').click(function() {
-        i++;
-        $('#languages').append('<div class="col-md-6" id="language_row_name' + i +
-            '"><div class="form-group"><label for="language">Language Name:</label><input type="text" class="form-control" id="language_name" name="language_name[]" placeholder="Enter Your Language Name"></div></div><div class="col-md-6" id="language_row_level' +
-            i +
-            '"><div class="form-group"><label for="language_level">Language Level:</label><select class="form-select" id="language_level" name="language_level[]" aria-label="Default select example"><option value="beginner" selected>Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
-            i +
-            '" style="float:right;" onclick="removeLanguage(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
-        );
+    // var i = 1;
+    // $('#add_language').click(function() {
+    //     i++;
+    //     $('#languages').append('<div class="col-md-6" id="language_row_name' + i +
+    //         '"><div class="form-group"><label for="language">Language Name:</label><input type="text" class="form-control" id="language_name" name="language_name[]" placeholder="Enter Your Language Name"></div></div><div class="col-md-6" id="language_row_level' +
+    //         i +
+    //         '"><div class="form-group"><label for="language_level">Language Level:</label><select class="form-select" id="language_level" name="language_level[]" aria-label="Default select example"><option value="beginner" selected>Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
+    //         i +
+    //         '" style="float:right;" onclick="removeLanguage(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
+    //     );
+    // });
+    // removeLanguage = (id) => {
+    //     $('#language_row_name' + id).remove();
+    //     $('#language_row_level' + id).remove();
+    // }
+    $('input[name="languages"]').amsifySuggestags({
+        type: 'amsify',
+        suggestions: [
+            @foreach($languages as $language)
+            '{{$language->language_name}}',
+            @endforeach
+        ],
+        defaultTagClass: 'bg-warning',
+        // whiteList: true
     });
-    removeLanguage = (id) => {
-        $('#language_row_name' + id).remove();
-        $('#language_row_level' + id).remove();
-    }
 });
-removeLanguage_exist = (id) => {
-    $('#exist_language_name_' + id).remove();
-    $('#exist_language_level_' + id).remove();
-}
+// removeLanguage_exist = (id) => {
+//     $('#exist_language_name_' + id).remove();
+//     $('#exist_language_level_' + id).remove();
+// }
 //add interest
 $(document).ready(function() {
-    var i = 1;
-    $('#add_interest').click(function() {
-        i++;
-        $('#interests').append('<div class="col-md-6" id="interest_row_name' + i +
-            '"><div class="form-group"><label for="interest">Interest Name:</label><input type="text" class="form-control" id="interest_name" name="interest_name[]" placeholder="Enter Your Interest Name"></div></div><div class="col-md-6" id="interest_row_level' +
-            i + '"><a  class="btn btn-danger btn-sm float-right mt-5" id="' + i +
-            '" style="float:right;" onclick="removeInterest(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
-        );
+    // var i = 1;
+    // $('#add_interest').click(function() {
+    //     i++;
+    //     $('#interests').append('<div class="col-md-6" id="interest_row_name' + i +
+    //         '"><div class="form-group"><label for="interest">Interest Name:</label><input type="text" class="form-control" id="interest_name" name="interest_name[]" placeholder="Enter Your Interest Name"></div></div><div class="col-md-6" id="interest_row_level' +
+    //         i + '"><a  class="btn btn-danger btn-sm float-right mt-5" id="' + i +
+    //         '" style="float:right;" onclick="removeInterest(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
+    //     );
+    // });
+    // removeInterest = (id) => {
+    //     $('#interest_row_name' + id).remove();
+    //     $('#interest_row_level' + id).remove();
+    // }
+    $('input[name="interests"]').amsifySuggestags({
+        type: 'amsify',
+        suggestions: [
+            @foreach($interests as $interest)
+            '{{$interest->interest_name}}',
+            @endforeach
+        ],
+        defaultTagClass: 'bg-warning',
+        // whiteList: true
     });
-    removeInterest = (id) => {
-        $('#interest_row_name' + id).remove();
-        $('#interest_row_level' + id).remove();
-    }
 });
-removeInterest_exist = (id) => {
-    $('#exist_interest_name_' + id).remove();
-    $('#exist_interest_btn_' + id).remove();
-}
+// removeInterest_exist = (id) => {
+//     $('#exist_interest_name_' + id).remove();
+//     $('#exist_interest_btn_' + id).remove();
+// }
 //form validation of add_profile
 $(document).ready(function() {
     $('#add_profile').validate({

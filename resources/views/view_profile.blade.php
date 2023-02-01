@@ -99,7 +99,7 @@ html {
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3">
-                            <img src="{{asset('card_images')}}/{{$profile->image_path}}" alt="profile_pic"
+                            <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="profile_pic"
                                 style="width: 200px; height: 200px; border-radius:25%;border: 2px solid;">
                         </div>
                         <div class="col-md-7">
@@ -137,11 +137,11 @@ html {
                             <h3 style="font-family:Palatino;font-weight:bold;" class="mt-2">Skills</h3>
                         </div>
                         <div class="col-md-9">
-                            @if(!empty($profile->skills))
-                            @foreach($profile->skills as $skill)
+                            @if(!empty($skills))
+                            @foreach($skills as $skill)
                             <a target="_blank" class="btn btn-yellow float-right mt-2 ml-4"
                                 style="width: 100px; height: 40px; border-radius: 10px; font-size: 15px; font-weight: bold;">
-                                {{$skill->skill_name}}
+                                {{$skill}}
                             </a>
                             @endforeach
                             @endif
@@ -217,11 +217,11 @@ html {
                             <h3 style="font-family:Palatino;font-weight:bold;" class="mt-2">Languages</h3>
                         </div>
                         <div class="col-md-9">
-                            @if(!empty($profile->languages))
-                            @foreach($profile->languages as $language)
+                            @if(!empty($languages))
+                            @foreach($languages as $language)
                             <a target="_blank" class="btn btn-yellow float-right mt-2 ml-4"
                                 style="width: 100px; height: 40px; border-radius: 10px; font-size: 15px; font-weight: bold;">
-                                {{$language->language_name}}
+                                {{$language}}
                             </a>
                             @endforeach
                             @endif
@@ -233,11 +233,11 @@ html {
                             <h3 style="font-family:Palatino;font-weight:bold;" class="mt-2">Interests</h3>
                         </div>
                         <div class="col-md-9">
-                            @if(!empty($profile->interests))
-                            @foreach($profile->interests as $interest)
+                            @if(!empty($interests))
+                            @foreach($interests as $interest)
                             <a target="_blank" class="btn btn-yellow float-right mt-2 ml-4"
                                 style=" border-radius: 10px; font-size: 15px; font-weight: bold;">
-                                {{$interest->interest_name}}
+                                {{$interest}}
                             </a>
                             @endforeach
                             @endif

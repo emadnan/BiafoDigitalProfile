@@ -21,7 +21,10 @@ class ProfileController extends Controller
     public function addProfile($card_id,$type)
     {
         $card=Card::where('id',$card_id)->first();
-        $data=compact('card','card_id','type');
+        $skills=Skill::all();
+        $interests=Interest::all();
+        $languages=Language::all();
+        $data=compact('card','card_id','type','skills','interests','languages');
         return view('add_profile')->with($data);
     }
     public function insertProfile(Request $request)
@@ -33,12 +36,6 @@ class ProfileController extends Controller
         $card=Card::where('id',$request->card_id)->first();
         $image_path = $card->image_path;
         $type=$request->type;
-        if($request->hasFile('image'))
-        {
-            $image = $request->file('image');
-            $image_path = time().$image->getClientOriginalName();
-            $image->move(public_path().'/card_images/', $image_path);
-        }
         $profile=new Profile();
         $profile->card_id=$request->card_id;
         $profile->user_id = auth()->user()->id;
@@ -48,9 +45,11 @@ class ProfileController extends Controller
         $profile->address = $request->address;
         $profile->city = $request->city;
         $profile->country = $request->country;
+        $profile->skills=$request->skills;
+        $profile->interests=$request->interests;
+        $profile->languages=$request->languages;
         $profile->description = $request->description;
         $profile->dob = $request->dob;
-        $profile->image_path = $image_path;
         $profile->save();
         $profile_id = $profile->id;
         //Social Links
@@ -99,67 +98,31 @@ class ProfileController extends Controller
                 $experience_loop++;
             }
         }
-        //Skills
-        $skill_loop = 0;
-        if($request->skill)
-        {
-            foreach($request->skill as $key=>$value)
-            {
-                
-                $skill = new Skill();
-                $skill->profile_id = $profile->id;
-                $skill->skill_name = $value;
-                $skill->skill_level = $request->skill_level[$skill_loop];
-                $skill->save();
-                $skill_loop++;
-            }
-        }
-        //Languages
-        $language_loop = 0;
-        if($request->language_name)
-        {
-            foreach($request->language_name as $key=>$value)
-            {
-                
-                $language = new Language();
-                $language->profile_id = $profile->id;
-                $language->language_name = $value;
-                $language->language_level = $request->language_level[$language_loop];
-                $language->save();
-                $language_loop++;
-            }
-        }
-        //Interests
-        if($request->interest_name)
-        {
-            foreach($request->interest_name as $key=>$value)
-            {
-                
-                $interest=new Interest();
-                $interest->profile_id = $profile->id;
-                $interest->interest_name = $value;
-                $interest->save();
-            }
-        }
         return redirect('view_card/'.$request->card_id.'/'.$type);
 
     }
     public function viewProfile($card_id)
     {
         $card=Card::where('id',$card_id)->first();
-        $profile=Profile::with('social_links','educations','experiences','skills','languages','interests')->where('card_id',$card_id)->first();
+        $profile=Profile::with('social_links','educations','experiences')->where('card_id',$card_id)->first();
         if(empty($profile))
         {
             return redirect('view_card/'.$card_id.'/work')->with('error','Please add your profile first');
         }
-        $data=compact('card','profile');
+        $skills=(explode(",",$profile->skills));
+        $interests=(explode(",",$profile->interests));
+        $languages=(explode(",",$profile->languages));
+        $data=compact('card','profile','skills','interests','languages');
         return view('view_profile')->with($data);
     }
     public function editProfile($card_id)
     {
         $card=Card::where('id',$card_id)->first();
-        $profile=Profile::with('social_links','educations','experiences','skills','languages','interests')->where('card_id',$card_id)->first();
-        $data=compact('card','profile');
+        $profile=Profile::with('social_links','educations','experiences')->where('card_id',$card_id)->first();
+        $skills=Skill::all();
+        $interests=Interest::all();
+        $languages=Language::all();
+        $data=compact('card','profile','skills','interests','languages');
         return view('edit_profile')->with($data);
     }
     public function updateProfile(Request $request)
@@ -168,21 +131,14 @@ class ProfileController extends Controller
         // print_r($request->all());
         // die;
         //delete all data
-        $delete_skills=Skill::where('profile_id',$request->profile_id)->delete();
-        $delete_languages=Language::where('profile_id',$request->profile_id)->delete();
-        $delete_interests=Interest::where('profile_id',$request->profile_id)->delete();
+        // $delete_skills=Skill::where('profile_id',$request->profile_id)->delete();
+        // $delete_languages=Language::where('profile_id',$request->profile_id)->delete();
+        // $delete_interests=Interest::where('profile_id',$request->profile_id)->delete();
         $delete_social_links=SocialLink::where('profile_id',$request->profile_id)->delete();
         $delete_educations=Education::where('profile_id',$request->profile_id)->delete();
         $delete_experiences=Experience::where('profile_id',$request->profile_id)->delete();
         //UPDATe PROFILE
         $card=Card::where('id',$request->card_id)->first();
-        $image_path = $card->image_path;
-        if($request->hasFile('image'))
-        {
-            $image = $request->file('image');
-            $image_path = time().$image->getClientOriginalName();
-            $image->move(public_path().'/card_images/', $image_path);
-        }
         $profile=Profile::find($request->profile_id);
         $profile->card_id=$request->card_id;
         $profile->user_id = auth()->user()->id;
@@ -194,7 +150,9 @@ class ProfileController extends Controller
         $profile->country = $request->country;
         $profile->description = $request->description;
         $profile->dob = $request->dob;
-        $profile->image_path = $image_path;
+        $profile->skills=$request->skills;
+        $profile->interests=$request->interests;
+        $profile->languages=$request->languages;
         $profile->save();
         $profile_id = $profile->id;
         //Social Links
@@ -241,48 +199,6 @@ class ProfileController extends Controller
                 $experience->end_date = $request->end_date_exp[$experience_loop];
                 $experience->save();
                 $experience_loop++;
-            }
-        }
-        //Skills
-        $skill_loop = 0;
-        if($request->skill)
-        {
-            foreach($request->skill as $key=>$value)
-            {
-                
-                $skill = new Skill();
-                $skill->profile_id = $profile->id;
-                $skill->skill_name = $value;
-                $skill->skill_level = $request->skill_level[$skill_loop];
-                $skill->save();
-                $skill_loop++;
-            }
-        }
-        //Languages
-        $language_loop = 0;
-        if($request->language_name)
-        {
-            foreach($request->language_name as $key=>$value)
-            {
-                
-                $language = new Language();
-                $language->profile_id = $profile->id;
-                $language->language_name = $value;
-                $language->language_level = $request->language_level[$language_loop];
-                $language->save();
-                $language_loop++;
-            }
-        }
-        //Interests
-        if($request->interest_name)
-        {
-            foreach($request->interest_name as $key=>$value)
-            {
-                
-                $interest=new Interest();
-                $interest->profile_id = $profile->id;
-                $interest->interest_name = $value;
-                $interest->save();
             }
         }
         $data=compact('card','profile');
