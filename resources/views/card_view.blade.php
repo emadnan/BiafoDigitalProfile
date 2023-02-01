@@ -185,11 +185,12 @@
 
 
                 </div>
+                </form>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="button" id="saveButton" class="btn btn-primary">Save changes</button>
                 </div>
-                </form>
+                
             </div>
         </div>
     </div>
@@ -227,6 +228,33 @@
         </div>
     </div>
 </div>
+    <!-- //image crop modal -->
+    <div class="modal fade" id="image_crop_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Crop Image</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex " style=" width: 600px;height: 600px;">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-10 mt-4">
+                            <img id="to_be_cropped_image" style=" width: 600px;height: 600px;" />
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cropButton" class="btn btn-primary"><i class="fa-solid fa-crop"></i> Crop</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
 @section('scripts')
@@ -234,24 +262,140 @@
   $('.delete-card').click(function(e) {
     $('#modaldeletecard').attr('href', '/delete_card/' + $(this).attr('data-delete-card-id'))
 });
-var qrcode = new QRCode("qrcode", {
-    text: "{{route('view_profile', $card->id)}}",
-    width: 80,
-    height: 80,
-    colorDark: "#000000",
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.H,
-});
+// var qrcode = new QRCode("qrcode", {
+//     text: "{{route('view_profile', $card->id)}}",
+//     width: 80,
+//     height: 80,
+//     colorDark: "#000000",
+//     colorLight: "#ffffff",
+//     correctLevel: QRCode.CorrectLevel.H,
+// });
+const qrCode = new QRCodeStyling({
+        width: 120,
+        height: 120,
+        type: "canvas",
+        data: "{{route('view_profile', $card->id)}}",
+        image: "{{asset('frontend/img/qr_logo.svg')}}",
+        dotsOptions: {
+            color: "black",
+            type: "classy-rounded"
+        },
+        backgroundOptions: {
+            color: "#ffffff",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 0,
+            imageSize: 0.7,
+        },
+        qrOptions: {
+            errorCorrectionLevel: "H",
+        },
+    });
+
+    qrCode.append(document.getElementById("qrcode"));
 $('#update_card').click(function() {
         $('#update_card_modal').modal('show');
     });
+    $(document).ready(function() {
+    var image = document.getElementById("to_be_cropped_image");
+    var cropButton = document.getElementById("cropButton");
+    var downloadButton = document.getElementById("downloadButton");
+    var croppedImageContainer = document.getElementById("image_preview");
+    var saveButton = document.getElementById("saveButton");
+    let cropper;
     $('#image').change(function() {
-        let reader = new FileReader();
-        reader.onload = (e) => {
-            $('#image_preview').attr('src', e.target.result);
-        }
-        reader.readAsDataURL(this.files[0]);
+        //open image crop modal and show image
+        $('#image_crop_modal').modal('show');
+        var reader = new FileReader();
+        reader.onload = function() {
+            //set image widht and height
+            image.width = 560;
+            image.height = 500;
+            image.src = reader.result;
+            //destroy previous cropper
+            if (cropper) {
+                cropper.destroy();
+            }
+            cropper = new Cropper(image, {
+                aspectRatio: 1,
+                crop(event) {
+                    console.log(event.detail.x);
+                    console.log(event.detail.y);
+                    console.log(event.detail.width);
+                    console.log(event.detail.height);
+                    console.log(event.detail.rotate);
+                    console.log(event.detail.scaleX);
+                    console.log(event.detail.scaleY);
+                },
+                //cropper size set
+                viewMode: 1,
+                minContainerWidth: 560,
+                minContainerHeight: 500,
+                minCanvasWidth: 560,
+                minCanvasHeight: 500,
+            });
+        };
+        reader.readAsDataURL(event.target.files[0]);
     });
+    //crop button click
+    cropButton.addEventListener("click", () => {
+        //get cropped image
+        var croppedImage = cropper.getCroppedCanvas().toDataURL();
+        //show cropped image in image preview
+        croppedImageContainer.src = croppedImage;
+        //hide image crop modal
+        $('#image_crop_modal').modal('hide');
+    });
+    //save button click
+    saveButton.addEventListener("click", () => {
+        //if form validate true then save data
+        if ($('#update_card_form').valid()) {
+            //get cropped image
+            var croppedImage = cropper.getCroppedCanvas().toDataURL();
+            //show cropped image in image preview
+            croppedImageContainer.src = croppedImage;
+            //hide image crop modal
+            $('#image_crop_modal').modal('hide');
+            var data= new FormData();
+            data.append('_token','{{ csrf_token() }}');
+            data.append('card_id','{{$card->id}}');
+            data.append('image',croppedImage);
+            data.append('name',$('#name').val());
+            data.append('email',$('#email').val());
+            data.append('phone',$('#phone').val());
+            data.append('address',$('#address').val());
+            data.append('city',$('#city').val());
+            data.append('country',$('#country').val());
+            data.append('website',$('#website').val());
+            data.append('company',$('#company').val());
+            data.append('designation',$('#designation').val());
+            data.append('linkiden',$('#linkiden').val());
+
+            //ajax request
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('update_card') }}",
+                data: data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    //hide add card modal
+                    $('#update_card_modal').modal('hide');
+                    //show success message
+                    toastr.success('Card Updated Successfully');
+                    //reload page
+                    location.reload();
+                },
+                error: function(data) {
+                    //show error message
+                    toastr.error('Something Went Wrong');
+                }
+            });
+        }
+    });
+
     $('#update_card_form').validate({
         rules: {
             name: {
@@ -307,5 +451,6 @@ $('#update_card').click(function() {
             $(element).removeClass('is-invalid');
         }
     });
+});
 </script>
 @endsection

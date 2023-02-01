@@ -10,12 +10,27 @@ use App\Models\Profile;
 class CardController extends Controller
 {
     function addCard(Request $request){
-            if($request->hasFile('image'))
-            {
-                $image = $request->file('image');
-                $image_path = time().$image->getClientOriginalName();
-                $image->move(public_path().'/card_images/', $image_path);
-            }
+        // echo "<pre>";
+        // print_r($request->all());
+        // die;
+        
+            // if($request->hasFile('image'))
+            // {
+            //     $image = $request->file('image');
+            //     $image_path = time().$image->getClientOriginalName();
+            //     $image->move(public_path().'/card_images/', $image_path);
+            // }
+        if($request->image != null)
+        {
+            $image = $request->image;
+            $extension = explode('/', explode(":", substr($image, 0, strpos($image, ";")))[1])[1];
+            $replace = substr($image, 0, strpos($image, ',') + 1);
+            $image = str_replace($replace, "", $image);
+            $image = str_replace('', '+', $image);
+            $image_path= time() . '.' . $extension;
+            $image_decode = base64_decode($image);
+            file_put_contents(public_path().'/card_images/'.$image_path, $image_decode);
+        }
         $card = new Card();
         $card->user_id= auth()->user()->id;
         $card->name= $request->name;
@@ -30,7 +45,7 @@ class CardController extends Controller
         $card->website = $request->website;
         $card->image_path = $image_path;
         $card->save();
-        return redirect('/home');
+        return response()->json(['success'=>'Card Added Successfully']);
     }
 
     function getcard($card_id,$type){
@@ -47,14 +62,23 @@ class CardController extends Controller
         return redirect('/home');
     }
 
-    function update_card($card_id,$type,Request $request){
+    function update_card(Request $request){
+        // echo "<pre>";
+        // print_r($request->all());
+        // die;
+        $card_id=$request->card_id;
         $card = Card::where('id',$card_id)->first();
         $image_path=$card->image_path;
-        if( $request->hasFile('image')) {
-
-            $image = \Request::file('image');
-            $image_path = time().$image->getClientOriginalName();
-            $image->move(public_path().'/card_images/', $image_path);
+        if($request->image != null)
+        {
+            $image = $request->image;
+            $extension = explode('/', explode(":", substr($image, 0, strpos($image, ";")))[1])[1];
+            $replace = substr($image, 0, strpos($image, ',') + 1);
+            $image = str_replace($replace, "", $image);
+            $image = str_replace('', '+', $image);
+            $image_path= time() . '.' . $extension;
+            $image_decode = base64_decode($image);
+            file_put_contents(public_path().'/card_images/'.$image_path, $image_decode);
         }
         $card->user_id= auth()->user()->id;
         $card->name= $request->name;
@@ -70,6 +94,6 @@ class CardController extends Controller
         $card->image_path = $image_path;
         $card->save();
 
-        return redirect('view_card/'.$card_id.'/'.$type);
+        return response()->json(['success'=>'Card Updated Successfully']);
     }
 }
