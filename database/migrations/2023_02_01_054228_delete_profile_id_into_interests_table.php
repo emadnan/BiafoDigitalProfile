@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DeleteSkillLevelIntoSkillsTable extends Migration
+class DeleteProfileIdIntointerestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class DeleteSkillLevelIntoSkillsTable extends Migration
      */
     public function up()
     {
-        Schema::table('skills', function (Blueprint $table) {
-            $table->dropColumn('skill_level');
+        Schema::table('interests', function (Blueprint $table) {
+            $table->dropColumn('profile_id');
         });
     }
 
@@ -25,8 +25,9 @@ class DeleteSkillLevelIntoSkillsTable extends Migration
      */
     public function down()
     {
-        Schema::table('skills', function (Blueprint $table) {
-            $table->string('skill_level');
+        Schema::table('interests', function (Blueprint $table) {
+            $table->integer('profile_id');
         });
     }
 }
+
