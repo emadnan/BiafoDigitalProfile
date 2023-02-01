@@ -179,17 +179,17 @@ $(document).ready(function() {
 });
 //show image in image preview
 $(document).ready(function() {
-    const fileInput = document.getElementById("fileInput");
-    const image = document.getElementById("to_be_cropped_image");
-    const cropButton = document.getElementById("cropButton");
-    const downloadButton = document.getElementById("downloadButton");
-    const croppedImageContainer = document.getElementById("image_preview");
-    const saveButton = document.getElementById("saveButton");
+    var fileInput = document.getElementById("fileInput");
+    var image = document.getElementById("to_be_cropped_image");
+    var cropButton = document.getElementById("cropButton");
+    var downloadButton = document.getElementById("downloadButton");
+    var croppedImageContainer = document.getElementById("image_preview");
+    var saveButton = document.getElementById("saveButton");
     let cropper;
     $('#image').change(function() {
         //open image crop modal and show image
         $('#image_crop_modal').modal('show');
-        const reader = new FileReader();
+        var reader = new FileReader();
         reader.onload = function() {
             //set image widht and height
             image.width = 560;
@@ -219,7 +219,7 @@ $(document).ready(function() {
     //crop button click
     cropButton.addEventListener("click", () => {
         //get cropped image
-        const croppedImage = cropper.getCroppedCanvas().toDataURL();
+        var croppedImage = cropper.getCroppedCanvas().toDataURL();
         //show cropped image in image preview
         croppedImageContainer.src = croppedImage;
         //hide image crop modal
@@ -230,7 +230,7 @@ $(document).ready(function() {
         //if form validate true then save data
         if ($('#add_card_form').valid()) {
             //get cropped image
-            const croppedImage = cropper.getCroppedCanvas().toDataURL();
+            var croppedImage = cropper.getCroppedCanvas().toDataURL();
             //show cropped image in image preview
             croppedImageContainer.src = croppedImage;
             //hide image crop modal
