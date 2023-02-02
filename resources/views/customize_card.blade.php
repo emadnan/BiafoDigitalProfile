@@ -1,266 +1,271 @@
 @extends('layouts.admin')
 @section('content')
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-* {
-    --dark: #393939;
-    --red: #d12229;
-}
+    * {
+        --dark: #393939;
+        --red: #d12229;
+    }
 
-body {
-    margin: 0;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-    position: relative;
-}
+    body {
+        margin: 0;
+        font-family: Roboto, Arial, Helvetica, sans-serif;
+        position: relative;
+    }
 
-.credit {
-    position: absolute;
-    top: 15px;
-    right: 10px;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: rgb(248, 92, 113);
-    cursor: pointer;
-    z-index: 2;
-    overflow: hidden;
-}
+    .credit {
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgb(248, 92, 113);
+        cursor: pointer;
+        z-index: 2;
+        overflow: hidden;
+    }
 
-.btn-yellow {
-    background-color: #ff9d00;
-    border-radius: 10px;
-    padding: 10px;
-    width: 100px;
-    text-align: center;
-    font-weight: bold;
-}
+    .btn-yellow {
+        background-color: #ff9d00;
+        border-radius: 10px;
+        padding: 10px;
+        width: 100px;
+        text-align: center;
+        font-weight: bold;
+    }
 
-.btn-danger {
-    background-color: #d12229;
-    border-radius: 10px;
-    padding: 10px;
-    width: 100px;
-    text-align: center;
-    font-weight: bold;
-}
+    .btn-danger {
+        background-color: #d12229;
+        border-radius: 10px;
+        padding: 10px;
+        width: 100px;
+        text-align: center;
+        font-weight: bold;
+    }
 
-.credit a {
-    text-decoration: none;
-    color: #eee;
-    padding: 10px;
-}
+    .credit a {
+        text-decoration: none;
+        color: #eee;
+        padding: 10px;
+    }
 
-.qr_anchor:hover {
-    color: #d12229;
-}
+    .qr_anchor:hover {
+        color: #d12229;
+    }
 
-.credit:after {
-    box-sizing: border-box;
-    content: "";
-    border: 8px solid;
-    border-color: transparent transparent transparent #eee;
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    right: 1px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.5s;
-}
+    .credit:after {
+        box-sizing: border-box;
+        content: "";
+        border: 8px solid;
+        border-color: transparent transparent transparent #eee;
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        right: 1px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.5s;
+    }
 
-.credit:hover::after {
-    right: -4px;
-}
+    .credit:hover::after {
+        right: -4px;
+    }
 
-.test {
-    background-color: #1769ff;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: -100%;
-    transition: .5s ease-in-out;
-    z-index: -1;
-}
+    .test {
+        background-color: #1769ff;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        transition: .5s ease-in-out;
+        z-index: -1;
+    }
 
-.credit:hover .test {
-    left: 0;
-}
+    .credit:hover .test {
+        left: 0;
+    }
 
-/* page backgroung color white */
-.business2 {
-    display: flex;
-    /* align-items: center; */
-    /* min-height: 100vh; */
-    justify-content: left;
-    /* margin-left: 70px; */
-    /* background-color: #fdfdff; */
-}
+    /* page backgroung color white */
+    .business2 {
+        display: flex;
+        border-radius: 25%;
+        /* align-items: center; */
+        /* min-height: 100vh; */
+        justify-content: left;
+        /* margin-left: 70px; */
+        /* background-color: #fdfdff; */
+    }
 
-/* set the postion and margin front and back side cards */
-.business2 .front,
-.business2 .back {
-    background-color: var(--dark);
-    width: 300px;
-    height: 500px;
-    margin: 20px;
-    border-radius: 25px;
-    overflow: hidden;
-    position: relative;
-    color:white;
+    wantradius {
+        border-radius: 25%;
+    }
 
-}
+    /* set the postion and margin front and back side cards */
+    .business2 .front,
+    .business2 .back {
+        background-color: var(--dark);
+        width: 300px;
+        height: 500px;
+        margin: 20px;
+        border-radius: 25px;
+        overflow: hidden;
+        position: relative;
+        color: white;
 
-.business2 svg {
-    width: 95px;
-}
+    }
 
-.business2 h1,
-.business2 h2,
-.business2 i,
-.business2 p {
-    margin: 0;
-    /* color: #eee; */
-}
+    .business2 svg {
+        width: 95px;
+    }
 
-.business2 .red {
-    height: 35%;
-    background-color: var(--red);
-}
+    .business2 h1,
+    .business2 h2,
+    .business2 i,
+    .business2 p {
+        margin: 0;
+        /* color: #eee; */
+    }
 
-.business2 .head {
-    display: flex;
-    justify-content: center;
-    border-radius: 25px;
-    padding: 25px 0;
-}
+    .business2 .red {
+        height: 35%;
+        background-color: var(--red);
+    }
 
-.business2 .head img {
-    width: 40px;
-    border-radius: 25px;
-}
+    .business2 .head {
+        display: flex;
+        justify-content: center;
+        border-radius: 25px;
+        padding: 25px 0;
+    }
 
-.business2 .head>div {
-    text-align: center;
-    margin: 0 10px;
-    text-transform: uppercase;
-}
+    .business2 .head img {
+        width: 40px;
+        border-radius: 25px;
+    }
 
-.business2 .head>div p {
-    font-size: 0.8rem;
-    font-weight: 600;
-}
+    .business2 .head>div {
+        text-align: center;
+        margin: 0 10px;
+        text-transform: uppercase;
+    }
 
-/* round shapped avatar postion */
-.business2 .avatar {
-    position: absolute;
-    width: 50%;
-    left: 50%;
-    top: 100px;
-    transform: translate(-50%);
-    text-align: center;
-}
+    .business2 .head>div p {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
 
-/* Round shapped avatar layout */
-.business2 .img {
-    /* background-color: #bfc2c7; */
-    /* padding: 15px; */
-    box-sizing: border-box;
-    border-radius: 25%;
-    border: 5px solid var(--dark);
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    /* round shapped avatar postion */
+    .business2 .avatar {
+        position: absolute;
+        width: 50%;
+        left: 50%;
+        top: 100px;
+        transform: translate(-50%);
+        text-align: center;
+    }
 
-.business2 .img img {
-    width: 80%;
-    padding: 10px 0;
-}
+    /* Round shapped avatar layout */
+    .business2 .img {
+        /* background-color: #bfc2c7; */
+        /* padding: 15px; */
+        box-sizing: border-box;
+        border-radius: 25%;
+        border: 5px solid var(--dark);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.business2 .avatar p:nth-of-type(1) {
-    text-transform: uppercase;
-    font-weight: 900;
-}
+    .business2 .img img {
+        width: 80%;
+        padding: 10px 0;
+    }
 
-.business2 .infos {
-    position: absolute;
-    bottom: 5%;
-    left: 5%;
+    .business2 .avatar p:nth-of-type(1) {
+        text-transform: uppercase;
+        font-weight: 900;
+    }
 
-}
+    .business2 .infos {
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
 
-.business2 .infos>div {
-    display: flex;
-    margin: 5px;
-}
+    }
 
-/* icon background color, pading and radius */
-.business2 .infos>div i {
-    width: 25px;
-    height: 25px;
-    /* margin-right: 10px; */
-    /* background-color: var(--red); */
-    /* background-color: antiquewhite; */
-    padding: 5px;
-    border-radius: 100px;
-}
+    .business2 .infos>div {
+        display: flex;
+        margin: 5px;
+    }
 
-/* ICON font size, margin and font weight */
-.business2 .infos>div p {
-    font-size: 0.8rem;
-    margin: 4px 0;
-    font-weight: 500;
-}
+    /* icon background color, pading and radius */
+    .business2 .infos>div i {
+        width: 25px;
+        height: 25px;
+        /* margin-right: 10px; */
+        /* background-color: var(--red); */
+        /* background-color: antiquewhite; */
+        padding: 5px;
+        border-radius: 100px;
+    }
 
-/* back  side picture fetch from URL and pic postion*/
-.business2 .back .top {
-    width: 100%;
-    box-sizing: border-box;
-    height: 65%;
-    /* background: url("https://raw.githubusercontent.com/MohcineDev/Business-Card/main/imgs/e.webp") center; */
-    /* background: url({{asset('frontend/img/card_img/backgournd3.jpg')}}) center; */
-background-size: cover;
-background-repeat: no-repeat;
-filter: contrast(160%);
-position: relative;
-}
+    /* ICON font size, margin and font weight */
+    .business2 .infos>div p {
+        font-size: 0.8rem;
+        margin: 4px 0;
+        font-weight: 500;
+    }
 
-/* back side picture color shade red */
-.business2 .back .top::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 10;
-    /* background: linear-gradient(rgba(71, 11, 11, 0.8), rgba(240, 8, 8, 0.5)); */
-    /* backgroud linear-gradient withot rgba */
-    /* background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); */
-}
+    /* back  side picture fetch from URL and pic postion*/
+    .business2 .back .top {
+        width: 100%;
+        box-sizing: border-box;
+        height: 65%;
+        /* background: url("https://raw.githubusercontent.com/MohcineDev/Business-Card/main/imgs/e.webp") center; */
+        /* background: url({{asset('frontend/img/card_img/backgournd3.jpg')}}) center; */
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: contrast(160%);
+        position: relative;
+    }
 
-.business2 .back .top {
-    position: relative;
-}
+    /* back side picture color shade red */
+    .business2 .back .top::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+        /* background: linear-gradient(rgba(71, 11, 11, 0.8), rgba(240, 8, 8, 0.5)); */
+        /* backgroud linear-gradient withot rgba */
+        /* background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); */
+    }
 
-.business2 .back .top div img {
-    width: 40px;
-    margin: 10px;
-}
+    .business2 .back .top {
+        position: relative;
+    }
 
-.business2 .back .top div {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 40%;
-    left: 19%;
-    z-index: 11;
-    filter: contrast(80%);
-    text-transform: uppercase;
-}
+    .business2 .back .top div img {
+        width: 40px;
+        margin: 10px;
+    }
 
-/* .qricon {
+    .business2 .back .top div {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 40%;
+        left: 19%;
+        z-index: 11;
+        filter: contrast(80%);
+        text-transform: uppercase;
+    }
+
+    /* .qricon {
     background-color: var(--dark);
     border-radius: 50%;
     width: 70%;
@@ -273,31 +278,44 @@ position: relative;
     justify-content: center;
 } */
 
-.qricon div {
-    /* background-color: var(--red); */
-    border-radius: 10%;
-    padding: 08px 10px 12px 10px;
+    .qricon div {
+        /* background-color: var(--red); */
+        border-radius: 10%;
+        padding: 08px 10px 12px 10px;
 
 
-    display: block;
-    height: 137px;
-    width: 139px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
-    /* margin-bottom: auto; */
-    background: white;
-}
-.margin-top-10{
-    margin-top: 10%;
-}
+        display: block;
+        height: 137px;
+        width: 139px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        /* margin-bottom: auto; */
+        background: white;
+    }
 
-/* .business2 .back>p {
+    .margin-top-10 {
+        margin-top: 10%;
+    }
+
+    /* .business2 .back>p {
     text-align: center;
     margin-top: 35%;
     font-weight: 10%;
     color: var(--red); 
 }*/
+
+    /* .back_image{
+
+width: 100%;
+box-sizing: border-box;
+height: 500px;
+background-size: cover;
+background-repeat: no-repeat;
+position: relative;
+border-radius: 20px;
+z-index: -1;
+} */
 </style>
 <div class="content-wrapper">
     <section class="content-header">
@@ -312,7 +330,7 @@ position: relative;
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8" id="download_able">
-                <div class="business2 mt-5" >
+                <div class="business2 mt-5 wantradius">
                     <div class="front" id="buttom_color">
                         <div class="red" id="upper_color">
                             <div class="head">
@@ -327,8 +345,7 @@ position: relative;
                         </div>
                         <div class="avatar">
                             <div>
-                                <img src="{{asset('card_images')}}/{{$card->image_path}}" alt=""
-                                    style="height: 120px; width: 120px; border-radius: 25%" />
+                                <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="" style="height: 120px; width: 120px; border-radius: 25%" />
                             </div>
                             <p class="mt-2">{{$card->name}}</p>
                             @if($type=="work")
@@ -384,7 +401,18 @@ position: relative;
                     <!-- Back side of the card -->
 
                     <div class="back" id="main_back_color">
+
+
                         <div class="top">
+                            <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" alt="" class="back_image" style="width: 100%;
+box-sizing: border-box;
+height: 330px;
+background-size: cover;
+background-repeat: no-repeat;
+position: relative;
+border-radius: 20px;
+border-bottom-left-radius: 0px 0px;
+border-bottom-right-radius: 0px 0px;">
                         </div>
                         <div class="qricon">
                             <a class="qr_anchor" href="/view_profile/{{$card->id}}">
@@ -415,15 +443,13 @@ position: relative;
                                 <h6 style="font-family:Palatino;font-weight:bold;">Back Color:</h6>
                             </div>
                             <div class="col-md-6">
-                                <input type="color" id="main_back_color_picker" name="main_back_color_picker"
-                                    value="#393939">
+                                <input type="color" id="main_back_color_picker" name="main_back_color_picker" value="#393939">
                             </div>
                             <div class="col-md-6 mt-1">
                                 <h6 style="font-family:Palatino;font-weight:bold;">Text Color:</h6>
                             </div>
                             <div class="col-md-6">
-                                <input type="color" id="text_color_picker" name="text_color_picker"
-                                    value="#eee">
+                                <input type="color" id="text_color_picker" name="text_color_picker" value="#ffffff">
                             </div>
                         </div>
                         <div class="row">
@@ -443,63 +469,62 @@ position: relative;
 @endsection
 @section('scripts')
 <script>
-const qrCode = new QRCodeStyling({
-    width: 120,
-    height: 120,
-    type: "canvas",
-    data: "{{route('view_profile', $card->id)}}",
-    image: "{{asset('frontend/img/qr_logo.svg')}}",
-    dotsOptions: {
-        color: "black",
-        type: "classy-rounded"
-    },
-    backgroundOptions: {
-        color: "#ffffff",
-    },
-    imageOptions: {
-        crossOrigin: "anonymous",
-        margin: 0,
-        imageSize: 0.7,
-    },
-    qrOptions: {
-        errorCorrectionLevel: "H",
-    },
-});
-
-qrCode.append(document.getElementById("qrcode"));
-
-var upper_color_picker = document.getElementById("upper_color_picker").value;
-var buttom_color_picker = document.getElementById("buttom_color_picker").value;
-var main_back_color_picker = document.getElementById("main_back_color_picker").value;
-var text_color_picker = document.getElementById("text_color_picker").value;
-var check_color = document.getElementById("check_color");
-check_color.addEventListener("click", function () {
-    upper_color_picker = document.getElementById("upper_color_picker").value;
-    buttom_color_picker = document.getElementById("buttom_color_picker").value;
-    main_back_color_picker = document.getElementById("main_back_color_picker").value;
-    text_color_picker = document.getElementById("text_color_picker").value;
-    document.getElementById("upper_color").style.background = upper_color_picker;
-    document.getElementById("buttom_color").style.background = buttom_color_picker;
-    document.getElementById("main_back_color").style.background = main_back_color_picker;
-    //change text color
-    document.getElementById("upper_color").style.color = text_color_picker;
-    document.getElementById("buttom_color").style.color = text_color_picker;
-
-});
-//download download-able
-$(document).ready(function () {
-  var element = $("#download_able");
-  $("#download").on('click', function () {
-    // qrCode.download({name: "my-qr-code.png"});
-    html2canvas(element, {
-      onrendered: function (canvas) {
-        var imgData = canvas.toDataURL("image/png");
-        var newData = imgData.replace(/^data:image\/png/, "data:application/octet-stream");
-        $("#download").attr("download", "your_image.png").attr("href", newData)
-        }
+    const qrCode = new QRCodeStyling({
+        width: 120,
+        height: 120,
+        type: "canvas",
+        data: "{{route('view_profile', $card->id)}}",
+        image: "{{asset('frontend/img/qr_logo.svg')}}",
+        dotsOptions: {
+            color: "black",
+            type: "classy-rounded"
+        },
+        backgroundOptions: {
+            color: "#ffffff",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 0,
+            imageSize: 0.7,
+        },
+        qrOptions: {
+            errorCorrectionLevel: "H",
+        },
     });
-  });
-});
 
+    qrCode.append(document.getElementById("qrcode"));
+
+    var upper_color_picker = document.getElementById("upper_color_picker").value;
+    var buttom_color_picker = document.getElementById("buttom_color_picker").value;
+    var main_back_color_picker = document.getElementById("main_back_color_picker").value;
+    var text_color_picker = document.getElementById("text_color_picker").value;
+    var check_color = document.getElementById("check_color");
+    check_color.addEventListener("click", function() {
+        upper_color_picker = document.getElementById("upper_color_picker").value;
+        buttom_color_picker = document.getElementById("buttom_color_picker").value;
+        main_back_color_picker = document.getElementById("main_back_color_picker").value;
+        text_color_picker = document.getElementById("text_color_picker").value;
+        document.getElementById("upper_color").style.background = upper_color_picker;
+        document.getElementById("buttom_color").style.background = buttom_color_picker;
+        document.getElementById("main_back_color").style.background = main_back_color_picker;
+        //change text color
+        document.getElementById("upper_color").style.color = text_color_picker;
+        document.getElementById("buttom_color").style.color = text_color_picker;
+
+    });
+    //download download-able
+    $(document).ready(function() {
+        var element = $("#download_able");
+        $("#download").on('click', function() {
+            // qrCode.download({name: "my-qr-code.png"});
+            html2canvas(element, {
+                onrendered: function(canvas) {
+                    var imgData = canvas.toDataURL("image/png");
+                    var newData = imgData.replace(/^data:image\/png/, "data:application/octet-stream");
+                    $("#download").attr("download", "your_image.png").attr("href", newData)
+                }
+            });
+        });
+    });
 </script>
 @endsection
