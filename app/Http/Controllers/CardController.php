@@ -96,4 +96,10 @@ class CardController extends Controller
 
         return response()->json(['success'=>'Card Updated Successfully']);
     }
+    public function customize_card_index($card_id,$type){
+        $card = Card::where('id', $card_id)->first();
+        $type=$type;
+        $data =compact('card','type');
+        return view('customize_card')->with($data);
+    }
 }

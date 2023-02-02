@@ -100,16 +100,17 @@
             <!-- kdjaskd -->
         </div>
         <div class="row mt-3">
-          <div class="col-md-4"></div>
-          <div class="col-md-4 d-flex justify-content-center">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 d-flex justify-content-center">
           <a href="#" id="update_card" class="btn btn-yellow"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
           
           <button type="button" class="btn btn-danger ml-4 delete-card"
                                             data-delete-card-id="{{ $card->id }}" data-bs-toggle="modal"
                                             data-bs-target="#deletecardmodal"><i class="fa-solid fa-trash-can"></i> Delete
                                         </button>
+        <a href="/customize_card_index/{{$card->id}}/{{$type}}"  class="btn btn-yellow ml-4"><i class="fa-brands fa-figma"></i> Customize Card</a>
           </div>
-          <div class="col-md-4"></div>
+          <div class="col-md-3"></div>
         </div>
     </div>
      <!-- Update Card Model -->

@@ -26,7 +26,6 @@ body {
     background-color: #ff9d00;
     border-radius: 10px;
     padding: 10px;
-    width: 100px;
     text-align: center;
     font-weight: bold;
   }
@@ -108,6 +107,7 @@ body {
 
 .business2 h1,
 .business2 h2,
+.business2 i,
 .business2 p {
     margin: 0;
     color: #eee;
@@ -189,7 +189,7 @@ body {
     width: 25px;
     height: 25px;
     /* margin-right: 10px; */
-    background-color: var(--red);
+    /* background-color: var(--red); */
     /* background-color: antiquewhite; */
     padding: 5px;
     border-radius: 100px;

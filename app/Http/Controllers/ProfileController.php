@@ -103,7 +103,7 @@ class ProfileController extends Controller
         }
         $mail = [
             "title" => "Check your profile",
-            "body" => 'Dear .'.$request->name.' your profile has been created successfully. Please Update your profile by clicking on the link below',
+            "body" => 'Dear "'.$request->name.'" your profile has been created successfully. Please Update your profile by clicking on the link below',
             "link" => route('edit_profile',$request->card_id),
         ];
         Mail::to($request->email)->send(new ExampleMailable($mail));

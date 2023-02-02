@@ -40,4 +40,5 @@ Route::get('/edit_profile/{card_id}', [ProfileController::class,'editProfile'])-
 Route::post('/update_profile', [ProfileController::class,'updateProfile'])->name('update_profile');
 Route::get('/faq', [FaqController::class,'faq'])->name('faq');
 Route::get('/send', [MailController::class, 'index'])->name('send-email');
+Route::get('/customize_card_index/{card_id}/{type}', [CardController::class, 'customize_card_index'])->name('customize_card_index');
 

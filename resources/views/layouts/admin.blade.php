@@ -46,6 +46,8 @@
     <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.7/dist/cropper.min.js"></script>  
     <script src="{{asset('frontend/amsify_suggestags/js/jquery.amsify.suggestags.js')}}"></script>
     <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script type="text/javascript">
     jQuery.validator.setDefaults({
         errorElement: 'span',
