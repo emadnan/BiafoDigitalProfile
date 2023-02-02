@@ -73,11 +73,11 @@
                             <div class="col-md-4">
                             </div>
                             <div class="col-md-2">
-                                <input type="radio" id="individual" class="form-check-input" name="user_type" value="individual" checked>
+                                <input type="radio" id="user_type" class="form-check-input" name="user_type" value="individual" checked>
                                 <label for="individual" class="text-white form-check-label">Individual</label><br>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" id="company" name="user_type"  class="form-check-input" value="company">
+                                <input type="radio" id="user_type" name="user_type"  class="form-check-input" value="company">
                                 <label for="company" class="text-white form-check-label">Company</label><br>
                             </div>
 

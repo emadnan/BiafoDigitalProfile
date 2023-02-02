@@ -13,7 +13,22 @@
         font-family: Roboto, Arial, Helvetica, sans-serif;
         position: relative;
     }
-
+    .back_image{
+        width: 100%;
+        box-sizing: border-box;
+        height: 330px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        border-radius: 20px;
+        border-bottom-left-radius: 0px 0px;
+        border-bottom-right-radius: 0px 0px;
+    }
+    .profile_img{
+        height: 120px;
+        width: 120px; 
+        border-radius: 25%
+    }
     .credit {
         position: absolute;
         top: 15px;
@@ -345,7 +360,7 @@ z-index: -1;
                         </div>
                         <div class="avatar">
                             <div>
-                                <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="" style="height: 120px; width: 120px; border-radius: 25%" />
+                                <img src="{{asset('card_images')}}/{{$card->image_path}}" class="profile_img" alt="" />
                             </div>
                             <p class="mt-2">{{$card->name}}</p>
                             @if($type=="work")
@@ -404,15 +419,7 @@ z-index: -1;
 
 
                         <div class="top">
-                            <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" alt="" class="back_image" style="width: 100%;
-box-sizing: border-box;
-height: 330px;
-background-size: cover;
-background-repeat: no-repeat;
-position: relative;
-border-radius: 20px;
-border-bottom-left-radius: 0px 0px;
-border-bottom-right-radius: 0px 0px;">
+                            <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" alt="" class="back_image">
                         </div>
                         <div class="qricon">
                             <a class="qr_anchor" href="/view_profile/{{$card->id}}">
