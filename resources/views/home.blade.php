@@ -239,7 +239,7 @@ $(document).ready(function() {
             //hide image crop modal
             $('#image_crop_modal').modal('hide');
             var data= new FormData();
-            data.append('_token','{{ csrf_token() }}');
+            // data.append('_token',$('meta[name="csrf-token"]').attr('content'));
             data.append('image',croppedImage);
             data.append('name',$('#name').val());
             data.append('email',$('#email').val());
@@ -260,6 +260,10 @@ $(document).ready(function() {
                 cache: false,
                 contentType: false,
                 processData: false,
+                //show loader till ajax request complete
+                beforeSend: function() {
+                    $('#loader').show();
+                },
                 success: function(data) {
                     //hide add card modal
                     $('#add_card_modal').modal('hide');
@@ -287,6 +291,7 @@ $(document).ready(function() {
             email: {
                 required: true,
                 email: true,
+                remote:'/validate_email'
             },
             phone: {
                 required: true,
@@ -311,6 +316,7 @@ $(document).ready(function() {
             email: {
                 required: "Please Enter Email",
                 email: "Please Enter Valid Email",
+                remote: "Email Already Exist"
             },
             phone: {
                 required: "Please Enter Phone",

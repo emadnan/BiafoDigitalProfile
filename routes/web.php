@@ -41,4 +41,6 @@ Route::post('/update_profile', [ProfileController::class,'updateProfile'])->name
 Route::get('/faq', [FaqController::class,'faq'])->name('faq');
 Route::get('/send', [MailController::class, 'index'])->name('send-email');
 Route::get('/customize_card_index/{card_id}/{type}', [CardController::class, 'customize_card_index'])->name('customize_card_index');
+Route::get('/validate_email',[CardController::class,'validate_email'])->name('validate_email');
+Route::get('/company_user_card/{card_id}/{type}',[CardController::class,'company_user_card'])->name('company_user_card');
 

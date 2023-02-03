@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Card Created</title>
+    <title>Profile Created</title>
 </head>
 <body>
     <h1>{{ $data['title'] }}</h1>

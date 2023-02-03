@@ -24,6 +24,15 @@
         border-bottom-left-radius: 0px 0px;
         border-bottom-right-radius: 0px 0px;
     }
+    .back_image_temp{
+        width: 70%;
+        box-sizing: border-box;
+        height: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        border-radius: 20px;
+    }
     .profile_img{
         height: 120px;
         width: 120px; 
@@ -344,7 +353,7 @@ z-index: -1;
     </section>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8" id="download_able">
+            <div class="col-md-7" id="download_able">
                 <div class="business2 mt-5 wantradius">
                     <div class="front" id="buttom_color">
                         <div class="red" id="upper_color">
@@ -419,7 +428,7 @@ z-index: -1;
 
 
                         <div class="top">
-                            <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" alt="" class="back_image">
+                            <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" id="back_image"alt="" class="back_image">
                         </div>
                         <div class="qricon">
                             <a class="qr_anchor" href="/view_profile/{{$card->id}}">
@@ -430,7 +439,7 @@ z-index: -1;
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" style="margin-top:70px;">
+            <div class="col-md-5" style="margin-top:70px;">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -458,6 +467,19 @@ z-index: -1;
                             <div class="col-md-6">
                                 <input type="color" id="text_color_picker" name="text_color_picker" value="#ffffff">
                             </div>
+                            <div class="col-md-12 mt-3">
+                                <h4 style="font-family:Palatino;font-weight:bold;">Background Images:</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="ml-2"> 
+                            <input type="radio" name="background_image" id="background_image" class="form-check-input" value="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" checked>
+                            <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" alt="" class="back_image_temp">
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                            <input type="radio" name="background_image" id="background_image" class="form-check-input" value="{{asset('frontend/img/backgroud_one.jpg')}}">
+                            <img src="{{asset('frontend/img/backgroud_one.jpg')}}" alt="" class="back_image_temp">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mt-3">
@@ -469,6 +491,10 @@ z-index: -1;
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
             </div>
         </div>
     </div>
@@ -517,6 +543,10 @@ z-index: -1;
         //change text color
         document.getElementById("upper_color").style.color = text_color_picker;
         document.getElementById("buttom_color").style.color = text_color_picker;
+        //back image change
+        var background_image = document.querySelector('input[name="background_image"]:checked').value;
+        document.getElementById("back_image").src=background_image;
+        //console.log(test);
 
     });
     //download download-able

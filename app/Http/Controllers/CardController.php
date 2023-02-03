@@ -6,6 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Card;
 use App\Models\Profile;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use App\Events\ExampleEmailEvent;
+use App\Mail\ExampleMailable;
+use App\Events\CardEmailEvent;
+use App\Mail\CardMailable;
+use Illuminate\Support\Facades\Mail;
 
 class CardController extends Controller
 {
@@ -21,7 +29,26 @@ class CardController extends Controller
         //     $image_path = time().$image->getClientOriginalName();
         //     $image->move(public_path().'/card_images/', $image_path);
         // }
-        $image_path = "";
+        $user_type=auth()->user()->user_type;
+        if($user_type=="company")
+        {
+            $company_user = new User();
+            $company_user->name = $request->name;
+            $company_user->email = $request->email;
+            $company_user->user_type='company_user';
+            $password = Str::random(8);
+            $company_user->password = Hash::make($password);
+            $company_user->save();
+            $mail = [
+                "title" => "Card Created",
+                "body" => "Your Card has been created. Please login with your email and password. Your Cridentials are: ",
+                "password" => $password,
+                "email" => $request->email,
+                'link' => 'http://localhost:8000/login'
+            ];
+            Mail::to($request->email)->send(new CardMailable($mail));
+            $company_user_id=$company_user->id;
+        }
         if ($request->image != null) {
             $image = $request->image;
             $extension = explode('/', explode(":", substr($image, 0, strpos($image, ";")))[1])[1];
@@ -36,6 +63,7 @@ class CardController extends Controller
         }
         $card = new Card();
         $card->user_id = auth()->user()->id;
+        $card->company_user_id = $company_user_id;
         $card->name = $request->name;
         $card->email = $request->email;
         $card->phone = $request->phone;
@@ -107,5 +135,23 @@ class CardController extends Controller
         $type = $type;
         $data = compact('card', 'type');
         return view('customize_card')->with($data);
+    }
+    public function validate_email(Request $request)
+    {
+        $user = User::where('email', $request->email)->first('email');
+        if ($user) {
+            $return = false;
+        } else {
+            $return = true;
+        }
+        echo json_encode($return);
+        exit;
+    }
+    public function company_user_card($card_id,$type)
+    {
+        $card = Card::where('id', $card_id)->first();
+        $type = $type;
+        $data = compact('card', 'type');
+        return view('company_user')->with($data);
     }
 }
