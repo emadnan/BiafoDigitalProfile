@@ -16,12 +16,7 @@
     <link href="{{asset('frontend/css/landing_page_styles.css')}}" rel="stylesheet" />
     <link href="{{ asset('frontend\css\bootstrap5.min.css') }}" rel="stylesheet">
 </head>
-<style>
-    html {
-        scroll-behavior: smooth;
-    }
 
-</style>
 
 <header>
     <!-- NAVBAR-BAR -->
@@ -144,198 +139,207 @@
                             </div>
                         </div>
                        <section id="general" style=" padding:10%;">
-                            
-                                
-                            <h1 class="heading-23">General</h1>
-                            <div id="Where-can-I-get-HiHello">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            Where can I get V.Card?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    You can download the V.Card app for free in the App Store and Google Play Store. You can also use V.Card on the web..
-                                </p>
-                            </div>
-                            <!-- <div class="wrapper">
-                                <div class="collapsible">
-                                    <input type="checkbox" id="collapsible-head">
-                                    <label for="collapsible-head">
-                                        Where can I get V.Card?
-                                    </label>
-
-                                    <div class="collapsible-text">
-                                        <h5>Where can I get V.Card?</h5>
-                                        <p>
-                                            You can download the V.Card app for free in the App Store and Google Play Store. You can also use V.Card on the web.
-                                        </p>
+                            <h1 class="heading-23">General</h1><br>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <h5>Where can I get V.Card?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        You can download the V.Card app for free in the App Store and Google Play Store. You can also use V.Card on the web.
                                     </div>
                                 </div>
-                            </div> -->
-                            <div id="How-much-does-BiafoTech-cost">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p class="bold-text-10">
-                                            How much does V.Card cost?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p class="text-block-12">
-                                    V.Card allows you to create and share your digital business card for free. For a more premium experience, we offer digital business card subscriptions with additional features for individuals and businesses.
-                                </p>
+                            </div>
+                            <br>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                            <h5>How much does V.Card cost?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        V.Card allows you to create and share your digital business card for free. For a more premium experience, we offer digital business card subscriptions with additional features for individuals and businesses.
+                                    </div>
                                 </div>
-                            <div id="Is-BiafoTech-active-on-social-media">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p class="bold-text-15">
-                                            Is V.Card active on social media?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p class="text-block-12">
-                                    Yes! We regularly post on our social platforms. Follow us to keep up with the latest product updates.
-                                </p>
-                            </div>
-                            <div id="Where-do-I-send-feedback?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p class="bold-text-15">
-                                            Where do I send feedback??
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p class="text-block-12">
-                                    We love hearing your comments; it’s how we make V.Card better! Please send your feedback to feedback@v.card.me, or fill out a form on our Contact Us page.
-                                </p>
-                            </div>
-                            <div id="I’m-interested-in-writing-about-BiafoTech-Who-should-I-contact">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p class="bold-text-15">
-                                            I’m interested in writing about V.Card. Who should I contact?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p class="text-block-12">
-                                    If you’d like to write an article about V.Card, please contact press@ V.Card.me, and we’ll get back to you as soon as we can. In the meantime,check out our Press page.
-                                </p>
-                            </div>
-                            <div id="I-found-a-bug!-What-should-I-do?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            I found a bug! What should I do?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p class="text-block-12">
-                                    If you found a bug, we’d love to fix it. Please contact support through:
-                                    <pre style="margin-left: -32%">
-                                         Web: Click on your name at the top right and select Contact Support.
-                                        -Mobile: Tap settings and scroll down to the Contact Support page
-                                        -Mail: Contact us at support@v.card.me
-                                    </pre>
-                                </p>
-                            </div>
-                                <div id="I-forgot-my-password-Can-I-reset-it">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p class="bold-text-10">
-                                            I forgot my password. Can I reset it?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p class="text-block-12">
-                                    You can reset your password here.
-                                </p>
+                            </div>  
+                            <br>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                            <h5>Is V.Card active on social media?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes! We regularly post on our social platforms. Follow us to keep up with the latest product updates.
+                                    </div>
                                 </div>
-
-                                <div id="I-forgot-my-password-Can-I-reset-it">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p class="bold-text-10">
-                                            Can I change the email associated with my account?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p class="text-block-12">
-                                    You can change your email address in your V.Card Settings. Remember, the email address associated with your account is used for logging in and for all V.Card communications.
-                                </p>
-
+                            </div>  
+                            <br>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                            <h5>Where do I send feedback??</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        We love hearing your comments; it’s how we make V.Card better! Please send your feedback to feedback@v.card.me, or fill out a form on our Contact Us page.
+                                    </div>
                                 </div>
-
-                                <div id="I-forgot-my-password-Can-I-reset-it">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p class="bold-text-10">
-                                            How do I delete my account?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p class="text-block-12">
-                                    If there’s anything we can do to improve your experience, please email us at feedback@v.card.me. If you want to delete your account, go to Settings, and under Account, tap Delete Account. Type “Delete” to confirm the account deletion.
-                                </p>
-
-                            </div>
-                                <div id="I-forgot-my-password-Can-I-reset-it">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p class="bold-text-10">
-                                        How do I unsubscribe from marketing emails?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p class="text-block-12">
-                                    If you’d like to stop receiving marketing emails, please click Unsubscribe at the bottom of the email to be removed from that list.
-                                    If you are a V.Card user, you will continue to receive certain product-related emails that are integral to the V.Card app.
-                                </p>
-
                             </div>
 
-                                <div id="I-forgot-my-password-Can-I-reset-it">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p class="bold-text-10">
-                                            How do I export my contacts?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p class="text-block-12">
-                                    You can export your contacts by going to the V.Card Settings, scrolling down to the Advanced section, and tapping Export Contacts. 
-                                    Your exported contacts will be emailed to you.
-                                </p>
+                            <br>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                            <h5>I’m interested in writing about V.Card. Who should I contact?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        If you’d like to write an article about V.Card, please contact press@ V.Card.me, and we’ll get back to you as soon as we can. In the meantime,check out our Press page.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingSeven">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                                            <h5>I found a bug! What should I do?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseSeven" class="accordion-collapse collapse show" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        If you found a bug, we’d love to fix it. Please contact support through:
+                                        <pre style="margin-left: -35%">
+                                             Web: Click on your name at the top right and select Contact Support.
+                                            -Mobile: Tap settings and scroll down to the Contact Support page
+                                            -Mail: Contact us at support@v.card.me
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingEight">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                                            <h5>I forgot my password. Can I reset it?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseEight" class="accordion-collapse collapse show" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        You can reset your password here.
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingNine">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                                            <h5>Can I change the email associated with my account?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseNine" class="accordion-collapse collapse show" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        You can change your email address in your V.Card Settings. Remember, the email address associated with your account is used for logging in and for all V.Card communications.
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                                <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTen">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
+                                            <h5>How do I delete my account?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseTen" class="accordion-collapse collapse show" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        YIf there’s anything we can do to improve your experience, please email us at feedback@v.card.me. If you want to delete your account, go to Settings, and under Account, tap Delete Account. Type “Delete” to confirm the account deletion.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <br>
+                                <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingEleven">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">
+                                            <h5>How do I unsubscribe from marketing emails?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseEleven" class="accordion-collapse collapse show" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        If you’d like to stop receiving marketing emails, please click Unsubscribe at the bottom of the email to be removed from that list.
+                                        If you are a V.Card user, you will continue to receive certain product-related emails that are integral to the V.Card app.
+                                    </div>
+                                </div>
+                            </div>
+
+                                <br>
+                                <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwelve">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">
+                                            <h5>How do I export my contacts?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseTwelve" class="accordion-collapse collapse show" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        You can export your contacts by going to the V.Card Settings, scrolling down to the Advanced section, and tapping Export Contacts. 
+                                        Your exported contacts will be emailed to you.
+                                    </div>
+                                </div>
+                            </div>
                                 
+                                <br>
+                                <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThirteen">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="true" aria-controls="collapseThirteen">
+                                            <h5>Why was V.Card created?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseThirteen" class="accordion-collapse collapse show" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        We strongly believe in our mission: helping people strengthen relationships and amplify the power of their network.
+                                    </div>
+                                </div>
                             </div>
-                                <div id="I-forgot-my-password-Can-I-reset-it">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p class="bold-text-10">
-                                            Why was V.Card created?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p class="text-block-12">
-                                    We strongly believe in our mission: helping people strengthen relationships and amplify the power of their network.
-                                </p>
-                            </div>
+
                         </section>
                         <section id="creating-your-digital-business-cards" style=" padding:10%;">
                             <h1 class="heading-23">Creating Your Digital Business Cards</h1>
-                            <div id="Can-I-make-digital-business-cards-without-downloading-the-app?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            Can I make digital business cards without downloading the app?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    You can seamlessly create and share digital business cards on your computer with the V.Card web app. Switching from the web to the iOS or 
-                                    Android app allows you to take your digital business card with you wherever you go. 
-                                </p>
+                            <!-- <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <h5>Can I make digital business cards without downloading the app?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        You can seamlessly create and share digital business cards on your computer with the V.Card web app. Switching from the web to the iOS or 
+                                    Android app allows you to take your digital business card with you wherever you go.
+                                    </div>
+                                </div>
                             </div>
+                            <br> -->
+                            
 
                                 <div id="How-many-digital-business-cards-can-I-create?">
                                 <h5>
@@ -666,3 +670,60 @@
     </section>
 </footer>
 </body>
+<style>
+    /*html {
+        scroll-behavior: smooth;
+    }*/
+     .panel-group .panel {
+        border-radius: 0;
+        box-shadow: none;
+        border-color: #EEEEEE;
+    }
+
+    .panel-default > .panel-heading {
+        padding: 0;
+        border-radius: 0;
+        color: #212121;
+        background-color: #FAFAFA;
+        border-color: #EEEEEE;
+    }
+
+    .panel-title {
+        font-size: 14px;
+    }
+
+    .panel-title > a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+    }
+
+    .more-less {
+        float: right;
+        color: #212121;
+    }
+
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #EEEEEE;
+    }
+
+    /* ----- v CAN BE DELETED v ----- */
+    /*body {
+        background-color: #26a69a;
+    }*/
+
+    .demo {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+</style>
+<script>
+    function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+    }
+    $('.panel-group').on('hidden.bs.collapse', toggleIcon);
+    $('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
