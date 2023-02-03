@@ -51,7 +51,7 @@ class LoginController extends Controller
             {
                 $is_profile=0;
             }
-            return redirect('/company_user_card/'.$card->id.'/work');
+            return redirect('/company_user_card/'.$card->id.'/work/'.$is_profile);
         }
 
     }
