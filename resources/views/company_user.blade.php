@@ -117,7 +117,7 @@
         border-radius: 25%;
         /* align-items: center; */
         /* min-height: 100vh; */
-        justify-content: left;
+        justify-content: center;
         /* margin-left: 70px; */
         /* background-color: #fdfdff; */
     }
@@ -353,7 +353,7 @@ z-index: -1;
     </section>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-7" id="download_able">
+            <div class="col-md-12" id="download_able">
                 <div class="business2 mt-5 wantradius">
                     <div class="front" id="buttom_color">
                         <div class="red" id="upper_color">
@@ -431,7 +431,7 @@ z-index: -1;
                             <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" id="back_image"alt="" class="back_image">
                         </div>
                         <div class="qricon">
-                            <a class="qr_anchor" href="/view_profile/{{$card->id}}">
+                            <a class="qr_anchor" id="qr_anchor">
                                 <div id="qrcode">
                                 </div>
                             </a>
@@ -439,14 +439,34 @@ z-index: -1;
                     </div>
                 </div>
             </div>
-            <div class="col-md-5" style="margin-top:70px;">
+            <!-- <div class="col-md-5" style="margin-top:70px;">
+            <input type="hidden" id="is_profile" value="{{$is_profile}}">
                 <div class="card">
                     <div class="card-body">
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
+   <!-- Profile Not Compelete Model -->
+    <div class="modal fade" id="profile_not_complete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+          <div class="modal-content">
+                <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabel">Profile Not Complete</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                 </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your Profile Not Added Yet Please Contact Admin</p>
+                </div>
+                <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+          </div>
+     </div>
+</div>
 </div>
 @endsection
 @section('scripts')
@@ -476,41 +496,28 @@ z-index: -1;
 
     qrCode.append(document.getElementById("qrcode"));
 
-    var upper_color_picker = document.getElementById("upper_color_picker").value;
-    var buttom_color_picker = document.getElementById("buttom_color_picker").value;
-    var main_back_color_picker = document.getElementById("main_back_color_picker").value;
-    var text_color_picker = document.getElementById("text_color_picker").value;
-    var check_color = document.getElementById("check_color");
-    check_color.addEventListener("click", function() {
-        upper_color_picker = document.getElementById("upper_color_picker").value;
-        buttom_color_picker = document.getElementById("buttom_color_picker").value;
-        main_back_color_picker = document.getElementById("main_back_color_picker").value;
-        text_color_picker = document.getElementById("text_color_picker").value;
-        document.getElementById("upper_color").style.background = upper_color_picker;
-        document.getElementById("buttom_color").style.background = buttom_color_picker;
-        document.getElementById("main_back_color").style.background = main_back_color_picker;
-        //change text color
-        document.getElementById("upper_color").style.color = text_color_picker;
-        document.getElementById("buttom_color").style.color = text_color_picker;
-        //back image change
-        var background_image = document.querySelector('input[name="background_image"]:checked').value;
-        document.getElementById("back_image").src=background_image;
-        //console.log(test);
-
-    });
     //download download-able
     $(document).ready(function() {
-        var element = $("#download_able");
-        $("#download").on('click', function() {
-            // qrCode.download({name: "my-qr-code.png"});
-            html2canvas(element, {
-                onrendered: function(canvas) {
-                    var imgData = canvas.toDataURL("image/png");
-                    var newData = imgData.replace(/^data:image\/png/, "data:application/octet-stream");
-                    $("#download").attr("download", "your_image.png").attr("href", newData)
-                }
-            });
-        });
+        // var element = $("#download_able");
+        // $("#download").on('click', function() {
+        //     // qrCode.download({name: "my-qr-code.png"});
+        //     html2canvas(element, {
+        //         onrendered: function(canvas) {
+        //             var imgData = canvas.toDataURL("image/png");
+        //             var newData = imgData.replace(/^data:image\/png/, "data:application/octet-stream");
+        //             $("#download").attr("download", "your_image.png").attr("href", newData)
+        //         }
+        //     });
+        // });
+        $('#qr_anchor').click(function() {
+        // alert('hello')
+        if($('#is_profile').val() == 1){
+            window.location.href = "{{route('view_profile', $card->id)}}";
+        }
+        else{
+            $('#profile_not_complete').modal('show');
+        }
+    });
     });
 </script>
 @endsection

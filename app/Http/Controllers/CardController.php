@@ -147,11 +147,12 @@ class CardController extends Controller
         echo json_encode($return);
         exit;
     }
-    public function company_user_card($card_id,$type)
+    public function company_user_card($card_id,$type,$is_profile)
     {
         $card = Card::where('id', $card_id)->first();
         $type = $type;
-        $data = compact('card', 'type');
+        $is_profile=$is_profile;
+        $data = compact('card', 'type','is_profile');
         return view('company_user')->with($data);
     }
 }
