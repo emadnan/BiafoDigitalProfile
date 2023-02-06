@@ -144,11 +144,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                             <h5>Where can I get V.Card?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         You can download the V.Card app for free in the App Store and Google Play Store. You can also use V.Card on the web.
                                     </div>
@@ -158,11 +158,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                             <h5>How much does V.Card cost?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         V.Card allows you to create and share your digital business card for free. For a more premium experience, we offer digital business card subscriptions with additional features for individuals and businesses.
                                     </div>
@@ -172,11 +172,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                             <h5>Is V.Card active on social media?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         Yes! We regularly post on our social platforms. Follow us to keep up with the latest product updates.
                                     </div>
@@ -186,11 +186,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingFour">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                             <h5>Where do I send feedback??</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         We love hearing your comments; it’s how we make V.Card better! Please send your feedback to feedback@v.card.me, or fill out a form on our Contact Us page.
                                     </div>
@@ -201,11 +201,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingFive">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                             <h5>I’m interested in writing about V.Card. Who should I contact?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         If you’d like to write an article about V.Card, please contact press@ V.Card.me, and we’ll get back to you as soon as we can. In the meantime,check out our Press page.
                                     </div>
@@ -216,11 +216,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingSeven">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                             <h5>I found a bug! What should I do?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseSeven" class="accordion-collapse collapse show" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         If you found a bug, we’d love to fix it. Please contact support through:
                                         <pre style="margin-left: -35%">
@@ -236,11 +236,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingEight">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                                             <h5>I forgot my password. Can I reset it?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseEight" class="accordion-collapse collapse show" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         You can reset your password here.
                                     </div>
@@ -250,11 +250,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingNine">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                                             <h5>Can I change the email associated with my account?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseNine" class="accordion-collapse collapse show" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         You can change your email address in your V.Card Settings. Remember, the email address associated with your account is used for logging in and for all V.Card communications.
                                     </div>
@@ -264,11 +264,11 @@
                                 <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingTen">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
                                             <h5>How do I delete my account?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseTen" class="accordion-collapse collapse show" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                                <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         YIf there’s anything we can do to improve your experience, please email us at feedback@v.card.me. If you want to delete your account, go to Settings, and under Account, tap Delete Account. Type “Delete” to confirm the account deletion.
                                     </div>
@@ -279,11 +279,11 @@
                                 <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingEleven">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
                                             <h5>How do I unsubscribe from marketing emails?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseEleven" class="accordion-collapse collapse show" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+                                <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         If you’d like to stop receiving marketing emails, please click Unsubscribe at the bottom of the email to be removed from that list.
                                         If you are a V.Card user, you will continue to receive certain product-related emails that are integral to the V.Card app.
@@ -295,11 +295,11 @@
                                 <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingTwelve">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
                                             <h5>How do I export my contacts?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseTwelve" class="accordion-collapse collapse show" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+                                <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         You can export your contacts by going to the V.Card Settings, scrolling down to the Advanced section, and tapping Export Contacts. 
                                         Your exported contacts will be emailed to you.
@@ -311,11 +311,11 @@
                                 <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingThirteen">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="true" aria-controls="collapseThirteen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
                                             <h5>Why was V.Card created?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseThirteen" class="accordion-collapse collapse show" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+                                <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         We strongly believe in our mission: helping people strengthen relationships and amplify the power of their network.
                                     </div>
@@ -328,11 +328,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingfourteen">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefourteen" aria-expanded="true" aria-controls="collapsefourteen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefourteen" aria-expanded="false" aria-controls="collapsefourteen">
                                             <h5>Can I make digital business cards without downloading the app?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsefourteen" class="accordion-collapse collapse show" aria-labelledby="headingfourteen" data-bs-parent="#accordionExample">
+                                <div id="collapsefourteen" class="accordion-collapse collapse" aria-labelledby="headingfourteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         You can seamlessly create and share digital business cards on your computer with the V.Card web app. Switching from the web to the iOS or 
                                     Android app allows you to take your digital business card with you wherever you go.
@@ -343,11 +343,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingfifteen">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefifteen" aria-expanded="true" aria-controls="collapsefifteen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefifteen" aria-expanded="false" aria-controls="collapsefifteen">
                                             <h5>How many digital business cards can I create?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsefifteen" class="accordion-collapse collapse show" aria-labelledby="headingfifteen" data-bs-parent="#accordionExample">
+                                <div id="collapsefifteen" class="accordion-collapse collapse" aria-labelledby="headingfifteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         You can make up to four different digital business cards with a free account. If you want 
                                         more than that,you’ll need to upgrade to a subscription plan.
@@ -359,11 +359,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingsixteen">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesixteen" aria-expanded="true" aria-controls="collapsesixteen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesixteen" aria-expanded="false" aria-controls="collapsesixteen">
                                             <h5>What different cards do you recommend?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsesixteen" class="accordion-collapse collapse show" aria-labelledby="headingsixteen" data-bs-parent="#accordionExample">
+                                <div id="collapsesixteen" class="accordion-collapse collapse" aria-labelledby="headingsixteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         Everyone has their preferences, but we recommend having cards 
                                         for personal use and Company workspace.
@@ -375,11 +375,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingseventeen">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseventeen" aria-expanded="true" aria-controls="collapseseventeen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseventeen" aria-expanded="false" aria-controls="collapseseventeen">
                                             <h5>What information should I put on my business cards?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseseventeen" class="accordion-collapse collapse show" aria-labelledby="headingseventeen" data-bs-parent="#accordionExample">
+                                <div id="collapseseventeen" class="accordion-collapse collapse" aria-labelledby="headingseventeen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         You can add your phone number(s), email(s), any social media handles, 
                                         your company logo, payment, messaging apps, and more.
@@ -391,11 +391,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingeighteen">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseeighteen" aria-expanded="true" aria-controls="collapseeighteen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseeighteen" aria-expanded="false" aria-controls="collapseeighteen">
                                             <h5>What is the ideal image size?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseeighteen" class="accordion-collapse collapse show" aria-labelledby="headingeighteen" data-bs-parent="#accordionExample">
+                                <div id="collapseeighteen" class="accordion-collapse collapse" aria-labelledby="headingeighteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         The ideal size of image is 25 kb.
                                     </div>
@@ -406,11 +406,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingnineteen">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsenineteen" aria-expanded="true" aria-controls="collapsenineteen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsenineteen" aria-expanded="false" aria-controls="collapsenineteen">
                                             <h5>Is it okay to put social media handles on my digital business card? Is that unprofessional?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsenineteen" class="accordion-collapse collapse show" aria-labelledby="headingnineteen" data-bs-parent="#accordionExample">
+                                <div id="collapsenineteen" class="accordion-collapse collapse" aria-labelledby="headingnineteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         Sharing social media pages is a great networking tool to maintain your connections.
                                     </div>
@@ -421,11 +421,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingtwenty">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwenty" aria-expanded="true" aria-controls="collapsetwenty">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwenty" aria-expanded="false" aria-controls="collapsetwenty">
                                             <h5>How do I change the color of my digital business cards?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsetwenty" class="accordion-collapse collapse show" aria-labelledby="headingtwenty" data-bs-parent="#accordionExample">
+                                <div id="collapsetwenty" class="accordion-collapse collapse" aria-labelledby="headingtwenty" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         The free version of V.Card gives you five colors to choose from while customizing your card. 
                                         If you want to customize your card's color(s) further, you’ll need to sign up for one of our
@@ -438,11 +438,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingtwentyone">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyone" aria-expanded="true" aria-controls="collapsetwentyone">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyone" aria-expanded="false" aria-controls="collapsetwentyone">
                                             <h5>Any recommendations on what I should write in my business card headline?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsetwentyone" class="accordion-collapse collapse show" aria-labelledby="headingtwentyone" data-bs-parent="#accordionExample">
+                                <div id="collapsetwentyone" class="accordion-collapse collapse" aria-labelledby="headingtwentyone" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         It depends on the type of card you’re creating. If it’s a networking card, 
                                         perhaps list out your core skills and work history.If it’s a personal card, 
@@ -456,11 +456,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingtwentytwo">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentytwo" aria-expanded="true" aria-controls="collapsetwentytwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentytwo" aria-expanded="false" aria-controls="collapsetwentytwo">
                                             <h5>How do I choose a different card design?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsetwentytwo" class="accordion-collapse collapse show" aria-labelledby="headingtwentytwo" data-bs-parent="#accordionExample">
+                                <div id="collapsetwentytwo" class="accordion-collapse collapse" aria-labelledby="headingtwentytwo" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                             Choose from our three distinct design options with a V.Card Professional, 
                                             Business, or Enterprise plan. At this time, card designs can only be updated 
@@ -479,11 +479,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingtwentythree">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentythree" aria-expanded="true" aria-controls="collapsetwentythree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentythree" aria-expanded="false" aria-controls="collapsetwentythree">
                                             <h5>How do I share my card?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsetwentythree" class="accordion-collapse collapse show" aria-labelledby="headingtwentythree" data-bs-parent="#accordionExample">
+                                <div id="collapsetwentythree" class="accordion-collapse collapse" aria-labelledby="headingtwentythree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         There are a few ways to share your digital business card. We recommend sharing it using 
                                         your unique QR code, but you can also text, email, and share the link to your card. To 
@@ -497,11 +497,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingtwentyfour">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyfour" aria-expanded="true" aria-controls="collapsetwentyfour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyfour" aria-expanded="false" aria-controls="collapsetwentyfour">
                                             <h5>Can I share my HiHello card with someone who doesn’t have the app?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsetwentyfour" class="accordion-collapse collapse show" aria-labelledby="headingtwentyfour" data-bs-parent="#accordionExample">
+                                <div id="collapsetwentyfour" class="accordion-collapse collapse" aria-labelledby="headingtwentyfour" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         Yes! You can share your  v.card with anyone—even if they don’t 
                                         have the app—via your QR code, email, text message, and link sharing. 
@@ -515,11 +515,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingtwentyfive">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyfive" aria-expanded="true" aria-controls="collapsetwentyfive">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyfive" aria-expanded="false" aria-controls="collapsetwentyfive">
                                             <h5>How do I share my card using my QR code?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsetwentyfive" class="accordion-collapse collapse show" aria-labelledby="headingtwentyfive" data-bs-parent="#accordionExample">
+                                <div id="collapsetwentyfive" class="accordion-collapse collapse" aria-labelledby="headingtwentyfive" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         Every digital business card has its unique QR code. Double-tap
                                         the card you’d like to share and show your V.Card QR code to the
@@ -533,12 +533,12 @@
 
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingtwentysix">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentysix" aria-expanded="true" aria-controls="collapsetwentysix">
+                                    <h2 class="accordion-header collapsed" id="headingtwentysix">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentysix" aria-expanded="false" aria-controls="collapsetwentysix">
                                             <h5>What-is-a-QR-code?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsetwentysix" class="accordion-collapse collapse show" aria-labelledby="headingtwentysix" data-bs-parent="#accordionExample">
+                                <div id="collapsetwentysix" class="accordion-collapse collapse" aria-labelledby="headingtwentysix" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         QR stands for Quick Response. A QR code acts like a barcode you’d see at a grocery store. 
                                         When scanned with a smartphone, it’ll pull up the encoded information.
@@ -555,11 +555,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingtwentyseven">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyseven" aria-expanded="true" aria-controls="collapsetwentyseven">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyseven" aria-expanded="false" aria-controls="collapsetwentyseven">
                                             <h5>What is a digital business card address book?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsetwentyseven" class="accordion-collapse collapse show" aria-labelledby="headingtwentyseven" data-bs-parent="#accordionExample">
+                                <div id="collapsetwentyseven" class="accordion-collapse collapse" aria-labelledby="headingtwentyseven" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         A digital business card address book is an electronic database that stores
                                         and organizes digital business cards.
@@ -571,11 +571,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingtwentyeight">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyeight" aria-expanded="true" aria-controls="collapsetwentyeight">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyeight" aria-expanded="false" aria-controls="collapsetwentyeight">
                                             <h5>How do I add digital business cards to my address book?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsetwentyeight" class="accordion-collapse collapse show" aria-labelledby="headingtwentyeight" data-bs-parent="#accordionExample">
+                                <div id="collapsetwentyeight" class="accordion-collapse collapse" aria-labelledby="headingtwentyeight" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         You can add digital business cards to your address book by scanning QR Code, 
                                         it will Show you the profile of user.
@@ -587,11 +587,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingtwentynine">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentynine" aria-expanded="true" aria-controls="collapsetwentynine">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentynine" aria-expanded="false" aria-controls="collapsetwentynine">
                                             <h5>Can I store multiple digital business cards in one address book?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsetwentynine" class="accordion-collapse collapse show" aria-labelledby="headingtwentynine" data-bs-parent="#accordionExample">
+                                <div id="collapsetwentynine" class="accordion-collapse collapse" aria-labelledby="headingtwentynine" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         Yes, most V.Card business card address books allow you to store multiple 
                                         digital business cards in Address Book.
@@ -603,11 +603,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingthirty">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirty" aria-expanded="true" aria-controls="collapsethirty">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirty" aria-expanded="false" aria-controls="collapsethirty">
                                             <h5>Can I search for a specific digital business card in my address book?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsethirty" class="accordion-collapse collapse show" aria-labelledby="headingthirty" data-bs-parent="#accordionExample">
+                                <div id="collapsethirty" class="accordion-collapse collapse" aria-labelledby="headingthirty" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                     Yes, V.card digital business card address books have a search feature that allows you 
                                     to search for a specific contact by name, company, or other information.
@@ -624,11 +624,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingthirtyOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirtyOne" aria-expanded="true" aria-controls="collapsethirtyOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirtyOne" aria-expanded="false" aria-controls="collapsethirtyOne">
                                             <h5>How can i add virtual background?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsethirtyOne" class="accordion-collapse collapse show" aria-labelledby="headingthirtyOne" data-bs-parent="#accordionExample">
+                                <div id="collapsethirtyOne" class="accordion-collapse collapse" aria-labelledby="headingthirtyOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         When you are designing your digital business card, you can add an image that you would like to use as your background.
                                     </div>
@@ -639,11 +639,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingthirtytwo">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirtytwo" aria-expanded="true" aria-controls="collapsethirtytwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirtytwo" aria-expanded="false" aria-controls="collapsethirtytwo">
                                             <h5>Can i upload an image?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsethirtytwo" class="accordion-collapse collapse show" aria-labelledby="headingthirtytwo" data-bs-parent="#accordionExample">
+                                <div id="collapsethirtytwo" class="accordion-collapse collapse" aria-labelledby="headingthirtytwo" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         Yes you can upload an image while creating your digital business cards.
                                     </div>
@@ -654,11 +654,11 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingthirtythree">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirtythree" aria-expanded="true" aria-controls="collapsethirtythree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirtythree" aria-expanded="false" aria-controls="collapsethirtythree">
                                             <h5>What was the image size?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapsethirtythree" class="accordion-collapse collapse show" aria-labelledby="headingthirtythree" data-bs-parent="#accordionExample">
+                                <div id="collapsethirtythree" class="accordion-collapse collapse" aria-labelledby="headingthirtythree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                     The ideal size of image is 2 Mb.
                                     </div>
