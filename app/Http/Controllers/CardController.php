@@ -53,7 +53,8 @@ class CardController extends Controller
         }
         if ($request->image != null) {
             $image = $request->image;
-            $extension = explode('/', explode(":", substr($image, 0, strpos($image, ";")))[1])[1];
+            // $extension = explode('/', explode(":", substr($image, 0, strpos($image, ";")))[1])[1];
+            $extension = "png";
             // print_r($image);
             // exit;
             $replace = substr($image, 0, strpos($image, ',') + 1);
