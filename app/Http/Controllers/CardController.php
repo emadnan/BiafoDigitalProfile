@@ -139,9 +139,14 @@ class CardController extends Controller
     public function validate_email(Request $request)
     {
         $user = User::where('email', $request->email)->first('email');
+        $user_type=auth()->user()->user_type;
         if ($user) {
             $return = false;
         } else {
+            $return = true;
+        }
+        if($user_type == "individual")
+        {
             $return = true;
         }
         echo json_encode($return);
