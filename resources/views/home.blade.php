@@ -270,7 +270,7 @@ $(document).ready(function() {
                     //show success message
                     toastr.success('Card Added Successfully');
                     //reload page
-                    location.reload();
+                    // location.reload();
                 },
                 error: function(data) {
                     //show error message

@@ -30,6 +30,8 @@ class CardController extends Controller
         //     $image->move(public_path().'/card_images/', $image_path);
         // }
         $user_type=auth()->user()->user_type;
+        $image_path = "";
+        $company_user_id =null;
         if($user_type=="company")
         {
             $company_user = new User();
@@ -52,7 +54,7 @@ class CardController extends Controller
         if ($request->image != null) {
             $image = $request->image;
             $extension = explode('/', explode(":", substr($image, 0, strpos($image, ";")))[1])[1];
-            // print_r($extension);
+            // print_r($image);
             // exit;
             $replace = substr($image, 0, strpos($image, ',') + 1);
             $image = str_replace($replace, "", $image);
