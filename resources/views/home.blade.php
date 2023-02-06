@@ -284,6 +284,7 @@ $(document).ready(function() {
         rules: {
             image: {
                 required: true,
+                extension: "jpg|jpeg|png",
             },
             name: {
                 required: true,
@@ -309,6 +310,7 @@ $(document).ready(function() {
         messages: {
             image: {
                 required: "Please Select Image",
+                extension: "Please Select Valid Image",
             },
             name: {
                 required: "Please Enter Name",
