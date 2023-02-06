@@ -106,6 +106,7 @@ html {
                             <h1 style="font-family:Palatino;font-weight:bold;">{{$profile->name}}</h1>
                             <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-map-location-dot"></i>&nbsp; {{$profile->address}}, {{$profile->city}}, {{$profile->country}}</h5>
                             <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-envelope"></i>&nbsp; {{$profile->email}}</h5>
+                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-regular fa-envelope"></i>&nbsp; {{$profile->personal_email}}</h5>
                             <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-mobile-button"></i>&nbsp; {{$profile->phone}}</h5>
                             <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-cake-candles"></i>&nbsp; {{$profile->dob}}</h5>
                             <div class="border-top my-3"></div>

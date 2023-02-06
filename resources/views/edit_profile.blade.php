@@ -165,6 +165,13 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
+                                <label for="personal_email">Personal Email:</label>
+                                <input type="email" class="form-control" id="personal_email" name="personal_email"
+                                    placeholder="Enter Your Personal Email">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
                                 <label for="phone">Phone No:</label>
                                 <input type="phone" class="form-control" id="phone" name="phone"
                                     placeholder="Enter Your Phone No" value="{{$profile->phone}}">
@@ -198,10 +205,10 @@
                                     placeholder="Enter Your Date of Birth" value="{{$profile->dob}}">
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="description">Description:</label>
-                                <textarea class="form-control" id="description" name="description" rows="1"
+                                <textarea class="form-control" id="description" name="description" rows="3"
                                     placeholder="Enter Your Description">{{$profile->description}}</textarea>
                             </div>
                         </div>
@@ -598,6 +605,10 @@
                     required: true,
                     email: true
                 },
+                personal_email: {
+                    required: true,
+                    email: true
+                },
                 phone: {
                     required: true,
                     minlength: 11,
@@ -677,6 +688,10 @@
                 },
                 email: {
                     required: "Please enter your email",
+                    email: "Please enter a valid email address",
+                },
+                personal_email: {
+                    required: "Please enter your personal email",
                     email: "Please enter a valid email address",
                 },
                 phone: {

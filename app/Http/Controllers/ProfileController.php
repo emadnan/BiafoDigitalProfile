@@ -101,12 +101,15 @@ class ProfileController extends Controller
                 $experience_loop++;
             }
         }
+        if(auth()->user()->user_type == 'company')
+        {
         $mail = [
             "title" => "Check your profile",
             "body" => 'Dear "'.$request->name.'" your profile has been created successfully. Please Update your profile by clicking on the link below',
             "link" => route('edit_profile',$request->card_id),
         ];
         Mail::to($request->email)->send(new ExampleMailable($mail));
+        }
 
         return redirect('view_card/'.$request->card_id.'/'.$type);
 
@@ -154,6 +157,7 @@ class ProfileController extends Controller
         // $profile->user_id = auth()->user()->id;
         $profile->name = $request->name;
         $profile->email = $request->email;
+        $profile->personal_email = $request->personal_email;
         $profile->phone = $request->phone;
         $profile->address = $request->address;
         $profile->city = $request->city;
