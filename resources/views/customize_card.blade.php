@@ -13,6 +13,27 @@ body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     position: relative;
 }
+.input-hidden {
+  /* For Hiding Radio Button Circles */
+  position: absolute;
+  left: -9999px;
+}
+
+input[type="radio"]:checked + label > img {
+  border: 1px solid #d12229;
+  box-shadow: 0 0 3px 3px #d12229;
+}
+
+input[type="radio"] + label > img {
+  border: 1px rgb(0, 0, 0);
+  padding: 10px;
+
+  transition: 500ms all;
+}
+
+input[type="radio"]:checked + label > img {
+  transform: rotateZ(-10deg) rotateX(10deg);
+}
 
 .back_image {
     width: 100%;
@@ -492,25 +513,33 @@ z-index: -1;
             <div class="col-md-12 mt-2  ml-4">
                 <h4 style="font-family:Palatino;font-weight:bold;">Background Images:</h4>
             </div>
-            <div class="col-md-3">
-                <input type="radio" name="background_image" id="background_image" class="form-check-input"
+            <div class="col-md-2">
+                <input type="radio" name="background_image" id="background_image1" class="input-hidden"
                     value="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" checked>
+                    <label for="background_image1">
                 <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" alt="" class="back_image_temp">
+                </label>
             </div>
-            <div class="col-md-3">
-                <input type="radio" name="background_image" id="background_image" class="form-check-input"
+            <div class="col-md-2">
+                <input type="radio" name="background_image" id="background_image2" class="input-hidden"
                     value="{{asset('frontend/img/backgroud_one.jpg')}}">
+                    <label for="background_image2">
                 <img src="{{asset('frontend/img/backgroud_one.jpg')}}" alt="" class="back_image_temp">
+                </label>
             </div>
-            <div class="col-md-3">
-                <input type="radio" name="background_image" id="background_image" class="form-check-input"
+            <div class="col-md-2">
+                <input type="radio" name="background_image" id="background_image3" class="input-hidden"
                     value="{{asset('frontend/img/backgroud_three.jpg')}}">
+                    <label for="background_image3">
                 <img src="{{asset('frontend/img/backgroud_three.jpg')}}" alt="" class="back_image_temp">
+                </label>
             </div>
-            <div class="col-md-3">
-                <input type="radio" name="background_image" id="background_image" class="form-check-input"
+            <div class="col-md-2">
+                <input type="radio" name="background_image" id="background_image4" class="input-hidden"
                     value="{{asset('frontend/img/backgroud_four.jpg')}}">
+                    <label for="background_image4">
                 <img src="{{asset('frontend/img/backgroud_four.jpg')}}" alt="" class="back_image_temp">
+                </label>
             </div>
         </div>
     </div>
