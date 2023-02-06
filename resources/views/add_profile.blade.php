@@ -530,5 +530,11 @@ $(document).ready(function() {
         }
     });
 });
+// when form submit show loader
+$(document).ready(function() {
+    $('#add_profile').submit(function() {
+        $('#loader').show();
+    });
+});
 </script>
 @endsection

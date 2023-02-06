@@ -5,9 +5,10 @@
         <section class="content-header">
             <div class='container-fluid'>
                 <div class='row'>
-                    <div class='col-md-8'></div>
+                    <div class='col-md-8'>
+                    </div>
                     <div class='col-md-4'>
-                        <a type="button" href="#" id="add_card" class="anchor btn btn-primary float-right">
+                        <a type="button"  id="add_card" class="anchor btn btn-primary float-right">
                             Add Card
                         </a>
                     </div>
@@ -80,13 +81,13 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Full Name:</label>
-                            <input type="text" class="form-control" name="name" id="name" value="{{Auth::user()->name}}"
+                            <input type="text" class="form-control" name="name" id="name"
                                 placeholder="Enter Full Name">
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
                             <input type="email" class="form-control" name="email" id="email"
-                                value="{{Auth::user()->email}}" placeholder="Enter Email">
+                                 placeholder="Enter Email">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone:</label>
@@ -230,6 +231,8 @@ $(document).ready(function() {
     });
     //save button click
     saveButton.addEventListener("click", () => {
+        document.querySelector("body").style.visibility = "hidden";
+        document.querySelector("#loader").style.visibility = "visible";
         //if form validate true then save data
         if ($('#add_card_form').valid()) {
             //get cropped image
