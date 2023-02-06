@@ -113,7 +113,7 @@
                 <div class="col-lg-12 mb-1">
                     <div class="card h-100 shadow-lg">
                         <div>
-                            <h1 style="margin-left: 30%; margin-top: 50px; border: 20px; border-color: black;">Frequently Asked Questions</h1>
+                            <h1 style="margin-left: 30%; margin-top: 50px; border: 20px; border-color: black;"><b>Frequently Asked Questions</b></h1>
 
                             <br><br>
                                 
@@ -121,25 +121,26 @@
                             
                                 <h2>Contents</h2>
                                 <p>
-                                    <a style="text-decoration:none;" href="#general">General</a>
+                                    <a style="text-decoration:none;" href="#general"><h5>General</h5></a>
                                 </p>
                                 <p>
-                                    <a style="text-decoration:none;" href="#creating-your-digital-business-cards">Creating your digital business cards</a>
+                                    <a style="text-decoration:none;" href="#creating-your-digital-business-cards"><h5>Creating your digital business cards</h5></a>
                                 </p>
                                 <p>
-                                    <a style="text-decoration:none;" href="#sharing-your-digital-business-cards">Sharing your digital business cards</a>
+                                    <a style="text-decoration:none;" href="#sharing-your-digital-business-cards"><h5>Sharing your digital business cards</h5></a>
                                 </p>
                                 <p>
-                                    <a style="text-decoration:none;" href="#address-Book">Address Book</a>
+                                    <a style="text-decoration:none;" href="#address-Book"><h5>Address Book</h5></a>
                                 </p>
                                 <p>
-                                    <a style="text-decoration:none;" href="#virtual-backgrounds">Virtual backgrounds</a>
+                                    <a style="text-decoration:none;" href="#virtual-backgrounds">
+                                        <h5>Virtual backgrounds</h5></a>
                                 </p>
                             
                             </div>
                         </div>
-                       <section id="general" style=" padding:10%;">
-                            <h1 class="heading-23">General</h1><br>
+                       <section id="general" style=" padding:10%; background-color: ;">
+                            <h1 class="heading-23"><b>General</b></h1><br>
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
@@ -323,326 +324,349 @@
 
                         </section>
                         <section id="creating-your-digital-business-cards" style=" padding:10%;">
-                            <h1 class="heading-23">Creating Your Digital Business Cards</h1>
-                            <!-- <div class="accordion" id="accordionExample">
+                            <h1 class="heading-23"><b>Creating Your Digital Business Cards</b></h1>
+                            <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <h2 class="accordion-header" id="headingfourteen">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefourteen" aria-expanded="true" aria-controls="collapsefourteen">
                                             <h5>Can I make digital business cards without downloading the app?</h5>
                                         </button>
                                     </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div id="collapsefourteen" class="accordion-collapse collapse show" aria-labelledby="headingfourteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         You can seamlessly create and share digital business cards on your computer with the V.Card web app. Switching from the web to the iOS or 
                                     Android app allows you to take your digital business card with you wherever you go.
                                     </div>
                                 </div>
                             </div>
-                            <br> -->
-                            
-
-                                <div id="How-many-digital-business-cards-can-I-create?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            How many digital business cards can I create?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    You can make up to four different digital business cards with a free account. If you want 
-                                    more than that,you’ll need to upgrade to a subscription plan.
-                                </p>
-                            </div>
-                                <div id="What-different-cards-do-you-recommend?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            What different cards do you recommend?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p>
-                                    Everyone has their preferences, but we recommend having cards 
-                                    for personal use and Company workspace.
-                                </p>
-                            </div>
-                                <div id="What-information-should-I-put-on-my-business-cards?">
-
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            What information should I put on my business cards?
-
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    You can add your phone number(s), email(s), any social media handles, 
-                                    your company logo, payment, messaging apps, and more.
-                                </p>
-
+                            <br>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingfifteen">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefifteen" aria-expanded="true" aria-controls="collapsefifteen">
+                                            <h5>How many digital business cards can I create?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsefifteen" class="accordion-collapse collapse show" aria-labelledby="headingfifteen" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        You can make up to four different digital business cards with a free account. If you want 
+                                        more than that,you’ll need to upgrade to a subscription plan.
+                                    </div>
                                 </div>
-
-                                <div id="What-is-the-ideal-image-size?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            What is the ideal image size?
-
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    The ideal size of image is 25 kb.
-                                </p>
-
                             </div>
-                                <div id="Is-it-okay-to-put-social-media-handles-on-my-digital-business-card?-Is-that-unprofessional?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            Is it okay to put social media handles on my digital business card? Is that unprofessional?
+                            <br>
 
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    Sharing social media pages is a great networking tool to maintain your connections.
-                                </p>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingsixteen">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesixteen" aria-expanded="true" aria-controls="collapsesixteen">
+                                            <h5>What different cards do you recommend?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsesixteen" class="accordion-collapse collapse show" aria-labelledby="headingsixteen" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Everyone has their preferences, but we recommend having cards 
+                                        for personal use and Company workspace.
+                                    </div>
+                                </div>
                             </div>
+                            <br>
 
-                                <div id="How-do-I-change-the-color-of-my-digital-business-cards?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            How do I change the color of my digital business cards?
-
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    The free version of V.Card gives you five colors to choose from while customizing your card. 
-                                    If you want to customize your card's color(s) further, you’ll need to sign up for one of our
-                                    digital business card subscription plans.
-                                </p>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingseventeen">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseventeen" aria-expanded="true" aria-controls="collapseseventeen">
+                                            <h5>What information should I put on my business cards?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseseventeen" class="accordion-collapse collapse show" aria-labelledby="headingseventeen" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        You can add your phone number(s), email(s), any social media handles, 
+                                        your company logo, payment, messaging apps, and more.
+                                    </div>
+                                </div>
                             </div>
+                            <br>
 
-                                <div id="Any-recommendations-on-what-I-should-write-in-my-business-card-headline?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            Any recommendations on what I should write in my business card headline?
-
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    It depends on the type of card you’re creating. If it’s a networking card, 
-                                    perhaps list out your core skills and work history.If it’s a personal card, 
-                                    maybe make it a little more fun and write a bit about who you are outside of 
-                                    work! The headline can be a maximum of 280 characters. 
-                                </p>
-
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingeighteen">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseeighteen" aria-expanded="true" aria-controls="collapseeighteen">
+                                            <h5>What is the ideal image size?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapseeighteen" class="accordion-collapse collapse show" aria-labelledby="headingeighteen" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        The ideal size of image is 25 kb.
+                                    </div>
+                                </div>
                             </div>
-                                <div id="How-do-I-choose-a-different-card-design?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            How do I choose a different card design?
+                            <br>
 
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                Choose from our three distinct design options with a V.Card Professional, 
-                                Business, or Enterprise plan. At this time, card designs can only be updated 
-                                on the V.Card web app. (Don’t worry—as soon as you save your card with the new design, 
-                                it will automatically appear on your mobile app.)
-                                </p>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingnineteen">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsenineteen" aria-expanded="true" aria-controls="collapsenineteen">
+                                            <h5>Is it okay to put social media handles on my digital business card? Is that unprofessional?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsenineteen" class="accordion-collapse collapse show" aria-labelledby="headingnineteen" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Sharing social media pages is a great networking tool to maintain your connections.
+                                    </div>
+                                </div>
                             </div>
+                            <br>
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingtwenty">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwenty" aria-expanded="true" aria-controls="collapsetwenty">
+                                            <h5>How do I change the color of my digital business cards?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsetwenty" class="accordion-collapse collapse show" aria-labelledby="headingtwenty" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        The free version of V.Card gives you five colors to choose from while customizing your card. 
+                                        If you want to customize your card's color(s) further, you’ll need to sign up for one of our
+                                        digital business card subscription plans.
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingtwentyone">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyone" aria-expanded="true" aria-controls="collapsetwentyone">
+                                            <h5>Any recommendations on what I should write in my business card headline?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsetwentyone" class="accordion-collapse collapse show" aria-labelledby="headingtwentyone" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        It depends on the type of card you’re creating. If it’s a networking card, 
+                                        perhaps list out your core skills and work history.If it’s a personal card, 
+                                        maybe make it a little more fun and write a bit about who you are outside of 
+                                        work! The headline can be a maximum of 280 characters.
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingtwentytwo">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentytwo" aria-expanded="true" aria-controls="collapsetwentytwo">
+                                            <h5>How do I choose a different card design?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsetwentytwo" class="accordion-collapse collapse show" aria-labelledby="headingtwentytwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                            Choose from our three distinct design options with a V.Card Professional, 
+                                            Business, or Enterprise plan. At this time, card designs can only be updated 
+                                            on the V.Card web app. (Don’t worry—as soon as you save your card with the new design, 
+                                            it will automatically appear on your mobile app.)
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
                         </section>
 
 
                         <section id="sharing-your-digital-business-cards" style=" padding:10%;">
-                            <h1 class="heading-23">Sharing Your Digital Business Cards</h1>
-                            <div id="How-do-I-share-my-card?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            How do I share my card?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    There are a few ways to share your digital business card. We recommend sharing it using 
-                                    your unique QR code, but you can also text, email, and share the link to your card. To 
-                                    share your card,simply double-tap the card you’d like to share and select your preferred 
-                                    sharing method.
-                                </p>
+                            <h1 class="heading-23"><b>Sharing Your Digital Business Cards</b></h1>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingtwentythree">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentythree" aria-expanded="true" aria-controls="collapsetwentythree">
+                                            <h5>How do I share my card?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsetwentythree" class="accordion-collapse collapse show" aria-labelledby="headingtwentythree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        There are a few ways to share your digital business card. We recommend sharing it using 
+                                        your unique QR code, but you can also text, email, and share the link to your card. To 
+                                        share your card,simply double-tap the card you’d like to share and select your preferred 
+                                        sharing method.
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
 
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingtwentyfour">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyfour" aria-expanded="true" aria-controls="collapsetwentyfour">
+                                            <h5>Can I share my HiHello card with someone who doesn’t have the app?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsetwentyfour" class="accordion-collapse collapse show" aria-labelledby="headingtwentyfour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes! You can share your  v.card with anyone—even if they don’t 
+                                        have the app—via your QR code, email, text message, and link sharing. 
+                                        Once received, anyone can save your contact information by emailing or texting your 
+                                        card to themselves or downloading it as a virtual contact file.
+                                    </div>
+                                </div>
                             </div>
-                                <div id="Can-I-share-my-v.card-with-someone-who-doesn’t-have-the-app?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            Can I share my HiHello card with someone who doesn’t have the app?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    Yes! You can share your  v.card with anyone—even if they don’t 
-                                    have the app—via your QR code, email, text message, and link sharing. 
-                                    Once received, anyone can save your contact information by emailing or texting your 
-                                    card to themselves or downloading it as a virtual contact file.
-                                </p>
+                            <br>
 
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingtwentyfive">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyfive" aria-expanded="true" aria-controls="collapsetwentyfive">
+                                            <h5>How do I share my card using my QR code?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsetwentyfive" class="accordion-collapse collapse show" aria-labelledby="headingtwentyfive" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Every digital business card has its unique QR code. Double-tap
+                                        the card you’d like to share and show your V.Card QR code to the
+                                        person with whom you’re sharing your card.They’ll have the option
+                                        to save your card by texting or emailing it to themselves or downloading 
+                                        it as a virtual contact file.
+                                    </div>
+                                </div>
                             </div>
-                                <div id="How-do-I-share-my-card-using-my-QR-code?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            How do I share my card using my QR code?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    Every digital business card has its unique QR code. Double-tap
-                                    the card you’d like to share and show your V.Card QR code to the
-                                    person with whom you’re sharing your card.They’ll have the option
-                                    to save your card by texting or emailing it to themselves or downloading 
-                                    it as a virtual contact file.
-                                </p>
-                            </div>
+                            <br>
 
-                                <div id="What-is-a-QR-code?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            What-is-a-QR-code?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    QR stands for Quick Response. A QR code acts like a barcode you’d see at a grocery store. 
-                                    When scanned with a smartphone, it’ll pull up the encoded information.
-                                </p>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingtwentysix">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentysix" aria-expanded="true" aria-controls="collapsetwentysix">
+                                            <h5>What-is-a-QR-code?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsetwentysix" class="accordion-collapse collapse show" aria-labelledby="headingtwentysix" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        QR stands for Quick Response. A QR code acts like a barcode you’d see at a grocery store. 
+                                        When scanned with a smartphone, it’ll pull up the encoded information.
+                                    </div>
+                                </div>
                             </div>
+                            <br>
+
                         </section>
-
-
-
 
                         <section id="address-Book" style=" padding:10%;">
-                            <h1 class="heading-23">Address Book</h1>
+                            <h1 class="heading-23"><b>Address Book</b></h1>
 
-                            <div id="What-is-a-digital-business-card-address-book?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            What is a digital business card address book?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    A digital business card address book is an electronic database that stores
-                                    and organizes digital business cards.
-                                </p>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingtwentyseven">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyseven" aria-expanded="true" aria-controls="collapsetwentyseven">
+                                            <h5>What is a digital business card address book?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsetwentyseven" class="accordion-collapse collapse show" aria-labelledby="headingtwentyseven" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        A digital business card address book is an electronic database that stores
+                                        and organizes digital business cards.
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
 
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingtwentyeight">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentyeight" aria-expanded="true" aria-controls="collapsetwentyeight">
+                                            <h5>How do I add digital business cards to my address book?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsetwentyeight" class="accordion-collapse collapse show" aria-labelledby="headingtwentyeight" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        You can add digital business cards to your address book by scanning QR Code, 
+                                        it will Show you the profile of user.
+                                    </div>
+                                </div>
                             </div>
-                                <div id="How-do-I-add-digital-business-cards-to-my-address-book?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            How do I add digital business cards to my address book?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    You can add digital business cards to your address book by scanning QR Code, 
-                                    it will Show you the profile of user.
-                                </p>
+                            <br>
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingtwentynine">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwentynine" aria-expanded="true" aria-controls="collapsetwentynine">
+                                            <h5>Can I store multiple digital business cards in one address book?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsetwentynine" class="accordion-collapse collapse show" aria-labelledby="headingtwentynine" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes, most V.Card business card address books allow you to store multiple 
+                                        digital business cards in Address Book.
+                                    </div>
+                                </div>
                             </div>
-                                <div id="Can-I-store-multiple-digital-business-cards-in-one-address-book?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                          Can I store multiple digital business cards in one address book?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                    Yes, most V.Card business card address books allow you to store multiple 
-                                    digital business cards in Address Book.
-                                </p>
-                            </div>
-                                <div id="Can-I-search-for-a-specific-digital-business-card-in-my-address-book?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            Can I search for a specific digital business card in my address book?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
+                            <br>
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingthirty">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirty" aria-expanded="true" aria-controls="collapsethirty">
+                                            <h5>Can I search for a specific digital business card in my address book?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsethirty" class="accordion-collapse collapse show" aria-labelledby="headingthirty" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
                                     Yes, V.card digital business card address books have a search feature that allows you 
                                     to search for a specific contact by name, company, or other information.
-                                </p>
+                                    </div>
                                 </div>
+                            </div>
+                            <br>
 
                         </section>
-
-
-
                         
                         <section id="virtual-backgrounds" style=" padding:10%;">
-                            <h1 class="heading-23">Virtual Background</h1>
+                            <h1 class="heading-23"><b>Virtual Background</b></h1>
 
-                            <div id="how-can-i-add-virtual-background?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            How can i add virtual background?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                      When you are designing your digital business card, you can add an image that you would like to use as your background.                              
-                                </p>
-
-                            </div>
-                                <div id="can-i-upload-an-image?">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                            Can i upload an image?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                     Yes you can upload an image while creating your digital business cards.
-                                    </p>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingthirtyOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirtyOne" aria-expanded="true" aria-controls="collapsethirtyOne">
+                                            <h5>How can i add virtual background?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsethirtyOne" class="accordion-collapse collapse show" aria-labelledby="headingthirtyOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        When you are designing your digital business card, you can add an image that you would like to use as your background.
+                                    </div>
                                 </div>
-                                <div id="what-was-the-image-size">
-                                <h5>
-                                    <a style="text-decoration:none;" href="#" class="linkmobile">
-                                        <p>
-                                          What was the image size?
-                                        </p>
-                                    </a>
-                                </h5>
-                                <p >
-                                   The ideal size of image is 2 Mb.
-                                </p>
                             </div>
-                        
+                            <br>
 
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingthirtytwo">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirtytwo" aria-expanded="true" aria-controls="collapsethirtytwo">
+                                            <h5>Can i upload an image?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsethirtytwo" class="accordion-collapse collapse show" aria-labelledby="headingthirtytwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes you can upload an image while creating your digital business cards.
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingthirtythree">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethirtythree" aria-expanded="true" aria-controls="collapsethirtythree">
+                                            <h5>What was the image size?</h5>
+                                        </button>
+                                    </h2>
+                                <div id="collapsethirtythree" class="accordion-collapse collapse show" aria-labelledby="headingthirtythree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    The ideal size of image is 2 Mb.
+                                    </div>
+                                </div>
+                            </div>
+                           
                         </section>
-                    </div>
-
-
-
-                        
+   
                     </div>
                 </div>
             </div>    
