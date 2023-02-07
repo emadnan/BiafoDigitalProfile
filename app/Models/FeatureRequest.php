@@ -12,6 +12,6 @@ class FeatureRequest extends Model
 
     use HasFactory;
     use SoftDeletes;
-    protected $table = "features_requests";
+    protected $table = "feature_requests";
     protected $primarykey = "id";
 }

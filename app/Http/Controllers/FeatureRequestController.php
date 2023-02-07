@@ -10,6 +10,8 @@ class FeatureRequestController extends Controller
 {
     function add_featureRequest(Request $request)
     {
+        // print_r($request->all());
+        // die;
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email',
@@ -26,6 +28,6 @@ class FeatureRequestController extends Controller
 
         $featureRequest->save();
 
-        return redirect('/users')->route('')->with('success', 'User created successfully!');
+        return redirect('/');
     }
 }

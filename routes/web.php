@@ -46,5 +46,5 @@ Route::get('/validate_email',[CardController::class,'validate_email'])->name('va
 Route::get('/company_user_card/{card_id}/{type}/{is_profile}',[CardController::class,'company_user_card'])->name('company_user_card');
 Route::get('continue_card/{card_id}',[CardController::class,'continue_card'])->name('continue_card');
 Route::get('visting_card/{card_id}/{type}',[CardController::class,'visting_card'])->name('visting_card');
-Route::post('/add_featureRequest',[FeatureRequestController::class,'featureRequest'])->name('featureRequest');
+Route::post('/add_featureRequest',[FeatureRequestController::class,'add_featureRequest'])->name('add_featureRequest');
 
