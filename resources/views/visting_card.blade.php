@@ -177,8 +177,53 @@ figure .caption {
     background: white;
     position: absolute;
     z-index: 1;
-    top:50%;
+    top: 50%;
     left: 70%;
+}
+
+.input-hidden {
+    /* For Hiding Radio Button Circles */
+    position: absolute;
+    left: -9999px;
+}
+
+input[type="radio"]:checked+label>img {
+    border: 1px solid #d12229;
+    box-shadow: 0 0 3px 3px #d12229;
+}
+
+input[type="radio"]+label>img {
+    border: 1px rgb(0, 0, 0);
+    padding: 10px;
+
+    transition: 500ms all;
+}
+
+input[type="radio"]:checked+label>img {
+    transform: rotateZ(-5deg) rotateX(5deg);
+}
+
+.back_image {
+    width: 100%;
+    box-sizing: border-box;
+    height: 330px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px 0px;
+    border-bottom-right-radius: 0px 0px;
+}
+
+.back_image_temp {
+    width: 300px;
+    height: 200px;
+    box-sizing: border-box;
+    margin-bottom: 20 auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 20px;
 }
 
 @media (min-width: 450px) {
@@ -204,19 +249,52 @@ figure .caption {
                 <div class="col-md-6">
                     <div class="card_container">
                         <figure class="front">
-                            <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" alt="front" />
+                            <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" id="back_image" alt="front" />
                             <div class="caption">
                                 <h2>Sultan <span>Zubair</span></h2>
                                 <p>web developer</p>
                             </div>
                             <p class="paragraph">BiafoTech</p>
                             <div class="qricon" id="qrcode">
-                        </div>
+                            </div>
                         </figure>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row ml-4" style="margin-top:300px">
+                <div class="col-md-12 ml-4 mt-2 mb-4">
+                    <h4 style="font-family:Palatino;font-weight:bold;">Background Images:</h4>
+                </div>
+                <div class="col-md-4">
+                    <input type="radio" name="background_image" id="background_image1" class="input-hidden"
+                        value="{{asset('frontend/img/visting_imges/front.jpg')}}" checked>
+                    <label for="background_image1">
+                        <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" alt="" class="back_image_temp">
+                    </label>
+                </div>
+                <div class="col-md-4">
+                    <input type="radio" name="background_image" id="background_image2" class="input-hidden"
+                        value="{{asset('frontend/img/visting_imges/images.jpeg')}}">
+                    <label for="background_image2">
+                        <img src="{{asset('frontend/img/visting_imges/images.jpeg')}}" alt="" class="back_image_temp">
+                    </label>
+                </div>
+                <div class="col-md-4">
+                    <input type="radio" name="background_image" id="background_image3" class="input-hidden"
+                        value="{{asset('frontend/img/backgroud_three.jpg')}}">
+                    <label for="background_image3">
+                        <img src="{{asset('frontend/img/backgroud_three.jpg')}}" alt="" class="back_image_temp">
+                    </label>
+                </div>
+                <div class="col-md-4">
+                    <input type="radio" name="background_image" id="background_image4" class="input-hidden"
+                        value="{{asset('frontend/img/backgroud_four.jpg')}}">
+                    <label for="background_image4">
+                        <img src="{{asset('frontend/img/backgroud_four.jpg')}}" alt="" class="back_image_temp">
+                    </label>
+                </div>
+            </div>
     </div>
 </div>
 @endsection
@@ -246,5 +324,12 @@ const qrCode = new QRCodeStyling({
 });
 
 qrCode.append(document.getElementById("qrcode"));
+var background_image = document.getElementsByName("background_image");
+for (var i = 0; i < background_image.length; i++) {
+    background_image[i].addEventListener("change", function() {
+        var background_image = document.querySelector('input[name="background_image"]:checked').value;
+        document.getElementById("back_image").src = background_image;
+    });
+}
 </script>
 @endsection
