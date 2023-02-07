@@ -43,4 +43,5 @@ Route::get('/send', [MailController::class, 'index'])->name('send-email');
 Route::get('/customize_card_index/{card_id}/{type}', [CardController::class, 'customize_card_index'])->name('customize_card_index');
 Route::get('/validate_email',[CardController::class,'validate_email'])->name('validate_email');
 Route::get('/company_user_card/{card_id}/{type}/{is_profile}',[CardController::class,'company_user_card'])->name('company_user_card');
+Route::get('continue_card/{card_id}',[CardController::class,'continue_card'])->name('continue_card');
 

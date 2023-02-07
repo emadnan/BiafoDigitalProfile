@@ -12,8 +12,12 @@ use Illuminate\Support\Str;
 use App\Events\ExampleEmailEvent;
 use App\Mail\ExampleMailable;
 use App\Events\CardEmailEvent;
+use App\Events\CardDeleteEmailEvent;
 use App\Mail\CardMailable;
+use App\Mail\CardDeleteMailable;
+use App\Mail\UserCreateMailable;
 use Illuminate\Support\Facades\Mail;
+use Auth;
 
 class CardController extends Controller
 {
@@ -94,7 +98,36 @@ class CardController extends Controller
 
     function delete_card($id)
     {
-        $card = Card::where('id', $id)->delete();
+        $card = Card::where('id', $id)->first();
+        if(auth()->user()->user_type=="company")
+        {
+            // $user = User::where('id',$card->company_user_id)->delete();
+            $card=Card::where('id',$id)->delete();
+        
+        $profile = Profile::where('card_id', $id)->first();
+        $email=null;
+        //send mail
+        $mail = [
+            "title" => "Card Deleted",
+            "body" => "Your Card has been deleted. If you want to continue using our services please click on the Yes below. ",
+            'link' => route('continue_card', $id)
+        ];
+        if($profile->personal_email!=null)
+        {
+            $email=$profile->personal_email;
+        }
+        else
+        {
+            $email=$card->email;
+        }
+        $check = Mail::to($email)->send(new CardDeleteMailable($mail));
+        // print_r($check);
+        // die;
+    }
+    else
+    {
+        $card=Card::where('id',$id)->delete();
+    }
         return redirect('/home');
     }
 
@@ -162,5 +195,38 @@ class CardController extends Controller
         $is_profile=$is_profile;
         $data = compact('card', 'type','is_profile');
         return view('company_user')->with($data);
+    }
+    public function continue_card($card_id)
+    {
+        //if login user logout it
+        Auth::logout();
+        //retore card
+        $card = Card::withTrashed()->find($card_id)->restore();
+        $profile = Profile::where('card_id',$card_id)->first();
+        //make new user
+        $user=new User();
+        $user->name = $profile->name;
+        $user->email = $profile->personal_email;
+        $password = Str::random(8);
+        $user->password = Hash::make($password);
+        $user->user_type = "individual";
+        $user->save();
+        //update user_id in card
+        $card = Card::where('id', $card_id)->first();
+        $card->user_id=$user->id;
+        $card->save();
+        //update user_id in profile
+        $profile->user_id=$user->id;
+        $profile->save();
+        //send mail
+        $mail = [
+            "title" => "Card Restored Successfully",
+            "body" => "Your Card has been restored and your account has been created. Your Credentials are as follows: ",
+            'email' => $user->email,
+            'password' => $password, 
+            'link' => route('login')
+        ];
+        Mail::to($user->email)->send(new UserCreateMailable($mail));
+        return view('continue_card');
     }
 }
