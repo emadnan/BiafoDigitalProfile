@@ -508,7 +508,8 @@ html {
                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                       <div class="contact_form">
                         <h3 class="mb-5 fw-bolder">JUST SEND REQUEST</h3>
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <form id="contactForm" action="#" method="post" data-sb-form-api-token="API_TOKEN">
+                            @csrf
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
@@ -532,7 +533,7 @@ html {
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                                 <label for="message">Enter Request Detailes</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A Request is required.</div>
                             </div>
                             <!-- Submit success message-->
                             <!---->
