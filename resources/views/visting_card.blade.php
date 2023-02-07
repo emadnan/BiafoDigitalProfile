@@ -291,6 +291,8 @@ input[type="radio"]:checked+label>img {
                         <input type="file" name="image" id="image" class="form-control" style="margin-top: 20px;">
                         <span>Image Dimension: 1920 X 1080</span>
                     </div>
+                    <br>
+                    <button class="btn btn-primary" id="download">Download</button>
                 </div>
             </div>
         </div>
@@ -372,11 +374,16 @@ image.addEventListener("change", function() {
     }
     reader.readAsDataURL(image);
 });
-var text_color = document.getElementById("text_color");
-text_color.addEventListener("change", function() {
-    // var text_color = document.getElementById("text_color").value;
-    // document.getElementById("card").style.color = text_color;
-    aleart("hello");
+
+$('#download').click(function() {
+    var node = document.getElementById('card');
+        domtoimage.toPng(node)
+          .then(function(dataUrl) {
+            var link = document.createElement('a');
+            link.download = 'Your_vCard.png';
+            link.href = dataUrl;
+            link.click();
+});
 });
 </script>
 @endsection
