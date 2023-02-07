@@ -66,6 +66,11 @@ html {
                         </a>
                       </li> -->
                             <li class="nav-item">
+                                <a class="nav-link text-white text-center" href="#request_a_feature">
+                                    Request A Feature
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-white text-center" href="#contact_us">
                                     Contact Us
                                 </a>
@@ -83,11 +88,11 @@ html {
                             <a class="btn btn-yellow rounded-pill px-5 py-2"
                                 href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
                             <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
-                                href="#contact_us"><b>{{ __('Create Card') }}</b></a>
+                                href="#pricing"><b>{{ __('Create Card') }}</b></a>
                             @endif
                             @else
                             <a class="btn btn-yellow rounded-pill px-5 py-2 "
-                                href="#contact_us"><b>{{ __('Create Card') }}</b></a>
+                                href="#pricing"><b>{{ __('Create Card') }}</b></a>
                             <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                             @endguest
                         </form>
@@ -119,7 +124,7 @@ html {
                     <div class="col-md-5 mt-2"></div>
                     <div class="col-md-2 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">Features
+                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;"><b>FEATURES</b>
                         </h3>
 
                         <!-- </div> -->
@@ -178,7 +183,7 @@ html {
                     <div class="col-md-5 mt-2"></div>
                     <div class="col-md-2 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00">ABOUT US
+                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00"><b>ABOUT US</b>
                         </h3>
                         <!-- </div> -->
                     </div>
@@ -211,7 +216,7 @@ html {
                     <div class="col-md-5 mt-2"></div>
                     <div class="col-md-2 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">PRICING
+                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;"><b>PRICING</b>
                         </h3>
 
                         <!-- </div> -->
@@ -480,6 +485,141 @@ html {
                         </div>
                     </div>
         </section>
+        <!-- request a feature-->
+
+        <section id="request_a_feature">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 mt-2"></div>
+                    <div class="col-md-2 mt-5">
+                        <!-- <div style="background-color:#ff9d00"> -->
+                        <h3 class="text-center mt-3 rounded-pill px-6 py-2" style="background-color:#ff9d00;">
+                            <b>REQUEST A FEATURES</b>
+                        </h3>
+
+                        <!-- </div> -->
+                    </div>
+                    <div class="col-md-5"></div>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-body">
+                    <div class="section-content">
+                  <div class="row py-4 section-contact">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                      <div class="contact_form">
+                        <h3 class="mb-5 fw-bolder">JUST SEND REQUEST</h3>
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <label for="name">Full name</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <label for="email">Email address</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <!-- Phone number input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <label for="phone">Phone number</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                            <!-- Message input-->
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">Enter Request Detailes</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
+                            <button id="submitButton" type="submit" class="btn rounded-pill btn-yellow text-white w-50 fw-bold">Send Request</button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        
+                        <img src="/frontend/img/Request_image.png" style="padding-left: 15%; padding-top: 15%; height: 500px; width: 80%;">
+                      <!-- <div class="contat_info">
+                        <h3 class="mb-1 fw-bolder">REQUEST INFO</h3>
+                        <p>You Can Do Request From Following Details</p>
+                        <div class="d-flex">
+                          <div class="icons_contact_info ms-2">
+                            <i class="fa-solid fa-envelope fs-3 mt-4 p-3"></i>
+                          </div>
+                          <div class="mt-3 ms-3">
+                            <p class="mb-0 pb-0 text-black fw-bold text-uppercase">email</p>
+                            <small class="text-muted">example@example.com</small>
+                          </div>
+                        </div>
+                        <div class="d-flex mt-1">
+                          <div class="icons_contact_info ms-2">
+                            <i class="fa-solid fa-phone fs-3 mt-4 p-3"></i>
+                          </div>
+                          <div class="mt-3 ms-3">
+                            <p class="mb-0 pb-0 text-black fw-bold text-uppercase">phone</p>
+                            <small class="d-block text-muted">+9202302222</small>
+                            <small class="text-muted">+93232344433</small>
+                          </div>
+                        </div>
+                        <div class="d-flex mt-1">
+                          <div class="icons_contact_info ms-2">
+                            <i class="fa-solid fa-map-location-dot fs-3 mt-4 p-3"></i>
+                          </div>
+                          <div class="mt-3 ms-3">
+                            <p class="mb-0 pb-0 text-black fw-bold text-uppercase">Address</p>
+                            <small class="d-block text-muted">Adress here</small>
+                          </div>
+                        </div>
+                        <div class="d-flex mt-4">
+                        </div>
+                        <div class="social_icons mt-4">
+                          <p>Visit our social profile and get connected.</p>
+                          <div class="d-flex mt-2">
+                            <a href="#">
+                              <i class="fa-brands fa-facebook-f fs-3 me-2 mt-2" style="padding: 8px 12px !important;"></i>
+                            </a>
+                            <a href="#">
+                              <i class="fa-brands fa-instagram fs-3 p-2 me-2 mt-2"></i>
+                            </a>
+                            <a href="#">
+                              <i class="fa-brands fa-linkedin-in fs-3 p-2 me-2 mt-2"></i>
+                            </a>
+                            <a href="#">
+                              <i class="fa-brands fa-youtube fs-3 p-2 me-2 mt-2"></i>
+                            </a>
+                            <a href="#">
+                              <i class="fa-brands fa-twitter fs-3 p-2 me-2 mt-2"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contract US-->
         <section id="contact_us">
             <div class="container">
@@ -487,8 +627,7 @@ html {
                     <div class="col-md-5 mt-2"></div>
                     <div class="col-md-2 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h3 class="text-center mt-3 rounded-pill px-6 py-2" style="background-color:#ff9d00;">CONTACT
-                            US
+                        <h3 class="text-center mt-3 rounded-pill px-6 py-2" style="background-color:#ff9d00;"><b>CONTACT US</b>
                         </h3>
 
                         <!-- </div> -->

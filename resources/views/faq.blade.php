@@ -59,6 +59,11 @@
                     </a>
                   </li> -->
                         <li class="nav-item">
+                                <a class="nav-link text-white text-center" href="/#request_a_feature">
+                                    Request A Feature
+                                </a>
+                            </li>
+                        <li class="nav-item">
                             <a class="nav-link text-white text-center" href="/#contact-us">Contact Us</a>
                         </li>
                         <li class="nav-item">
@@ -75,11 +80,11 @@
                         <a class="btn btn-yellow rounded-pill px-5 py-2"
                             href="{{ route('login') }}">{{ __('Login') }}</a>
                             <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
-                            href="{{ route('register') }}"><b>{{ __('Create Card') }}</b></a>
+                            href="/#pricing"><b>{{ __('Create Card') }}</b></a>
                         @endif
                         @else
                         <a class="btn btn-yellow rounded-pill px-5 py-2 "
-                                href="{{ route('pricing') }}"><b>{{ __('Create Card') }}</b></a>
+                                href="#/pricing"><b>{{ __('Create Card') }}</b></a>
                                 <a class="btn btn-yellow ml-4"
                                 href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                         @endguest
@@ -113,28 +118,32 @@
                 <div class="col-lg-12 mb-1">
                     <div class="card h-100 shadow-lg">
                         <div>
-                            <h1 style="margin-left: 30%; margin-top: 50px; border: 20px; border-color: black;"><b>Frequently Asked Questions</b></h1>
+                            <h1 style="margin-left: 30%; margin-top: 50px;">
+                                <b>
+                                    Frequently Asked Questions
+                                </b>
+                            </h1>
 
                             <br><br>
                                 
                             <div style ="margin-left:10%">
                             
-                                <h2>Contents</h2>
+                                <h2><b>Contents</b></h2>
                                 <p>
-                                    <a style="text-decoration:none;" href="#general"><h5>General</h5></a>
+                                    <a style="text-decoration:none;" href="#general"><h5><u>General</u></h5></a>
                                 </p>
                                 <p>
-                                    <a style="text-decoration:none;" href="#creating-your-digital-business-cards"><h5>Creating your digital business cards</h5></a>
+                                    <a style="text-decoration:none;" href="#creating-your-digital-business-cards"><h5><u>Creating your digital business cards</u></h5></a>
                                 </p>
                                 <p>
-                                    <a style="text-decoration:none;" href="#sharing-your-digital-business-cards"><h5>Sharing your digital business cards</h5></a>
+                                    <a style="text-decoration:none;" href="#sharing-your-digital-business-cards"><h5><u>Sharing your digital business cards</u></h5></a>
                                 </p>
                                 <p>
-                                    <a style="text-decoration:none;" href="#address-Book"><h5>Address Book</h5></a>
+                                    <a style="text-decoration:none;" href="#address-Book"><h5><u>Address Book</u></h5></a>
                                 </p>
                                 <p>
                                     <a style="text-decoration:none;" href="#virtual-backgrounds">
-                                        <h5>Virtual backgrounds</h5></a>
+                                        <h5><u>Virtual backgrounds</u></h5></a>
                                 </p>
                             
                             </div>
@@ -324,7 +333,7 @@
 
                         </section>
                         <section id="creating-your-digital-business-cards" style=" padding:10%;">
-                            <h1 class="heading-23"><b>Creating Your Digital Business Cards</b></h1>
+                            <h1 class="heading-23"><b>Creating Your Digital Business Cards</b></h1><br>
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingfourteen">
@@ -475,7 +484,7 @@
 
 
                         <section id="sharing-your-digital-business-cards" style=" padding:10%;">
-                            <h1 class="heading-23"><b>Sharing Your Digital Business Cards</b></h1>
+                            <h1 class="heading-23"><b>Sharing Your Digital Business Cards</b></h1><br>
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingtwentythree">
@@ -550,7 +559,7 @@
                         </section>
 
                         <section id="address-Book" style=" padding:10%;">
-                            <h1 class="heading-23"><b>Address Book</b></h1>
+                            <h1 class="heading-23"><b>Address Book</b></h1><br>
 
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
@@ -619,7 +628,7 @@
                         </section>
                         
                         <section id="virtual-backgrounds" style=" padding:10%;">
-                            <h1 class="heading-23"><b>Virtual Background</b></h1>
+                            <h1 class="heading-23"><b>Virtual Background</b></h1><br>
 
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
@@ -672,27 +681,24 @@
             </div>    
         </div>
     </div>
-    
 
-
-
-<footer>
-    <section class="text-white text-center bg_main_content_yellowish mt-5" style="padding: 20px; margin-right: -30%; margin-left: -30%;">
-      
-      <div class="container ">
-            <div class="d-flex justify-content-between text-white">
-                <div class="py-2">
-                    <a href="#contact" class="text-white text-decoration-none">Contact us</a> <span style="color:#304367">|</span> <a
-                    href="/privacy-policy" class="text-white text-decoration-none">Privacy Policy</a>
-                    </div>
+    <footer>
+        <section class="text-white text-center bg_main_content_yellowish mt-5" style="padding: 20px; margin-right: -30%; margin-left: -30%;">
+        
+        <div class="container ">
+                <div class="d-flex justify-content-between text-white">
                     <div class="py-2">
-                        <p class="mb-0">Copyright @ 2022. <a href="#" class="text-white">Biafotech.</a> All rights reserved.</p>
+                        <a href="#contact" class="text-white text-decoration-none">Contact us</a> <span style="color:#304367">|</span> <a
+                        href="/privacy-policy" class="text-white text-decoration-none">Privacy Policy</a>
+                        </div>
+                        <div class="py-2">
+                            <p class="mb-0">Copyright @ 2022. <a href="#" class="text-white">Biafotech.</a> All rights reserved.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</footer>
+        </section>
+    </footer>
 </body>
 <style>
     /*html {
