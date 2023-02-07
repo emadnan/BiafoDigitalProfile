@@ -29,6 +29,13 @@ body {
     text-align: center;
     font-weight: bold;
   }
+  .btn-green {
+    background-color: #00ff08;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
   .btn-danger {
     background-color:#d12229;
     border-radius: 10px;

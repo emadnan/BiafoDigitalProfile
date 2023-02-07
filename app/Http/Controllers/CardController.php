@@ -229,4 +229,11 @@ class CardController extends Controller
         Mail::to($user->email)->send(new UserCreateMailable($mail));
         return view('continue_card');
     }
+    public function visting_card($card_id,$type)
+    {
+        $card = Card::where('id', $card_id)->first();
+        $type = $type;
+        $data = compact('card', 'type');
+        return view('visting_card')->with($data);
+    }
 }

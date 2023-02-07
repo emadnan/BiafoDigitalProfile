@@ -109,6 +109,7 @@
                                             data-bs-target="#deletecardmodal"><i class="fa-solid fa-trash-can"></i> Delete
                                         </button>
         <a href="/customize_card_index/{{$card->id}}/{{$type}}"  class="btn btn-yellow ml-4"><i class="fa-brands fa-figma"></i> Customize Card</a>
+        <a href="/visting_card/{{$card->id}}/{{$type}}"  class="btn btn-green ml-4"><i class="fa-brands fa-card"></i> Visting Card</a>
           </div>
           <div class="col-md-3"></div>
         </div>
