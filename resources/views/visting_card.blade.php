@@ -226,6 +226,30 @@ input[type="radio"]:checked+label>img {
     border-radius: 20px;
 }
 
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
 @media (min-width: 450px) {
     .card_container {
         left: 50%;
@@ -247,9 +271,10 @@ input[type="radio"]:checked+label>img {
         <div class="container">
             <div class="row mt-5">
                 <div class="col-md-6">
-                    <div class="card_container">
+                    <div class="card_container" id="card">
                         <figure class="front">
-                            <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" id="back_image" alt="front" />
+                            <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" id="back_image" alt="front"
+                                style="width: 450px;height: 270px;" />
                             <div class="caption">
                                 <h2>Sultan <span>Zubair</span></h2>
                                 <p>web developer</p>
@@ -260,41 +285,48 @@ input[type="radio"]:checked+label>img {
                         </figure>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="upload-btn-wrapper">
+                        <button class="btn">Upload a Image</button>
+                        <input type="file" name="image" id="image" class="form-control" style="margin-top: 20px;">
+                        <span>Image Dimension: 1920 X 1080</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row ml-4" style="margin-top:300px">
-                <div class="col-md-12 ml-4 mt-2 mb-4">
-                    <h4 style="font-family:Palatino;font-weight:bold;">Background Images:</h4>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" name="background_image" id="background_image1" class="input-hidden"
-                        value="{{asset('frontend/img/visting_imges/front.jpg')}}" checked>
-                    <label for="background_image1">
-                        <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" alt="" class="back_image_temp">
-                    </label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" name="background_image" id="background_image2" class="input-hidden"
-                        value="{{asset('frontend/img/visting_imges/images.jpeg')}}">
-                    <label for="background_image2">
-                        <img src="{{asset('frontend/img/visting_imges/images.jpeg')}}" alt="" class="back_image_temp">
-                    </label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" name="background_image" id="background_image3" class="input-hidden"
-                        value="{{asset('frontend/img/backgroud_three.jpg')}}">
-                    <label for="background_image3">
-                        <img src="{{asset('frontend/img/backgroud_three.jpg')}}" alt="" class="back_image_temp">
-                    </label>
-                </div>
-                <div class="col-md-4">
-                    <input type="radio" name="background_image" id="background_image4" class="input-hidden"
-                        value="{{asset('frontend/img/backgroud_four.jpg')}}">
-                    <label for="background_image4">
-                        <img src="{{asset('frontend/img/backgroud_four.jpg')}}" alt="" class="back_image_temp">
-                    </label>
-                </div>
+            <div class="col-md-12 ml-4 mt-2 mb-4">
+                <h4 style="font-family:Palatino;font-weight:bold;">Background Images:</h4>
             </div>
+            <div class="col-md-4">
+                <input type="radio" name="background_image" id="background_image1" class="input-hidden"
+                    value="{{asset('frontend/img/visting_imges/front.jpg')}}" checked>
+                <label for="background_image1">
+                    <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" alt="" class="back_image_temp">
+                </label>
+            </div>
+            <div class="col-md-4">
+                <input type="radio" name="background_image" id="background_image2" class="input-hidden"
+                    value="{{asset('frontend/img/visting_imges/1.jpg')}}">
+                <label for="background_image2">
+                    <img src="{{asset('frontend/img/visting_imges/1.jpg')}}" alt="" class="back_image_temp">
+                </label>
+            </div>
+            <div class="col-md-4">
+                <input type="radio" name="background_image" id="background_image3" class="input-hidden"
+                    value="{{asset('frontend/img/visting_imges/2.png')}}">
+                <label for="background_image3">
+                    <img src="{{asset('frontend/img/visting_imges/2.png')}}" alt="" class="back_image_temp">
+                </label>
+            </div>
+            <div class="col-md-4">
+                <input type="radio" name="background_image" id="background_image4" class="input-hidden"
+                    value="{{asset('frontend/img/visting_imges/3.jpg')}}">
+                <label for="background_image4">
+                    <img src="{{asset('frontend/img/visting_imges/3.jpg')}}" alt="" class="back_image_temp">
+                </label>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
@@ -331,5 +363,20 @@ for (var i = 0; i < background_image.length; i++) {
         document.getElementById("back_image").src = background_image;
     });
 }
+var image = document.getElementById("image");
+image.addEventListener("change", function() {
+    var image = document.getElementById("image").files[0];
+    var reader = new FileReader();
+    reader.onload = function() {
+        document.getElementById("back_image").src = reader.result;
+    }
+    reader.readAsDataURL(image);
+});
+var text_color = document.getElementById("text_color");
+text_color.addEventListener("change", function() {
+    // var text_color = document.getElementById("text_color").value;
+    // document.getElementById("card").style.color = text_color;
+    aleart("hello");
+});
 </script>
 @endsection
