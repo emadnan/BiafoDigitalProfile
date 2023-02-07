@@ -83,11 +83,11 @@ html {
                             <a class="btn btn-yellow rounded-pill px-5 py-2"
                                 href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
                             <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
-                                href="{{ route('pricing') }}"><b>{{ __('Create Card') }}</b></a>
+                                href="#contact_us"><b>{{ __('Create Card') }}</b></a>
                             @endif
                             @else
                             <a class="btn btn-yellow rounded-pill px-5 py-2 "
-                                href="{{ route('pricing') }}"><b>{{ __('Create Card') }}</b></a>
+                                href="#contact_us"><b>{{ __('Create Card') }}</b></a>
                             <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                             @endguest
                         </form>
