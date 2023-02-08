@@ -30,4 +30,10 @@ class FeatureRequestController extends Controller
 
         return redirect('/');
     }
+
+    public function index()
+    {
+        $list_feature_requests = FeatureRequest::all();
+        return view('list_feature_request', compact('list_feature_requests'));
+    }
 }

@@ -66,6 +66,16 @@
                     </a>
                 </li>
                 <li  >
+
+                <!-- Request features -->
+                <a class="{{ request()->routeIs('lists_feature_requets') ? 'nav-link active' : 'nav-link text-white' }}"
+                        href="{{ route('lists_feature_requets') }}"><i class=" nav-icon fa-solid fa-list"></i>
+                        <p >
+                           Feature Requests
+                        </p>
+                    </a>
+                </li>
+                <li  >
                     <a class="nav-link text-white"
                         href="#"><i class="nav-icon fas fa-bell"></i>
                         <p >Notifications
