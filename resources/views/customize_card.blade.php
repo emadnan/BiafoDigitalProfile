@@ -541,6 +541,20 @@ z-index: -1;
                 <img src="{{asset('frontend/img/backgroud_four.jpg')}}" alt="" class="back_image_temp">
                 </label>
             </div>
+            <div class="col-md-2">
+                <input type="radio" name="background_image" id="background_image5" class="input-hidden"
+                    value="{{asset('frontend/img/backgroud_five.jpg')}}">
+                    <label for="background_image5">
+                <img src="{{asset('frontend/img/backgroud_five.jpg')}}" alt="" class="back_image_temp">
+                </label>
+            </div>
+            <div class="col-md-2">
+                <input type="radio" name="background_image" id="background_image6" class="input-hidden"
+                    value="{{asset('frontend/img/background_six.jpg')}}">
+                    <label for="background_image6">
+                <img src="{{asset('frontend/img/background_six.jpg')}}" alt="" class="back_image_temp">
+                </label>
+            </div>
         </div>
     </div>
 </div>
