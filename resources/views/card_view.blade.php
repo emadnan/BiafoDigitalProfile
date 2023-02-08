@@ -354,9 +354,14 @@ $('#update_card').click(function() {
         //if form validate true then save data
         if ($('#update_card_form').valid()) {
             //get cropped image
+            if(cropper)
+            {
             var croppedImage = cropper.getCroppedCanvas().toDataURL();
-            //show cropped image in image preview
             croppedImageContainer.src = croppedImage;
+            }
+            else{
+                var croppedImage = "no_image";
+            }
             //hide image crop modal
             $('#image_crop_modal').modal('hide');
             var data= new FormData();

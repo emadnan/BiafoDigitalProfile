@@ -139,7 +139,7 @@ class CardController extends Controller
         $card_id = $request->card_id;
         $card = Card::where('id', $card_id)->first();
         $image_path = $card->image_path;
-        if ($request->image != null) {
+        if ($request->image != "no_image") {
             $image = $request->image;
             $extension = explode('/', explode(":", substr($image, 0, strpos($image, ";")))[1])[1];
             $replace = substr($image, 0, strpos($image, ',') + 1);
