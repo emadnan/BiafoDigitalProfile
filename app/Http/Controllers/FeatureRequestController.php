@@ -36,4 +36,12 @@ class FeatureRequestController extends Controller
         $list_feature_requests = FeatureRequest::all();
         return view('list_feature_request', compact('list_feature_requests'));
     }
+
+    public function deleteRow($id)
+    {
+        $row = FeatureRequest::find($id);
+        $row->delete();
+
+        return redirect()->back()->with('success', 'Reqeust has been successfully deleted.');
+    }
 }

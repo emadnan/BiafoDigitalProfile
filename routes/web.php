@@ -48,5 +48,6 @@ Route::get('continue_card/{card_id}',[CardController::class,'continue_card'])->n
 Route::get('visting_card/{card_id}/{type}',[CardController::class,'visting_card'])->name('visting_card');
 Route::post('/add_featureRequest',[FeatureRequestController::class,'add_featureRequest'])->name('add_featureRequest');
 Route::get('/lists_feature_requets', [FeatureRequestController::class,'index'])->name('lists_feature_requets');
+Route::get('/delete_feature_requets/{id}',[FeatureRequestController::class,'deleteRow'])->name('delete_feature_requets');
 
 

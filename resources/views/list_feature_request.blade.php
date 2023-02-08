@@ -25,6 +25,7 @@
                                     <th scope="col">Phone</th>
                                     <th scope="col">Request</th>
                                     <th scope="col">Action</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,11 +36,14 @@
                                     <td>{{ $feature_request->email }}</td>
                                     <td>{{ $feature_request->phone }}</td>
                                     <td>{{ $feature_request->request }}</td>
+                                    <td>
+                                        <a type="button" class="btn btn-danger" href="/delete_feature_requets/{{$feature_request->id}}">Delete</a>
+                                    </td>
                                 </tr>
+
                                 @endforeach
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
