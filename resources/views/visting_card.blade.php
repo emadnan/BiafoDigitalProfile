@@ -275,24 +275,40 @@ input[type="radio"]:checked+label>img {
                         <figure class="front">
                             <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" id="back_image" alt="front"
                                 style="width: 450px;height: 270px;" />
-                            <div class="caption">
-                                <h2>Sultan <span>Zubair</span></h2>
-                                <p>web developer</p>
+                            <div class="caption" id="text">
+                                <h2 id="name_text">{{$card->name}}</h2>
+                                <p>{{$card->designation}}</p>
                             </div>
-                            <p class="paragraph">BiafoTech</p>
+                            @if($type == "work")
+                            <p class="paragraph" id="company_text">{{$card->company}}</p>
+                            @endif
                             <div class="qricon" id="qrcode">
                             </div>
                         </figure>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="upload-btn-wrapper">
-                        <button class="btn">Upload a Image</button>
-                        <input type="file" name="image" id="image" class="form-control" style="margin-top: 20px;">
-                        <span>Image Dimension: 1920 X 1080</span>
+                    <div class="col-md-12">
+                        <div class="upload-btn-wrapper">
+                            <button class="btn">Upload a Image</button>
+                            <input type="file" name="image" id="image" class="form-control" style="margin-top: 20px;">
+                            <span>Image Dimension: 1920 X 1080</span>
+                        </div>
                     </div>
-                    <br>
-                    <button class="btn btn-primary" id="download">Download</button>
+                    <div class="row">
+                        <div class="col-md-4 mt-4 mb-3">
+                            <h5> <b>Text Color:</b></h5>
+                        </div>
+                        <div class="col-md-4 mt-3 mb-3">
+                            <input type="color" id="text_color" name="text_color" value="#ffffff">
+                        </div>
+                        <div class="col-md-4 mt-2 mb-3">
+                        <button class="btn btn-primary" id="save">Save Colors</button>
+                    </div>
+                    </div>
+                    <div class="col-md-6 mt-5">
+                        <button class="btn btn-primary" id="download">Download</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -326,6 +342,20 @@ input[type="radio"]:checked+label>img {
                     value="{{asset('frontend/img/visting_imges/3.jpg')}}">
                 <label for="background_image4">
                     <img src="{{asset('frontend/img/visting_imges/3.jpg')}}" alt="" class="back_image_temp">
+                </label>
+            </div>
+            <div class="col-md-4">
+                <input type="radio" name="background_image" id="background_image5" class="input-hidden"
+                    value="{{asset('frontend/img/visting_imges/4.jpg')}}">
+                <label for="background_image5">
+                    <img src="{{asset('frontend/img/visting_imges/4.jpg')}}" alt="" class="back_image_temp">
+                </label>
+            </div>
+            <div class="col-md-4">
+                <input type="radio" name="background_image" id="background_image6" class="input-hidden"
+                    value="{{asset('frontend/img/visting_imges/5.jpg')}}">
+                <label for="background_image6">
+                    <img src="{{asset('frontend/img/visting_imges/5.jpg')}}" alt="" class="back_image_temp">
                 </label>
             </div>
         </div>
@@ -377,13 +407,22 @@ image.addEventListener("change", function() {
 
 $('#download').click(function() {
     var node = document.getElementById('card');
-        domtoimage.toPng(node)
-          .then(function(dataUrl) {
+    domtoimage.toPng(node)
+        .then(function(dataUrl) {
             var link = document.createElement('a');
             link.download = 'Your_vCard.png';
             link.href = dataUrl;
             link.click();
+        });
 });
+//change text color of the card
+var text_color = document.getElementById("text_color");
+$('#save').click(function(){
+    text_color= document.getElementById("text_color").value;
+    document.getElementById("text").style.color = text_color;
+    document.getElementById("name_text").style.color = text_color;
+    document.getElementById("company_text").style.color = text_color;
+    console.log(text_color);
 });
 </script>
 @endsection
