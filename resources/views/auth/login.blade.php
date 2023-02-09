@@ -5,6 +5,10 @@
     .btn-yellow {
   background-color: #ff9d00
 }
+.btn-white {
+  background-color: #ffffff;
+  width: 60%;
+}
     </style>
 <div class="container">
     <div class="row justify-content-center mt-5">
@@ -69,8 +73,8 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
-                                <a href="{{ url('auth/google') }}" style="margin-top: 20px;" class="btn btn-yellow rounded-pill px-5 py-2">
-                                <i class="fa-brands fa-google"></i> Login With Google
+                                <a href="{{ url('auth/google') }}" style="margin-top: 20px;" class="btn btn-white">
+                                <img src="{{asset('frontend\img\google.svg')}}" alt="AdminLTE Logo" width="30" hieght="30">&nbsp; <b>Login with Google</b>
                                 </a> 
                             </div>
                         </div>
