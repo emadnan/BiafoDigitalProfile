@@ -10,6 +10,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\FeatureRequestController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 /*
 |--------------------------------------------------------------------------
@@ -57,5 +58,8 @@ Route::get('/roles', [RoleController::class,'index'])->name('roles');
 Route::post('/add_role',[RoleController::class,'add_role'])->name('add_role');
 Route::get('/delete_role/{id}',[RoleController::class,'delete_role'])->name('delete_role');
 Route::post('/update_role/{id}',[RoleController::class,'update_role'])->name('update_role');
-
+Route::get('/permissions',[PermissionController::class,'index'])->name('permissions');
+Route::post('/add_Permission',[PermissionController::class,'add_Permission'])->name('add_Permission');
+Route::get('/delete_Permission/{id}',[PermissionController::class,'delete_Permission'])->name('delete_Permission');
+Route::post('/update_Permission/{id}',[PermissionController::class,'update_Permission'])->name('update_Permission');
 
