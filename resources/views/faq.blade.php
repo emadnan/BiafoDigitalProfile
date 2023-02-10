@@ -201,7 +201,7 @@
                                     </h2>
                                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        We love hearing your comments; it’s how we make V.Card better! Please send your feedback to feedback@v.card.me, or fill out a form on our Contact Us page.
+                                        We love hearing your comments; it’s how we make V.Card better! Please send your feedback to feedback@ V.Card.me, or fill out a form on our Contact Us page.
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +216,7 @@
                                     </h2>
                                 <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        If you’d like to write an article about V.Card, please contact press@ V.Card.me, and we’ll get back to you as soon as we can. In the meantime,check out our Press page.
+                                        If you’d like to write an article about V.Card, please contact press@ V.Card.me, and we’ll get back to you as soon as we can. In the meantime, check out our Press page.
                                     </div>
                                 </div>
                             </div>
@@ -233,9 +233,10 @@
                                     <div class="accordion-body">
                                         If you found a bug, we’d love to fix it. Please contact support through:
                                         <pre style="margin-left: -35%">
-                                             Web: Click on your name at the top right and select Contact Support.
-                                            -Mobile: Tap settings and scroll down to the Contact Support page
-                                            -Mail: Contact us at support@v.card.me
+                                            - Web: Click on your name at the top right and select Contact Support.
+                                            - Mobile: Tap settings and scroll down to the Contact Support page
+                                            - Mail: Contact us at support@ V.Card.me
+
                                         </pre>
                                     </div>
                                 </div>
@@ -251,7 +252,7 @@
                                     </h2>
                                 <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        You can reset your password here.
+                                        Yes! You can reset your password.
                                     </div>
                                 </div>
                             </div>
@@ -279,8 +280,7 @@
                                     </h2>
                                 <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        YIf there’s anything we can do to improve your experience, please email us at feedback@v.card.me. If you want to delete your account, go to Settings, and under Account, tap Delete Account. Type “Delete” to confirm the account deletion.
-                                    </div>
+                                        If there’s anything we can do to improve your experience, please email us at feedback@V.Card.me. If you want to delete your account, go to Settings, and under Account, tap Delete Account. Type “Delete” to confirm the account deletion.                                    </div>
                                 </div>
                             </div>
                             
@@ -294,8 +294,7 @@
                                     </h2>
                                 <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        If you’d like to stop receiving marketing emails, please click Unsubscribe at the bottom of the email to be removed from that list.
-                                        If you are a V.Card user, you will continue to receive certain product-related emails that are integral to the V.Card app.
+                                        If you’d like to stop receiving marketing emails, please click Unsubscribe at the bottom of the email to be removed from that list. If you are a V.Card user, you will continue to receive certain product-related emails that are integral to the V.Card app.
                                     </div>
                                 </div>
                             </div>
@@ -310,8 +309,9 @@
                                     </h2>
                                 <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        You can export your contacts by going to the V.Card Settings, scrolling down to the Advanced section, and tapping Export Contacts. 
+                                        You can export your contacts by going to the V.Card Settings, scrolling down to the Advanced section, and tapping Export Contacts.
                                         Your exported contacts will be emailed to you.
+
                                     </div>
                                 </div>
                             </div>
@@ -326,7 +326,7 @@
                                     </h2>
                                 <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        We strongly believe in our mission: helping people strengthen relationships and amplify the power of their network.
+                                        We strongly believe in our mission: helping people strengthen relationships and amplify the power of their network. To learn more, visit our About Us page and read V.card.
                                     </div>
                                 </div>
                             </div>
@@ -343,8 +343,7 @@
                                     </h2>
                                 <div id="collapsefourteen" class="accordion-collapse collapse" aria-labelledby="headingfourteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        You can seamlessly create and share digital business cards on your computer with the V.Card web app. Switching from the web to the iOS or 
-                                    Android app allows you to take your digital business card with you wherever you go.
+                                        You can seamlessly create and share digital business cards on your computer with the V.Card web app. Switching from the web to the iOS or Android app allows you to take your digital business card with you wherever you go.
                                     </div>
                                 </div>
                             </div>
@@ -358,8 +357,7 @@
                                     </h2>
                                 <div id="collapsefifteen" class="accordion-collapse collapse" aria-labelledby="headingfifteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        You can make up to four different digital business cards with a free account. If you want 
-                                        more than that,you’ll need to upgrade to a subscription plan.
+                                        You can make up to four different digital business cards with a free account. If you want more than that, you’ll need to upgrade to a subscription plan. To learn more, please visit our Pricing page.
                                     </div>
                                 </div>
                             </div>
@@ -374,8 +372,7 @@
                                     </h2>
                                 <div id="collapsesixteen" class="accordion-collapse collapse" aria-labelledby="headingsixteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        Everyone has their preferences, but we recommend having cards 
-                                        for personal use and Company workspace.
+                                        You can make up to four different digital business cards with a free account. If you want more than that, you’ll need to upgrade to a subscription plan. To learn more, please visit our Pricing page.
                                     </div>
                                 </div>
                             </div>
@@ -390,8 +387,7 @@
                                     </h2>
                                 <div id="collapseseventeen" class="accordion-collapse collapse" aria-labelledby="headingseventeen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        You can add your phone number(s), email(s), any social media handles, 
-                                        your company logo, payment, messaging apps, and more.
+                                        The possibilities are endless! You can add your phone numbers, emails, any social media handles, your company logo, payment, messaging apps, and more.
                                     </div>
                                 </div>
                             </div>
@@ -406,7 +402,7 @@
                                     </h2>
                                 <div id="collapseeighteen" class="accordion-collapse collapse" aria-labelledby="headingeighteen" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        The ideal size of image is 25 kb.
+                                    The ideal image size for your profile photo is 2MB.
                                     </div>
                                 </div>
                             </div>
@@ -436,9 +432,7 @@
                                     </h2>
                                 <div id="collapsetwenty" class="accordion-collapse collapse" aria-labelledby="headingtwenty" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        The free version of V.Card gives you five colors to choose from while customizing your card. 
-                                        If you want to customize your card's color(s) further, you’ll need to sign up for one of our
-                                        digital business card subscription plans.
+                                        The free version of V.Card gives you ten colors to choose from while customizing your card. If you want to customize your card's colors further, you’ll need to sign up for one of our digital business card subscription plans.
                                     </div>
                                 </div>
                             </div>
@@ -453,10 +447,7 @@
                                     </h2>
                                 <div id="collapsetwentyone" class="accordion-collapse collapse" aria-labelledby="headingtwentyone" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        It depends on the type of card you’re creating. If it’s a networking card, 
-                                        perhaps list out your core skills and work history.If it’s a personal card, 
-                                        maybe make it a little more fun and write a bit about who you are outside of 
-                                        work! The headline can be a maximum of 280 characters.
+                                        It depends on the type of card you’re creating. If it’s a networking card, perhaps list out your core skills and work history. If it’s a personal card, maybe make it a little more fun and write a bit about who you are outside of work!
                                     </div>
                                 </div>
                             </div>
@@ -471,10 +462,7 @@
                                     </h2>
                                 <div id="collapsetwentytwo" class="accordion-collapse collapse" aria-labelledby="headingtwentytwo" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                            Choose from our three distinct design options with a V.Card Professional, 
-                                            Business, or Enterprise plan. At this time, card designs can only be updated 
-                                            on the V.Card web app. (Don’t worry—as soon as you save your card with the new design, 
-                                            it will automatically appear on your mobile app.)
+                                        Choose from our three distinct design options with a V.Card Professional, Business, or Enterprise plan. At this time, card designs can only be updated on the V.Card web app.
                                     </div>
                                 </div>
                             </div>
@@ -494,10 +482,7 @@
                                     </h2>
                                 <div id="collapsetwentythree" class="accordion-collapse collapse" aria-labelledby="headingtwentythree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        There are a few ways to share your digital business card. We recommend sharing it using 
-                                        your unique QR code, but you can also text, email, and share the link to your card. To 
-                                        share your card,simply double-tap the card you’d like to share and select your preferred 
-                                        sharing method.
+                                        There are a few ways to share your digital business card. We recommend sharing it using your unique QR code, but you can also text, email, and share the link to your card. To share your card, simply double-tap the card you’d like to share and select your preferred sharing method.
                                     </div>
                                 </div>
                             </div>
@@ -512,10 +497,7 @@
                                     </h2>
                                 <div id="collapsetwentyfour" class="accordion-collapse collapse" aria-labelledby="headingtwentyfour" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        Yes! You can share your  v.card with anyone—even if they don’t 
-                                        have the app—via your QR code, email, text message, and link sharing. 
-                                        Once received, anyone can save your contact information by emailing or texting your 
-                                        card to themselves or downloading it as a virtual contact file.
+                                        Yes! You can share your V card with anyone even if they don’t have the app via your QR code, email, text message, and link sharing. Once received, anyone can save your contact information by emailing or texting your card to themselves or downloading it as a virtual contact file.
                                     </div>
                                 </div>
                             </div>
@@ -530,11 +512,7 @@
                                     </h2>
                                 <div id="collapsetwentyfive" class="accordion-collapse collapse" aria-labelledby="headingtwentyfive" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        Every digital business card has its unique QR code. Double-tap
-                                        the card you’d like to share and show your V.Card QR code to the
-                                        person with whom you’re sharing your card.They’ll have the option
-                                        to save your card by texting or emailing it to themselves or downloading 
-                                        it as a virtual contact file.
+                                        Every digital business card has its unique QR code. Double-tap the card you’d like to share and show your V.Card QR code to the person with whom you’re sharing your card. They’ll have the option to save your card by texting or emailing it to themselves or downloading it as a virtual contact file.
                                     </div>
                                 </div>
                             </div>
@@ -549,8 +527,7 @@
                                     </h2>
                                 <div id="collapsetwentysix" class="accordion-collapse collapse" aria-labelledby="headingtwentysix" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        QR stands for Quick Response. A QR code acts like a barcode you’d see at a grocery store. 
-                                        When scanned with a smartphone, it’ll pull up the encoded information.
+                                        QR stands for Quick Response. A QR code acts like a barcode you’d see at a grocery store. When scanned with a smartphone, it’ll pull up the encoded information.
                                     </div>
                                 </div>
                             </div>
@@ -570,8 +547,7 @@
                                     </h2>
                                 <div id="collapsetwentyseven" class="accordion-collapse collapse" aria-labelledby="headingtwentyseven" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        A digital business card address book is an electronic database that stores
-                                        and organizes digital business cards.
+                                        A digital business card address book is an electronic database that stores and organizes digital business cards.
                                     </div>
                                 </div>
                             </div>
@@ -586,8 +562,7 @@
                                     </h2>
                                 <div id="collapsetwentyeight" class="accordion-collapse collapse" aria-labelledby="headingtwentyeight" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        You can add digital business cards to your address book by scanning QR Code, 
-                                        it will Show you the profile of user.
+                                        You can add digital business cards to your address book by scanning the QR Code, which will show you the profile of a user.
                                     </div>
                                 </div>
                             </div>
@@ -602,8 +577,7 @@
                                     </h2>
                                 <div id="collapsetwentynine" class="accordion-collapse collapse" aria-labelledby="headingtwentynine" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        Yes, most V.Card business card address books allow you to store multiple 
-                                        digital business cards in Address Book.
+                                     Yes, V.Card business card address books allow you to store multiple digital business cards in Address Book.
                                     </div>
                                 </div>
                             </div>
@@ -618,8 +592,7 @@
                                     </h2>
                                 <div id="collapsethirty" class="accordion-collapse collapse" aria-labelledby="headingthirty" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                    Yes, V.card digital business card address books have a search feature that allows you 
-                                    to search for a specific contact by name, company, or other information.
+                                        Yes, V.card digital business card address books have a search feature that allows you to search for a specific contact by name, company, or other information.
                                     </div>
                                 </div>
                             </div>
@@ -654,7 +627,7 @@
                                     </h2>
                                 <div id="collapsethirtytwo" class="accordion-collapse collapse" aria-labelledby="headingthirtytwo" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        Yes you can upload an image while creating your digital business cards.
+                                        When you are designing your digital business card, you can add an image that you would like to use as your background.
                                     </div>
                                 </div>
                             </div>
@@ -669,7 +642,7 @@
                                     </h2>
                                 <div id="collapsethirtythree" class="accordion-collapse collapse" aria-labelledby="headingthirtythree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                    The ideal size of image is 2 Mb.
+                                        The ideal size of the image is 2 Mb.
                                     </div>
                                 </div>
                             </div>
