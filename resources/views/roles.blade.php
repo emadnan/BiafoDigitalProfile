@@ -2,12 +2,13 @@
 @section('content')
 <div class="content-wrapper">
     <section class="content-header">
-        <div class='container-fluid'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-md-8'>
+                    <h2>Roles</h2>
                 </div>
                 <div class='col-md-4'>
-                    <button type="button" class="btn btn-primary" id="addRole">
+                    <button type="button" class="btn btn-primary float-right" id="addRole">
                         Add Role
                     </button>
                 </div>
