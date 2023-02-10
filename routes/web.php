@@ -10,6 +10,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\FeatureRequestController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\RoleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,5 +53,9 @@ Route::get('visting_card/{card_id}/{type}',[CardController::class,'visting_card'
 Route::post('/add_featureRequest',[FeatureRequestController::class,'add_featureRequest'])->name('add_featureRequest');
 Route::get('/lists_feature_requets', [FeatureRequestController::class,'index'])->name('lists_feature_requets');
 Route::get('/delete_feature_requets/{id}',[FeatureRequestController::class,'deleteRow'])->name('delete_feature_requets');
+Route::get('/roles', [RoleController::class,'index'])->name('roles');
+Route::post('/add_role',[RoleController::class,'add_role'])->name('add_role');
+Route::get('/delete_role/{id}',[RoleController::class,'delete_role'])->name('delete_role');
+Route::post('/update_role/{id}',[RoleController::class,'update_role'])->name('update_role');
 
 
