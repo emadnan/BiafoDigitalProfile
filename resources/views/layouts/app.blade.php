@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Card App</title>
+    <title>Cardify</title>
 
     <!-- Scripts -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -82,7 +82,7 @@
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#ad021c;">
             <div class="container">
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Cardify') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

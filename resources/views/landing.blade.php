@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Card App</title>
+    <title>Cardify</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script src="{{asset('frontend/js/bootstrap5.bundle.min.js')}}"></script>
@@ -29,7 +29,7 @@ html {
             <nav class="navbar navbar-expand-lg w-100 p-0">
                 <div class="container">
                     <a class="navbar-brand text-white fs-3" href="#">
-                        <h2>CardGiene</h2>
+                        <h2>Cardify</h2>
                     </a>
                     <button class="navbar-toggler btn-yellow text-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
