@@ -67,11 +67,21 @@ class RegisterController extends Controller
     {
         // print_r($data);
         // exit;
+        $role_id = 0;
+        if($data['user_type']=="company")
+        {
+            $role_id = 2;
+        }
+        elseif($data['user_type']=="individual")
+        {
+            $role_id = 4;
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'user_type' => $data['user_type'],
+            'role_id' => $role_id,
         ]);
     }
 }
