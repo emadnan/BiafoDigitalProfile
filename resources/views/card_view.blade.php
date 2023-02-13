@@ -21,9 +21,9 @@ $permissions= session()->get('permissions');
             </div>
         </div>
     </section>
-    <div class="container-fluid">
+    <div class="container-fluid" id="download_able">
         @if(isset($permissions['can_view_card']))
-        <div class="business2 mt-5" id="download">
+        <div class="business2 mt-5">
             <div class="front">
                 <div class="red">
                     <div class="head">
@@ -126,6 +126,10 @@ $permissions= session()->get('permissions');
                 @if(isset($permissions['can_create_visting_card']))
                 <a href="/visting_card/{{$card->id}}/{{$type}}" class="btn btn-green ml-4"><i
                         class="fa-brands fa-card"></i> Visting Card</a>
+                @endif
+                @if(isset($permissions['can_download_card']))
+                <a href="#" id="download_card" class="btn btn-yellow ml-4"><i class="fa-solid fa-download"></i> Download
+                    Card</a>
                 @endif
             </div>
             <div class="col-md-3"></div>
@@ -282,6 +286,24 @@ $permissions= session()->get('permissions');
 @endsection
 @section('scripts')
 <script>
+        $("#download_card").on('click', function() {
+        // qrCode.download({name: "my-qr-code.png"});
+        // html2canvas(element, {
+        //     onrendered: function(canvas) {
+        //         var imgData = canvas.toDataURL("image/png");
+        //         var newData = imgData.replace(/^data:image\/png/,
+        //             "data:application/octet-stream");
+        //         $("#download").attr("download", "your_image.png").attr("href", newData)
+        //     }
+        var node = document.getElementById('download_able');
+        domtoimage.toPng(node)
+          .then(function(dataUrl) {
+            var link = document.createElement('a');
+            link.download = 'Your_vCard.png';
+            link.href = dataUrl;
+            link.click();
+      });
+        });
 $('.delete-card').click(function(e) {
     $('#modaldeletecard').attr('href', '/delete_card/' + $(this).attr('data-delete-card-id'))
 });
