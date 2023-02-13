@@ -231,10 +231,11 @@ $(document).ready(function() {
     });
     //save button click
     saveButton.addEventListener("click", () => {
-        document.querySelector("body").style.visibility = "hidden";
-        document.querySelector("#loader").style.visibility = "visible";
+       
         //if form validate true then save data
         if ($('#add_card_form').valid()) {
+        document.querySelector("body").style.visibility = "hidden";
+        document.querySelector("#loader").style.visibility = "visible";
             //get cropped image
             var croppedImage = cropper.getCroppedCanvas().toDataURL();
             //show cropped image in image preview

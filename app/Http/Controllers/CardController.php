@@ -41,7 +41,8 @@ class CardController extends Controller
             $company_user = new User();
             $company_user->name = $request->name;
             $company_user->email = $request->email;
-            $company_user->user_type='company_user';
+            $company_user->user_type = 'company_user';
+            $company_user->role_id = 3;
             $password = Str::random(8);
             $company_user->password = Hash::make($password);
             $company_user->save();
@@ -210,6 +211,7 @@ class CardController extends Controller
         $password = Str::random(8);
         $user->password = Hash::make($password);
         $user->user_type = "individual";
+        $user->role_id = 4;
         $user->save();
         //update user_id in card
         $card = Card::where('id', $card_id)->first();
