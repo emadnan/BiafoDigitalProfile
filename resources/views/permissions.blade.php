@@ -107,7 +107,7 @@
                   @csrf
                   <div class="mb-3">
                     <label for="role" class="form-label">Update:</label>
-                    <input type="text" class="form-control" id="update-permission" name="permission" placeholder="Enter Permission">
+                    <input type="text" class="form-control" id="update-permission-input" name="permission" placeholder="Enter Permission">
                   </div>
                   <button type="submit" class="btn btn-primary float-right">Submit</button>
                 </form>
@@ -133,9 +133,8 @@
     $('.update-permission').click(function() {
       var update_permission_id = $(this).data('permission-id');
       var update_permission_name = $(this).data('permission-name');
-      // console.log(update_permission_name);
-      $('#update-permission').value = update_permission_name;
       $('#updateForm').attr('action', '/update_Permission/' + update_permission_id);
+      $('#update-permission-input').val(update_permission_name);
 
     });
   });

@@ -62,4 +62,5 @@ Route::get('/permissions',[PermissionController::class,'index'])->name('permissi
 Route::post('/add_Permission',[PermissionController::class,'add_Permission'])->name('add_Permission');
 Route::get('/delete_Permission/{id}',[PermissionController::class,'delete_Permission'])->name('delete_Permission');
 Route::post('/update_Permission/{id}',[PermissionController::class,'update_Permission'])->name('update_Permission');
-
+Route::get('/permission_role/{id}',[RoleController::class,'permission_role'])->name('permission_role');
+Route::post('/add_permission_role',[RoleController::class,'add_permission_role'])->name('add_permission_role');

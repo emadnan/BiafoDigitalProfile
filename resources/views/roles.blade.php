@@ -26,7 +26,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Role</th>
-                                        <th scope="col" width="20%">Action</th>
+                                        <th scope="col" width="30%">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,6 +43,7 @@
                                                 data-delete-role-id="{{ $role->id }}" data-bs-toggle="modal"
                                                 data-bs-target="#deletefilemodal"><i class="fa fa-trash"
                                                     aria-hidden="true"></i> Delete </button>
+                                                    <a class="btn btn-warning" href="/permission_role/{{$role->id}}" role="button">Assign Permissions</a>
                                         </td>
                                     </tr>
                                     @endforeach

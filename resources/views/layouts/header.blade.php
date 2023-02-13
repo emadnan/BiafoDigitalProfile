@@ -9,6 +9,9 @@
          <li class="nav-item ml-4">
              <a class="nav-link" href="/roles" role="button">Roles</a>
          </li>
+         <li class="nav-item ml-4">
+             <a class="nav-link" href="/permissions" role="button">Permissions</a>
+         </li>
 
      </ul>
 
