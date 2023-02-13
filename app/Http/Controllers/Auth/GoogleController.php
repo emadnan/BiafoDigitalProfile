@@ -54,7 +54,7 @@ class GoogleController extends Controller
             }
     
         } catch (Exception $e) {
-            dd($e->getMessage());
+            print_r($e->getMessage());
         }
     }
 }
