@@ -8,6 +8,7 @@ use Socialite;
 use Auth;
 use Exception;
 use App\Models\User;
+use App\Models\PermissionRole;
   
 class GoogleController extends Controller
 {
@@ -38,7 +39,13 @@ class GoogleController extends Controller
             if($finduser){
      
                 Auth::login($finduser);
-    
+                $role_id=auth()->user()->role_id;
+                $permission_roles=PermissionRole::where('role_id',$role_id)->get();
+                $permissions=[];
+                foreach($permission_roles as $permission_role){
+                $permissions[$permission_role->permissions->permission]=$permission_role->permissions->permission;
+                }
+                session()->put('permissions',$permissions);
                 return redirect('/home');
      
             }else{
@@ -50,7 +57,13 @@ class GoogleController extends Controller
                 ]);
     
                 Auth::login($newUser);
-     
+                $role_id=auth()->user()->role_id;
+                $permission_roles=PermissionRole::where('role_id',$role_id)->get();
+                $permissions=[];
+                foreach($permission_roles as $permission_role){
+                $permissions[$permission_role->permissions->permission]=$permission_role->permissions->permission;
+                }
+                session()->put('permissions',$permissions);
                 return redirect('/home');
             }
     

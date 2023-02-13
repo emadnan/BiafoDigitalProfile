@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('content')
+@php
+$permissions= session()->get('permissions');
+@endphp
 <div class="content-wrapper">
     <div class="container">
         <section class="content-header">
@@ -8,9 +11,11 @@
                     <div class='col-md-8'>
                     </div>
                     <div class='col-md-4'>
+                        @if(isset($permissions['can_create_card']))
                         <a type="button"  id="add_card" class="anchor btn btn-primary float-right">
                             Add Card
                         </a>
+                        @endif
                     </div>
                 </div>
             </div>

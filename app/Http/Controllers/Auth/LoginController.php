@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Card;
 use App\Models\Profile;
+use App\Models\PermissionRole;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -39,20 +40,14 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    // public function authenticated()
-    // {
-    //     $user_type=auth()->user()->user_type;
-    //     if($user_type=="company_user")
-    //     {
-    //         $card=Card::where('company_user_id',auth()->user()->id)->first();
-    //         $profile=Profile::where('card_id',$card->id)->first();
-    //         $is_profile=1;
-    //         if($profile==null)
-    //         {
-    //             $is_profile=0;
-    //         }
-    //         return redirect('/company_user_card/'.$card->id.'/work/'.$is_profile);
-    //     }
-
-    // }
+    public function authenticated()
+    {
+       $role_id=auth()->user()->role_id;
+       $permission_roles=PermissionRole::where('role_id',$role_id)->get();
+         $permissions=[];
+            foreach($permission_roles as $permission_role){
+                $permissions[$permission_role->permissions->permission]=$permission_role->permissions->permission;
+            }
+            session()->put('permissions',$permissions);
+    }
 }

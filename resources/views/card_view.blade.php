@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('content')
+@php
+$permissions= session()->get('permissions');
+@endphp
 <link href="{{asset('frontend/css/card_styles.css')}}" rel="stylesheet" />
 <div class="content-wrapper">
     <section class="content-header">
@@ -8,14 +11,18 @@
                 <div class='col-md-8'></div>
                 <div class='col-md-4'>
                     @if(empty($profile))
-                <a href="/add_profile/{{$card->id}}/{{$type}}" class="btn btn-primary" style="float:right;margin-top:10px;">Add
-                            Profile</a>
-                            @endif
+                    @if(isset($permissions['can_add_profile']))
+                    <a href="/add_profile/{{$card->id}}/{{$type}}" class="btn btn-primary"
+                        style="float:right;margin-top:10px;">Add
+                        Profile</a>
+                    @endif
+                    @endif
                 </div>
             </div>
         </div>
     </section>
     <div class="container-fluid">
+        @if(isset($permissions['can_view_card']))
         <div class="business2 mt-5" id="download">
             <div class="front">
                 <div class="red">
@@ -91,36 +98,47 @@
                 <div class="top">
                 </div>
                 <div class="qricon">
-                <a class="qr_anchor" href="/view_profile/{{$card->id}}">
-                    <div id="qrcode">
-                    </div>
-</a>
+                    <a class="qr_anchor" href="/view_profile/{{$card->id}}">
+                        <div id="qrcode">
+                        </div>
+                    </a>
                 </div>
             </div>
             <!-- kdjaskd -->
         </div>
+        @endif
         <div class="row mt-3">
-          <div class="col-md-3"></div>
-          <div class="col-md-6 d-flex justify-content-center">
-          <a href="#" id="update_card" class="btn btn-yellow"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
-          
-          <button type="button" class="btn btn-danger ml-4 delete-card"
-                                            data-delete-card-id="{{ $card->id }}" data-bs-toggle="modal"
-                                            data-bs-target="#deletecardmodal"><i class="fa-solid fa-trash-can"></i> Delete
-                                        </button>
-        <a href="/customize_card_index/{{$card->id}}/{{$type}}"  class="btn btn-yellow ml-4"><i class="fa-brands fa-figma"></i> Customize Card</a>
-        <a href="/visting_card/{{$card->id}}/{{$type}}"  class="btn btn-green ml-4"><i class="fa-brands fa-card"></i> Visting Card</a>
-          </div>
-          <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-6 d-flex justify-content-center">
+                @if(isset($permissions['can_edit_card']))
+                <a href="#" id="update_card" class="btn btn-yellow"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                @endif
+                @if(isset($permissions['can_delete_card']))
+                <button type="button" class="btn btn-danger ml-4 delete-card" data-delete-card-id="{{ $card->id }}"
+                    data-bs-toggle="modal" data-bs-target="#deletecardmodal"><i class="fa-solid fa-trash-can"></i>
+                    Delete
+                </button>
+                @endif
+                @if(isset($permissions['can_customize_card']))
+                <a href="/customize_card_index/{{$card->id}}/{{$type}}" class="btn btn-yellow ml-4"><i
+                        class="fa-brands fa-figma"></i> Customize Card</a>
+                @endif
+                @if(isset($permissions['can_create_visting_card']))
+                <a href="/visting_card/{{$card->id}}/{{$type}}" class="btn btn-green ml-4"><i
+                        class="fa-brands fa-card"></i> Visting Card</a>
+                @endif
+            </div>
+            <div class="col-md-3"></div>
         </div>
     </div>
-     <!-- Update Card Model -->
-     <div class="modal fade" id="update_card_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!-- Update Card Model -->
+    <div class="modal fade" id="update_card_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form id="update_card_form" action="/update_card/{{$card->id}}/{{$type}}" method="POST" enctype="multipart/form-data">
+                    <form id="update_card_form" action="/update_card/{{$card->id}}/{{$type}}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         <!-- //image -->
                         <div>
@@ -142,12 +160,13 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" name="email" id="email"
-                                value="{{$card->email}}" placeholder="Enter Email">
+                            <input type="email" class="form-control" name="email" id="email" value="{{$card->email}}"
+                                placeholder="Enter Email">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone:</label>
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone" value="{{$card->phone}}">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone"
+                                value="{{$card->phone}}">
                         </div>
                         <div class="form-group">
                             <label for="company">Company:</label>
@@ -171,7 +190,8 @@
                         </div>
                         <div class="form-group">
                             <label for="city">City:</label>
-                            <input type="text" class="form-control" name="city" id="city" placeholder="Enter City" value="{{$card->city}}">
+                            <input type="text" class="form-control" name="city" id="city" placeholder="Enter City"
+                                value="{{$card->city}}">
                         </div>
                         <div class="form-group">
                             <label for="linkiden">Linkiden:</label>
@@ -192,12 +212,12 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" id="saveButton" class="btn btn-primary">Save changes</button>
                 </div>
-                
+
             </div>
         </div>
     </div>
-       <!-- Modal delete -->
-       <div class="modal fade" id="deletecardmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!-- Modal delete -->
+    <div class="modal fade" id="deletecardmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -230,38 +250,39 @@
         </div>
     </div>
 </div>
-    <!-- //image crop modal -->
-    <div class="modal fade" id="image_crop_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Crop Image</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body d-flex " style=" width: 600px;height: 600px;">
-                    <div class="row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-10 mt-4">
-                            <img id="to_be_cropped_image" style=" width: 600px;height: 600px;" />
+<!-- //image crop modal -->
+<div class="modal fade" id="image_crop_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Crop Image</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body d-flex " style=" width: 600px;height: 600px;">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10 mt-4">
+                        <img id="to_be_cropped_image" style=" width: 600px;height: 600px;" />
 
-                        </div>
                     </div>
+                </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="cropButton" class="btn btn-primary"><i class="fa-solid fa-crop"></i> Crop</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cropButton" class="btn btn-primary"><i class="fa-solid fa-crop"></i>
+                    Crop</button>
             </div>
         </div>
     </div>
 </div>
+</div>
 @endsection
 @section('scripts')
 <script>
-  $('.delete-card').click(function(e) {
+$('.delete-card').click(function(e) {
     $('#modaldeletecard').attr('href', '/delete_card/' + $(this).attr('data-delete-card-id'))
 });
 // var qrcode = new QRCode("qrcode", {
@@ -273,33 +294,33 @@
 //     correctLevel: QRCode.CorrectLevel.H,
 // });
 const qrCode = new QRCodeStyling({
-        width: 120,
-        height: 120,
-        type: "canvas",
-        data: "{{route('view_profile', $card->id)}}",
-        image: "{{asset('frontend/img/qr_logo.svg')}}",
-        dotsOptions: {
-            color: "black",
-            type: "classy-rounded"
-        },
-        backgroundOptions: {
-            color: "#ffffff",
-        },
-        imageOptions: {
-            crossOrigin: "anonymous",
-            margin: 0,
-            imageSize: 0.7,
-        },
-        qrOptions: {
-            errorCorrectionLevel: "H",
-        },
-    });
+    width: 120,
+    height: 120,
+    type: "canvas",
+    data: "{{route('view_profile', $card->id)}}",
+    image: "{{asset('frontend/img/qr_logo.svg')}}",
+    dotsOptions: {
+        color: "black",
+        type: "classy-rounded"
+    },
+    backgroundOptions: {
+        color: "#ffffff",
+    },
+    imageOptions: {
+        crossOrigin: "anonymous",
+        margin: 0,
+        imageSize: 0.7,
+    },
+    qrOptions: {
+        errorCorrectionLevel: "H",
+    },
+});
 
-    qrCode.append(document.getElementById("qrcode"));
+qrCode.append(document.getElementById("qrcode"));
 $('#update_card').click(function() {
-        $('#update_card_modal').modal('show');
-    });
-    $(document).ready(function() {
+    $('#update_card_modal').modal('show');
+});
+$(document).ready(function() {
     var image = document.getElementById("to_be_cropped_image");
     var cropButton = document.getElementById("cropButton");
     var downloadButton = document.getElementById("downloadButton");
@@ -354,30 +375,28 @@ $('#update_card').click(function() {
         //if form validate true then save data
         if ($('#update_card_form').valid()) {
             //get cropped image
-            if(cropper)
-            {
-            var croppedImage = cropper.getCroppedCanvas().toDataURL();
-            croppedImageContainer.src = croppedImage;
-            }
-            else{
+            if (cropper) {
+                var croppedImage = cropper.getCroppedCanvas().toDataURL();
+                croppedImageContainer.src = croppedImage;
+            } else {
                 var croppedImage = "no_image";
             }
             //hide image crop modal
             $('#image_crop_modal').modal('hide');
-            var data= new FormData();
-            data.append('_token','{{ csrf_token() }}');
-            data.append('card_id','{{$card->id}}');
-            data.append('image',croppedImage);
-            data.append('name',$('#name').val());
-            data.append('email',$('#email').val());
-            data.append('phone',$('#phone').val());
-            data.append('address',$('#address').val());
-            data.append('city',$('#city').val());
-            data.append('country',$('#country').val());
-            data.append('website',$('#website').val());
-            data.append('company',$('#company').val());
-            data.append('designation',$('#designation').val());
-            data.append('linkiden',$('#linkiden').val());
+            var data = new FormData();
+            data.append('_token', '{{ csrf_token() }}');
+            data.append('card_id', '{{$card->id}}');
+            data.append('image', croppedImage);
+            data.append('name', $('#name').val());
+            data.append('email', $('#email').val());
+            data.append('phone', $('#phone').val());
+            data.append('address', $('#address').val());
+            data.append('city', $('#city').val());
+            data.append('country', $('#country').val());
+            data.append('website', $('#website').val());
+            data.append('company', $('#company').val());
+            data.append('designation', $('#designation').val());
+            data.append('linkiden', $('#linkiden').val());
 
             //ajax request
             $.ajax({
