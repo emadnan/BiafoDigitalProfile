@@ -34,8 +34,8 @@ class PermissionController extends Controller
     public function update_Permission(Request $request, $id)
     {
         $permission = Permission::find($id);
-        $permission->permissions = $request->permissions;
+        $permission->permission = $request->permission;
         $permission->save();
-        return redirect()->route('permission')->with('success', 'Permission updated successfully');
+        return redirect()->route('permissions')->with('success', 'Permission updated successfully');
     }
 }
