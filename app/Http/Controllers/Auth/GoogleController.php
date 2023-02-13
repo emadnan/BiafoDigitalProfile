@@ -29,7 +29,8 @@ class GoogleController extends Controller
     public function handleGoogleCallback()  // this function get user login of googlre
     {
         try {
-    
+            print_r("hello");
+            die;
             $user = Socialite::driver('google')->user();
      
             $finduser = User::where('google_id', $user->id)->first();
