@@ -316,8 +316,8 @@ $('.delete-card').click(function(e) {
 //     correctLevel: QRCode.CorrectLevel.H,
 // });
 const qrCode = new QRCodeStyling({
-    width: 125,
-    height: 125,
+    width: 120,
+    height: 120,
     type: "canvas",
     data: "{{route('view_profile', $card->id)}}",
     image: "{{asset('frontend/img/qr_logo.svg')}}",
@@ -331,7 +331,7 @@ const qrCode = new QRCodeStyling({
     imageOptions: {
         crossOrigin: "anonymous",
         margin: 0,
-        imageSize: 0.7,
+        imageSize: 0.4,
     },
     qrOptions: {
         errorCorrectionLevel: "H",
