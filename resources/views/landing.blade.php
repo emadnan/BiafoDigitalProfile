@@ -112,7 +112,7 @@ html {
                                 your digital contact information. They give people the ability to share who they are,
                                 with anyone, wherever they go.</p>
                         </div>
-                        <img src="{{asset('frontend/img/landing_pic.png')}}" alt=""
+                        <img src="{{asset('frontend/img/landing_3.png')}}" alt=""
                             class="position-absolute customize__absolute__img">
                     </div>
                 </div>
@@ -192,26 +192,19 @@ html {
         <section class="about_curved_bg mt-5" id="about">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 mt-2"></div>
-                    <div class="col-md-4 mt-5">
-                        <!-- <div style="background-color:#ff9d00"> -->
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8">
-                            <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00">
-                                <b>ABOUT US</b>
-                        </div>
-                        <div class="col-md-2"></div>
+                    <div class="col-md-5 mt-2"></div>
+                    <div class="col-md-2 mt-5">
+                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00">
+                            <b>ABOUT US</b>
                         </h3>
-                        <!-- </div> -->
                     </div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-5"></div>
                 </div>
 
-                <div class="row mt-3">
-                    <div class="col-md-6 mt-3">
+                <div class="row">
+                    <div class="col-md-6 mt-5">
                         <div>
-                            <img src="{{asset('frontend/img/about_3.png')}}" class="mt-5" alt="" width="300"
-                                height="400">
+                            <img src="{{asset('frontend/img/about_6.png')}}" alt="" height="80%" width="80%">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -770,7 +763,8 @@ html {
                                             </div>
                                             <div class="mt-3 ms-3">
                                                 <p class="mb-0 pb-0 text-black fw-bold text-uppercase">Address</p>
-                                                <small class="d-block text-muted">Lake City Near Jalal Sons, Lahore, Punjab, Pakistan </small>
+                                                <small class="d-block text-muted">Lake City Near Jalal Sons, Lahore,
+                                                    Punjab, Pakistan </small>
                                             </div>
                                         </div>
                                         <div class="d-flex mt-4">
@@ -782,7 +776,8 @@ html {
                                                     <i class="fa-brands fa-facebook-f fs-3 me-2 mt-2"
                                                         style="padding: 8px 12px !important;"></i>
                                                 </a>
-                                                <a href="https://www.linkedin.com/company/biafotech-pvt-ltd?original_referer=https%3A%2F%2Fwww.biafotech.com%2F" target="_blank">
+                                                <a href="https://www.linkedin.com/company/biafotech-pvt-ltd?original_referer=https%3A%2F%2Fwww.biafotech.com%2F"
+                                                    target="_blank">
                                                     <i class="fa-brands fa-linkedin-in fs-3 p-2 me-2 mt-2"></i>
                                                 </a>
                                             </div>
