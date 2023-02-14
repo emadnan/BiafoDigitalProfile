@@ -1,4 +1,6 @@
-
+@php
+$permissions= session()->get('permissions');
+@endphp
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -65,6 +67,7 @@
                         </p>
                     </a>
                 </li>
+                @if(isset($permissions['can_view_feature_requests']))
                 <li  >
 
                 <!-- Request features -->
@@ -75,6 +78,7 @@
                         </p>
                     </a>
                 </li>
+                @endif
                 <li  >
                     <a class="nav-link text-white"
                         href="#"><i class="nav-icon fas fa-bell"></i>

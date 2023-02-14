@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('content')
+@php
+$permissions= session()->get('permissions');
+@endphp
 <div class="content-wrapper">
   <section class="content-header">
     <div class='container'>
@@ -8,9 +11,11 @@
           <h2>Permissions</h2>
         </div>
         <div class='col-md-4'>
+          @if(isset($permissions['can_create_permissions']))
           <button type="button" class="btn btn-primary float-right" id="permissionbtn">
             Add permission
           </button>
+          @endif
         </div>
       </div>
     </div>
@@ -35,8 +40,12 @@
                     <th scope="row">{{ $loop->iteration}}</th>
                     <td>{{ $permission->permission}}</td>
                     <td>
+                      @if(isset($permissions['can_delete_permissions'])
                       <button type="button" class="btn btn-danger delete-permission" data-permission-id="{{ $permission->id }}" data-bs-toggle="modal" data-bs-target="#deletefilemodal"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
-                      <button type="button" class="btn btn-danger update-permission" data-permission-id="{{ $permission->id }}" data-permission-name="{{$permission->permission}}" data-bs-toggle="modal" data-bs-target="#update-permission"><i class="fa fa-pencil" aria-hidden="true"></i> Update</button>
+                      @endif
+                      @if(isset($permissions['can_edit_permissions']))
+                      <button type="button" class="btn btn-warning update-permission" data-permission-id="{{ $permission->id }}" data-permission-name="{{$permission->permission}}" data-bs-toggle="modal" data-bs-target="#update-permission"><i class="fa fa-pencil" aria-hidden="true"></i> Update</button>
+                      @endif
                     </td>
                   </tr>
                   @endforeach

@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('content')
+@php
+$permissions= session()->get('permissions');
+@endphp
 <div class="content-wrapper">
     <section class="content-header">
         <div class='container-fluid'>
@@ -37,7 +40,9 @@
                                     <td>{{ $feature_request->phone }}</td>
                                     <td>{{ $feature_request->request }}</td>
                                     <td>
+                                        @if(isset($permissions['can_delete_feature_requests']))
                                         <a type="button" class="btn btn-danger" href="/delete_feature_requets/{{$feature_request->id}}">Delete</a>
+                                        @endif
                                     </td>
                                 </tr>
 

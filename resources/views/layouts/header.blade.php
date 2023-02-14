@@ -1,4 +1,6 @@
-
+@php
+$permissions= session()->get('permissions');
+@endphp
  <!-- Navbar -->
  <nav class="main-header navbar navbar-expand navbar-dark navbar-dark">
      <!-- Left navbar links -->
@@ -6,12 +8,16 @@
          <li class="nav-item">
              <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
          </li>
+         @if(isset($permissions['can_view_roles']))
          <li class="nav-item ml-4">
              <a class="nav-link" href="/roles" role="button">Roles</a>
          </li>
+            @endif
+            @if(isset($permissions['can_view_permissions']))
          <li class="nav-item ml-4">
              <a class="nav-link" href="/permissions" role="button">Permissions</a>
          </li>
+            @endif
 
      </ul>
 

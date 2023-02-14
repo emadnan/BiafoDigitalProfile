@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('content')
+@php
+$permissions= session()->get('permissions');
+@endphp
 <div class="content-wrapper">
     <section class="content-header">
         <div class='container'>
@@ -8,9 +11,11 @@
                     <h2>Roles</h2>
                 </div>
                 <div class='col-md-4'>
+                    @if(isset($permissions['can_create_roles']))
                     <button type="button" class="btn btn-primary float-right" id="addRole">
                         Add Role
                     </button>
+                    @endif
                 </div>
             </div>
         </div>
@@ -35,15 +40,21 @@
                                         <th scope="row">{{ $loop->iteration}}</th>
                                         <td>{{ $role->role}}</td>
                                         <td>
+                                            @if(isset($permissions['can_edit_roles']))
                                             <button type="button" class="btn btn-danger update-role"
                                                 data-role-id="{{ $role->id }}" data-role-name="{{$role->role}}"
                                                 data-bs-toggle="modal" data-bs-target="#updateRoleModal"><i
                                                     class="fa fa-pencil" aria-hidden="true"></i> Update </button>
+                                                    @endif
+                                            @if(isset($permissions['can_delete_roles']))
                                             <button type="button" class="btn btn-danger delete-role"
                                                 data-delete-role-id="{{ $role->id }}" data-bs-toggle="modal"
                                                 data-bs-target="#deletefilemodal"><i class="fa fa-trash"
                                                     aria-hidden="true"></i> Delete </button>
+                                                    @endif
+                                            @if(isset($permissions['can_assign_permissions']))
                                                     <a class="btn btn-warning" href="/permission_role/{{$role->id}}" role="button">Assign Permissions</a>
+                                                    @endif
                                         </td>
                                     </tr>
                                     @endforeach
