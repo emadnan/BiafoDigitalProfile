@@ -51,7 +51,7 @@ $permissions= session()->get('permissions');
                         </p>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a class="nav-link text-white"
                         href="#"><i class="nav-icon fa-solid fa-mountain-sun"></i>
                         <p >
@@ -66,7 +66,7 @@ $permissions= session()->get('permissions');
                             Profiles
                         </p>
                     </a>
-                </li>
+                </li> -->
                 @if(isset($permissions['can_view_feature_requests']))
                 <li  >
 
@@ -79,13 +79,13 @@ $permissions= session()->get('permissions');
                     </a>
                 </li>
                 @endif
-                <li  >
+                <!-- <li  >
                     <a class="nav-link text-white"
                         href="#"><i class="nav-icon fas fa-bell"></i>
                         <p >Notifications
                         </p>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

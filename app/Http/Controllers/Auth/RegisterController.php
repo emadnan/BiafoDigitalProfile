@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\PermissionRole;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -76,6 +77,12 @@ class RegisterController extends Controller
         {
             $role_id = 4;
         }
+        $permission_roles=PermissionRole::where('role_id',$role_id)->get();
+        $permissions=[];
+        foreach($permission_roles as $permission_role){
+           $permissions[$permission_role->permissions->permission]=$permission_role->permissions->permission;
+        } 
+        session()->put('permissions',$permissions);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

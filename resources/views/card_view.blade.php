@@ -124,8 +124,7 @@ $permissions= session()->get('permissions');
                         class="fa-brands fa-figma"></i> Customize Card</a>
                 @endif
                 @if(isset($permissions['can_create_visting_card']))
-                <a href="/visting_card/{{$card->id}}/{{$type}}" class="btn btn-green ml-4"><i
-                        class="fa-brands fa-card"></i> Visting Card</a>
+                <a href="/visting_card/{{$card->id}}/{{$type}}" class="btn btn-yellow ml-4"><i class="fa-regular fa-id-card"></i> Visting Card</a>
                 @endif
                 @if(isset($permissions['can_download_card']))
                 <a href="#" id="download_card" class="btn btn-yellow ml-4"><i class="fa-solid fa-download"></i> Download

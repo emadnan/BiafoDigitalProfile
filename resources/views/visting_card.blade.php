@@ -282,8 +282,10 @@ input[type="radio"]:checked+label>img {
                             @if($type == "work")
                             <p class="paragraph" id="company_text">{{$card->company}}</p>
                             @endif
-                            <div class="qricon" id="qrcode">
-                            </div>
+                            <a href="{{route('view_profile', $card->id)}}">
+                                <div class="qricon" id="qrcode">
+                                </div>
+                            </a>
                         </figure>
                     </div>
                 </div>
@@ -303,8 +305,8 @@ input[type="radio"]:checked+label>img {
                             <input type="color" id="text_color" name="text_color" value="#ffffff">
                         </div>
                         <div class="col-md-4 mt-2 mb-3">
-                        <button class="btn btn-primary" id="save">Save Colors</button>
-                    </div>
+                            <button class="btn btn-primary" id="save">Save Colors</button>
+                        </div>
                     </div>
                     <div class="col-md-6 mt-5">
                         <button class="btn btn-primary" id="download">Download</button>
@@ -417,8 +419,8 @@ $('#download').click(function() {
 });
 //change text color of the card
 var text_color = document.getElementById("text_color");
-$('#save').click(function(){
-    text_color= document.getElementById("text_color").value;
+$('#save').click(function() {
+    text_color = document.getElementById("text_color").value;
     document.getElementById("text").style.color = text_color;
     document.getElementById("name_text").style.color = text_color;
     document.getElementById("company_text").style.color = text_color;

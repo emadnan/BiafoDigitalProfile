@@ -51,7 +51,7 @@ class CardController extends Controller
                 "body" => "Your Card has been created. Please login with your email and password. Your Cridentials are: ",
                 "password" => $password,
                 "email" => $request->email,
-                'link' => 'http://localhost:8000/login'
+                'link' => route('login')
             ];
             Mail::to($request->email)->send(new CardMailable($mail));
             $company_user_id=$company_user->id;
