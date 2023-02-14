@@ -577,7 +577,7 @@ const qrCode = new QRCodeStyling({
     imageOptions: {
         crossOrigin: "anonymous",
         margin: 0,
-        imageSize: 0.7,
+        imageSize: 0.4,
     },
     qrOptions: {
         errorCorrectionLevel: "H",
