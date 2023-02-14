@@ -594,8 +594,8 @@ html {
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
 
-                                    <img src="/frontend/img/Request_image.png"
-                                        style="padding-left: 15%; padding-top: 15%; height: 500px; width: 80%;">
+                                    <img src="/frontend/img/request_2.png"
+                                        style="padding-left: 15%; height: 100%; width: 100%;">
                                     <!-- <div class="contat_info">
                         <h3 class="mb-1 fw-bolder">REQUEST INFO</h3>
                         <p>You Can Do Request From Following Details</p>
@@ -778,11 +778,11 @@ html {
                                         <div class="social_icons mt-4">
                                             <p>Visit our social profile and get connected.</p>
                                             <div class="d-flex mt-2">
-                                                <a href="https://www.facebook.com/BIAFOTECH/">
+                                                <a href="https://www.facebook.com/BIAFOTECH/" target="_blank">
                                                     <i class="fa-brands fa-facebook-f fs-3 me-2 mt-2"
                                                         style="padding: 8px 12px !important;"></i>
                                                 </a>
-                                                <a href="https://www.linkedin.com/company/biafotech-pvt-ltd?original_referer=https%3A%2F%2Fwww.biafotech.com%2F">
+                                                <a href="https://www.linkedin.com/company/biafotech-pvt-ltd?original_referer=https%3A%2F%2Fwww.biafotech.com%2F" target="_blank">
                                                     <i class="fa-brands fa-linkedin-in fs-3 p-2 me-2 mt-2"></i>
                                                 </a>
                                             </div>
