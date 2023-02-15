@@ -366,6 +366,11 @@ position: relative;
 border-radius: 20px;
 z-index: -1;
 } */
+@media screen and (max-width: 600px) {
+    .business2 .front .back .top div body {
+        max-width: 100%;
+    }
+}
 </style>
 <div class="content-wrapper">
     <section class="content-header">
@@ -380,8 +385,9 @@ z-index: -1;
     </section>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-7" id="download_able">
+            
                 <div class="business2 mt-5 wantradius">
+                    <div class="col-md-6" id="download_able">
                     <div class="front" id="buttom_color">
                         <div class="red" id="upper_color">
                             <div class="head">
@@ -447,7 +453,8 @@ z-index: -1;
                             </div>
                         </div>
                     </div>
-
+                </div>
+                <div class="col-md-6">
 
                     <!-- Back side of the card -->
 
@@ -465,6 +472,7 @@ z-index: -1;
                             </a>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
             <div class="col-md-5" style="margin-top:70px;">

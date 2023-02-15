@@ -371,7 +371,7 @@ border-radius: 20px;
 z-index: -1;
 } */
 @media screen and (max-width: 600px) {
-    .business2 .front .back .top div {
+    .business2 .front .back .top div body {
         max-width: 100%;
     }
 }
