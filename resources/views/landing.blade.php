@@ -105,8 +105,8 @@ html {
             <div class="hero_bg_img">
                 <div class="container">
                     <div class="position-relative">
-                        <div class="position-absolute text-white customize__absolute__text" style="z-index: 99;">
-                            <h1>Digital Business Card,</h1>
+                        <div class="position-absolute text-white customize__absolute__text">
+                            <h1>Digital Business Card</h1>
                             <p>A digital business card (also referred to as a QR code business card, virtual business
                                 card, electronic business card or mobile business card) is a profile that connects all
                                 your digital contact information. They give people the ability to share who they are,
@@ -124,8 +124,8 @@ html {
         <section id="feature">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 mt-2"></div>
-                    <div class="col-md-2 mt-5">
+                    <div class="col-md-4 mt-2"></div>
+                    <div class="col-md-4 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
                         <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">
                             <b>FEATURES</b>
@@ -133,55 +133,70 @@ html {
 
                         <!-- </div> -->
                     </div>
-                    <div class="col-md-5"></div>
+                    <div class="col-md-4"></div>
                 </div>
-                <div class="row mt-5">
+                <div class="row mt-5 mb-5">
                     <div class="col-md-3">
-                        <div class="card" style="background-color: #ad021c; ">
-                            <div class="card-body card h-100 shadow-lg">
-                                <h6 class="text-center" style="background-color:#ff9d00;">
-                                    <strong>Create Digital Business <br>Card</strong>
-                                </h6>
-                                <p style="font-size:18px;"> Create and customize stylish digital business cards. <br>It
-                                    stores the data of the user <br>once you scan the QR code <br> it will show the
-                                    profile of the <br> user.</p>
+                        <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px">
+                            <div class="card-header btn-yellow text-center"
+                                style="border-top-right-radius:25px;border-top-left-radius:25px">
+                                <h6 class="card-title">Create Digital Business Card</h6>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Create and customize stylish digital business cards.
+                                    </li>
+                                    <li class="list-group-item"> It stores the data of the user once you scan the QR
+                                        code it will show the profile of the user</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card" style="background-color: #ad021c; ">
-                            <div class="card-body card h-100 shadow-lg">
-                                <h6 class="text-center" style="background-color:#ff9d00;">
-                                    <strong>Sharing Your Business <br>Card</strong>
-                                </h6>
-                                <p style="font-size:18px;"> Share your virtual business card using a QR code or send it
-                                    through email, text, social media, and more. Anyone can receive your digital card,
-                                    even if they don't have the app.</p>
+                        <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px">
+                            <div class="card-header btn-yellow text-center"
+                                style="border-top-right-radius:25px;border-top-left-radius:25px">
+                                <h6 class="card-title">Sharing Your Business Card</h6>
+                            </div>
+                            <div class="card-body mt-3">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Share your virtual business card using a QR code or send
+                                        it through email, text, social media, and more. </li>
+                                    <li class="list-group-item"> Anyone can receive your digital card, even if they
+                                        don't have the app.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card" style="background-color: #ad021c;">
-                            <div class="card-body card h-100 shadow-lg">
-                                <h6 class="text-center" style="background-color:#ff9d00;">
-                                    <strong>Address Book<br>Card</strong>
-                                </h6>
-                                <p style="font-size:18px;"> When you share your digital business card via QR code, <br>
-                                    the recipient's contact
-                                    <br> information will automatically <br>be added to your digital <br>address book.
-                                </p>
+                        <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px">
+                            <div class="card-header btn-yellow text-center"
+                                style="border-top-right-radius:25px;border-top-left-radius:25px">
+                                <h6 class="card-title">Address Book</h6>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">When you share your digital business card using QR Code,
+                                        the contact information of the person.</li>
+                                    <li class="list-group-item"> you are sharing it with will automatically be saved in
+                                        your digital address book. </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-body card h-100 shadow-lg">
-                                <h6 class="text-center" style="background-color:#ff9d00;">
-                                    <strong>Virtual Background<br>Card</strong>
-                                </h6>
-                                <p style="font-size:18px;"> Use virtual backgrounds. Your virtual background can display
-                                    information from your digital business card, such as your QR code, name, pronouns,
-                                    preferred name, title, company, and logo.</p>
+                        <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px">
+                            <div class="card-header btn-yellow text-center"
+                                style="border-top-right-radius:25px;border-top-left-radius:25px">
+                                <h6 class="card-title">Virtual Background</h6>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Virtual background images or upload your image</li>
+                                    <li class="list-group-item">Your virtual background will encompass the information
+                                        on your digital business card, including your: QR code, Name, Pronouns,
+                                        Preferred Name, Title, Company, and Logo.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -192,13 +207,13 @@ html {
         <section class="about_curved_bg mt-5" id="about">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 mt-2"></div>
-                    <div class="col-md-2 mt-5">
+                    <div class="col-md-4 mt-2"></div>
+                    <div class="col-md-4 mt-5">
                         <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00">
                             <b>ABOUT US</b>
                         </h3>
                     </div>
-                    <div class="col-md-5"></div>
+                    <div class="col-md-4"></div>
                 </div>
 
                 <div class="row">
@@ -231,8 +246,8 @@ html {
         <section id="pricing">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 mt-2"></div>
-                    <div class="col-md-2 mt-5">
+                    <div class="col-md-4 mt-2"></div>
+                    <div class="col-md-4 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
                         <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">
                             <b>PRICING</b>
@@ -240,7 +255,7 @@ html {
 
                         <!-- </div> -->
                     </div>
-                    <div class="col-md-5"></div>
+                    <div class="col-md-4"></div>
                 </div>
                 <div class="card-ll mt-5" style=" border-radius: 25px;">
                     <div class="container p-5">
@@ -505,8 +520,8 @@ html {
         <section id="request_a_feature">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 mt-2"></div>
-                    <div class="col-md-4 mt-5">
+                    <div class="col-md-3 mt-2"></div>
+                    <div class="col-md-6 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
                         <h3 class="text-center mt-3 rounded-pill px-6 py-2" style="background-color:#ff9d00;">
                             <b>REQUEST A FEATURES</b>
@@ -514,7 +529,7 @@ html {
 
                         <!-- </div> -->
                     </div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="card mt-5">
                     <div class="card-body">
@@ -557,7 +572,7 @@ html {
                                                 <textarea class="form-control" id="message" type="text" name="request"
                                                     placeholder="Enter your message here..." style="height: 10rem"
                                                     data-sb-validations="required"></textarea>
-                                                <label for="message">Enter Request Detailes</label>
+                                                <label for="message">Enter Request Details</label>
                                                 <div class="invalid-feedback" data-sb-feedback="message:required">A
                                                     Request is required.</div>
                                             </div>
