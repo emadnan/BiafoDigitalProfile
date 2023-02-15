@@ -238,6 +238,11 @@ wantradius {
     text-transform: uppercase;
     font-weight: 900;
 }
+.name_and_designation{
+    text-align: center;
+    margin-top: 70px;
+    font-weight: 900;
+}
 
 .business2 .infos {
     position: absolute;
@@ -376,19 +381,59 @@ z-index: -1;
     <section class="content-header">
         <div class='container-fluid'>
             <div class='row'>
-                <div class='col-md-8'>
+            <div class='col-md-7'>
+                <a class="btn btn-primary" id="download"><i class="fa-solid fa-download"></i> Download</a>
                 </div>
-                <div class='col-md-4'>
-                <a class="btn btn-primary float-right" id="download"><i class="fa-solid fa-download"></i> Download</a>
+                <div class='col-md-5'>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mt-1">
+                                <h6 style="font-family:Palatino;font-weight:bold;">Upper Color:</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="color" id="upper_color_picker" name="upper_color_picker" value="#d12229">
+                            </div>
+                            <div class="col-md-6 mt-1">
+                                <h6 style="font-family:Palatino;font-weight:bold;">Buttom Color:</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="color" id="buttom_color_picker" name="buttom_color_picker" value="#393939">
+                            </div>
+                            <div class="col-md-6 mt-1">
+                                <h6 style="font-family:Palatino;font-weight:bold;">Back Color:</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="color" id="main_back_color_picker" name="main_back_color_picker"
+                                    value="#393939">
+                            </div>
+                            <div class="col-md-6 mt-1">
+                                <h6 style="font-family:Palatino;font-weight:bold;">Text Color:</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="color" id="text_color_picker" name="text_color_picker" value="#ffffff">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <button class="btn btn-primary" id="check_color">Save Changes</button>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                </div>
+                
             </div>
     </section>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" id="download_able">
             
                 <div class="business2 mt-5 wantradius">
-                    <div class="col-md-6" id="download_able">
-                    <div class="front" id="buttom_color">
+                    <div class="col-md-6">
+                    <div class="front float-right" id="buttom_color">
                         <div class="red" id="upper_color">
                             <div class="head">
                                 <div>
@@ -404,10 +449,14 @@ z-index: -1;
                             <div>
                                 <img src="{{asset('card_images')}}/{{$card->image_path}}" class="profile_img" alt="" />
                             </div>
-                            <p class="mt-2">{{$card->name}}</p>
-                            @if($type=="work")
-                            <p>{{$card->designation}}</p>
-                            @endif
+                        </div>
+                        <div class="name_and_designation text-center">
+                            <div>
+                                <p>{{$card->name}}</p>
+                                @if($type=="work")
+                                <p>{{$card->designation}}</p>
+                                @endif
+                            </div>
                         </div>
 
                         <!-- Info code start from here -->
@@ -473,47 +522,6 @@ z-index: -1;
                         </div>
                     </div>
                 </div>
-                </div>
-            </div>
-            <div class="col-md-5" style="margin-top:70px;">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6 mt-1">
-                                <h6 style="font-family:Palatino;font-weight:bold;">Upper Color:</h6>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="color" id="upper_color_picker" name="upper_color_picker" value="#d12229">
-                            </div>
-                            <div class="col-md-6 mt-1">
-                                <h6 style="font-family:Palatino;font-weight:bold;">Buttom Color:</h6>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="color" id="buttom_color_picker" name="buttom_color_picker" value="#393939">
-                            </div>
-                            <div class="col-md-6 mt-1">
-                                <h6 style="font-family:Palatino;font-weight:bold;">Back Color:</h6>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="color" id="main_back_color_picker" name="main_back_color_picker"
-                                    value="#393939">
-                            </div>
-                            <div class="col-md-6 mt-1">
-                                <h6 style="font-family:Palatino;font-weight:bold;">Text Color:</h6>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="color" id="text_color_picker" name="text_color_picker" value="#ffffff">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mt-3">
-                                <button class="btn btn-primary" id="check_color">Save Changes</button>
-                            </div>
-                            <div class="col-md-6 mt-3">
-                                
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

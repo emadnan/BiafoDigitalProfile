@@ -16,7 +16,11 @@ body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     position: relative;
 }
-
+.name_and_designation{
+    text-align: center;
+    /* margin-top: 70px; */
+    font-weight: 900;
+}
 .input-hidden {
     /* For Hiding Radio Button Circles */
     position: absolute;
@@ -394,97 +398,102 @@ z-index: -1;
         </div>
     </section>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 d-flex justify-content-center"  id="download_able">
-                @if(isset($permissions['can_view_card']))
-                <div class="business2 mt-5 wantradius">
-                    <div class="front" id="buttom_color">
-                        <div class="red" id="upper_color">
-                            <div class="head">
-                                <div>
-                                    @if($type=="work")
-                                    <h2>{{$card->company}}</h2>
-                                    @endif
+    <div class="row" id="download_able">
+            
+            <div class="business2 mt-5 wantradius">
+                <div class="col-md-6">
+                <div class="front float-right" id="buttom_color">
+                    <div class="red" id="upper_color">
+                        <div class="head">
+                            <div>
+                                @if($type=="work")
+                                <h2>{{$card->company}}</h2>
+                                @endif
 
-                                    <!-- <p>Tagline goes here</p> -->
-                                </div>
+                                <!-- <p>Tagline goes here</p> -->
                             </div>
                         </div>
-                        <div class="avatar">
-                            <div>
-                                <img src="{{asset('card_images')}}/{{$card->image_path}}" class="profile_img" alt="" />
-                            </div>
-                            <p class="mt-2">{{$card->name}}</p>
+                    </div>
+                    <div class="avatar">
+                        <div>
+                            <img src="{{asset('card_images')}}/{{$card->image_path}}" class="profile_img" alt="" />
+                        </div>
+                    </div>
+                    <div class="name_and_designation text-center">
+                        <div>
+                            <p>{{$card->name}}</p>
                             @if($type=="work")
                             <p>{{$card->designation}}</p>
                             @endif
                         </div>
-
-                        <!-- Info code start from here -->
-
-                        <div class="infos">
-                            <!-- Logo for email -->
-                            <div>
-                                <i class="fa-solid fa-envelope"></i>
-                                <div class="ml-2">
-                                    <p>{{$card->email}}</p>
-                                </div>
-                            </div>
-                            <!-- Logo for phone Number -->
-                            <div>
-                                <i class="fa-solid fa-phone"></i>
-                                <div class="ml-2">
-                                    <p>{{$card->phone}}</p>
-                                </div>
-                            </div>
-                            @if($type=="work")
-                            <!-- Logo for website -->
-                            <div>
-                                <i class="fa-solid fa-globe"></i>
-                                <div class="ml-2">
-                                    <p>{{$card->website}}</p>
-                                </div>
-                            </div>
-                            <!-- Logo for website -->
-                            <div>
-                                <i class="fa-brands fa-linkedin"></i>
-                                <div class="ml-2">
-                                    <p>{{$card->linkedin}}</p>
-                                </div>
-                            </div>
-                            @endif
-                            <div>
-                                <!-- Logo of current location -->
-                                <i class="fa-solid fa-map-marker-alt"></i>
-                                <div class="ml-2">
-                                    <p>{{$card->address}}</p>
-                                    <!-- <p>LAHORE</p> -->
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
+                    <!-- Info code start from here -->
 
-                    <!-- Back side of the card -->
-
-                    <div class="back" id="main_back_color">
-
-
-                        <div class="top">
-                            <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" id="back_image" alt=""
-                                class="back_image">
+                    <div class="infos">
+                        <!-- Logo for email -->
+                        <div>
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="ml-2">
+                                <p>{{$card->email}}</p>
+                            </div>
                         </div>
-                        <div class="qricon">
-                            <a class="qr_anchor" href="/view_profile/{{$card->id}}">
-                                <div id="qrcode">
-                                </div>
-                            </a>
+                        <!-- Logo for phone Number -->
+                        <div>
+                            <i class="fa-solid fa-phone"></i>
+                            <div class="ml-2">
+                                <p>{{$card->phone}}</p>
+                            </div>
+                        </div>
+                        @if($type=="work")
+                        <!-- Logo for website -->
+                        <div>
+                            <i class="fa-solid fa-globe"></i>
+                            <div class="ml-2">
+                                <p>{{$card->website}}</p>
+                            </div>
+                        </div>
+                        <!-- Logo for website -->
+                        <div>
+                            <i class="fa-brands fa-linkedin"></i>
+                            <div class="ml-2">
+                                <p>{{$card->linkedin}}</p>
+                            </div>
+                        </div>
+                        @endif
+                        <div>
+                            <!-- Logo of current location -->
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <div class="ml-2">
+                                <p>{{$card->address}}</p>
+                                <!-- <p>LAHORE</p> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+
+                <!-- Back side of the card -->
+
+                <div class="back" id="main_back_color">
+
+
+                    <div class="top">
+                        <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" id="back_image" alt=""
+                            class="back_image">
+                    </div>
+                    <div class="qricon">
+                        <a class="qr_anchor" href="/view_profile/{{$card->id}}">
+                            <div id="qrcode">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
-        @endif
+    </div>
         <div class="row mt-3">
             <div class="col-md-12 d-flex justify-content-center">
                 @if(isset($permissions['can_edit_card']))
