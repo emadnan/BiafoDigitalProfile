@@ -53,7 +53,7 @@ $permissions= session()->get('permissions');
                                                     aria-hidden="true"></i> Delete </button>
                                                     @endif
 
-                                            @if(isset($permissions['can_assign_permissions']) || Auth::user()->user_type == "super_admin"
+                                            @if(isset($permissions['can_assign_permissions']) || Auth::user()->user_type == "super_admin")
                                                     <a class="btn btn-warning" href="/permission_role/{{$role->id}}" role="button">Assign Permissions</a>
                                                     @endif
                                         </td>
