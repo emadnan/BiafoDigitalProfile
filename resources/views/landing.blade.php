@@ -142,7 +142,7 @@ html {
                                 <h6 class="text-center" style="background-color:#ff9d00;">
                                     <strong>Create Digital Business <br>Card</strong>
                                 </h6>
-                                <pstyle="font-size:18px;"> Create and customize stylish digital business cards. <br>It
+                                <p style="font-size:18px;"> Create and customize stylish digital business cards. <br>It
                                     stores the data of the user <br>once you scan the QR code <br> it will show the
                                     profile of the <br> user.</p>
                             </div>
