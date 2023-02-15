@@ -13,7 +13,7 @@ $permissions= session()->get('permissions');
              <a class="nav-link" href="/roles" role="button">Roles</a>
          </li>
             @endif
-            @if(isset($permissions['can_view_permissions']))
+            @if(isset($permissions['can_view_permissions']) || Auth::user()->user_type == "super_admin")
          <li class="nav-item ml-4">
              <a class="nav-link" href="/permissions" role="button">Permissions</a>
          </li>

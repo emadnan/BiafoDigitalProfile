@@ -52,7 +52,8 @@ $permissions= session()->get('permissions');
                                                 data-bs-target="#deletefilemodal"><i class="fa fa-trash"
                                                     aria-hidden="true"></i> Delete </button>
                                                     @endif
-                                            @if(isset($permissions['can_assign_permissions']))
+
+                                            @if(isset($permissions['can_assign_permissions']) || Auth::user()->user_type == "super_admin"
                                                     <a class="btn btn-warning" href="/permission_role/{{$role->id}}" role="button">Assign Permissions</a>
                                                     @endif
                                         </td>

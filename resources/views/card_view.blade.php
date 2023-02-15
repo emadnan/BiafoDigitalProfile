@@ -370,6 +370,11 @@ position: relative;
 border-radius: 20px;
 z-index: -1;
 } */
+@media screen and (max-width: 600px) {
+    .business2 .front .back .top div {
+        max-width: 100%;
+    }
+}
 </style>
 <div class="content-wrapper">
     <section class="content-header">
