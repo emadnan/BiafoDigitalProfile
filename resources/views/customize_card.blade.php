@@ -94,7 +94,7 @@ input[type="radio"]:checked+label>img {
     background-color: #d12229;
     border-radius: 10px;
     padding: 10px;
-    /* width: 100px; */
+    width: 100px;
     text-align: center;
     font-weight: bold;
 }
@@ -144,7 +144,7 @@ input[type="radio"]:checked+label>img {
 
 /* page backgroung color white */
 .business2 {
-    /* display: flex; */
+    display: flex;
     border-radius: 25%;
     /* align-items: center; */
     /* min-height: 100vh; */
@@ -166,7 +166,7 @@ wantradius {
     margin: 20px;
     border-radius: 25px;
     overflow: hidden;
-    /* position: relative; */
+    position: relative;
     color: white;
 
 }
