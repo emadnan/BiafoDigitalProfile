@@ -27,6 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        print_r("hello");
+        die;
         $user_id=auth()->user()->id;
         $cards = Card::where('user_id',$user_id)->orwhere('company_user_id',$user_id)->get();
         $companies = Company::all();
