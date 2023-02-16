@@ -949,7 +949,7 @@
                                         <button class="accordion-button collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapsethirtyOne"
                                             aria-expanded="false" aria-controls="collapsethirtyOne">
-                                            <h5>How can i add virtual background?</h5>
+                                            <h5>How can I add virtual background?</h5>
                                         </button>
                                     </h2>
                                     <div id="collapsethirtyOne" class="accordion-collapse collapse"
@@ -968,17 +968,18 @@
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapsethirtytwo"
                                                 aria-expanded="false" aria-controls="collapsethirtytwo">
-                                                <h5>Can i upload and update an image?</h5>
+                                                <h5>Can I upload an image?</h5>
                                             </button>
                                         </h2>
                                         <div id="collapsethirtytwo" class="accordion-collapse collapse"
                                             aria-labelledby="headingthirtytwo" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                Yes, you can upload and update your image.
+                                                Yes, you can upload an image while creating your digital business cards.
                                             </div>
                                         </div>
                                     </div>
-                                    <br>
+                                </div><br>
+                                   
 
                                     <div class="accordion" id="accordionExample">
                                         <div class="accordion-item">
@@ -986,20 +987,43 @@
                                                 <button class="accordion-button collapsed" type="button"
                                                     data-bs-toggle="collapse" data-bs-target="#collapsethirtythree"
                                                     aria-expanded="false" aria-controls="collapsethirtythree">
-                                                    <h5>What is the image size?</h5>
+                                                    <h5>Can I update my image?</h5>
                                                 </button>
                                             </h2>
                                             <div id="collapsethirtythree" class="accordion-collapse collapse"
                                                 aria-labelledby="headingthirtythree"
                                                 data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
-                                                    The ideal size of the image is 2 Mb.
+                                                    Yes, you can update your image.
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
+                                    <br>
+
+                                        <div class="accordion" id="accordionExample">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingthirtyfour">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapsethirtyfour"
+                                                        aria-expanded="false" aria-controls="collapsethirtyfour">
+                                                        <h5>What is the image size?</h5>
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsethirtyfour" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingthirtyfour"
+                                                    data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        The ideal size of the image is 2 Mb.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </section>
-
                     </div>
                 </div>
             </div>
