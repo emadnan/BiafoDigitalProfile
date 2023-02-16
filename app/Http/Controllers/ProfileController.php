@@ -17,10 +17,6 @@ use Illuminate\Support\Facades\Mail;
 
 class ProfileController extends Controller
 {
-    public function index()
-    {
-        return view('profiles');
-    }
     public function addProfile($card_id,$type)
     {
         $card=Card::where('id',$card_id)->first();

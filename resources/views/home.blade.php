@@ -4,8 +4,16 @@
 $permissions= session()->get('permissions');
 $is_new = session()->get('is_new');
 @endphp
-<input type="hidden" id="is_new" value="{{$is_new}}"/>
+<style>
+    .modal-dialog{
+        margin-top: 6%;
+    }
+    /* .form-control{
+        border-radius: 10px;
+    } */
+    </style>
 <div class="content-wrapper">
+    <input type="hidden" id="is_new" value="{{$is_new}}">
     <div class="container">
         <section class="content-header">
             <div class='container-fluid'>
@@ -14,8 +22,12 @@ $is_new = session()->get('is_new');
                     </div>
                     <div class='col-md-4'>
                         @if(isset($permissions['can_create_card']))
-                        <a type="button"  id="add_card" class="anchor btn btn-primary float-right">
+                        <a type="button" id="add_card" class="anchor btn btn-primary float-right">
+                            @if(Auth::user()->user_type=='company')
+                            Add Employee Card
+                            @else
                             Add Card
+                            @endif
                         </a>
                         @endif
                     </div>
@@ -77,9 +89,9 @@ $is_new = session()->get('is_new');
                         </div>
                         <div class="mt-5 d-flex justify-content-center">
                             <div>
-                            <img src="{{asset('frontend/img/your-image-here.jpg')}}" alt="image preview"
-                                id="image_preview"
-                                style="width: 200px; height: 200px; border-radius:20%;border: 5px solid;">
+                                <img src="{{asset('frontend/img/your-image-here.jpg')}}" alt="image preview"
+                                    id="image_preview"
+                                    style="width: 200px; height: 200px; border-radius:20%;border: 5px solid;">
                             </div>
                         </div>
                         <div class="form-group">
@@ -88,13 +100,11 @@ $is_new = session()->get('is_new');
                         </div>
                         <div class="form-group">
                             <label for="name">Full Name:</label>
-                            <input type="text" class="form-control" name="name" id="name"
-                                placeholder="Enter Full Name">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Full Name">
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" name="email" id="email"
-                                 placeholder="Enter Email">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone:</label>
@@ -143,7 +153,7 @@ $is_new = session()->get('is_new');
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" id="saveButton" class="btn btn-primary">Save changes</button>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -169,8 +179,89 @@ $is_new = session()->get('is_new');
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="cropButton" class="btn btn-primary"><i class="fa-solid fa-crop"></i> Crop</button>
+                    <button type="button" id="cropButton" class="btn btn-primary"><i class="fa-solid fa-crop"></i>
+                        Crop</button>
                 </div>
+            </div>
+        </div>
+    </div>
+    <!-- Company Profile  Modal  -->
+    <div class="modal fade bd-example-modal-lg" id="company_profile_modal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <form id="company_profile_form" action="/add_company" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <h5 style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c"> Setup Your Company Profile</h5>
+                        <div class="row mt-3 mb-3">
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <img src="{{asset('frontend/img/logo_here.png')}}" alt="image preview"
+                                    id="logo_preview"
+                                    style="height: 200px; padding:10px;border: 5px solid;">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="logo">Company Logo: <span style="color:red;">*</span></label>
+                                    <input type="file" class="form-control" name="logo" id="logo">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">Company Name: <span style="color:red;">*</span></label>
+                                    <input type="text" class="form-control" name="company_name" id="company_name"
+                                        placeholder="Enter Your Company Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">Company Linkedin:</label>
+                                    <input type="text" class="form-control" name="company_linkedin" id="company_linkedin"
+                                        placeholder="Enter Your Company Linkedin">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">Company Website:</label>
+                                    <input type="text" class="form-control" name="company_website" id="company_website"
+                                        placeholder="Enter Your Company Website">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="logo">Country: <span style="color:red;">*</span></label>
+                                    <select name="company_country" id="company_country" class="form-control">
+                                        <option value="">Select Country</option>
+                                        @foreach ($countries as $country)
+                                        <option value="{{$country->id}}">{{$country->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="logo">City: <span style="color:red;">*</span></label>
+                                    <select name="company_city" id="company_city" class="form-control">
+                                        <option value="">Select City</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="name">Company Address: <span style="color:red;">*</span></label>
+                                    <textarea class="form-control" name="company_address" id="company_address"
+                                        placeholder="Enter Your Company Address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                        <button type="submit" id="saveButton" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -185,11 +276,41 @@ $(document).ready(function() {
         $('#add_card_modal').modal('show');
     });
     var is_new = $('#is_new').val();
-    if(is_new == '1')
-    {
-        $('#add_card_modal').modal('show');
+    if (is_new == '1') {
+        $('#company_profile_modal').modal('show');
     }
+    var logo=document.getElementById("logo");
+    var logo_preview=document.getElementById("logo_preview");
+    logo.addEventListener('change',function(){
+        var reader=new FileReader();
+        reader.onload=function(){
+            logo_preview.src=reader.result;
+        }
+        reader.readAsDataURL(this.files[0]);
+    });
+    var country = document.getElementById("company_country");
+    var city = document.getElementById("company_city");
+    //country change event listener to get cities
+    country.addEventListener('change',function(){
+        var country_id = this.value;
+        // alert(country_id);
+        var url = "/cities/"+country_id;
+        $.ajax({
+            url:url,
+            type:'GET',
+            success:function(data){
+                console.log(city);
+                var cities = data;
+                var html = '<option value="">Select City</option>';
+                for(var i=0;i<cities.length;i++){
+                    html += '<option value="'+cities[i].id+'">'+cities[i].name+'</option>';
+                }
+                city.innerHTML = html;
+            }
+        });
+    });
 });
+    
 //show image in image preview
 $(document).ready(function() {
     var image = document.getElementById("to_be_cropped_image");
@@ -209,8 +330,8 @@ $(document).ready(function() {
             image.src = reader.result;
             //destroy previous cropper
             if (cropper) {
-            cropper.destroy();
-             }
+                cropper.destroy();
+            }
             cropper = new Cropper(image, {
                 aspectRatio: 1,
                 crop(event) {
@@ -243,30 +364,30 @@ $(document).ready(function() {
     });
     //save button click
     saveButton.addEventListener("click", () => {
-       
+
         //if form validate true then save data
         if ($('#add_card_form').valid()) {
-        document.querySelector("body").style.visibility = "hidden";
-        document.querySelector("#loader").style.visibility = "visible";
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader").style.visibility = "visible";
             //get cropped image
             var croppedImage = cropper.getCroppedCanvas().toDataURL();
             //show cropped image in image preview
             croppedImageContainer.src = croppedImage;
             //hide image crop modal
             $('#image_crop_modal').modal('hide');
-            var data= new FormData();
+            var data = new FormData();
             // data.append('_token',$('meta[name="csrf-token"]').attr('content'));
-            data.append('image',croppedImage);
-            data.append('name',$('#name').val());
-            data.append('email',$('#email').val());
-            data.append('phone',$('#phone').val());
-            data.append('address',$('#address').val());
-            data.append('city',$('#city').val());
-            data.append('country',$('#country').val());
-            data.append('website',$('#website').val());
-            data.append('company',$('#company').val());
-            data.append('designation',$('#designation').val());
-            data.append('linkiden',$('#linkiden').val());
+            data.append('image', croppedImage);
+            data.append('name', $('#name').val());
+            data.append('email', $('#email').val());
+            data.append('phone', $('#phone').val());
+            data.append('address', $('#address').val());
+            data.append('city', $('#city').val());
+            data.append('country', $('#country').val());
+            data.append('website', $('#website').val());
+            data.append('company', $('#company').val());
+            data.append('designation', $('#designation').val());
+            data.append('linkiden', $('#linkiden').val());
 
             //ajax request
             $.ajax({
@@ -308,7 +429,7 @@ $(document).ready(function() {
             email: {
                 required: true,
                 email: true,
-                remote:'/validate_email'
+                remote: '/validate_email'
             },
             phone: {
                 required: true,
@@ -361,6 +482,45 @@ $(document).ready(function() {
             $(element).removeClass('is-invalid');
         }
     });
+//form validate for company_profile
+$('#company_profile_form').validate({
+    rules:{
+        logo:{
+            required:true,
+            extension:"png",
+        },
+        company_name:{
+            required:true,
+        },
+        company_address:{
+            required:true,
+        },
+        company_city:{
+            required:true,
+        },
+        company_country:{
+            required:true,
+        },
+    },
+    messege:{
+        logo:{
+            required:"Please Select Logo",
+            extension:"Please Select Valid Logo",
+        },
+        company_name:{
+            required:"Please Enter Company Name",
+        },
+        company_address:{
+            required:"Please Enter Company Address",
+        },
+        company_city:{
+            required:"Please Enter Company City",
+        },
+        company_country:{
+            required:"Please Enter Company Country",
+        },
+    },
+});
 });
 </script>
 @endsection
