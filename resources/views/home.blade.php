@@ -2,8 +2,8 @@
 @section('content')
 @php
 $permissions= session()->get('permissions');
+$is_new = session()->get('is_new');
 @endphp
-
 <style>
     .modal-dialog{
         margin-top: 6%;
@@ -13,6 +13,7 @@ $permissions= session()->get('permissions');
     } */
     </style>
 <div class="content-wrapper">
+    <input type="hidden" id="is_new" value="{{$is_new}}">
     <div class="container">
         <section class="content-header">
             <div class='container-fluid'>
@@ -274,10 +275,10 @@ $(document).ready(function() {
     $('#add_card').click(function() {
         $('#add_card_modal').modal('show');
     });
-    // var is_new = $('#is_new').val();
-    // if (is_new == '1') {
-    //     $('#company_profile_modal').modal('show');
-    // }
+    var is_new = $('#is_new').val();
+    if (is_new == '1') {
+        $('#company_profile_modal').modal('show');
+    }
     var logo=document.getElementById("logo");
     var logo_preview=document.getElementById("logo_preview");
     logo.addEventListener('change',function(){
