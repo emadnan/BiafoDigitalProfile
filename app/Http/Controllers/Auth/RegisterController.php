@@ -83,10 +83,10 @@ class RegisterController extends Controller
            $permissions[$permission_role->permissions->permission]=$permission_role->permissions->permission;
         } 
         session()->put('permissions',$permissions);
-        if($data['user_type']=="company")
-        {
-            session()->put('is_new',1);
-        }
+        // if($data['user_type']=="company")
+        // {
+        //     session()->put('is_new',1);
+        // }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

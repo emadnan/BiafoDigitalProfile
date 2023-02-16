@@ -2,7 +2,6 @@
 @section('content')
 @php
 $permissions= session()->get('permissions');
-<!-- $is_new = session()->get('is_new'); -->
 @endphp
 
 <style>
@@ -13,7 +12,6 @@ $permissions= session()->get('permissions');
         border-radius: 10px;
     } */
     </style>
-<!-- <input type="hidden" id="is_new" value="{{$is_new}}" /> -->
 <div class="content-wrapper">
     <div class="container">
         <section class="content-header">
