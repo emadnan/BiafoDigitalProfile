@@ -38,7 +38,7 @@ class HomeController extends Controller
          $countries = Country::all();
          $cities = City::all();
         
-        $data=compact('cards','companies','countries','cities');
+        $data=compact('cards','companies');
         echo '<pre>';
         print_r($data);
         die;
