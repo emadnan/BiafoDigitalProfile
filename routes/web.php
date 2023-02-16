@@ -69,3 +69,7 @@ Route::get('/cities/{country_id}',[HomeController::class,'fetch_cities'])->name(
 Route::post('/add_company',[CompanyController::class,'add_company'])->name('add_company');
 Route::get('/company_profile',[CompanyController::class,'index'])->name('company_profile');
 Route::post('/update_company/{id}',[CompanyController::class,'update_company'])->name('update_company');
+Route::get('logouttest',function(){
+    Auth::logout();
+    return redirect('/');
+});
