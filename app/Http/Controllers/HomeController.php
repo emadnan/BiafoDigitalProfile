@@ -35,12 +35,12 @@ class HomeController extends Controller
         $cards = Card::where('user_id',$user_id)->orwhere('company_user_id',$user_id)->get();
         
         $companies = Company::all();
-        // $countries = Country::all();
+        $countries = Country::all();
         
-        $data=compact('cards','companies');
-        echo '<pre>';
-        print_r($data);
-        die;
+        $data=compact('cards','companies','countries');
+        // echo '<pre>';
+        // print_r($data);
+        // die;
         return view('home')->with($data);
     }
     public function fetch_cities($country_id)
