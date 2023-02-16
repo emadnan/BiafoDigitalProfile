@@ -18,7 +18,7 @@ body {
 }
 .name_and_designation{
     text-align: center;
-    /* margin-top: 70px; */
+    margin-top: 60px;
     font-weight: 900;
 }
 .input-hidden {
@@ -165,7 +165,7 @@ wantradius {
 .business2 .back {
     background-color: var(--dark);
     width: 300px;
-    height: 500px;
+    height: 550px;
     margin: 20px;
     border-radius: 25px;
     overflow: hidden;
@@ -248,21 +248,23 @@ wantradius {
 }
 
 .business2 .infos {
-    position: absolute;
+    /* position: absolute;
     bottom: 5%;
-    left: 5%;
+    left: 5%; */
+    margin:10px
 
 }
 
 .business2 .infos>div {
     display: flex;
-    margin: 5px;
+    /* margin: 5px;s */
+    align-items: center;
 }
 
 /* icon background color, pading and radius */
 .business2 .infos>div i {
     width: 25px;
-    height: 25px;
+    /* height: 25px; */
     /* margin-right: 10px; */
     /* background-color: var(--red); */
     /* background-color: antiquewhite; */

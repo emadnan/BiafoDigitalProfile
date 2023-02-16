@@ -2,7 +2,9 @@
 @section('content')
 @php
 $permissions= session()->get('permissions');
+$is_new = session()->get('is_new');
 @endphp
+<input type="hidden" id="is_new" value="{{$is_new}}"/>
 <div class="content-wrapper">
     <div class="container">
         <section class="content-header">
@@ -182,6 +184,11 @@ $(document).ready(function() {
     $('#add_card').click(function() {
         $('#add_card_modal').modal('show');
     });
+    var is_new = $('#is_new').val();
+    if(is_new == '1')
+    {
+        $('#add_card_modal').modal('show');
+    }
 });
 //show image in image preview
 $(document).ready(function() {

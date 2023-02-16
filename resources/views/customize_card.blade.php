@@ -13,26 +13,31 @@ body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     position: relative;
 }
+.name_and_designation{
+    text-align: center;
+    margin-top: 60px;
+    font-weight: 900;
+}
 .input-hidden {
-  /* For Hiding Radio Button Circles */
-  position: absolute;
-  left: -9999px;
+    /* For Hiding Radio Button Circles */
+    position: absolute;
+    left: -9999px;
 }
 
-input[type="radio"]:checked + label > img {
-  border: 1px solid #d12229;
-  box-shadow: 0 0 3px 3px #d12229;
+input[type="radio"]:checked+label>img {
+    border: 1px solid #d12229;
+    box-shadow: 0 0 3px 3px #d12229;
 }
 
-input[type="radio"] + label > img {
-  border: 1px rgb(0, 0, 0);
-  padding: 10px;
+input[type="radio"]+label>img {
+    border: 1px rgb(0, 0, 0);
+    padding: 10px;
 
-  transition: 500ms all;
+    transition: 500ms all;
 }
 
-input[type="radio"]:checked + label > img {
-  transform: rotateZ(-10deg) rotateX(10deg);
+input[type="radio"]:checked+label>img {
+    transform: rotateZ(-10deg) rotateX(10deg);
 }
 
 .back_image {
@@ -80,7 +85,7 @@ input[type="radio"]:checked + label > img {
     background-color: #ff9d00;
     border-radius: 10px;
     padding: 10px;
-    width: 100px;
+    /* width: 200px; */
     text-align: center;
     font-weight: bold;
 }
@@ -157,7 +162,7 @@ wantradius {
 .business2 .back {
     background-color: var(--dark);
     width: 300px;
-    height: 500px;
+    height: 550px;
     margin: 20px;
     border-radius: 25px;
     overflow: hidden;
@@ -238,28 +243,25 @@ wantradius {
     text-transform: uppercase;
     font-weight: 900;
 }
-.name_and_designation{
-    text-align: center;
-    margin-top: 70px;
-    font-weight: 900;
-}
 
 .business2 .infos {
-    position: absolute;
+    /* position: absolute;
     bottom: 5%;
-    left: 5%;
+    left: 5%; */
+    margin:10px
 
 }
 
 .business2 .infos>div {
     display: flex;
-    margin: 5px;
+    /* margin: 5px;s */
+    align-items: center;
 }
 
 /* icon background color, pading and radius */
 .business2 .infos>div i {
     width: 25px;
-    height: 25px;
+    /* height: 25px; */
     /* margin-right: 10px; */
     /* background-color: var(--red); */
     /* background-color: antiquewhite; */
