@@ -9,11 +9,11 @@
     <title>Cardify</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <script src="{{asset('frontend/js/bootstrap5.bundle.min.js')}}"></script>
+    <script src="{{ asset('frontend/js/bootstrap5.bundle.min.js') }}"></script>
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{asset('frontend/css/landing_page_styles.css')}}" rel="stylesheet" />
+    <link href="{{ asset('frontend/css/landing_page_styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend\css\bootstrap5.min.css') }}" rel="stylesheet">
 </head>
 
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-lg w-100 p-0">
             <div class="container">
                 <a class="navbar-brand text-white fs-3" href="#">
-                    <h2>CardGiene</h2>
+                    <h2>Cardify</h2>
                 </a>
                 <button class="navbar-toggler btn-yellow text-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -76,16 +76,16 @@
                     <form class="d-flex ms-5 customize_mob_menu">
                         {{-- <a class="btn btn-yellow rounded-pill px-5 py-2" >Login</a> --}}
                         @guest
-                        @if (Route::has('login'))
-                        <a class="btn btn-yellow rounded-pill px-5 py-2"
-                            href="{{ route('login') }}">{{ __('Login') }}</a>
-                        <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
-                            href="/#pricing"><b>{{ __('Create Card') }}</b></a>
-                        @endif
+                            @if (Route::has('login'))
+                                <a class="btn btn-yellow rounded-pill px-5 py-2"
+                                    href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
+                                    href="/#pricing"><b>{{ __('Create Card') }}</b></a>
+                            @endif
                         @else
-                        <a class="btn btn-yellow rounded-pill px-5 py-2 "
-                            href="#/pricing"><b>{{ __('Create Card') }}</b></a>
-                        <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
+                            <a class="btn btn-yellow rounded-pill px-5 py-2 "
+                                href="#/pricing"><b>{{ __('Create Card') }}</b></a>
+                            <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                         @endguest
 
                     </form>
@@ -99,7 +99,7 @@
             <div class="container">
                 <div class="position-relative">
                     
-                    <img src="{{asset('frontend/img/hero_img_6.png')}}" alt=""
+                    <img src="{{ asset('frontend/img/hero_img_6.png') }}" alt=""
                         class="position-absolute customize__absolute__img">
                 </div>
             </div>
@@ -134,18 +134,20 @@
                                         </a>
                                     </p>
                                     <p>
-                                        <a style="text-decoration:none; color:#ad021c" href="#creating-your-digital-business-cards">
+                                        <a style="text-decoration:none; color:#ad021c"
+                                            href="#creating-your-digital-business-cards">
                                             <h5>Creating your digital business cards</h5>
                                         </a>
                                     </p>
                                     <p>
-                                        <a style="text-decoration:none; color:#ad021c" href="#sharing-your-digital-business-cards">
+                                        <a style="text-decoration:none; color:#ad021c"
+                                            href="#sharing-your-digital-business-cards">
                                             <h5>Sharing your digital business cards</h5>
                                         </a>
                                     </p>
                                     <p>
-                                        <a style="text-decoration:none; color:#ad021c" href="#address-Book">
-                                            <h5>Address Book</h5>
+                                        <a style="text-decoration:none; color:#ad021c" href="#Profile">
+                                            <h5>Profile</h5>
                                         </a>
                                     </p>
                                     <p>
@@ -156,11 +158,15 @@
 
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="{{asset('frontend/img/faq_2.png')}}" alt="" height="80%" width="80%">
+                                    <img src="{{ asset('frontend/img/faq_2.png') }}" alt="" height="80%"
+                                        width="80%">
                                 </div>
                             </div>
                         </div>
+
+                        <!-- 1. General sectoion starts here -->
                         <section id="general" style="margin-left:5%;margin-right:5%; margin-bottom:5%;">
+
                             <h1 class="heading-23"><b>General</b></h1><br>
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
@@ -174,8 +180,9 @@
                                     <div id="collapseOne" class="accordion-collapse collapse"
                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            You can download the Cardify app for free in the App Store and Google Play
-                                            Store. You can also use Cardify on the web.
+                                            Cardify is available as a web app, and users can create and share their
+                                            digital business cards without the need to download an additional
+                                            application.
                                         </div>
                                     </div>
                                 </div>
@@ -211,8 +218,7 @@
                                             <div id="collapseThree" class="accordion-collapse collapse"
                                                 aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
-                                                    Yes! We regularly post on our social platforms. Follow us to keep up
-                                                    with the latest product updates.
+                                                    Yes! Follow us to keep up with the latest product updates.
                                                 </div>
                                             </div>
                                         </div>
@@ -229,8 +235,8 @@
                                                 <div id="collapseFour" class="accordion-collapse collapse"
                                                     aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                                     <div class="accordion-body">
-                                                        We love hearing your comments; it’s how we make Cardify better!
-                                                        Please send your feedback to feedback@ Cardify.me, or fill out a
+                                                        We love hearing your comments; it is how we make cardify better!
+                                                        Please send your feedback to info@biafotech.com, or fill out a
                                                         form on our Contact Us page.
                                                     </div>
                                                 </div>
@@ -252,8 +258,8 @@
                                                         data-bs-parent="#accordionExample">
                                                         <div class="accordion-body">
                                                             If you’d like to write an article about Cardify, please
-                                                            contact press@ Cardify.me, and we’ll get back to you as soon
-                                                            as we can. In the meantime, check out our Press page.
+                                                            contact info@biafotech.com, and we’ll get back to you as
+                                                            soon as we can.
                                                         </div>
                                                     </div>
                                                 </div>
@@ -273,14 +279,16 @@
                                                             aria-labelledby="headingSeven"
                                                             data-bs-parent="#accordionExample">
                                                             <div class="accordion-body">
-                                                                If you found a bug, we’d love to fix it. Please contact
-                                                                support through:
-                                                                <pre style="margin-left: -35%">
-                                            - Web: Click on your name at the top right and select Contact Support.
-                                            - Mobile: Tap settings and scroll down to the Contact Support page
-                                            - Mail: Contact us at support@ Cardify.me
-
-                                        </pre>
+                                                                <p>If you found a bug, we’d love to fix it. Please
+                                                                    contact US
+                                                                    through:</p>
+                                                                <ul style="list-style-type:square;">
+                                                                    <li>Web: Click on your name at the top right and
+                                                                        select Contact us.</li>
+                                                                    <li>Mobile: Tap settings and scroll down to the
+                                                                        Contact us page</li>
+                                                                    <li>Mail: Contact us at info@biafotech.com</li>
+                                                                </ul>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -289,14 +297,16 @@
                                                     <div class="accordion" id="accordionExample">
                                                         <div class="accordion-item">
                                                             <h2 class="accordion-header" id="headingEight">
-                                                                <button class="accordion-button collapsed" type="button"
-                                                                    data-bs-toggle="collapse"
+                                                                <button class="accordion-button collapsed"
+                                                                    type="button" data-bs-toggle="collapse"
                                                                     data-bs-target="#collapseEight"
-                                                                    aria-expanded="false" aria-controls="collapseEight">
+                                                                    aria-expanded="false"
+                                                                    aria-controls="collapseEight">
                                                                     <h5>I forgot my password. Can I reset it?</h5>
                                                                 </button>
                                                             </h2>
-                                                            <div id="collapseEight" class="accordion-collapse collapse"
+                                                            <div id="collapseEight"
+                                                                class="accordion-collapse collapse"
                                                                 aria-labelledby="headingEight"
                                                                 data-bs-parent="#accordionExample">
                                                                 <div class="accordion-body">
@@ -322,15 +332,15 @@
                                                                     aria-labelledby="headingNine"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-                                                                        You can change your email address in your Cardify
-                                                                        Settings. Remember, the email address associated
-                                                                        with your account is used for logging in and for
-                                                                        all Cardify communications.
+                                                                        You can change your email address in your
+                                                                        cardify Settings. Remember, the email address
+                                                                        associated with your account is used for logging
+                                                                        in and for all communications.
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <br>
-                                                            <div class="accordion" id="accordionExample">
+                                                            <!-- <div class="accordion" id="accordionExample">
                                                                 <div class="accordion-item">
                                                                     <h2 class="accordion-header" id="headingTen">
                                                                         <button class="accordion-button collapsed"
@@ -346,46 +356,43 @@
                                                                         aria-labelledby="headingTen"
                                                                         data-bs-parent="#accordionExample">
                                                                         <div class="accordion-body">
-                                                                            If there’s anything we can do to improve
-                                                                            your experience, please email us at
-                                                                            feedback@Cardify.me. If you want to delete
-                                                                            your account, go to Settings, and under
-                                                                            Account, tap Delete Account. Type “Delete”
-                                                                            to confirm the account deletion. </div>
+                                                                            If you’d like to stop receiving marketing emails, please click Unsubscribe at the bottom 
+                                                                            of the email to be removed from that list. If you are a cardify. it user, you will continue 
+                                                                            to receive certain product-related emails that are integral to the cardify app </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <br> -->
+                                                            <div class="accordion" id="accordionExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header" id="headingEleven">
+                                                                        <button class="accordion-button collapsed"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseEleven"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseEleven">
+                                                                            <h5>How do I unsubscribe from marketing
+                                                                                emails?</h5>
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapseEleven"
+                                                                        class="accordion-collapse collapse"
+                                                                        aria-labelledby="headingEleven"
+                                                                        data-bs-parent="#accordionExample">
+                                                                        <div class="accordion-body">
+                                                                            If you’d like to stop receiving
+                                                                            marketing emails, please click
+                                                                            Unsubscribe at the bottom of the email
+                                                                            to be removed from that list. If you are
+                                                                            a Cardify user, you will continue to
+                                                                            receive certain product-related emails
+                                                                            that are integral to the Cardify app.
+                                                                        </div>
                                                                     </div>
                                                                 </div>
 
                                                                 <br>
-                                                                <div class="accordion" id="accordionExample">
-                                                                    <div class="accordion-item">
-                                                                        <h2 class="accordion-header" id="headingEleven">
-                                                                            <button class="accordion-button collapsed"
-                                                                                type="button" data-bs-toggle="collapse"
-                                                                                data-bs-target="#collapseEleven"
-                                                                                aria-expanded="false"
-                                                                                aria-controls="collapseEleven">
-                                                                                <h5>How do I unsubscribe from marketing
-                                                                                    emails?</h5>
-                                                                            </button>
-                                                                        </h2>
-                                                                        <div id="collapseEleven"
-                                                                            class="accordion-collapse collapse"
-                                                                            aria-labelledby="headingEleven"
-                                                                            data-bs-parent="#accordionExample">
-                                                                            <div class="accordion-body">
-                                                                                If you’d like to stop receiving
-                                                                                marketing emails, please click
-                                                                                Unsubscribe at the bottom of the email
-                                                                                to be removed from that list. If you are
-                                                                                a Cardify user, you will continue to
-                                                                                receive certain product-related emails
-                                                                                that are integral to the Cardify app.
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <br>
-                                                                    <div class="accordion" id="accordionExample">
+                                                                <!-- <div class="accordion" id="accordionExample">
                                                                         <div class="accordion-item">
                                                                             <h2 class="accordion-header"
                                                                                 id="headingTwelve">
@@ -417,39 +424,38 @@
                                                                             </div>
                                                                         </div>
 
-                                                                        <br>
-                                                                        <div class="accordion" id="accordionExample">
-                                                                            <div class="accordion-item">
-                                                                                <h2 class="accordion-header"
-                                                                                    id="headingThirteen">
-                                                                                    <button
-                                                                                        class="accordion-button collapsed"
-                                                                                        type="button"
-                                                                                        data-bs-toggle="collapse"
-                                                                                        data-bs-target="#collapseThirteen"
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="collapseThirteen">
-                                                                                        <h5>Why was Cardify created?</h5>
-                                                                                    </button>
-                                                                                </h2>
-                                                                                <div id="collapseThirteen"
-                                                                                    class="accordion-collapse collapse"
-                                                                                    aria-labelledby="headingThirteen"
-                                                                                    data-bs-parent="#accordionExample">
-                                                                                    <div class="accordion-body">
-                                                                                        We strongly believe in our
-                                                                                        mission: helping people
-                                                                                        strengthen relationships and
-                                                                                        amplify the power of their
-                                                                                        network. To learn more, visit
-                                                                                        our About Us page and read
-                                                                                        Cardify.
-                                                                                    </div>
-                                                                                </div>
+                                                                        <br> -->
+                                                                <div class="accordion" id="accordionExample">
+                                                                    <div class="accordion-item">
+                                                                        <h2 class="accordion-header"
+                                                                            id="headingThirteen">
+                                                                            <button class="accordion-button collapsed"
+                                                                                type="button"
+                                                                                data-bs-toggle="collapse"
+                                                                                data-bs-target="#collapseThirteen"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="collapseThirteen">
+                                                                                <h5>Why was Cardify created?
+                                                                                </h5>
+                                                                            </button>
+                                                                        </h2>
+                                                                        <div id="collapseThirteen"
+                                                                            class="accordion-collapse collapse"
+                                                                            aria-labelledby="headingThirteen"
+                                                                            data-bs-parent="#accordionExample">
+                                                                            <div class="accordion-body">
+                                                                                We strongly believe in our mission:
+                                                                                helping people strengthen relationships
+                                                                                and amplify the power oftheir network.
                                                                             </div>
+                                                                        </div>
+                                                                    </div>
 
+                                                
                         </section>
-                        <section id="creating-your-digital-business-cards" style="margin-left:5%;margin-right:5%; margin-bottom:5%; margin-top:3%">
+                         <!-- 2. SECTION "Creating Your Digital Business Cards" STARTS HERE-->
+                        <section id="creating-your-digital-business-cards"
+                            style="margin-left:5%;margin-right:5%; margin-bottom:5%; margin-top:3%">
                             <h1 class="heading-23"><b>Creating Your Digital Business Cards</b></h1><br>
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
@@ -464,8 +470,7 @@
                                         aria-labelledby="headingfourteen" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             You can seamlessly create and share digital business cards on your computer
-                                            with the Cardify web app. Switching from the web to the iOS or Android app
-                                            allows you to take your digital business card with you wherever you go.
+                                            with the cardify web app.
                                         </div>
                                     </div>
                                 </div>
@@ -482,9 +487,11 @@
                                         <div id="collapsefifteen" class="accordion-collapse collapse"
                                             aria-labelledby="headingfifteen" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                You can make up to four different digital business cards with a free
-                                                account. If you want more than that, you’ll need to upgrade to a
-                                                subscription plan. To learn more, please visit our Pricing page.
+                                                With a free user account on Cardify, you can create an unlimited number
+                                                of digital business
+                                                cards. However, for individuals and businesses seeking additional
+                                                features and a more premium
+                                                experience, we offer digital business card subscriptions.
                                             </div>
                                         </div>
                                     </div>
@@ -502,9 +509,9 @@
                                             <div id="collapsesixteen" class="accordion-collapse collapse"
                                                 aria-labelledby="headingsixteen" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
-                                                    You can make up to four different digital business cards with a free
-                                                    account. If you want more than that, you’ll need to upgrade to a
-                                                    subscription plan. To learn more, please visit our Pricing page.
+                                                    Everyone has their preferences, but we recommend having cards for
+                                                    personal use, work, networking, and
+                                                    even your side hustle.
                                                 </div>
                                             </div>
                                         </div>
@@ -516,16 +523,17 @@
                                                     <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#collapseseventeen"
                                                         aria-expanded="false" aria-controls="collapseseventeen">
-                                                        <h5>What information should I put on my business cards?</h5>
+                                                        <h5>What information can I include on my digital business card?
+                                                        </h5>
                                                     </button>
                                                 </h2>
                                                 <div id="collapseseventeen" class="accordion-collapse collapse"
                                                     aria-labelledby="headingseventeen"
                                                     data-bs-parent="#accordionExample">
                                                     <div class="accordion-body">
-                                                        The possibilities are endless! You can add your phone numbers,
-                                                        emails, any social media handles, your company logo, payment,
-                                                        messaging apps, and more.
+                                                        You can include a variety of information on your digital
+                                                        business cards, such as your name, job title,
+                                                        company, contact information, and social media links.
                                                     </div>
                                                 </div>
                                             </div>
@@ -535,8 +543,9 @@
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="headingeighteen">
                                                         <button class="accordion-button collapsed" type="button"
-                                                            data-bs-toggle="collapse" data-bs-target="#collapseeighteen"
-                                                            aria-expanded="false" aria-controls="collapseeighteen">
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#collapseeighteen" aria-expanded="false"
+                                                            aria-controls="collapseeighteen">
                                                             <h5>What is the ideal image size?</h5>
                                                         </button>
                                                     </h2>
@@ -550,12 +559,13 @@
                                                 </div>
                                                 <br>
 
-                                                <div class="accordion" id="accordionExample">
+                                                <!-- <div class="accordion" id="accordionExample">
                                                     <div class="accordion-item">
                                                         <h2 class="accordion-header" id="headingnineteen">
                                                             <button class="accordion-button collapsed" type="button"
                                                                 data-bs-toggle="collapse"
-                                                                data-bs-target="#collapsenineteen" aria-expanded="false"
+                                                                data-bs-target="#collapsenineteen"
+                                                                aria-expanded="false"
                                                                 aria-controls="collapsenineteen">
                                                                 <h5>Is it okay to put social media handles on my digital
                                                                     business card? Is that unprofessional?</h5>
@@ -570,13 +580,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <br> -->
+                                                <div class="accordion" id="accordionExample">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingnineteen">
+                                                            <button class="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#collapsenineteen"
+                                                                aria-expanded="false"
+                                                                aria-controls="collapsenineteen">
+                                                                <h5>Is it safe to share my digital business card with
+                                                                    others?</h5>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapsenineteen" class="accordion-collapse collapse"
+                                                            aria-labelledby="headingnineteen"
+                                                            data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                Yes, sharing your digital business card using a QR code
+                                                                is
+                                                                safe and secure. Cardify takes measures to protect your
+                                                                personal information and ensure the privacy of your
+                                                                data.
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <br>
 
                                                     <div class="accordion" id="accordionExample">
                                                         <div class="accordion-item">
                                                             <h2 class="accordion-header" id="headingtwenty">
-                                                                <button class="accordion-button collapsed" type="button"
-                                                                    data-bs-toggle="collapse"
+                                                                <button class="accordion-button collapsed"
+                                                                    type="button" data-bs-toggle="collapse"
                                                                     data-bs-target="#collapsetwenty"
                                                                     aria-expanded="false"
                                                                     aria-controls="collapsetwenty">
@@ -584,15 +619,16 @@
                                                                         cards?</h5>
                                                                 </button>
                                                             </h2>
-                                                            <div id="collapsetwenty" class="accordion-collapse collapse"
+                                                            <div id="collapsetwenty"
+                                                                class="accordion-collapse collapse"
                                                                 aria-labelledby="headingtwenty"
                                                                 data-bs-parent="#accordionExample">
                                                                 <div class="accordion-body">
-                                                                    The free version of Cardify gives you ten colors to
-                                                                    choose from while customizing your card. If you want
-                                                                    to customize your card's colors further, you’ll need
-                                                                    to sign up for one of our digital business card
-                                                                    subscription plans.
+                                                                    Cardify offers various customization options,
+                                                                    including the
+                                                                    ability to choose a color scheme, font style,and
+                                                                    background
+                                                                    image.
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -616,18 +652,22 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         It depends on the type of card you’re creating.
-                                                                        If it’s a networking card, perhaps list out your
-                                                                        core skills and work history. If it’s a personal
-                                                                        card, maybe make it a little more fun and write
-                                                                        a bit about who you are outside of work!
+                                                                        If it’s a
+                                                                        networking card, perhaps list out your core
+                                                                        skills
+                                                                        and work history. If it’s a personal card,
+                                                                        maybe make it a little more fun and write a bit
+                                                                        about who you are
+                                                                        outside of work!
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <br>
 
-                                                            <div class="accordion" id="accordionExample">
+                                                            <!-- <div class="accordion" id="accordionExample">
                                                                 <div class="accordion-item">
-                                                                    <h2 class="accordion-header" id="headingtwentytwo">
+                                                                    <h2 class="accordion-header"
+                                                                        id="headingtwentytwo">
                                                                         <button class="accordion-button collapsed"
                                                                             type="button" data-bs-toggle="collapse"
                                                                             data-bs-target="#collapsetwentytwo"
@@ -650,12 +690,13 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <br>
+                                                                <br> -->
 
                         </section>
 
-
-                        <section id="sharing-your-digital-business-cards" style="margin-left:5%;margin-right:5%; margin-bottom:5%; margin-top:3%">
+<!--3. SECTION "Sharing Your Digital Business Cards" STARTS HERE-->
+                        <section id="sharing-your-digital-business-cards"
+                            style="margin-left:5%;margin-right:5%; margin-bottom:5%; margin-top:3%">
                             <h1 class="heading-23"><b>Sharing Your Digital Business Cards</b></h1><br>
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
@@ -711,7 +752,8 @@
                                                 </button>
                                             </h2>
                                             <div id="collapsetwentyfive" class="accordion-collapse collapse"
-                                                aria-labelledby="headingtwentyfive" data-bs-parent="#accordionExample">
+                                                aria-labelledby="headingtwentyfive"
+                                                data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
                                                     Every digital business card has its unique QR code. Double-tap the
                                                     card you’d like to share and show your Cardify QR code to the person
@@ -746,7 +788,8 @@
 
                         </section>
 
-                        <section id="address-Book" style="margin-left:5%;margin-right:5%; margin-bottom:5%; margin-top:3%">
+                        <!-- <section id="make-Profile
+                            style="margin-left:5%;margin-right:5%; margin-bottom:5%; margin-top:3%">
                             <h1 class="heading-23"><b>Address Book</b></h1><br>
 
                             <div class="accordion" id="accordionExample">
@@ -798,7 +841,8 @@
                                                 </button>
                                             </h2>
                                             <div id="collapsetwentynine" class="accordion-collapse collapse"
-                                                aria-labelledby="headingtwentynine" data-bs-parent="#accordionExample">
+                                                aria-labelledby="headingtwentynine"
+                                                data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
                                                     Yes, Cardify business card address books allow you to store multiple
                                                     digital business cards in Address Book.
@@ -818,7 +862,8 @@
                                                     </button>
                                                 </h2>
                                                 <div id="collapsethirty" class="accordion-collapse collapse"
-                                                    aria-labelledby="headingthirty" data-bs-parent="#accordionExample">
+                                                    aria-labelledby="headingthirty"
+                                                    data-bs-parent="#accordionExample">
                                                     <div class="accordion-body">
                                                         Yes, Cardify digital business card address books have a search
                                                         feature that allows you to search for a specific contact by
@@ -828,9 +873,74 @@
                                             </div>
                                             <br>
 
-                        </section>
+                        </section> -->
+                        <!--4. SECTION "Profile" STARTS HERE -->
+                        <section id="Profile"
+                            style="margin-left:5%;margin-right:5%; margin-bottom:5%; margin-top:3%">
+                            <h1 class="heading-23"><b>Profile</b></h1><br>
 
-                        <section id="virtual-backgrounds" style="margin-left:5%;margin-right:5%; margin-bottom:5%; margin-top:3%">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingtwentyseven">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapsetwentyseven"
+                                            aria-expanded="false" aria-controls="collapsetwentyseven">
+                                            <h5>How does a user&#39;s profile get generated on Cardify?</h5>
+                                        </button>
+                                    </h2>
+                                    <div id="collapsetwentyseven" class="accordion-collapse collapse"
+                                        aria-labelledby="headingtwentyseven" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            When the user creates a digital business card, the user clicks on the &quot;add 
+                                            profile&quot; button and fills out the required form. Once the information is entered, 
+                                            the user clicks the &quot;save&quot; button, and their profile will be created.
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingtwentyeight">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapsetwentyeight"
+                                                aria-expanded="false" aria-controls="collapsetwentyeight">
+                                                <h5>CCan I customize my digital business card profile?</h5>
+                                            </button>
+                                        </h2>
+                                        <div id="collapsetwentyeight" class="accordion-collapse collapse"
+                                            aria-labelledby="headingtwentyeight" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                Yes, you can customize your profile on Cardify by adding information such as
+                                                 your name, job title, company, contact information, and social media links.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingtwentynine">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapsetwentynine"
+                                                    aria-expanded="false" aria-controls="collapsetwentynine">
+                                                    <h5>Can a user update their Profile?
+                                                    </h5>
+                                                </button>
+                                            </h2>
+                                            <div id="collapsetwentynine" class="accordion-collapse collapse"
+                                                aria-labelledby="headingtwentynine"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    Yes! he can update their profile.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                        </section>
+                <!--5.SECTION "Virtual Background" STARTS HERE -->
+                        <section id="virtual-backgrounds"
+                            style="margin-left:5%;margin-right:5%; margin-bottom:5%; margin-top:3%">
                             <h1 class="heading-23"><b>Virtual Background</b></h1><br>
 
                             <div class="accordion" id="accordionExample">
@@ -845,8 +955,8 @@
                                     <div id="collapsethirtyOne" class="accordion-collapse collapse"
                                         aria-labelledby="headingthirtyOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            When you are designing your digital business card, you can add an image that
-                                            you would like to use as your background.
+                                            When you are designing your digital business card, you can add an image 
+                                            that you would like to use as your background.
                                         </div>
                                     </div>
                                 </div>
@@ -858,14 +968,13 @@
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapsethirtytwo"
                                                 aria-expanded="false" aria-controls="collapsethirtytwo">
-                                                <h5>Can i upload an image?</h5>
+                                                <h5>Can i upload and update an image?</h5>
                                             </button>
                                         </h2>
                                         <div id="collapsethirtytwo" class="accordion-collapse collapse"
                                             aria-labelledby="headingthirtytwo" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                When you are designing your digital business card, you can add an image
-                                                that you would like to use as your background.
+                                                Yes, you can upload and update your image.
                                             </div>
                                         </div>
                                     </div>
@@ -877,11 +986,12 @@
                                                 <button class="accordion-button collapsed" type="button"
                                                     data-bs-toggle="collapse" data-bs-target="#collapsethirtythree"
                                                     aria-expanded="false" aria-controls="collapsethirtythree">
-                                                    <h5>What was the image size?</h5>
+                                                    <h5>What is the image size?</h5>
                                                 </button>
                                             </h2>
                                             <div id="collapsethirtythree" class="accordion-collapse collapse"
-                                                aria-labelledby="headingthirtythree" data-bs-parent="#accordionExample">
+                                                aria-labelledby="headingthirtythree"
+                                                data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
                                                     The ideal size of the image is 2 Mb.
                                                 </div>
@@ -908,7 +1018,8 @@
                             class="text-white text-decoration-none">Privacy Policy</a>
                     </div>
                     <div class="py-2">
-                        <p class="mb-0">Copyright @ 2022. <a href="#" class="text-white">Biafotech.</a> All rights
+                        <p class="mb-0">Copyright @ 2022. <a href="#" class="text-white">Biafotech.</a> All
+                            rights
                             reserved.</p>
                     </div>
                 </div>
@@ -918,59 +1029,59 @@
     </footer>
 </body>
 <style>
-/*html {
+    /*html {
         scroll-behavior: smooth;
     }*/
-.panel-group .panel {
-    border-radius: 0;
-    box-shadow: none;
-    border-color: #EEEEEE;
-}
+    .panel-group .panel {
+        border-radius: 0;
+        box-shadow: none;
+        border-color: #EEEEEE;
+    }
 
-.panel-default>.panel-heading {
-    padding: 0;
-    border-radius: 0;
-    color: #212121;
-    background-color: #FAFAFA;
-    border-color: #EEEEEE;
-}
+    .panel-default>.panel-heading {
+        padding: 0;
+        border-radius: 0;
+        color: #212121;
+        background-color: #FAFAFA;
+        border-color: #EEEEEE;
+    }
 
-.panel-title {
-    font-size: 14px;
-}
+    .panel-title {
+        font-size: 14px;
+    }
 
-.panel-title>a {
-    display: block;
-    padding: 15px;
-    text-decoration: none;
-}
+    .panel-title>a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+    }
 
-.more-less {
-    float: right;
-    color: #212121;
-}
+    .more-less {
+        float: right;
+        color: #212121;
+    }
 
-.panel-default>.panel-heading+.panel-collapse>.panel-body {
-    border-top-color: #EEEEEE;
-}
+    .panel-default>.panel-heading+.panel-collapse>.panel-body {
+        border-top-color: #EEEEEE;
+    }
 
-/* ----- v CAN BE DELETED v ----- */
-/*body {
+    /* ----- v CAN BE DELETED v ----- */
+    /*body {
         background-color: #26a69a;
     }*/
 
-.demo {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
+    .demo {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
 </style>
 <script>
-function toggleIcon(e) {
-    $(e.target)
-        .prev('.panel-heading')
-        .find(".more-less")
-        .toggleClass('glyphicon-plus glyphicon-minus');
-}
-$('.panel-group').on('hidden.bs.collapse', toggleIcon);
-$('.panel-group').on('shown.bs.collapse', toggleIcon);
+    function toggleIcon(e) {
+        $(e.target)
+            .prev('.panel-heading')
+            .find(".more-less")
+            .toggleClass('glyphicon-plus glyphicon-minus');
+    }
+    $('.panel-group').on('hidden.bs.collapse', toggleIcon);
+    $('.panel-group').on('shown.bs.collapse', toggleIcon);
 </script>
