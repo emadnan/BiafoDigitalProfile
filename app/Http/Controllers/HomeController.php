@@ -36,12 +36,12 @@ class HomeController extends Controller
         
         $companies = Company::all();
          $countries = Country::all();
-        // $cities = City::all();
-        echo '<pre>';
-        print_r($countries);
-        die;
-        $data=compact('cards','companies','countries','cities');
+         $cities = City::all();
         
+        $data=compact('cards','companies','countries','cities');
+        echo '<pre>';
+        print_r($data);
+        die;
         return view('home')->with($data);
     }
     public function fetch_cities($country_id)
