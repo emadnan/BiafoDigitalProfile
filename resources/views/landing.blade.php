@@ -9,17 +9,18 @@
     <title>Cardify</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <script src="{{asset('frontend/js/bootstrap5.bundle.min.js')}}"></script>
+    <script src="{{ asset('frontend/js/bootstrap5.bundle.min.js') }}"></script>
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{asset('frontend/css/landing_page_styles.css')}}" rel="stylesheet" />
+    <link href="{{ asset('frontend/css/landing_page_styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend\css\bootstrap5.min.css') }}" rel="stylesheet">
 </head>
 <style>
-html {
-    scroll-behavior: smooth;
-}
+    html {
+        scroll-behavior: smooth;
+    }
+
 </style>
 
 <body>
@@ -84,16 +85,16 @@ html {
                         <form class="d-flex ms-5 customize_mob_menu">
                             {{-- <a class="btn btn-yellow rounded-pill px-5 py-2" >Login</a> --}}
                             @guest
-                            @if (Route::has('login'))
-                            <a class="btn btn-yellow rounded-pill px-5 py-2"
-                                href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
-                            <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
-                                href="#pricing"><b>{{ __('Create Card') }}</b></a>
-                            @endif
+                                @if (Route::has('login'))
+                                    <a class="btn btn-yellow rounded-pill px-5 py-2"
+                                        href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
+                                    <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
+                                        href="#pricing"><b>{{ __('Create Card') }}</b></a>
+                                @endif
                             @else
-                            <a class="btn btn-yellow rounded-pill px-5 py-2 "
-                                href="#pricing"><b>{{ __('Create Card') }}</b></a>
-                            <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
+                                <a class="btn btn-yellow rounded-pill px-5 py-2 "
+                                    href="#pricing"><b>{{ __('Create Card') }}</b></a>
+                                <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                             @endguest
                         </form>
                     </div>
@@ -112,7 +113,7 @@ html {
                                 your digital contact information. They give people the ability to share who they are,
                                 with anyone, wherever they go.</p>
                         </div>
-                        <img src="{{asset('frontend/img/landing_3.png')}}" alt=""
+                        <img src="{{ asset('frontend/img/landing_3.png') }}" alt=""
                             class="position-absolute customize__absolute__img">
                     </div>
                 </div>
@@ -160,7 +161,8 @@ html {
                             </div>
                             <div class="card-body mt-3">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Share your virtual business card using a QR code or send
+                                    <li class="list-group-item">Share your virtual business card using a QR code or
+                                        send
                                         it through email, text, social media, and more. </li>
                                     <li class="list-group-item"> Anyone can receive your digital card, even if they
                                         don't have the app.</li>
@@ -176,7 +178,8 @@ html {
                             </div>
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">When you share your digital business card using QR Code,
+                                    <li class="list-group-item">When you share your digital business card using QR
+                                        Code,
                                         the contact information of the person.</li>
                                     <li class="list-group-item"> you are sharing it with will automatically be saved in
                                         your digital address book. </li>
@@ -219,24 +222,31 @@ html {
                 <div class="row">
                     <div class="col-md-6 mt-5">
                         <div>
-                            <img src="{{asset('frontend/img/about_6.png')}}" alt="" height="80%" width="80%">
+                            <img src="{{ asset('frontend/img/about_6.png') }}" alt="" height="80%"
+                                width="80%">
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="about_content_text">
-                            <h3 class="text-center text-white">Biafo is a nearly 67 km long glacier in the Karakoram
-                                Mountain range of Pakistan and is part of the world’s longest glacial system outside the
-                                polar regions. This is our namesake, a technology company that feels the need at heart
-                                to be rooted in the values of the land and nature we surround ourselves in, an ethical
-                                company that believes in putting our community, our employees and our customers first.,
-                            </h3>
-                            <h6 class="text-center text-white"> Biafotech came into existence as a need when it soon
-                                became apparent that there was a lack of specific expertise available in the country, we
-                                banded together a team of consultants and business analysts willing to learn everything.
-                                We rescued a project in a record 4 months and gave birth to a company with a vision to
-                                do things better and more professionally,
-                            </h6>
-
+                        <div class="about_content_text text-white text-justify mt-4" style="font-size: 1vw">
+                            <p>Welcome to our QR Generated Card application <strong>‘Cardify’</strong>
+                                where sharing your contact information has never been easier. Our mission is to
+                                revolutionize business communication, eliminating the need for traditional paper
+                                business cards and providing a more sustainable solution.
+                            </p>
+                            <p>Our application allows you to create a personalized
+                                digital business card that can be shared instantly by scanning a unique QR code. With
+                                our app, you can share all of your contact information, including your name, email
+                                address, phone number, and social media profiles.
+                            </p>
+                            <p>Using <strong>Cardify</strong> saves time and
+                                money, reduces paper waste, and enhances your professional image. Our app is perfect for
+                                anyone looking for a convenient and sustainable way to share their contact information,
+                                whether you're a business professional, entrepreneur, or student..
+                            </p>
+                            <p> Our company is committed to providing innovative
+                                solutions that help people improve their communication and productivity. We strive to
+                                create technology that is easy to use, reliable, and environmentally friendly.With <strong>Cardify</strong>, you can make a great first impression every time.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -264,7 +274,8 @@ html {
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
                                     <button type="submit" class="btn btn-yellow">
-                                        <a class="nav-link text-black text-center" href="/register" data-name="feature">
+                                        <a class="nav-link text-black text-center" href="/register"
+                                            data-name="feature">
                                             <b>
                                                 Free
                                             </b>
@@ -280,31 +291,38 @@ html {
                                             <span class="h2">$0</span>/month
                                             <br><br>
                                         </div>
-                                        <p class="card-text">Some quick example text to build on the card title and make
+                                        <p class="card-text">Some quick example text to build on the card title and
+                                            make
                                             up the bulk of the card's content.</p>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Cras justo odio</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Dapibus ac facilisis in</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                             </svg> Vestibulum at eros</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                             </svg> Custom colors</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                             </svg> Personalized card link</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                             </svg> Additional card designs</li>
                                     </ul>
                                     <div class="card-body text-center">
@@ -323,7 +341,8 @@ html {
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
                                     <button type="submit" class="btn btn-yellow ">
-                                        <a class="nav-link text-black text-center" href="/register" data-name="feature">
+                                        <a class="nav-link text-black text-center" href="/register"
+                                            data-name="feature">
                                             <b>
                                                 Professional
                                             </b>
@@ -339,33 +358,40 @@ html {
                                             <span class="h2">$5</span>/month
                                             <br><br>
                                         </div>
-                                        <p class="card-text">Some quick example text to build on the card title and make
+                                        <p class="card-text">Some quick example text to build on the card title and
+                                            make
                                             up the bulk of the card's content.</p>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Cras justo odio</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Dapibus ac facilisis in</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Vestibulum at eros</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                             </svg> Custom colors</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                             </svg> Personalized card link</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                             </svg> Additional card designs</li>
                                     </ul>
                                     <div class="card-body text-center">
@@ -384,7 +410,8 @@ html {
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
                                     <button type="submit" class="btn btn-yellow">
-                                        <a class="nav-link text-black text-center" href="/register" data-name="feature">
+                                        <a class="nav-link text-black text-center" href="/register"
+                                            data-name="feature">
                                             <b>
                                                 Business
                                             </b>
@@ -400,35 +427,42 @@ html {
                                             <span class="h4"><b>Contact Sales</b></span>
                                             <br><br>
                                         </div>
-                                        <p class="card-text">Some quick example text to build on the card title and make
+                                        <p class="card-text">Some quick example text to build on the card title and
+                                            make
                                             up the bulk of the card's content.</p>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Cras justo odio</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Dapibus ac facilisis in</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Vestibulum at eros</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Custom colors</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                             </svg> Personalized card link</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                             </svg> Additional card designs</li>
                                     </ul>
                                     <div class="card-body text-center">
@@ -447,7 +481,8 @@ html {
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
                                     <button type="submit" class="btn btn-yellow  " s>
-                                        <a class="nav-link text-black text-center" href="/register" data-name="feature">
+                                        <a class="nav-link text-black text-center" href="/register"
+                                            data-name="feature">
                                             <b>
                                                 Enterprise
                                             </b>
@@ -463,37 +498,44 @@ html {
                                             <span class="h4"><b>Contact Sales</b></span>
                                             <br><br>
                                         </div>
-                                        <p class="card-text">Some quick example text to build on the card title and make
+                                        <p class="card-text">Some quick example text to build on the card title and
+                                            make
                                             up the bulk of the card's content.</p>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Cras justo odio</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Dapibus ac facilisis in</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Vestibulum at eros</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Custom colors</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Personalized card link</li>
-                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor"
+                                                class="bi bi-check" viewBox="0 0 16 16">
                                                 <path
                                                     d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                             </svg> Additional card designs</li>
@@ -542,36 +584,40 @@ html {
                                             @csrf
                                             <!-- Name input-->
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="name" name="name" type="text"
-                                                    placeholder="Enter your name..." data-sb-validations="required" />
+                                                <input class="form-control" id="name" name="name"
+                                                    type="text" placeholder="Enter your name..."
+                                                    data-sb-validations="required" />
                                                 <label for="name">Full name</label>
-                                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is
+                                                <div class="invalid-feedback" data-sb-feedback="name:required">A name
+                                                    is
                                                     required.</div>
                                             </div>
                                             <!-- Email address input-->
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="email" name="email" type="email"
-                                                    placeholder="name@example.com"
+                                                <input class="form-control" id="email" name="email"
+                                                    type="email" placeholder="name@example.com"
                                                     data-sb-validations="required,email" />
                                                 <label for="email">Email address</label>
-                                                <div class="invalid-feedback" data-sb-feedback="email:required">An email
+                                                <div class="invalid-feedback" data-sb-feedback="email:required">An
+                                                    email
                                                     is required.</div>
                                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is
                                                     not valid.</div>
                                             </div>
                                             <!-- Phone number input-->
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="phone" name="phone" type="tel"
-                                                    placeholder="(123) 456-7890" data-sb-validations="required" />
+                                                <input class="form-control" id="phone" name="phone"
+                                                    type="tel" placeholder="(123) 456-7890"
+                                                    data-sb-validations="required" />
                                                 <label for="phone">Phone number</label>
-                                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone
+                                                <div class="invalid-feedback" data-sb-feedback="phone:required">A
+                                                    phone
                                                     number is required.</div>
                                             </div>
                                             <!-- Message input-->
                                             <div class="form-floating mb-3">
                                                 <textarea class="form-control" id="message" type="text" name="request"
-                                                    placeholder="Enter your message here..." style="height: 10rem"
-                                                    data-sb-validations="required"></textarea>
+                                                    placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                                                 <label for="message">Enter Request Details</label>
                                                 <div class="invalid-feedback" data-sb-feedback="message:required">A
                                                     Request is required.</div>
@@ -674,7 +720,8 @@ html {
                     <div class="col-md-4 mt-2"></div>
                     <div class="col-md-4 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h3 class="text-center mt-3 rounded-pill px-6 py-2" style="background-color:#ff9d00;"><b>CONTACT
+                        <h3 class="text-center mt-3 rounded-pill px-6 py-2" style="background-color:#ff9d00;">
+                            <b>CONTACT
                                 US</b>
                         </h3>
 
@@ -695,7 +742,8 @@ html {
                                                 <input class="form-control" id="name" type="text"
                                                     placeholder="Enter your name..." data-sb-validations="required" />
                                                 <label for="name">Full name</label>
-                                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is
+                                                <div class="invalid-feedback" data-sb-feedback="name:required">A name
+                                                    is
                                                     required.</div>
                                             </div>
                                             <!-- Email address input-->
@@ -704,7 +752,8 @@ html {
                                                     placeholder="name@example.com"
                                                     data-sb-validations="required,email" />
                                                 <label for="email">Email address</label>
-                                                <div class="invalid-feedback" data-sb-feedback="email:required">An email
+                                                <div class="invalid-feedback" data-sb-feedback="email:required">An
+                                                    email
                                                     is required.</div>
                                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is
                                                     not valid.</div>
@@ -714,14 +763,14 @@ html {
                                                 <input class="form-control" id="phone" type="tel"
                                                     placeholder="(123) 456-7890" data-sb-validations="required" />
                                                 <label for="phone">Phone number</label>
-                                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone
+                                                <div class="invalid-feedback" data-sb-feedback="phone:required">A
+                                                    phone
                                                     number is required.</div>
                                             </div>
                                             <!-- Message input-->
                                             <div class="form-floating mb-3">
-                                                <textarea class="form-control" id="message" type="text"
-                                                    placeholder="Enter your message here..." style="height: 10rem"
-                                                    data-sb-validations="required"></textarea>
+                                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..."
+                                                    style="height: 10rem" data-sb-validations="required"></textarea>
                                                 <label for="message">Message</label>
                                                 <div class="invalid-feedback" data-sb-feedback="message:required">A
                                                     message is required.</div>
@@ -819,7 +868,8 @@ html {
                             class="text-white text-decoration-none">Privacy Policy</a>
                     </div>
                     <div class="py-2">
-                        <p class="mb-0">Copyright @ 2022. <a href="#" class="text-white">Biafotech.</a> All rights
+                        <p class="mb-0">Copyright @ 2022. <a href="#" class="text-white">Biafotech.</a> All
+                            rights
                             reserved.</p>
                     </div>
                 </div>
@@ -829,7 +879,7 @@ html {
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="{{asset('frontend/js/scripts.js')}}"></script>
+    <script src="{{ asset('frontend/js/scripts.js') }}"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -840,50 +890,50 @@ html {
     <link href="{{ asset('frontend\css\jquery.multiselect.css') }}" rel="stylesheet">
 </body>
 <style>
-.card {
-    border: none;
-}
+    .card {
+        border: none;
+    }
 
-.card::after {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
+    .card::after {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
 
-.card:hover {
+    .card:hover {
 
-    transform: scale(1.02, 1.02);
-    -webkit-transform: scale(1.02, 1.02);
-    backface-visibility: hidden;
-    will-change: transform;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .75) !important;
-}
+        transform: scale(1.02, 1.02);
+        -webkit-transform: scale(1.02, 1.02);
+        backface-visibility: hidden;
+        will-change: transform;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .75) !important;
+    }
 
-.card:hover::after {
-    opacity: 1;
-}
+    .card:hover::after {
+        opacity: 1;
+    }
 
-.card:hover .btn-outline-primary {
-    color: white;
-    background: #007bff;
-}
+    .card:hover .btn-outline-primary {
+        color: white;
+        background: #007bff;
+    }
 </style>
 <script>
-// Add active class to the current button (highlight it)
-var header = document.getElementById("navbarSupportedContent");
-var btns = header.getElementsByClassName("nav-link");
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-        if (this.attr('data-name') == "feature") {
-            alert('hello');
-        }
-    });
-}
+    // Add active class to the current button (highlight it)
+    var header = document.getElementById("navbarSupportedContent");
+    var btns = header.getElementsByClassName("nav-link");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+            if (this.attr('data-name') == "feature") {
+                alert('hello');
+            }
+        });
+    }
 </script>
 
 </html>
