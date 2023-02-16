@@ -58,15 +58,17 @@ $permissions= session()->get('permissions');
                             Backgrounds
                         </p>
                     </a>
-                </li>
+                </li> -->
+                @if(isset($permissions['can_view_company_profile']))
                 <li>
-                    <a class="{{ request()->routeIs('profiles') ? 'nav-link active' : 'nav-link text-white' }}"
-                        href="{{ route('profiles') }}"><i class="nav-icon fa-solid fa-user-gear"></i>
+                    <a class="{{ request()->routeIs('company_profile') ? 'nav-link active' : 'nav-link text-white' }}"
+                        href="{{ route('company_profile') }}"><i class="nav-icon fa-solid fa-building"></i>
                         <p >
-                            Profiles
+                            Company Profile
                         </p>
                     </a>
-                </li> -->
+                </li>
+                @endif
                 @if(isset($permissions['can_view_feature_requests']))
                 <li  >
 

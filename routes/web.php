@@ -12,6 +12,7 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\CompanyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,7 +39,7 @@ Route::post('/add_card',[CardController::class,'addCard'])->name('add_card');
 Route::get('/view_card/{card_id}/{type}', [CardController::class, 'getcard'])->name('view_card');
 Route::get('/delete_card/{id}',[CardController::class, 'delete_card'])->name('delete_card');
 Route::post('/update_card',[CardController::class, 'update_card'])->name('update_card');
-Route::get('/profiles', [ProfileController::class,'index'])->name('profiles');
+// Route::get('/profiles', [ProfileController::class,'index'])->name('profiles');
 Route::get('/add_profile/{card_id}/{type}', [ProfileController::class,'addProfile'])->name('add_profile');
 Route::post('/insert_profile', [ProfileController::class,'insertProfile'])->name('insert_profile');
 Route::get('/view_profile/{card_id}', [ProfileController::class,'viewProfile'])->name('view_profile');
@@ -64,3 +65,7 @@ Route::get('/delete_Permission/{id}',[PermissionController::class,'delete_Permis
 Route::post('/update_Permission/{id}',[PermissionController::class,'update_Permission'])->name('update_Permission');
 Route::get('/permission_role/{id}',[RoleController::class,'permission_role'])->name('permission_role');
 Route::post('/add_permission_role',[RoleController::class,'add_permission_role'])->name('add_permission_role');
+Route::get('/cities/{country_id}',[HomeController::class,'fetch_cities'])->name('cities');
+Route::post('/add_company',[CompanyController::class,'add_company'])->name('add_company');
+Route::get('/company_profile',[CompanyController::class,'index'])->name('company_profile');
+Route::post('/update_company/{id}',[CompanyController::class,'update_company'])->name('update_company');

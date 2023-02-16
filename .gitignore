@@ -1,5 +1,6 @@
 /node_modules
 /public/card_images
+/public/company_logos
 /public/hot
 /public/storage
 /storage/*.key
