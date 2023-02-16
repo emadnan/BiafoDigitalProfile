@@ -82,7 +82,7 @@ class RegisterController extends Controller
         foreach($permission_roles as $permission_role){
            $permissions[$permission_role->permissions->permission]=$permission_role->permissions->permission;
         } 
-        session()->put('permissions',$permissions);
+        // session()->put('permissions',$permissions);
         // if($data['user_type']=="company")
         // {
         //     session()->put('is_new',1);
