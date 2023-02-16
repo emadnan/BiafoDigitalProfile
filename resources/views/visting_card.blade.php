@@ -17,7 +17,7 @@ body {
 body {
     background: whitesmoke;
     font-weight: 400;
-    font-size: 1em;
+    /* font-size: 1em; */
     font-family: 'Raleway', Arial, sans-serif;
 }
 
@@ -32,8 +32,8 @@ figure {
 .card_container {
     position: block;
     perspective: 1000;
-    margin-top: -300px;
-    top: 50%;
+    /* margin-bottom: -900px; */
+    /* top: 100%; */
 }
 
 
@@ -74,38 +74,38 @@ figure .caption {
     left: 0;
     width: 100%;
     height: 100%;
-    text-transform: uppercase;
-    padding: 2em;
-    backface-visibility: hidden;
+    /* text-transform: uppercase; */
+    padding: 2.5em;
+    
 }
 
-.front .caption {
+/* .front .caption {
     font-size: 1.25em;
-}
+} */
 
-.front .caption:before {
+/* .front .caption:before {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* content: ''; */
-}
+   
+} */
 
 
 .front h2 {
     /* word-spacing: -0.15em; */
-    font-weight: 300;
-    font-size: 1em;
+    /* font-weight: 300; */
+    font-size: 0.7em;
     position: absolute;
     top: 10%;
-    left: 0;
+    left: 20px;
     width: 100%;
     /* color: #272833; */
     color: #fff;
 
     text-align: left;
-    margin-left: 19px;
+    /* margin-left: 19px; */
 }
 
 .front h2 span {
@@ -114,43 +114,68 @@ figure .caption {
 
 
 
-.front p {
-    letter-spacing: 5px;
+.designation {
+    /* letter-spacing: 2px; */
     font-size: 68.5%;
+    /* font-size: 50%; */
     position: absolute;
     bottom: 10;
-    left: 0;
-    padding: 1.5em;
+    left: 20px;
+    /* padding: 1.5em; */
     width: 100%;
     opacity: 0;
     /* transform: translate3d(0,10px,0); */
     /* transition: opacity 0.35s, transform 0.35s; */
     text-align: left;
-
-}
-
-
-.front p {
     opacity: 1;
-    /* transform: translate3d(0,0,0); */
+
 }
 
 .paragraph {
-    letter-spacing: 5px;
+    /* letter-spacing: 5px; */
     font-size: 68.5%;
     position: absolute;
-    bottom: 130px;
-    left: 0;
-    padding: 1.5em;
+    bottom: 180px;
+    left: 20px;
+    /* padding: 1.5em; */
     width: 100%;
-    opacity: 0;
+    /* opacity: 0; */
+    /* transform: translate3d(0,10px,0); */
+    /* transition: opacity 0.35s, transform 0.35s; */
+    /* text-transform: uppercase; */
+    text-align: left;
+    /* margin-left: 21px; */
+}
+.phone{
+    /* letter-spacing: 5px; */
+    font-size: 68.5%;
+    position: absolute;
+    bottom: 165px;
+    left: 20px;
+    /* padding: 1.5em; */
+    width: 100%;
+    /* opacity: 0; */
     /* transform: translate3d(0,10px,0); */
     /* transition: opacity 0.35s, transform 0.35s; */
     text-transform: uppercase;
     text-align: left;
-    margin-left: 5px;
+    /* margin-left: 21px; */
 }
-
+.email{
+    /* letter-spacing: 5px; */
+    font-size: 68.5%;
+    position: absolute;
+    bottom: 148px;
+    left: 20px;
+    /* padding: 1.5em; */
+    width: 100%;
+    /* opacity: 0; */
+    /* transform: translate3d(0,10px,0); */
+    /* transition: opacity 0.35s, transform 0.35s; */
+    /* text-transform: uppercase; */
+    text-align: left;
+    /* margin-left: 21px; */
+}
 /* figure a{
   z-index: 1000;
   text-indent: 200%;
@@ -276,12 +301,14 @@ input[type="radio"]:checked+label>img {
                             <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" id="back_image" alt="front"
                                 style="width: 450px;height: 270px;" />
                             <div class="caption" id="text">
-                                <h2 id="name_text">{{$card->name}}</h2>
-                                <p>{{$card->designation}}</p>
+                                <h2 id="name_text"><i class="fa-solid fa-user"></i>&nbsp;|&nbsp;{{$card->name}}</h2>
+                                <p class = 'designation'><i class="fa-solid fa-briefcase"></i>&nbsp;|&nbsp;{{$card->designation}}</p>                         
+                                @if($type == "work")
+                                <p class="paragraph" id="company_text"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;{{$card->company}}</p>
+                                @endif
+                                <p class="phone" id="company_phone"><i class="fa-solid fa-square-phone-flip"></i>&nbsp;|&nbsp;{{$card->phone}}</p>
+                                <p class="email" id="company_email"><i class="fa-solid fa-envelope"></i>&nbsp;|&nbsp;{{$card->email}}</p>
                             </div>
-                            @if($type == "work")
-                            <p class="paragraph" id="company_text">{{$card->company}}</p>
-                            @endif
                             <a href="{{route('view_profile', $card->id)}}">
                                 <div class="qricon" id="qrcode">
                                 </div>
@@ -289,6 +316,7 @@ input[type="radio"]:checked+label>img {
                         </figure>
                     </div>
                 </div>
+
                 <div class="col-md-6">
                     <div class="col-md-12">
                         <div class="upload-btn-wrapper">
