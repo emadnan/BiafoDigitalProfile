@@ -27,14 +27,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        print_r("hello");
-        die;
+        // print_r("hello");
+        // die;
         $user_id=auth()->user()->id;
+        // print_r($user_id);
+        // die;
         $cards = Card::where('user_id',$user_id)->orwhere('company_user_id',$user_id)->get();
+        
         $companies = Company::all();
         $countries = Country::all();
-        $cities = City::all();
-        $data=compact('cards','companies','countries','cities');
+        
+        $data=compact('cards','companies','countries');
+        // echo '<pre>';
+        // print_r($data);
+        // die;
         return view('home')->with($data);
     }
     public function fetch_cities($country_id)
