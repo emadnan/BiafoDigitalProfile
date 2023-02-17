@@ -284,7 +284,7 @@ input[type="radio"]:checked+label>img {
 }
 </style>
 <div class="content-wrapper">
-    <input type="hidden" id="company_id" value="{{$company->id}}">
+<input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
     <section class="content-header">
         <div class='container-fluid'>
             <div class='row'>
@@ -416,14 +416,14 @@ input[type="radio"]:checked+label>img {
 @section('scripts')
 <script>
 var company_id = document.getElementById("company_id").value;
-if(company_id)
+if(company_id != 'none')
 {
     var qrCode = new QRCodeStyling({
     width: 120,
     height: 120,
     type: "canvas",
     data: "{{route('view_profile', $card->id)}}",
-    image: "{{asset('company_logos')}}/{{$company->logo}}",
+    image: "{{asset('company_logos')}}/{{empty($company) ? 'default.png' : $company->logo}}",
     dotsOptions: {
         color: "black",
         type: "classy-rounded"

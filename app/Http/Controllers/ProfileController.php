@@ -11,6 +11,8 @@ use App\Models\Experience;
 use App\Models\Skill;
 use App\Models\Language;
 use App\Models\Interest;
+use App\Models\Country;
+use App\Models\City;
 use App\Events\ExampleEmailEvent;
 use App\Mail\ExampleMailable;
 use Illuminate\Support\Facades\Mail;
@@ -42,8 +44,8 @@ class ProfileController extends Controller
         $profile->email = $request->email;
         $profile->phone = $request->phone;
         $profile->address = $request->address;
-        $profile->city = $request->city;
-        $profile->country = $request->country;
+        $profile->city_id = $request->city;
+        $profile->country_id = $request->country;
         $profile->skills=$request->skills;
         $profile->interests=$request->interests;
         $profile->languages=$request->languages;
@@ -97,15 +99,15 @@ class ProfileController extends Controller
                 $experience_loop++;
             }
         }
-        if(auth()->user()->user_type == 'company')
-        {
-        $mail = [
-            "title" => "Check your profile",
-            "body" => 'Dear "'.$request->name.'" your profile has been created successfully. Please Update your profile by clicking on the link below',
-            "link" => route('edit_profile',$request->card_id),
-        ];
-        Mail::to($request->email)->send(new ExampleMailable($mail));
-        }
+        // if(auth()->user()->user_type == 'company')
+        // {
+        // $mail = [
+        //     "title" => "Check your profile",
+        //     "body" => 'Dear "'.$request->name.'" your profile has been created successfully. Please Update your profile by clicking on the link below',
+        //     "link" => route('edit_profile',$request->card_id),
+        // ];
+        // Mail::to($request->email)->send(new ExampleMailable($mail));
+        // }
 
         return redirect('view_card/'.$request->card_id.'/'.$type);
 
@@ -128,10 +130,12 @@ class ProfileController extends Controller
     {
         $card=Card::where('id',$card_id)->first();
         $profile=Profile::with('social_links','educations','experiences')->where('card_id',$card_id)->first();
+        $countries=Country::all();
+        $cities=City::where('country_id',$profile->country_id)->get();
         $skills=Skill::all();
         $interests=Interest::all();
         $languages=Language::all();
-        $data=compact('card','profile','skills','interests','languages');
+        $data=compact('card','profile','skills','interests','languages','countries','cities');
         return view('edit_profile')->with($data);
     }
     public function updateProfile(Request $request)

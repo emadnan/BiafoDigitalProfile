@@ -45,12 +45,13 @@ class CardController extends Controller
             $company_user->email = $request->email;
             $company_user->user_type = 'company_user';
             $company_user->role_id = 3;
+            $company_user->company_id = auth()->user()->company_id;
             $password = Str::random(8);
             $company_user->password = Hash::make($password);
             $company_user->save();
             $mail = [
                 "title" => "Card Created",
-                "body" => "Your Card has been created. Please login with your email and password. Your Cridentials are: ",
+                "body" => "Your Card has been created. Please login with your email and password Kindly Login and Update Your Profile. Your Cridentials are: ",
                 "password" => $password,
                 "email" => $request->email,
                 'link' => route('login')
@@ -80,12 +81,25 @@ class CardController extends Controller
         $card->company = $request->company;
         $card->designation = $request->designation;
         $card->address = $request->address;
-        $card->country = $request->country;
-        $card->city = $request->city;
+        $card->country_id = $request->country;
+        $card->city_id = $request->city;
         $card->linkedin = $request->linkiden;
         $card->website = $request->website;
         $card->image_path = $image_path;
         $card->save();
+        //Add Profile
+        $profile = new Profile();
+        $profile->card_id = $card->id;
+        $profile->user_id = auth()->user()->id;
+        $profile->company_user_id = $company_user_id;
+        $profile->name = $request->name;
+        $profile->email = $request->email;
+        $profile->phone = $request->phone;
+        $profile->description = "This is my description";
+        $profile->address = $request->address;
+        $profile->country_id = $request->country;
+        $profile->city_id = $request->city;
+        $profile->save();
         return response()->json(['success' => 'Card Added Successfully']);
     }
 

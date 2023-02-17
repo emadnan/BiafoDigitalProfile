@@ -354,6 +354,28 @@ $(document).ready(function() {
             }
         });
     });
+    var country2 = document.getElementById("country");
+    var city2 = document.getElementById("city");
+    //country change event listener to get cities
+    country2.addEventListener('change', function() {
+        var country_id2 = this.value;
+        // alert(country_id);
+        var url = "/cities/" + country_id2;
+        $.ajax({
+            url: url,
+            type: 'GET',
+            success: function(data) {
+                console.log(city);
+                var cities = data;
+                var html = '<option value="">Select City</option>';
+                for (var i = 0; i < cities.length; i++) {
+                    html += '<option value="' + cities[i].id + '">' + cities[i].name +
+                        '</option>';
+                }
+                city2.innerHTML = html;
+            }
+        });
+    });
 });
 
 //show image in image preview

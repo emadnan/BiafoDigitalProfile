@@ -12,4 +12,11 @@ class Card extends Model
     use SoftDeletes;
     protected $table="cards";
     protected $primarykey="id";
+
+    function country(){
+        return $this->belongsTo('App\Models\Country','country_id','id');
+    }
+    function city(){
+        return $this->belongsTo('App\Models\City','city_id','id');
+    }
 }

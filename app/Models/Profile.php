@@ -22,4 +22,10 @@ class Profile extends Model
     function social_links(){
         return $this->hasMany('App\Models\SocialLink','profile_id','id');
     }
+    function country(){
+        return $this->belongsTo('App\Models\Country','country_id','id');
+    }
+    function city(){
+        return $this->belongsTo('App\Models\City','city_id','id');
+    }
 }

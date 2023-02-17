@@ -82,7 +82,7 @@ html {
                             @endif
                             @else
                             <a class="btn btn-yellow rounded-pill px-5 py-2 "
-                            @if($profile->user_id == Auth::user()->id)
+                            @if($profile->user_id == Auth::user()->id  || $profile->company_user_id == Auth::user()->id)
                                <a href="/edit_profile/{{$profile->card_id}}"><b><i class="fa-solid fa-pen-to-square"></i> Edit Profile</b></a>
                             @endif
                             <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b><i class="fa-solid fa-house-chimney"></i> {{ __('Dashboard') }}</b></a>
@@ -104,7 +104,7 @@ html {
                         </div>
                         <div class="col-md-7">
                             <h1 style="font-family:Palatino;font-weight:bold;">{{$profile->name}}</h1>
-                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-map-location-dot"></i>&nbsp; {{$profile->address}}, {{$profile->city}}, {{$profile->country}}</h5>
+                            <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-map-location-dot"></i>&nbsp; {{$profile->address}}, {{$profile->city->name}}, {{$profile->country->name}}</h5>
                             <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-envelope"></i>&nbsp; {{$profile->email}}</h5>
                             <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-regular fa-envelope"></i>&nbsp; {{$profile->personal_email}}</h5>
                             <h5 class="mt-3" style="font-family:Palatino;font-weight:bold;"><i class="fa-solid fa-mobile-button"></i>&nbsp; {{$profile->phone}}</h5>

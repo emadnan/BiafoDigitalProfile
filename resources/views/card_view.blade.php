@@ -383,11 +383,13 @@ z-index: -1;
 }
 </style>
 <div class="content-wrapper">
-    <input type="hidden" id="company_id" value="{{$company->id}}">
+    <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
     <section class="content-header">
         <div class='container-fluid'>
             <div class='row'>
-                <div class='col-md-8'></div>
+                <div class='col-md-8'>
+                    <h5 style="font-family:Palatino;font-weight:bold;">Note: Click QR Code to View Profile </h5>
+                </div>
                 <div class='col-md-4'>
                     @if(empty($profile))
                     @if(isset($permissions['can_add_profile']))
@@ -468,7 +470,7 @@ z-index: -1;
                             <!-- Logo of current location -->
                             <i class="fa-solid fa-map-marker-alt"></i>
                             <div class="ml-2">
-                                <p>{{$card->address}}</p>
+                                <p>{{$card->address}}, {{$card->city->name}}, {{$card->country->name}}</p>
                                 <!-- <p>LAHORE</p> -->
                             </div>
                         </div>
@@ -704,14 +706,14 @@ $('.delete-card').click(function(e) {
 //     correctLevel: QRCode.CorrectLevel.H,
 // });
 var company_id = document.getElementById("company_id").value;
-if(company_id)
+if(company_id != 'none')
 {
     var qrCode = new QRCodeStyling({
     width: 120,
     height: 120,
     type: "canvas",
     data: "{{route('view_profile', $card->id)}}",
-    image: "{{asset('company_logos')}}/{{$company->logo}}",
+    image: "{{asset('company_logos')}}/{{empty($company) ? 'default.png' : $company->logo}}",
     dotsOptions: {
         color: "black",
         type: "classy-rounded"
