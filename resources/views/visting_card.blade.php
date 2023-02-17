@@ -70,7 +70,7 @@ figure img {
 
 figure .caption {
     position: absolute;
-    top: 0px;
+    top: 50px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -98,7 +98,7 @@ figure .caption {
     /* font-weight: 300; */
     font-size: 0.7em;
     position: absolute;
-    top: 10%;
+    top: 7%;
     left: 20px;
     width: 100%;
     /* color: #272833; */
@@ -126,6 +126,7 @@ figure .caption {
     opacity: 0;
     /* transform: translate3d(0,10px,0); */
     /* transition: opacity 0.35s, transform 0.35s; */
+    top: 40px;
     text-align: left;
     opacity: 1;
 
@@ -135,7 +136,7 @@ figure .caption {
     /* letter-spacing: 5px; */
     font-size: 68.5%;
     position: absolute;
-    bottom: 180px;
+    bottom: 177px;
     left: 20px;
     /* padding: 1.5em; */
     width: 100%;
@@ -150,7 +151,7 @@ figure .caption {
     /* letter-spacing: 5px; */
     font-size: 68.5%;
     position: absolute;
-    bottom: 165px;
+    bottom: 158px;
     left: 20px;
     /* padding: 1.5em; */
     width: 100%;
@@ -165,7 +166,7 @@ figure .caption {
     /* letter-spacing: 5px; */
     font-size: 68.5%;
     position: absolute;
-    bottom: 148px;
+    bottom: 138px;
     left: 20px;
     /* padding: 1.5em; */
     width: 100%;
@@ -306,6 +307,7 @@ input[type="radio"]:checked+label>img {
                                 @if($type == "work")
                                 <p class="paragraph" id="company_text"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;{{$card->company}}</p>
                                 @endif
+                                <p class="paragraph" id="company_address"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;{{$card->company}}</p>
                                 <p class="phone" id="company_phone"><i class="fa-solid fa-square-phone-flip"></i>&nbsp;|&nbsp;{{$card->phone}}</p>
                                 <p class="email" id="company_email"><i class="fa-solid fa-envelope"></i>&nbsp;|&nbsp;{{$card->email}}</p>
                             </div>
