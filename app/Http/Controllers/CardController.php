@@ -8,6 +8,8 @@ use App\Models\Card;
 use App\Models\Profile;
 use App\Models\User;
 use App\Models\Company;
+use App\Models\Country;
+use App\Models\City;
 use App\Models\VistingCardBackground;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -111,7 +113,9 @@ class CardController extends Controller
         $profile = Profile::where('card_id', $card_id)->first();
         $company_id = auth()->user()->company_id;
         $company = Company::where('id', $company_id)->first();
-        $data = compact('card', 'type', 'profile', 'company');
+        $countries = Country::all();
+        $cities = City::where('country_id', $card->country_id)->get();
+        $data = compact('card', 'type', 'profile', 'company', 'countries', 'cities');
         return view('card_view')->with($data);
     }
 
@@ -175,8 +179,8 @@ class CardController extends Controller
         $card->company = $request->company;
         $card->designation = $request->designation;
         $card->address = $request->address;
-        $card->country = $request->country;
-        $card->city = $request->city;
+        $card->country_id = $request->country;
+        $card->city_id = $request->city;
         $card->linkedin = $request->linkiden;
         $card->website = $request->website;
         $card->image_path = $image_path;

@@ -578,15 +578,31 @@ z-index: -1;
                                 placeholder="Enter Address" value="{{$card->address}}">
                         </div>
                         <div class="form-group">
-                            <label for="country">Country:</label>
-                            <input type="text" class="form-control" name="country" id="country"
-                                placeholder="Enter Country" value="{{$card->country}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="city">City:</label>
-                            <input type="text" class="form-control" name="city" id="city" placeholder="Enter City"
-                                value="{{$card->city}}">
-                        </div>
+                        <label for="country">Country: <span style="color:red;">*</span></label>
+                        <select name="country" id="country" class="form-control">
+                            <option value="">Select Country</option>
+                            @foreach ($countries as $country)
+                            @if($card->country_id == $country->id)
+                            <option value="{{$country->id}}" selected>{{$country->name}}</option>
+                            @else
+                            <option value="{{$country->id}}">{{$country->name}}</option>
+                            @endif
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City: <span style="color:red;">*</span></label>
+                        <select name="city" id="city" class="form-control">
+                            <option value="">Select City</option>)
+                            @foreach($cities as $city)
+                            @if($card->city_id == $city->id)
+                            <option value="{{$city->id}}" selected>{{$city->name}}</option>
+                            @else
+                            <option value="{{$city->id}}">{{$city->name}}</option>
+                            @endif
+                            @endforeach
+                        </select>
+                    </div>
                         <div class="form-group">
                             <label for="linkiden">Linkiden:</label>
                             <input type="text" class="form-control" name="linkiden" id="linkiden"
@@ -697,6 +713,28 @@ $("#download_card").on('click', function() {
 $('.delete-card').click(function(e) {
     $('#modaldeletecard').attr('href', '/delete_card/' + $(this).attr('data-delete-card-id'))
 });
+var country2 = document.getElementById("country");
+    var city2 = document.getElementById("city");
+    //country change event listener to get cities
+    country2.addEventListener('change', function() {
+        var country_id2 = this.value;
+        // alert(country_id);
+        var url = "/cities/" + country_id2;
+        $.ajax({
+            url: url,
+            type: 'GET',
+            success: function(data) {
+                console.log(city);
+                var cities = data;
+                var html = '<option value="">Select City</option>';
+                for (var i = 0; i < cities.length; i++) {
+                    html += '<option value="' + cities[i].id + '">' + cities[i].name +
+                        '</option>';
+                }
+                city2.innerHTML = html;
+            }
+        });
+    });
 // var qrcode = new QRCode("qrcode", {
 //     text: "{{route('view_profile', $card->id)}}",
 //     width: 80,
