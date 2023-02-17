@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Card;
 use App\Models\Profile;
 use App\Models\User;
+use App\Models\Company;
+use App\Models\VistingCardBackground;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Events\ExampleEmailEvent;
@@ -93,7 +95,9 @@ class CardController extends Controller
         $card = Card::where('id', $card_id)->first();
         $type = $type;
         $profile = Profile::where('card_id', $card_id)->first();
-        $data = compact('card', 'type', 'profile');
+        $company_id = auth()->user()->company_id;
+        $company = Company::where('id', $company_id)->first();
+        $data = compact('card', 'type', 'profile', 'company');
         return view('card_view')->with($data);
     }
 
@@ -170,7 +174,9 @@ class CardController extends Controller
     {
         $card = Card::where('id', $card_id)->first();
         $type = $type;
-        $data = compact('card', 'type');
+        $company_id = auth()->user()->company_id;
+        $company = Company::where('id', $company_id)->first();
+        $data = compact('card', 'type', 'company');
         return view('customize_card')->with($data);
     }
     public function validate_email(Request $request)
@@ -235,7 +241,39 @@ class CardController extends Controller
     {
         $card = Card::where('id', $card_id)->first();
         $type = $type;
-        $data = compact('card', 'type');
+        $company_id = auth()->user()->company_id;
+        $company = Company::where('id', $company_id)->first();
+        $visting_card_backgrounds=VistingCardBackground::where('company_id',$company_id)->get();
+        $data = compact('card', 'type', 'company','visting_card_backgrounds');
         return view('visting_card')->with($data);
+    }
+    public function save_visting_card_backgrounds(Request $request)
+    {
+        if ($request->image != null) {
+            $image = $request->image;
+            // $extension = explode('/', explode(":", substr($image, 0, strpos($image, ";")))[1])[1];
+            $extension = "png";
+            // print_r($image);
+            // exit;
+            $replace = substr($image, 0, strpos($image, ',') + 1);
+            $image = str_replace($replace, "", $image);
+            $image = str_replace('', '+', $image);
+            $image_path = time() . '.' . $extension;
+            $image_decode = base64_decode($image);
+            file_put_contents(public_path() . '/visting_card_images/' . $image_path, $image_decode);
+        }
+        $visting_card_backgrounds = VistingCardBackground::where('company_id', auth()->user()->company_id)->get();
+        if($visting_card_backgrounds->count() > 0){
+        foreach ($visting_card_backgrounds as $visting_card_background) {
+            $visting_card_background->is_active = 0;
+            $visting_card_background->save();
+        }
+        }
+        $visting_card_background = new VistingCardBackground();
+        $visting_card_background->company_id = auth()->user()->company_id;
+        $visting_card_background->image = $image_path;
+        $visting_card_background->is_active = 1;
+        $visting_card_background->save();
+        return response()->json(['success' => 'Visting Card Background Added Successfully']);
     }
 }

@@ -5,13 +5,13 @@ $permissions= session()->get('permissions');
 $is_new = session()->get('is_new');
 @endphp
 <style>
-    .modal-dialog{
-        margin-top: 6%;
-    }
-    /* .form-control{
+.modal-dialog {
+    margin-top: 6%;
+}
+/* .form-control{
         border-radius: 10px;
     } */
-    </style>
+</style>
 <div class="content-wrapper">
     <input type="hidden" id="is_new" value="{{$is_new}}">
     <div class="container">
@@ -52,7 +52,6 @@ $is_new = session()->get('is_new');
                         </div>
                     </a>
                 </div>
-                @endif
                 <div class="col-md-3">
                     <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
                         <div class="card" style="color:#ad021;border-radius:7%">
@@ -71,200 +70,245 @@ $is_new = session()->get('is_new');
                         </div>
                     </a>
                 </div>
-                @endforeach
+                @else
+                <div class="col-md-2">
+                    <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
+                        <div class="d-flex justify-content-center employee_image" id="employee_image">
+                            <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
+                                style="border-radius:50%;height:150px; width:150px">
+                            <!-- <div class="card-body"> -->
+                        </div>
+                        <div class="justify-content-center text-center mt-2 " id="employee_detail">
+                            <h3 style="font-family:Palatino;font-weight:bold;">{{$card->name}}</h3>
+                            @if(Auth::user()->user_type=='individual')
+                            <h6 style="font-family:Optima;font-weight:bold;">Workspace</h6>
+                            @else
+                            <span style="font-family:Optima;font-weight:bold;">{{$card->designation}}</span>
+                            @endif
+                        </div>
+                </a>
+            </div>
+            @endif
+            @endforeach
+        </div>
+    </div>
+</div>
+<!-- add card Model -->
+<div class="modal fade" id="add_card_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form id="add_card_form" action="/add_card" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <!-- //image -->
+                    <div>
+                        <h5
+                            style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c">
+                            Add Card Here</h5>
+                    </div>
+                    <div class="mt-5 d-flex justify-content-center">
+                        <div>
+                            <img src="{{asset('frontend/img/your-image-here.jpg')}}" alt="image preview"
+                                id="image_preview"
+                                style="width: 200px; height: 200px; border-radius:20%;border: 5px solid;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image: <span style="color:red;">*</span></label>
+                        <input type="file" class="form-control" name="image" id="image" placeholder="Enter Image">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Full Name: <span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email: <span style="color:red;">*</span></label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone: <span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company:</label>
+                        <input type="text" class="form-control" name="company" id="company" placeholder="Enter Company"
+                            value="{{ empty($company) ? '' : $company->company_name }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="designation">Designation:</label>
+                        <input type="text" class="form-control" name="designation" id="designation"
+                            placeholder="Enter Designation">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address: <span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address"
+                            value="{{ empty($company) ? '' : $company->address }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country: <span style="color:red;">*</span></label>
+                        <select name="country" id="country" class="form-control">
+                            <option value="">Select Country</option>
+                            @foreach ($countries as $country)
+                            @if(empty($company))
+                            <option value="{{$country->id}}">{{$country->name}}</option>
+                            @else
+                            @if($company->country_id == $country->id)
+                            <option value="{{$country->id}}" selected>{{$country->name}}</option>
+                            @else
+                            <option value="{{$country->id}}">{{$country->name}}</option>
+                            @endif
+                            @endif
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City: <span style="color:red;">*</span></label>
+                        <select name="city" id="city" class="form-control">
+                            <option value="">Select City</option>
+                            @if(!empty($company))
+                            @foreach($cities as $city)
+                            @if($company->city_id == $city->id)
+                            <option value="{{$city->id}}" selected>{{$city->name}}</option>
+                            @else
+                            <option value="{{$city->id}}">{{$city->name}}</option>
+                            @endif
+                            @endforeach
+                            @endif
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkiden">Linkiden:</label>
+                        <input type="text" class="form-control" name="linkiden" id="linkiden"
+                            placeholder="Enter Linkiden" value="{{ empty($company) ? '' : $company->linkedin }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website:</label>
+                        <input type="text" class="form-control" name="website" id="website" placeholder="Enter Website"
+                            value="{{ empty($company) ? '' : $company->website }}">
+                    </div>
+
+
+
+            </div>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" id="saveButton" class="btn btn-primary">Save changes</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- //image crop modal -->
+<div class="modal fade" id="image_crop_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Crop Image</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body d-flex " style=" width: 600px;height: 600px;">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10 mt-4">
+                        <img id="to_be_cropped_image" style=" width: 600px;height: 600px;" />
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cropButton" class="btn btn-primary"><i class="fa-solid fa-crop"></i>
+                    Crop</button>
             </div>
         </div>
     </div>
-    <!-- add card Model -->
-    <div class="modal fade" id="add_card_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content">
+</div>
+<!-- Company Profile  Modal  -->
+<div class="modal fade bd-example-modal-lg" id="company_profile_modal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form id="company_profile_form" action="/add_company" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="modal-body">
-                    <form id="add_card_form" action="/add_card" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <!-- //image -->
-                        <div>
-                            <h5><u>Add Card Here</u></h5>
+                    <h5
+                        style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c">
+                        Setup Your Company Profile</h5>
+                    <div class="row mt-3 mb-3">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <img src="{{asset('frontend/img/logo_here.png')}}" alt="image preview" id="logo_preview"
+                                style="height: 200px; padding:10px;border: 5px solid;">
                         </div>
-                        <div class="mt-5 d-flex justify-content-center">
-                            <div>
-                                <img src="{{asset('frontend/img/your-image-here.jpg')}}" alt="image preview"
-                                    id="image_preview"
-                                    style="width: 200px; height: 200px; border-radius:20%;border: 5px solid;">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="logo">Company Logo: <span style="color:red;">*</span></label>
+                                <input type="file" class="form-control" name="logo" id="logo">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="image">Image:</label>
-                            <input type="file" class="form-control" name="image" id="image" placeholder="Enter Image">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Company Name: <span style="color:red;">*</span></label>
+                                <input type="text" class="form-control" name="company_name" id="company_name"
+                                    placeholder="Enter Your Company Name">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="name">Full Name:</label>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Full Name">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Company Linkedin:</label>
+                                <input type="text" class="form-control" name="company_linkedin" id="company_linkedin"
+                                    placeholder="Enter Your Company Linkedin">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Company Website:</label>
+                                <input type="text" class="form-control" name="company_website" id="company_website"
+                                    placeholder="Enter Your Company Website">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Phone:</label>
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="logo">Country: <span style="color:red;">*</span></label>
+                                <select name="company_country" id="company_country" class="form-control">
+                                    <option value="">Select Country</option>
+                                    @foreach ($countries as $country)
+                                    <option value="{{$country->id}}">{{$country->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="company">Company:</label>
-                            <input type="text" class="form-control" name="company" id="company"
-                                placeholder="Enter Company">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="logo">City: <span style="color:red;">*</span></label>
+                                <select name="company_city" id="company_city" class="form-control">
+                                    <option value="">Select City</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="designation">Designation:</label>
-                            <input type="text" class="form-control" name="designation" id="designation"
-                                placeholder="Enter Designation">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="name">Company Address: <span style="color:red;">*</span></label>
+                                <textarea class="form-control" name="company_address" id="company_address"
+                                    placeholder="Enter Your Company Address"></textarea>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="address">Address:</label>
-                            <input type="text" class="form-control" name="address" id="address"
-                                placeholder="Enter Address">
-                        </div>
-                        <div class="form-group">
-                            <label for="country">Country:</label>
-                            <input type="text" class="form-control" name="country" id="country"
-                                placeholder="Enter Country">
-                        </div>
-                        <div class="form-group">
-                            <label for="city">City:</label>
-                            <input type="text" class="form-control" name="city" id="city" placeholder="Enter City">
-                        </div>
-                        <div class="form-group">
-                            <label for="linkiden">Linkiden:</label>
-                            <input type="text" class="form-control" name="linkiden" id="linkiden"
-                                placeholder="Enter Linkiden">
-                        </div>
-                        <div class="form-group">
-                            <label for="website">Website:</label>
-                            <input type="text" class="form-control" name="website" id="website"
-                                placeholder="Enter Website">
-                        </div>
-
-
-
+                    </div>
                 </div>
-                </form>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
                     <button type="submit" id="saveButton" class="btn btn-primary">Save changes</button>
                 </div>
-
-            </div>
+            </form>
         </div>
     </div>
-    <!-- //image crop modal -->
-    <div class="modal fade" id="image_crop_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Crop Image</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body d-flex " style=" width: 600px;height: 600px;">
-                    <div class="row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-10 mt-4">
-                            <img id="to_be_cropped_image" style=" width: 600px;height: 600px;" />
-
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="cropButton" class="btn btn-primary"><i class="fa-solid fa-crop"></i>
-                        Crop</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Company Profile  Modal  -->
-    <div class="modal fade bd-example-modal-lg" id="company_profile_modal" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <form id="company_profile_form" action="/add_company" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="modal-body">
-                        <h5 style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c"> Setup Your Company Profile</h5>
-                        <div class="row mt-3 mb-3">
-                            <div class="col-md-12 d-flex justify-content-center">
-                                <img src="{{asset('frontend/img/logo_here.png')}}" alt="image preview"
-                                    id="logo_preview"
-                                    style="height: 200px; padding:10px;border: 5px solid;">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="logo">Company Logo: <span style="color:red;">*</span></label>
-                                    <input type="file" class="form-control" name="logo" id="logo">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name">Company Name: <span style="color:red;">*</span></label>
-                                    <input type="text" class="form-control" name="company_name" id="company_name"
-                                        placeholder="Enter Your Company Name">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name">Company Linkedin:</label>
-                                    <input type="text" class="form-control" name="company_linkedin" id="company_linkedin"
-                                        placeholder="Enter Your Company Linkedin">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name">Company Website:</label>
-                                    <input type="text" class="form-control" name="company_website" id="company_website"
-                                        placeholder="Enter Your Company Website">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="logo">Country: <span style="color:red;">*</span></label>
-                                    <select name="company_country" id="company_country" class="form-control">
-                                        <option value="">Select Country</option>
-                                        @foreach ($countries as $country)
-                                        <option value="{{$country->id}}">{{$country->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="logo">City: <span style="color:red;">*</span></label>
-                                    <select name="company_city" id="company_city" class="form-control">
-                                        <option value="">Select City</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="name">Company Address: <span style="color:red;">*</span></label>
-                                    <textarea class="form-control" name="company_address" id="company_address"
-                                        placeholder="Enter Your Company Address"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-                        <button type="submit" id="saveButton" class="btn btn-primary">Save changes</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+</div>
 </div>
 
 
@@ -279,38 +323,39 @@ $(document).ready(function() {
     if (is_new == '1') {
         $('#company_profile_modal').modal('show');
     }
-    var logo=document.getElementById("logo");
-    var logo_preview=document.getElementById("logo_preview");
-    logo.addEventListener('change',function(){
-        var reader=new FileReader();
-        reader.onload=function(){
-            logo_preview.src=reader.result;
+    var logo = document.getElementById("logo");
+    var logo_preview = document.getElementById("logo_preview");
+    logo.addEventListener('change', function() {
+        var reader = new FileReader();
+        reader.onload = function() {
+            logo_preview.src = reader.result;
         }
         reader.readAsDataURL(this.files[0]);
     });
     var country = document.getElementById("company_country");
     var city = document.getElementById("company_city");
     //country change event listener to get cities
-    country.addEventListener('change',function(){
+    country.addEventListener('change', function() {
         var country_id = this.value;
         // alert(country_id);
-        var url = "/cities/"+country_id;
+        var url = "/cities/" + country_id;
         $.ajax({
-            url:url,
-            type:'GET',
-            success:function(data){
+            url: url,
+            type: 'GET',
+            success: function(data) {
                 console.log(city);
                 var cities = data;
                 var html = '<option value="">Select City</option>';
-                for(var i=0;i<cities.length;i++){
-                    html += '<option value="'+cities[i].id+'">'+cities[i].name+'</option>';
+                for (var i = 0; i < cities.length; i++) {
+                    html += '<option value="' + cities[i].id + '">' + cities[i].name +
+                        '</option>';
                 }
                 city.innerHTML = html;
             }
         });
     });
 });
-    
+
 //show image in image preview
 $(document).ready(function() {
     var image = document.getElementById("to_be_cropped_image");
@@ -482,45 +527,45 @@ $(document).ready(function() {
             $(element).removeClass('is-invalid');
         }
     });
-//form validate for company_profile
-$('#company_profile_form').validate({
-    rules:{
-        logo:{
-            required:true,
-            extension:"png",
+    //form validate for company_profile
+    $('#company_profile_form').validate({
+        rules: {
+            logo: {
+                required: true,
+                extension: "png",
+            },
+            company_name: {
+                required: true,
+            },
+            company_address: {
+                required: true,
+            },
+            company_city: {
+                required: true,
+            },
+            company_country: {
+                required: true,
+            },
         },
-        company_name:{
-            required:true,
+        messege: {
+            logo: {
+                required: "Please Select Logo",
+                extension: "Please Select Valid Logo",
+            },
+            company_name: {
+                required: "Please Enter Company Name",
+            },
+            company_address: {
+                required: "Please Enter Company Address",
+            },
+            company_city: {
+                required: "Please Enter Company City",
+            },
+            company_country: {
+                required: "Please Enter Company Country",
+            },
         },
-        company_address:{
-            required:true,
-        },
-        company_city:{
-            required:true,
-        },
-        company_country:{
-            required:true,
-        },
-    },
-    messege:{
-        logo:{
-            required:"Please Select Logo",
-            extension:"Please Select Valid Logo",
-        },
-        company_name:{
-            required:"Please Enter Company Name",
-        },
-        company_address:{
-            required:"Please Enter Company Address",
-        },
-        company_city:{
-            required:"Please Enter Company City",
-        },
-        company_country:{
-            required:"Please Enter Company Country",
-        },
-    },
-});
+    });
 });
 </script>
 @endsection

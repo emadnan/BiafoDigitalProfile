@@ -15,7 +15,7 @@
       
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2022-2023 <a href="https://biafotech.com">Biafotech</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2022-2023 <a href="">Cardify</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->

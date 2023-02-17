@@ -164,7 +164,7 @@ wantradius {
 .business2 .front,
 .business2 .back {
     background-color: var(--dark);
-    width: 300px;
+    width: 320px;
     height: 550px;
     margin: 20px;
     border-radius: 25px;
@@ -383,6 +383,7 @@ z-index: -1;
 }
 </style>
 <div class="content-wrapper">
+    <input type="hidden" id="company_id" value="{{$company->id}}">
     <section class="content-header">
         <div class='container-fluid'>
             <div class='row'>
@@ -702,7 +703,34 @@ $('.delete-card').click(function(e) {
 //     colorLight: "#ffffff",
 //     correctLevel: QRCode.CorrectLevel.H,
 // });
-const qrCode = new QRCodeStyling({
+var company_id = document.getElementById("company_id").value;
+if(company_id)
+{
+    var qrCode = new QRCodeStyling({
+    width: 120,
+    height: 120,
+    type: "canvas",
+    data: "{{route('view_profile', $card->id)}}",
+    image: "{{asset('company_logos')}}/{{$company->logo}}",
+    dotsOptions: {
+        color: "black",
+        type: "classy-rounded"
+    },
+    backgroundOptions: {
+        color: "#ffffff",
+    },
+    imageOptions: {
+        crossOrigin: "anonymous",
+        margin: 0,
+        imageSize: 0.4,
+    },
+    qrOptions: {
+        errorCorrectionLevel: "H",  
+    },
+});
+}
+else{
+var qrCode = new QRCodeStyling({
     width: 120,
     height: 120,
     type: "canvas",
@@ -721,10 +749,10 @@ const qrCode = new QRCodeStyling({
         imageSize: 0.4,
     },
     qrOptions: {
-        errorCorrectionLevel: "H",
+        errorCorrectionLevel: "H",  
     },
 });
-
+}
 qrCode.append(document.getElementById("qrcode"));
 $('#update_card').click(function() {
     $('#update_card_modal').modal('show');

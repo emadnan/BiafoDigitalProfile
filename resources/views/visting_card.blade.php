@@ -70,7 +70,7 @@ figure img {
 
 figure .caption {
     position: absolute;
-    top: 50px;
+    top: 10px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -284,6 +284,7 @@ input[type="radio"]:checked+label>img {
 }
 </style>
 <div class="content-wrapper">
+    <input type="hidden" id="company_id" value="{{$company->id}}">
     <section class="content-header">
         <div class='container-fluid'>
             <div class='row'>
@@ -302,14 +303,14 @@ input[type="radio"]:checked+label>img {
                             <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" id="back_image" alt="front"
                                 style="width: 450px;height: 270px;" />
                             <div class="caption" id="text">
-                                <h2 id="name_text"><i class="fa-solid fa-user"></i>&nbsp;|&nbsp;{{$card->name}}</h2>
-                                <p class = 'designation'><i class="fa-solid fa-briefcase"></i>&nbsp;|&nbsp;{{$card->designation}}</p>                         
+                                <h2 id="name_text"><i class="fa-solid fa-user"></i>&nbsp;|&nbsp;<b>{{$card->name}}</b></h2>
+                                <p class = 'designation'><i class="fa-solid fa-briefcase"></i>&nbsp;|&nbsp;<b>{{$card->designation}}</b></p>                         
                                 @if($type == "work")
-                                <p class="paragraph" id="company_text"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;{{$card->company}}</p>
+                                <p class="paragraph" id="company_text"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;<b>{{$card->company}}</b></p>
                                 @endif
-                                <p class="paragraph" id="company_address"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;{{$card->company}}</p>
-                                <p class="phone" id="company_phone"><i class="fa-solid fa-square-phone-flip"></i>&nbsp;|&nbsp;{{$card->phone}}</p>
-                                <p class="email" id="company_email"><i class="fa-solid fa-envelope"></i>&nbsp;|&nbsp;{{$card->email}}</p>
+                                <!-- <p class="paragraph" id="company_address"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;{{$card->company}}</p> -->
+                                <p class="phone" id="company_phone"><i class="fa-solid fa-square-phone-flip"></i>&nbsp;|&nbsp;<b>{{$card->phone}}</b></p>
+                                <p class="email" id="company_email"><i class="fa-solid fa-envelope"></i>&nbsp;|&nbsp;<b>{{$card->email}}</b></p>
                             </div>
                             <a href="{{route('view_profile', $card->id)}}">
                                 <div class="qricon" id="qrcode">
@@ -345,6 +346,7 @@ input[type="radio"]:checked+label>img {
             </div>
         </div>
         <div class="row ml-4" style="margin-top:300px">
+        @if(auth()->user()->user_type != "company_user")
             <div class="col-md-12 ml-4 mt-2 mb-4">
                 <h4 style="font-family:Palatino;font-weight:bold;">Background Images:</h4>
             </div>
@@ -390,13 +392,57 @@ input[type="radio"]:checked+label>img {
                     <img src="{{asset('frontend/img/visting_imges/5.jpg')}}" alt="" class="back_image_temp">
                 </label>
             </div>
+            @endif
         </div>
+        @if($visting_card_backgrounds)
+        <div class="row ml-4">
+            <div class="col-md-12 ml-4 mt-2 mb-4">
+                <h4 style="font-family:Palatino;font-weight:bold;">Company's Background Images:</h4>
+            </div>
+            @foreach($visting_card_backgrounds as $image)
+            <div class="col-md-4">
+                <input type="radio" name="background_image" id="background_image{{$image->id}}C" class="input-hidden"
+                    value="{{asset('visting_card_images')}}/{{$image->image}}">
+                <label for="background_image{{$image->id}}C">
+                    <img src="{{asset('visting_card_images')}}/{{$image->image}}" alt="" class="back_image_temp">
+                </label>
+            </div>
+            @endforeach
+        </div>
+        @endif
     </div>
 </div>
 @endsection
 @section('scripts')
 <script>
-const qrCode = new QRCodeStyling({
+var company_id = document.getElementById("company_id").value;
+if(company_id)
+{
+    var qrCode = new QRCodeStyling({
+    width: 120,
+    height: 120,
+    type: "canvas",
+    data: "{{route('view_profile', $card->id)}}",
+    image: "{{asset('company_logos')}}/{{$company->logo}}",
+    dotsOptions: {
+        color: "black",
+        type: "classy-rounded"
+    },
+    backgroundOptions: {
+        color: "#ffffff",
+    },
+    imageOptions: {
+        crossOrigin: "anonymous",
+        margin: 0,
+        imageSize: 0.4,
+    },
+    qrOptions: {
+        errorCorrectionLevel: "H",  
+    },
+});
+}
+else{
+var qrCode = new QRCodeStyling({
     width: 120,
     height: 120,
     type: "canvas",
@@ -415,9 +461,10 @@ const qrCode = new QRCodeStyling({
         imageSize: 0.4,
     },
     qrOptions: {
-        errorCorrectionLevel: "H",
+        errorCorrectionLevel: "H",  
     },
 });
+}
 
 qrCode.append(document.getElementById("qrcode"));
 var background_image = document.getElementsByName("background_image");
@@ -433,6 +480,23 @@ image.addEventListener("change", function() {
     var reader = new FileReader();
     reader.onload = function() {
         document.getElementById("back_image").src = reader.result;
+        base64=reader.result;
+        //send base64 to server
+        var company_id = document.getElementById("company_id").value;
+        if(company_id)
+        {
+        $.ajax({
+            type: "POST",
+            url: "{{route('save_visting_card_backgrounds')}}",
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "image": base64,
+            },
+            success: function(data) {
+                console.log(data);
+            }
+        });
+    }
     }
     reader.readAsDataURL(image);
 });

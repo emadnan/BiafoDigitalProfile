@@ -28,7 +28,7 @@ html {
         <nav class="navbar navbar-expand-lg w-100 p-0">
             <div class="container">
                 <a class="navbar-brand text-white fs-3" href="#">
-                    <h2>CardGiene</h2>
+                    <h2>Cardify</h2>
                 </a>
                 <button class="navbar-toggler btn-yellow text-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -147,7 +147,7 @@ html {
                     href="/privacy-policy" class="text-white text-decoration-none">Privacy Policy</a>
                     </div>
                     <div class="py-2">
-                        <p class="mb-0">Copyright @ 2022. <a href="#" class="text-white">Biafotech.</a> All rights reserved.</p>
+                        <p class="mb-0">Copyright @ 2022. <a href="#" class="text-white">Cardify.</a> All rights reserved.</p>
                     </div>
                 </div>
             </div>

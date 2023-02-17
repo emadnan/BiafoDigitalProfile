@@ -7,6 +7,7 @@ use App\Models\Card;
 use App\Models\Company;
 use App\Models\Country;
 use App\Models\City;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -33,11 +34,16 @@ class HomeController extends Controller
         // print_r($user_id);
         // die;
         $cards = Card::where('user_id',$user_id)->orwhere('company_user_id',$user_id)->get();
-        
-        $companies = Company::all();
+        $company_id = auth()->user()->company_id;
+        $company = Company::where('id',$company_id)->first();
         $countries = Country::all();
-        
-        $data=compact('cards','companies','countries');
+        if($company)
+        {
+        $cities=City::where('country_id',$company->country_id)->get();
+        } else{
+        $cities=null;
+        }
+        $data=compact('cards','company','countries','cities');
         // echo '<pre>';
         // print_r($data);
         // die;

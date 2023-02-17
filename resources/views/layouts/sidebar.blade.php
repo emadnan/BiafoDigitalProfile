@@ -46,7 +46,11 @@ $permissions= session()->get('permissions');
                         class="{{ request()->routeIs('home') ? 'nav-link active' : 'nav-link text-white' }}">
                         <i class="nav-icon fa-solid fa-address-card"></i>
                         <p >
-                           Cards
+                            @if(auth()->user()->user_type == 'company')
+                           Employees
+                           @else
+                            My Cards
+                            @endif
 
                         </p>
                     </a>

@@ -868,7 +868,7 @@
                             class="text-white text-decoration-none">Privacy Policy</a>
                     </div>
                     <div class="py-2">
-                        <p class="mb-0">Copyright @ 2022. <a href="#" class="text-white">Biafotech.</a> All
+                        <p class="mb-0">Copyright @ 2022. <a href="#" class="text-white">Cardify.</a> All
                             rights
                             reserved.</p>
                     </div>
