@@ -71,8 +71,8 @@ figure img {
 
 figure .caption {
     position: absolute;
-    top: 10px;
-    left: 0;
+    top: 72px;
+    left: -40px;
     width: 100%;
     height: 100%;
     /* text-transform: uppercase; */
@@ -103,8 +103,8 @@ figure .caption {
     /* font-weight: 300; */
     font-size: 1.3em;
     position: absolute;
-    top: 7%;
-    /* left: 20px; */
+    top: -17%;
+    left: 60px;
     width: 100%;
     /* color: #272833; */
     color: #fff;
@@ -124,32 +124,33 @@ figure .caption {
 }
 
 .designation {
-    /* letter-spacing: 2px; */
-    font-size: 0.7em;
-    /* font-size: 50%; */
+    letter-spacing: 1px;
+    /* font-size: 0.7em; */
+    font-size: 68.5%;
     /* position: absolute; */
     position: relative;
     bottom: 10;
-    left: 20px;
+    /* left: 20px; */
     /* padding: 1.5em; */
     width: 100%;
     opacity: 0;
     /* transform: translate3d(0,10px,0); */
     /* transition: opacity 0.35s, transform 0.35s; */
-    top: 8px;
-    text-align: right;
+    /* top: 8px; */
+    text-align: left;
     opacity: 1;
     /* word-wrap: break-word;
     white-space: pre-wrap; */
+    margin-left: 21px;
 
 }
 
 .paragraph {
-    /* letter-spacing: 5px; */
+    letter-spacing: 1px;
     font-size: 68.5%;
     position: absolute;
     bottom: 177px;
-    left: 20px;
+    /* left: 20px; */
     /* padding: 1.5em; */
     width: 100%;
     /* opacity: 0; */
@@ -157,14 +158,14 @@ figure .caption {
     /* transition: opacity 0.35s, transform 0.35s; */
     /* text-transform: uppercase; */
     text-align: left;
-    /* margin-left: 21px; */
+    margin-left: 21px;
 }
 .phone{
-    /* letter-spacing: 5px; */
+    letter-spacing: 1px;
     font-size: 68.5%;
     position: absolute;
     bottom: 158px;
-    left: 20px;
+    /* left: 20px; */
     /* padding: 1.5em; */
     width: 100%;
     /* opacity: 0; */
@@ -172,14 +173,14 @@ figure .caption {
     /* transition: opacity 0.35s, transform 0.35s; */
     text-transform: uppercase;
     text-align: left;
-    /* margin-left: 21px; */
+    margin-left: 21px;
 }
 .email{
-    /* letter-spacing: 5px; */
+    letter-spacing: 1px;
     font-size: 68.5%;
     position: absolute;
     bottom: 138px;
-    left: 20px;
+    /* left: 20px; */
     /* padding: 1.5em; */
     width: 100%;
     /* opacity: 0; */
@@ -187,7 +188,7 @@ figure .caption {
     /* transition: opacity 0.35s, transform 0.35s; */
     /* text-transform: uppercase; */
     text-align: left;
-    /* margin-left: 21px; */
+    margin-left: 21px;
 }
 /* figure a{
   z-index: 1000;
@@ -208,7 +209,7 @@ figure .caption {
     /* display: flex; */
     height: 130px;
     width: 130px;
-    /* margin-left: 520px; */
+    margin-left: 311px;
     /* margin-right: auto; */
     /* margin-top: 95%; */
     /* margin-bottom: auto; */
