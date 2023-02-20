@@ -426,6 +426,7 @@ z-index: -1;
                     </div>
                     <div class="name_and_designation text-center">
                         <div>
+                            
                             <p>{{$card->name}}</p>
                             @if($type=="work")
                             <p>{{$card->designation}}</p>
@@ -438,32 +439,41 @@ z-index: -1;
                     <div class="infos">
                         <!-- Logo for email -->
                         <div>
+                            
                             <i class="fa-solid fa-envelope"></i>
                             <div class="ml-2">
                                 <p>{{$card->email}}</p>
                             </div>
+                          
                         </div>
                         <!-- Logo for phone Number -->
                         <div>
+                                                    
                             <i class="fa-solid fa-phone"></i>
                             <div class="ml-2">
                                 <p>{{$card->phone}}</p>
                             </div>
+                           
                         </div>
                         @if($type=="work")
                         <!-- Logo for website -->
                         <div>
+                            @if ($card->website)                  
+                            
                             <i class="fa-solid fa-globe"></i>
                             <div class="ml-2">
                                 <p>{{$card->website}}</p>
                             </div>
+                            @endif
                         </div>
                         <!-- Logo for website -->
                         <div>
+                            @if ($card->linkedin)
                             <i class="fa-brands fa-linkedin"></i>
                             <div class="ml-2">
                                 <p>{{$card->linkedin}}</p>
                             </div>
+                            @endif
                         </div>
                         @endif
                         <div>
@@ -588,7 +598,7 @@ z-index: -1;
                     <div class="form-group">
                         <label for="city">City: <span style="color:red;">*</span></label>
                         <select name="city" id="city" class="form-control">
-                            <option value="">Select City</option>)
+                            <option value="">Select City</option>
                             @foreach($cities as $city)
                             @if($card->city_id == $city->id)
                             <option value="{{$city->id}}" selected>{{$city->name}}</option>

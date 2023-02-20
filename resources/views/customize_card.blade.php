@@ -467,10 +467,12 @@ z-index: -1;
                         <div class="infos">
                             <!-- Logo for email -->
                             <div>
+                                                               
                                 <i class="fa-solid fa-envelope"></i>
                                 <div class="ml-2">
                                     <p>{{$card->email}}</p>
                                 </div>
+                                
                             </div>
                             <!-- Logo for phone Number -->
                             <div>
@@ -482,17 +484,21 @@ z-index: -1;
                             @if($type=="work")
                             <!-- Logo for website -->
                             <div>
+                                @if ($card->website)                                
                                 <i class="fa-solid fa-globe"></i>
                                 <div class="ml-2">
                                     <p>{{$card->website}}</p>
                                 </div>
+                                @endif
                             </div>
-                            <!-- Logo for website -->
+                            <!-- Logo for LinkedIn -->
                             <div>
+                                @if ($card->linkedin)                                
                                 <i class="fa-brands fa-linkedin"></i>
                                 <div class="ml-2">
                                     <p>{{$card->linkedin}}</p>
                                 </div>
+                                @endif
                             </div>
                             @endif
                             <div>
