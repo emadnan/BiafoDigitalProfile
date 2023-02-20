@@ -34,6 +34,7 @@ figure {
     perspective: 1000;
     /* margin-bottom: -900px; */
     /* top: 100%; */
+    
 }
 
 
@@ -77,8 +78,12 @@ figure .caption {
     /* text-transform: uppercase; */
     padding: 2.5em;
     
+    
 }
 
+.caption{
+    text-align: center;
+}
 /* .front .caption {
     font-size: 1.25em;
 } */
@@ -96,29 +101,34 @@ figure .caption {
 .front h2 {
     /* word-spacing: -0.15em; */
     /* font-weight: 300; */
-    font-size: 0.7em;
+    font-size: 1.3em;
     position: absolute;
     top: 7%;
-    left: 20px;
+    /* left: 20px; */
     width: 100%;
     /* color: #272833; */
     color: #fff;
-
+    /* right: -65% */
+    text-transform: uppercase;
     text-align: left;
-    /* margin-left: 19px; */
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
+
+
 
 .front h2 span {
     font-weight: bold;
 }
 
-
-
 .designation {
     /* letter-spacing: 2px; */
-    font-size: 68.5%;
+    font-size: 0.7em;
     /* font-size: 50%; */
-    position: absolute;
+    /* position: absolute; */
+    position: relative;
     bottom: 10;
     left: 20px;
     /* padding: 1.5em; */
@@ -126,9 +136,11 @@ figure .caption {
     opacity: 0;
     /* transform: translate3d(0,10px,0); */
     /* transition: opacity 0.35s, transform 0.35s; */
-    top: 40px;
-    text-align: left;
+    top: 8px;
+    text-align: right;
     opacity: 1;
+    /* word-wrap: break-word;
+    white-space: pre-wrap; */
 
 }
 
@@ -204,7 +216,7 @@ figure .caption {
     position: absolute;
     z-index: 1;
     top: 50%;
-    left: 70%;
+    left: 1%;
 }
 
 .input-hidden {
@@ -303,10 +315,16 @@ input[type="radio"]:checked+label>img {
                             <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" id="back_image" alt="front"
                                 style="width: 450px;height: 270px;" />
                             <div class="caption" id="text">
-                                <h2 id="name_text"><i class="fa-solid fa-user"></i>&nbsp;|&nbsp;<b>{{$card->name}}</b></h2>
-                                <p class = 'designation'><i class="fa-solid fa-briefcase"></i>&nbsp;|&nbsp;<b>{{$card->designation}}</b></p>                         
+                                <h2 id="name_text"><b>{{$card->name}}</b></h2>
+                                
+                                @if ($card->designation)                                 
+                                <p class = 'designation'><i class="fa-solid fa-briefcase"></i>&nbsp;|&nbsp;<b>{{$card->designation}}</b></p> 
+                                @endif 
+                                
+                                @if($card->company)
                                 @if($type == "work")
                                 <p class="paragraph" id="company_text"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;<b>{{$card->company}}</b></p>
+                                @endif
                                 @endif
                                 <!-- <p class="paragraph" id="company_address"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;{{$card->company}}</p> -->
                                 <p class="phone" id="company_phone"><i class="fa-solid fa-square-phone-flip"></i>&nbsp;|&nbsp;<b>{{$card->phone}}</b></p>
