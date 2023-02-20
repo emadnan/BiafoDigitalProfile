@@ -297,21 +297,36 @@ class CardController extends Controller
 
     public function import_csv_file(Request $request){
         $file = $request->file('csv_file');
-        $handle= fopen($file, "r");
-
+        $handle = fopen($file, "r");
+        $user_id = auth()->user()->id;
+        $user=User::where('id',$user_id)->first();
+        $company = Company::where('id', $user->company_id)->first();
+        $country_id = $company->country_id;
+        $city_id = $company->city_id;
+        $is_csv = 1;
+        $i=0;
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE){
+            if($i==0){
+                $i++;
+                continue;
+            }
             $card = new Card;
+            $card->user_id = $user_id;
+            $card->country_id = $country_id;
+            $card->city_id = $city_id;
             $card ->name = $data[0];
             $card->email = $data[1];
             $card->phone = $data[2];
-            $card->company=$data[3];
-            $card->designation=$data[4];
-            $card->address=$data[5];
-            $card->linkedin=$data[6];
-            $card->website=$data[7];
-
+            $card->company = $data[3];
+            $card->designation = $data[4];
+            $card->address = $data[5];
+            $card->linkedin = $data[6];
+            $card->website = $data[7];
+            $card->is_csv = $is_csv;
+            $card->image_path="avatar.jpg";
             $card->save();
         }
+        return redirect()->back()->with('success', 'CSV File Imported Successfully');
 
         
     }

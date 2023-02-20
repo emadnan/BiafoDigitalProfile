@@ -74,3 +74,4 @@ Route::get('logouttest',function(){
     return redirect('/');
 });
 Route::post('save_visting_card_backgrounds',[CardController::class,'save_visting_card_backgrounds'])->name('save_visting_card_backgrounds');
+Route::post('/csv_import',[CardController::class,'import_csv_file'])->name('csv_import');

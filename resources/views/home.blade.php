@@ -23,9 +23,11 @@ $is_new = session()->get('is_new');
                     </div>
                     <div class='col-md-4'>
                         @if(isset($permissions['can_create_card']))
+                        @if(Auth::user()->user_type=='company')
                         <a type="button" id="csv" class="anchor btn btn-primary">
                             <i class="fa-solid fa-arrow-up-from-bracket"></i> CSV Upload
                         </a>
+                        @endif
                         <a type="button" id="add_card" class="anchor btn btn-primary">
                             @if(Auth::user()->user_type=='company')
                             Add Employee Card
@@ -78,8 +80,13 @@ $is_new = session()->get('is_new');
                 <div class="col-md-2">
                     <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
                         <div class="d-flex justify-content-center employee_image" id="employee_image">
+                            @if($card->image_path==null)
+                            <img src="{{asset('frontend/img/avatar.jpg')}}" class="card-img-top" alt="..."
+                                style="border-radius:50%;height:150px; width:150px">
+                            @else
                             <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
                                 style="border-radius:50%;height:150px; width:150px">
+                            @endif
                             <!-- <div class="card-body"> -->
                         </div>
                         <div class="justify-content-center text-center mt-2 " id="employee_detail">
@@ -255,7 +262,7 @@ $is_new = session()->get('is_new');
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form id="add_csv_form" action="#" method="POST" enctype="multipart/form-data">
+                    <form id="add_csv_form" action="/csv_import" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div>
                             <h5
