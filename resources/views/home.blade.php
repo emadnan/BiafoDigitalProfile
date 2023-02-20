@@ -23,7 +23,10 @@ $is_new = session()->get('is_new');
                     </div>
                     <div class='col-md-4'>
                         @if(isset($permissions['can_create_card']))
-                        <a type="button" id="add_card" class="anchor btn btn-primary float-right">
+                        <a type="button" id="csv" class="anchor btn btn-primary">
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i> CSV Upload
+                        </a>
+                        <a type="button" id="add_card" class="anchor btn btn-primary">
                             @if(Auth::user()->user_type=='company')
                             Add Employee Card
                             @else
@@ -246,6 +249,36 @@ $is_new = session()->get('is_new');
             </div>
         </div>
     </div>
+    <!-- CSV Model -->
+    <div class="modal fade" id="add_csv_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="add_csv_form" action="#" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div>
+                            <h5
+                                style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c">
+                                CSV Upload</h5>
+                        </div>
+                        <div class="form-group">
+                            <label for="csv_file">CSV File: <span style="color:red;">*</span></label>
+                            <input type="file" class="form-control" name="csv_file" id="csv_file"
+                                placeholder="Enter CSV File">
+                            <help>CSV file should be in this format: <a href="{{asset('sample_csv/sample.csv')}}">Download Sample</a></help>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" id="saveButton" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Company Profile  Modal  -->
     <div class="modal fade bd-example-modal-lg" id="company_profile_modal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -334,6 +367,9 @@ $is_new = session()->get('is_new');
 @section('scripts')
 <script>
 $(document).ready(function() {
+    $('#csv').click(function() {
+        $('#add_csv_modal').modal('show');
+    });
     $('#add_card').click(function() {
         $('#add_card_modal').modal('show');
     });
@@ -575,6 +611,21 @@ $(document).ready(function() {
         unhighlight: function(element, errorClass, validClass) {
             $(element).removeClass('is-invalid');
         }
+    });
+    //form validate for add_csv_form
+    $('#add_csv_form').validate({
+        rules: {
+            csv_file: {
+                required: true,
+                extension: "csv",
+            },
+        },
+        messages: {
+            csv_file: {
+                required: "Please Select CSV File",
+                extension: "Please Select Valid CSV File",
+            },
+        },
     });
     //form validate for company_profile
     $('#company_profile_form').validate({
