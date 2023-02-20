@@ -294,4 +294,25 @@ class CardController extends Controller
         $visting_card_background->save();
         return response()->json(['success' => 'Visting Card Background Added Successfully']);
     }
+
+    public function import_csv_file(Request $request){
+        $file = $request->file('csv_file');
+        $handle= fopen($file, "r");
+
+        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE){
+            $card = new Card;
+            $card ->name = $data[0];
+            $card->email = $data[1];
+            $card->phone = $data[2];
+            $card->company=$data[3];
+            $card->designation=$data[4];
+            $card->address=$data[5];
+            $card->linkedin=$data[6];
+            $card->website=$data[7];
+
+            $card->save();
+        }
+
+        
+    }
 }
