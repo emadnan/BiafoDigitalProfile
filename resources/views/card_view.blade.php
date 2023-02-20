@@ -558,11 +558,6 @@ z-index: -1;
                                 placeholder="Enter Email">
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone:</label>
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone"
-                                value="{{$card->phone}}">
-                        </div>
-                        <div class="form-group">
                             <label for="company">Company:</label>
                             <input type="text" class="form-control" name="company" id="company"
                                 placeholder="Enter Company" value="{{$card->company}}">
@@ -583,9 +578,9 @@ z-index: -1;
                             <option value="">Select Country</option>
                             @foreach ($countries as $country)
                             @if($card->country_id == $country->id)
-                            <option value="{{$country->id}}" selected>{{$country->name}}</option>
+                            <option value="{{$country->id}}" data-phone-code="{{$country->phonecode}}" selected>{{$country->name}}</option>
                             @else
-                            <option value="{{$country->id}}">{{$country->name}}</option>
+                            <option value="{{$country->id}}" data-phone-code="{{$country->phonecode}}">{{$country->name}}</option>
                             @endif
                             @endforeach
                         </select>
@@ -603,6 +598,24 @@ z-index: -1;
                             @endforeach
                         </select>
                     </div>
+                    <div class="form-group">
+                            <label for="phone">Phone: <span style="color:red;">*</span></label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">
+                                        <div class="phone_code" id="phone_code">
+                                            @if(!empty($card))
+                                            {{$card->country->phonecode}}
+                                            @else
+                                            +##
+                                            @endif
+                                        </div>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" name="phone" id="phone"
+                                    placeholder="Enter Phone">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="linkiden">Linkiden:</label>
                             <input type="text" class="form-control" name="linkiden" id="linkiden"
@@ -710,6 +723,13 @@ $("#download_card").on('click', function() {
             link.click();
         });
 });
+$('#country').change(function() {
+        var selectedOption = $('option:selected', this);
+        var country_code = $('option:selected', this).attr('data-phone-code');
+        var phone_code = $('#phone_code');
+        //put phone code in phone_code div 
+        phone_code.text(country_code);
+    });
 $('.delete-card').click(function(e) {
     $('#modaldeletecard').attr('href', '/delete_card/' + $(this).attr('data-delete-card-id'))
 });
