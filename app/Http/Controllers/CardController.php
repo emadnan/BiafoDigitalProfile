@@ -325,6 +325,23 @@ class CardController extends Controller
             $card->is_csv = $is_csv;
             $card->image_path="avatar.jpg";
             $card->save();
+            
+            // add profile via csv
+            $profile = new Profile();
+            $profile->card_id = $card->id;
+            $profile->user_id = auth()->user()->id;
+            $profile->name = $data[0];
+            $profile->email = $data[1];
+            $profile->phone = $data[2];
+            $card->company = $data[3];
+            $card->designation = $data[4];
+            $card->address = $data[5];
+            $card->linkedin = $data[6];
+            $card->website = $data[7];
+
+            $profile->country_id = $country_id;
+            $profile->city_id = $city_id;
+            $card->save();
         }
         return redirect()->back()->with('success', 'CSV File Imported Successfully');
 
