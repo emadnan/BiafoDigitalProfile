@@ -160,8 +160,8 @@ class ProfileController extends Controller
         $profile->personal_email = $request->personal_email;
         $profile->phone = $request->phone;
         $profile->address = $request->address;
-        $profile->city = $request->city;
-        $profile->country = $request->country;
+        $profile->city_id = $request->city;
+        $profile->country_id = $request->country;
         $profile->description = $request->description;
         $profile->dob = $request->dob;
         $profile->skills=$request->skills;
