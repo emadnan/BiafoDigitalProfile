@@ -13,6 +13,7 @@ use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ContactBookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,3 +76,5 @@ Route::get('logouttest',function(){
 });
 Route::post('save_visting_card_backgrounds',[CardController::class,'save_visting_card_backgrounds'])->name('save_visting_card_backgrounds');
 Route::post('/csv_import',[CardController::class,'import_csv_file'])->name('csv_import');
+Route::get('/contact_book',[ContactBookController::class,'index'])->name('contact_book');
+Route::get('/add_contact/{profile_id}',[ContactBookController::class,'addContact'])->name('add_contact_book');

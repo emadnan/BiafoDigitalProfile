@@ -28,4 +28,7 @@ class Profile extends Model
     function city(){
         return $this->belongsTo('App\Models\City','city_id','id');
     }
+    function card(){
+        return $this->hasOne('App\Models\Card','id','card_id');
+    }
 }

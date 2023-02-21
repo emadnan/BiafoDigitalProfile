@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Card App</title>
+    <title>Cardify</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script src="{{asset('frontend/js/bootstrap5.bundle.min.js')}}"></script>
@@ -20,9 +20,36 @@
 html {
     scroll-behavior: smooth;
 }
+.float{
+	position:fixed;
+	width:90px;
+	height:90px;
+	bottom:40px;
+	right:40px;
+	background-color:#ff9d00;
+	color:black;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+    z-index:100;
+}
+/* On Hover REd Color */
+.float:hover{
+    background-color:#ad021c;
+    color:white;
+
+}
+
+.my-float{
+	margin-top:24px;
+    font-size: 35px;
+}
 </style>
 
 <body>
+<a href="/add_contact/{{$profile->id}}" class="float" role="button">
+<i class="fa-solid fa-address-book my-float"></i>
+</a>
     <header>
         <!-- NAVBAR-BAR -->
         <section class="navbar fixed-top navbar-bg">

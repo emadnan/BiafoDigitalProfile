@@ -5,9 +5,8 @@ $permissions= session()->get('permissions');
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{url('/home')}}" class="brand-link" style="text-decoration: none;">
-        <img src="{{asset('frontend\img\logo_3.png')}}" alt="Logo"
-            class="img-fluid" style="width: 100%; height: 100%;">
-            <!-- <p>Comply Techs</p> -->
+        <img src="{{asset('frontend\img\logo_3.png')}}" alt="Logo" class="img-fluid" style="width: 100%; height: 100%;">
+        <!-- <p>Comply Techs</p> -->
         <!-- <span class="font-weight-light">Comply Techs</span> -->
     </a>
 
@@ -41,14 +40,14 @@ $permissions= session()->get('permissions');
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!--Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                <li  >
+                <li>
                     <a href="{{ route('home') }}"
                         class="{{ request()->routeIs('home') ? 'nav-link active' : 'nav-link text-white' }}">
                         <i class="nav-icon fa-solid fa-address-card"></i>
-                        <p >
+                        <p>
                             @if(auth()->user()->user_type == 'company')
-                           Employees
-                           @else
+                            Employees
+                            @else
                             My Cards
                             @endif
 
@@ -67,24 +66,34 @@ $permissions= session()->get('permissions');
                 <li>
                     <a class="{{ request()->routeIs('company_profile') ? 'nav-link active' : 'nav-link text-white' }}"
                         href="{{ route('company_profile') }}"><i class="nav-icon fa-solid fa-building"></i>
-                        <p >
+                        <p>
                             Company Profile
                         </p>
                     </a>
                 </li>
                 @endif
                 @if(isset($permissions['can_view_feature_requests']))
-                <li  >
+                <li>
 
-                <!-- Request features -->
-                <a class="{{ request()->routeIs('lists_feature_requets') ? 'nav-link active' : 'nav-link text-white' }}"
+                    <!-- Request features -->
+                    <a class="{{ request()->routeIs('lists_feature_requets') ? 'nav-link active' : 'nav-link text-white' }}"
                         href="{{ route('lists_feature_requets') }}"><i class=" nav-icon fa-solid fa-list"></i>
-                        <p >
-                           Feature Requests
+                        <p>
+                            Feature Requests
                         </p>
                     </a>
                 </li>
                 @endif
+                <li>
+
+                    <!-- Address Book-->
+                    <a class="{{ request()->routeIs('contact_book') ? 'nav-link active' : 'nav-link text-white' }}"
+                        href="{{ route('contact_book') }}"><i class="nav-icon fa-solid fa-address-book"></i>
+                        <p>
+                           Contact Book
+                        </p>
+                    </a>
+                </li>
                 <!-- <li  >
                     <a class="nav-link text-white"
                         href="#"><i class="nav-icon fas fa-bell"></i>
