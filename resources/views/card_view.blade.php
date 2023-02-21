@@ -16,11 +16,13 @@ body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     position: relative;
 }
-.name_and_designation{
+
+.name_and_designation {
     text-align: center;
     margin-top: 60px;
     font-weight: 900;
 }
+
 .input-hidden {
     /* For Hiding Radio Button Circles */
     position: absolute;
@@ -251,8 +253,7 @@ wantradius {
     /* position: absolute;
     bottom: 5%;
     left: 5%; */
-    margin:10px
-
+    margin: 10px
 }
 
 .business2 .infos>div {
@@ -381,147 +382,227 @@ z-index: -1;
         max-width: 100%;
     }
 }
+
 /* setting button style goes here */
 
 
 @-webkit-keyframes come-in {
-  0% {
-    -webkit-transform: translatey(100px);
-            transform: translatey(100px);
-    opacity: 0;
-  }
-  30% {
-    -webkit-transform: translateX(-50px) scale(0.4);
-            transform: translateX(-50px) scale(0.4);
-  }
-  70% {
-    -webkit-transform: translateX(0px) scale(1.2);
-            transform: translateX(0px) scale(1.2);
-  }
-  100% {
-    -webkit-transform: translatey(0px) scale(1);
-            transform: translatey(0px) scale(1);
-    opacity: 1;
-  }
+    0% {
+        -webkit-transform: translatey(100px);
+        transform: translatey(100px);
+        opacity: 0;
+    }
+
+    30% {
+        -webkit-transform: translateX(-50px) scale(0.4);
+        transform: translateX(-50px) scale(0.4);
+    }
+
+    70% {
+        -webkit-transform: translateX(0px) scale(1.2);
+        transform: translateX(0px) scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: translatey(0px) scale(1);
+        transform: translatey(0px) scale(1);
+        opacity: 1;
+    }
 }
+
 @keyframes come-in {
-  0% {
-    -webkit-transform: translatey(100px);
-            transform: translatey(100px);
-    opacity: 0;
-  }
-  30% {
-    -webkit-transform: translateX(-50px) scale(0.4);
-            transform: translateX(-50px) scale(0.4);
-  }
-  70% {
-    -webkit-transform: translateX(0px) scale(1.2);
-            transform: translateX(0px) scale(1.2);
-  }
-  100% {
-    -webkit-transform: translatey(0px) scale(1);
-            transform: translatey(0px) scale(1);
-    opacity: 1;
-  }
+    0% {
+        -webkit-transform: translatey(100px);
+        transform: translatey(100px);
+        opacity: 0;
+    }
+
+    30% {
+        -webkit-transform: translateX(-50px) scale(0.4);
+        transform: translateX(-50px) scale(0.4);
+    }
+
+    70% {
+        -webkit-transform: translateX(0px) scale(1.2);
+        transform: translateX(0px) scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: translatey(0px) scale(1);
+        transform: translatey(0px) scale(1);
+        opacity: 1;
+    }
 }
+
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .floating-container {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  /* bottom: 100%;  */
-  right: 0;
-  margin: 35px 25px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    /* bottom: 100%;  */
+    right: 0;
+    margin: 35px 25px;
 }
+
 .floating-container {
-  height: 300px;
+    height: 300px;
 }
+
 .floating-container .floating-button {
-  /* box-shadow: 0 10px 25px #AD021C; */
-  -webkit-transform: translatey(5px);
-          transform: translatey(5px);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+    /* box-shadow: 0 10px 25px #AD021C; */
+    -webkit-transform: translatey(5px);
+    transform: translatey(5px);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
+
 .floating-container .element-container .float-element:nth-child(1) {
-  -webkit-animation: come-in 0.4s forwards 0.2s;
-          animation: come-in 0.4s forwards 0.2s;
+    -webkit-animation: come-in 0.4s forwards 0.2s;
+    animation: come-in 0.4s forwards 0.2s;
 }
+
 .floating-container .element-container .float-element:nth-child(2) {
-  -webkit-animation: come-in 0.4s forwards 0.4s;
-          animation: come-in 0.4s forwards 0.4s;
+    -webkit-animation: come-in 0.4s forwards 0.4s;
+    animation: come-in 0.4s forwards 0.4s;
 }
+
 .floating-container .element-container .float-element:nth-child(3) {
-  -webkit-animation: come-in 0.4s forwards 0.6s;
-          animation: come-in 0.4s forwards 0.6s;
+    -webkit-animation: come-in 0.4s forwards 0.6s;
+    animation: come-in 0.4s forwards 0.6s;
 }
+
+.floating-container .element-container .float-element:nth-child(4) {
+    -webkit-animation: come-in 0.4s forwards 0.8s;
+    animation: come-in 0.4s forwards 0.8s;
+}
+
+.floating-container .element-container .float-element:nth-child(5) {
+    -webkit-animation: come-in 0.4s forwards 1s;
+    animation: come-in 0.4s forwards 1s;
+}
+
 .floating-container .floating-button {
-  position: absolute;
-  width: 65px;
-  height: 65px;
-  background: #AD021C;
-  bottom: 0;
-  border-radius: 50%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  color: white;
-  line-height: 65px;
-  text-align: center;
-  font-size: 23px;
-  z-index: 100;
-  /* box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6); */
-  cursor: pointer;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  top: 660px;
-  /* left: 68px; */
-  
-}
-.floating-container .float-element {
-  position: relative;
-  display: block;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin: 15px auto;
-  color: white;
-  font-weight: 500;
-  text-align: center;
-  line-height: 50px;
-  z-index: 0;
-  opacity: 0;
-  top: 300px;
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: #AD021C;
+    bottom: 0;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: white;
+    line-height: 65px;
+    text-align: center;
+    font-size: 23px;
+    z-index: 100;
+    /* box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6); */
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    top: 660px;
+    /* left: 68px; */
 
 }
+
+.floating-container .float-element {
+    position: relative;
+    display: block;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    color: black;
+    font-weight: 500;
+    text-align: center;
+    line-height: 50px;
+    z-index: 100;
+    opacity: 0;
+    top: 300px;
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+
+}
+
 .floating-container .float-element .material-icons {
-  vertical-align: middle;
-  font-size: 16px;
+    vertical-align: middle;
+    font-size: 16px;
 }
+
 .floating-container .float-element:nth-child(1) {
-  background: #42A5F5;
-  box-shadow: 0 20px 20px -10px rgba(66, 165, 245, 0.5);
+    background: #42a5f5;
+    /* box-shadow: 0 20px 20px -10px rgba(66, 165, 245, 0.5); */
 }
+
 .floating-container .float-element:nth-child(2) {
-  background: #4CAF50;
-  box-shadow: 0 20px 20px -10px rgba(76, 175, 80, 0.5);
+    background: red;
+    color: white;
+    /* box-shadow: 0 20px 20px -10px rgba(76, 175, 80, 0.5); */
 }
+
 .floating-container .float-element:nth-child(3) {
-  background: #FF9800;
-  box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5);
+    background: #ff9d00;
+    /* box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5); */
 }
+
 .floating-container .float-element:nth-child(4) {
-  background: #ff00ff;
-  box-shadow: 0 20px 20px -10px rgba(25, 152, 0, 0.5);
+    background:  #9900ff;
+    color: white;
+    /* box-shadow: 0 20px 20px -10px rgba(25, 152, 0, 0.5); */
+}
+
+.floating-container .float-element:nth-child(5) {
+    background: green;
+    color: white;
+    /* box-shadow: 0 20px 20px -10px rgba(25, 152, 0, 0.5); */
 }
 </style>
+<div class="floating-container">
 
+    <div class="floating-button" id="settings-button"><i class="fa-sharp fa-solid fa-gear"></i>
+    </div>
+    <div class="element-container" id="settings-menu" style="display: none">
+        @if(isset($permissions['can_edit_card']))
+        <span class="float-element">
+            <a id="update_card"><i class="fa-solid fa-pen-to-square"></i></a>
+        </span>
+        @endif
+        @if(isset($permissions['can_delete_card']))
+        <span class="float-element">
+            <a class="delete-card" data-delete-card-id="{{ $card->id }}" data-bs-toggle="modal"
+                data-bs-target="#deletecardmodal" style="text-decoration:none; color:white">
+                <i class="fa-solid fa-trash"></i>
+            </a>
+        </span>
+        @endif
+        @if(isset($permissions['can_customize_card']))
+        <span class="float-element">
+            <a href="/customize_card_index/{{$card->id}}/{{$type}}" style="text-decoration:none; color:black">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </a>
+        </span>
+        @endif
+        @if(isset($permissions['can_create_visting_card']))
+        <span class="float-element">
+            <a href="/visting_card/{{$card->id}}/{{$type}}" style="text-decoration:none; color:white">
+                <i class="fa-solid fa-id-card"></i>
+            </a>
+        </span>
+        @endif
+        @if(isset($permissions['can_download_card']))
+        <span class="float-element">
+            <a id="download_card">
+                <i class="fa-solid fa-download"></i>
+            </a>
+        </span>
+        @endif
+
+    </div>
+</div>
 <div class="content-wrapper">
     <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
     <section class="content-header">
@@ -530,8 +611,6 @@ z-index: -1;
                 <div class='col-md-8'>
                     <h5 style="font-family:Palatino;font-weight:bold;">Note: Click QR Code to View Profile </h5>
                 </div>
-
-                
                 <div class='col-md-4'>
                     @if(empty($profile))
                     @if(isset($permissions['can_add_profile']))
@@ -540,232 +619,175 @@ z-index: -1;
                         Profile</a>
                     @endif
                     @endif
-                    <!-- Setting buttons goes here -->
-                    {{-- <button class = "btn btn-floating float-right"  id="settings-button" style="background-color: #AD021C; color:#eee " onclick="showSettingsBtn()"><i class="fa-solid fa-gear"></i></button>
 
-                    <div id="settings-options" style="display:none">
-                        <!-- Add your settings options here -->
-                        <option value=""></option>
-                        <button class="btn btn-primary" type="submit">Button</button>
-                        <button class="btn btn-primary" type="submit">Button</button>
-                        <button class="btn btn-primary" type="submit">Button</button>
-                        <button class="btn btn-primary" type="submit">Button</button>
-                        
-                  </div> --}}
-                  
-                  <div class="floating-container">
-                   
-                        <div class="floating-button" id="settings-button"><i class="fa-sharp fa-solid fa-gear"></i></div>
-                            <div class="element-container" id="settings-menu" style="display: none">
-                                
-                                 <span class="float-element">
-                                <i class="material-icons">phone</i>
-                                </span>
-                                <span class="float-element">
-                                <i class="material-icons">email</i>
-                                </span>
-                                <span class="float-element"><i class="material-icons">chat</i></span>
-                                <span class="float-element"><i class="material-icons">test</i></span>
-                                
-                              
-                            </div>
-                        </div>  
-                
+                </div>
             </div>
-        </div>
     </section>
     <div class="container-fluid">
-    <div class="row" id="download_able">
-            
+        <div class="row" id="download_able">
+
             <div class="business2 mt-5 wantradius">
                 <div class="col-md-6">
-                <div class="front float-right" id="buttom_color">
-                    <div class="red" id="upper_color">
-                        <div class="head">
+                    <div class="front float-right" id="buttom_color">
+                        <div class="red" id="upper_color">
+                            <div class="head">
+                                <div>
+                                    @if($type=="work")
+                                    <h2>{{$card->company}}</h2>
+                                    @endif
+
+                                    <!-- <p>Tagline goes here</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="avatar">
                             <div>
+                                <img src="{{asset('card_images')}}/{{$card->image_path}}" class="profile_img" alt="" />
+                            </div>
+                        </div>
+                        <div class="name_and_designation text-center">
+                            <div>
+
+                                <p>{{$card->name}}</p>
                                 @if($type=="work")
-                                <h2>{{$card->company}}</h2>
+                                <p>{{$card->designation}}</p>
                                 @endif
-
-                                <!-- <p>Tagline goes here</p> -->
                             </div>
                         </div>
-                    </div>
-                    <div class="avatar">
-                        <div>
-                            <img src="{{asset('card_images')}}/{{$card->image_path}}" class="profile_img" alt="" />
-                        </div>
-                    </div>
-                    <div class="name_and_designation text-center">
-                        <div>
-                            
-                            <p>{{$card->name}}</p>
+
+                        <!-- Info code start from here -->
+
+                        <div class="infos">
+                            <!-- Logo for email -->
+                            <div>
+
+                                <i class="fa-solid fa-envelope"></i>
+                                <div class="ml-2">
+                                    <p>{{$card->email}}</p>
+                                </div>
+
+                            </div>
+                            <!-- Logo for phone Number -->
+                            <div>
+
+                                <i class="fa-solid fa-phone"></i>
+                                <div class="ml-2">
+                                    <p>{{$card->phone}}</p>
+                                </div>
+
+                            </div>
                             @if($type=="work")
-                            <p>{{$card->designation}}</p>
-                            @endif
-                        </div>
-                    </div>
+                            <!-- Logo for website -->
+                            <div>
+                                @if ($card->website)
 
-                    <!-- Info code start from here -->
-
-                    <div class="infos">
-                        <!-- Logo for email -->
-                        <div>
-                            
-                            <i class="fa-solid fa-envelope"></i>
-                            <div class="ml-2">
-                                <p>{{$card->email}}</p>
+                                <i class="fa-solid fa-globe"></i>
+                                <div class="ml-2">
+                                    <p>{{$card->website}}</p>
+                                </div>
+                                @endif
                             </div>
-                          
-                        </div>
-                        <!-- Logo for phone Number -->
-                        <div>
-                                                    
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="ml-2">
-                                <p>{{$card->phone}}</p>
-                            </div>
-                           
-                        </div>
-                        @if($type=="work")
-                        <!-- Logo for website -->
-                        <div>
-                            @if ($card->website)                  
-                            
-                            <i class="fa-solid fa-globe"></i>
-                            <div class="ml-2">
-                                <p>{{$card->website}}</p>
+                            <!-- Logo for website -->
+                            <div>
+                                @if ($card->linkedin)
+                                <i class="fa-brands fa-linkedin"></i>
+                                <div class="ml-2">
+                                    <p>{{$card->linkedin}}</p>
+                                </div>
+                                @endif
                             </div>
                             @endif
-                        </div>
-                        <!-- Logo for website -->
-                        <div>
-                            @if ($card->linkedin)
-                            <i class="fa-brands fa-linkedin"></i>
-                            <div class="ml-2">
-                                <p>{{$card->linkedin}}</p>
-                            </div>
-                            @endif
-                        </div>
-                        @endif
-                        <div>
-                            <!-- Logo of current location -->
-                            <i class="fa-solid fa-map-marker-alt"></i>
-                            <div class="ml-2">
-                                <p>{{$card->address}}, {{$card->city->name}}, {{$card->country->name}}</p>
-                                <!-- <p>LAHORE</p> -->
+                            <div>
+                                <!-- Logo of current location -->
+                                <i class="fa-solid fa-map-marker-alt"></i>
+                                <div class="ml-2">
+                                    <p>{{$card->address}}, {{$card->city->name}}, {{$card->country->name}}</p>
+                                    <!-- <p>LAHORE</p> -->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
+                <div class="col-md-6">
 
-                <!-- Back side of the card -->
+                    <!-- Back side of the card -->
 
-                <div class="back" id="main_back_color">
+                    <div class="back" id="main_back_color">
 
 
-                    <div class="top">
-                        <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" id="back_image" alt=""
-                            class="back_image">
-                    </div>
-                    <div class="qricon">
-                        <a class="qr_anchor" href="/view_profile/{{$card->id}}">
-                            <div id="qrcode">
-                            </div>
-                        </a>
+                        <div class="top">
+                            <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" id="back_image" alt=""
+                                class="back_image">
+                        </div>
+                        <div class="qricon">
+                            <a class="qr_anchor" href="/view_profile/{{$card->id}}">
+                                <div id="qrcode">
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
         </div>
     </div>
-    
-        <div class="row mt-3">
-            
-            <div class="col-md-12 d-flex justify-content-center">
-                @if(isset($permissions['can_edit_card']))
-                <a href="#" id="update_card" class="btn btn-yellow"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
-                @endif
-                @if(isset($permissions['can_delete_card']))
-                <button type="button" class="btn btn-danger ml-4 delete-card" data-delete-card-id="{{ $card->id }}"
-                    data-bs-toggle="modal" data-bs-target="#deletecardmodal"><i class="fa-solid fa-trash-can"></i>
-                    Delete
-                </button>
-                @endif
-                @if(isset($permissions['can_customize_card']))
-                <a href="/customize_card_index/{{$card->id}}/{{$type}}" class="btn btn-yellow ml-4"><i
-                        class="fa-brands fa-figma"></i> Customize Card</a>
-                @endif
-                @if(isset($permissions['can_create_visting_card']))
-                <a href="/visting_card/{{$card->id}}/{{$type}}" class="btn btn-yellow ml-4"><i
-                        class="fa-regular fa-id-card"></i> Visting Card</a>
-                @endif
-                @if(isset($permissions['can_download_card']))
-                <a href="#" id="download_card" class="btn btn-yellow ml-4"><i class="fa-solid fa-download"></i> Download
-                    Card</a>
-                @endif
-                
-            </div>
-        </div>
-    </div>
-    <!-- Update Card Model -->
-    <div class="modal fade" id="update_card_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form id="update_card_form" action="/update_card/{{$card->id}}/{{$type}}" method="POST"
-                        enctype="multipart/form-data">
-                        @csrf
-                        <!-- //image -->
-                        <div>
-                            <h5><u>Update Card Here</u></h5>
-                        </div>
-                        <div class="mt-5 d-flex justify-content-center">
-                            <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="image preview"
-                                id="image_preview"
-                                style="width: 200px; height: 200px; border-radius:50%;border: 5px solid;">
-                        </div>
-                        <div class="form-group">
-                            <label for="image">Image:</label>
-                            <input type="file" class="form-control" name="image" id="image" placeholder="Enter Image">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Full Name:</label>
-                            <input type="text" class="form-control" name="name" id="name" value="{{$card->name}}"
-                                placeholder="Enter Full Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" name="email" id="email" value="{{$card->email}}"
-                                placeholder="Enter Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Company:</label>
-                            <input type="text" class="form-control" name="company" id="company"
-                                placeholder="Enter Company" value="{{$card->company}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="designation">Designation:</label>
-                            <input type="text" class="form-control" name="designation" id="designation"
-                                placeholder="Enter Designation" value="{{$card->designation}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Address:</label>
-                            <input type="text" class="form-control" name="address" id="address"
-                                placeholder="Enter Address" value="{{$card->address}}">
-                        </div>
-                        <div class="form-group">
+</div>
+<!-- Update Card Model -->
+<div class="modal fade" id="update_card_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form id="update_card_form" action="/update_card/{{$card->id}}/{{$type}}" method="POST"
+                    enctype="multipart/form-data">
+                    @csrf
+                    <!-- //image -->
+                    <div>
+                        <h5><u>Update Card Here</u></h5>
+                    </div>
+                    <div class="mt-5 d-flex justify-content-center">
+                        <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="image preview" id="image_preview"
+                            style="width: 200px; height: 200px; border-radius:50%;border: 5px solid;">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image:</label>
+                        <input type="file" class="form-control" name="image" id="image" placeholder="Enter Image">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" class="form-control" name="name" id="name" value="{{$card->name}}"
+                            placeholder="Enter Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" name="email" id="email" value="{{$card->email}}"
+                            placeholder="Enter Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company:</label>
+                        <input type="text" class="form-control" name="company" id="company" placeholder="Enter Company"
+                            value="{{$card->company}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="designation">Designation:</label>
+                        <input type="text" class="form-control" name="designation" id="designation"
+                            placeholder="Enter Designation" value="{{$card->designation}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address"
+                            value="{{$card->address}}">
+                    </div>
+                    <div class="form-group">
                         <label for="country">Country: <span style="color:red;">*</span></label>
                         <select name="country" id="country" class="form-control">
                             <option value="">Select Country</option>
                             @foreach ($countries as $country)
                             @if($card->country_id == $country->id)
-                            <option value="{{$country->id}}" data-phone-code="{{$country->phonecode}}" selected>{{$country->name}}</option>
+                            <option value="{{$country->id}}" data-phone-code="{{$country->phonecode}}" selected>
+                                {{$country->name}}</option>
                             @else
-                            <option value="{{$country->id}}" data-phone-code="{{$country->phonecode}}">{{$country->name}}</option>
+                            <option value="{{$country->id}}" data-phone-code="{{$country->phonecode}}">
+                                {{$country->name}}</option>
                             @endif
                             @endforeach
                         </select>
@@ -784,79 +806,78 @@ z-index: -1;
                         </select>
                     </div>
                     <div class="form-group">
-                            <label for="phone">Phone: <span style="color:red;">*</span></label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <div class="phone_code" id="phone_code">
-                                            @if(!empty($card))
-                                            {{$card->country->phonecode}}
-                                            @else
-                                            +##
-                                            @endif
-                                        </div>
-                                    </span>
-                                </div>
-                                <input type="text" class="form-control" name="phone" id="phone"
-                                    placeholder="Enter Phone">
+                        <label for="phone">Phone: <span style="color:red;">*</span></label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">
+                                    <div class="phone_code" id="phone_code">
+                                        @if(!empty($card))
+                                        {{$card->country->phonecode}}
+                                        @else
+                                        +##
+                                        @endif
+                                    </div>
+                                </span>
                             </div>
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone">
                         </div>
-                        <div class="form-group">
-                            <label for="linkiden">Linkiden:</label>
-                            <input type="text" class="form-control" name="linkiden" id="linkiden"
-                                placeholder="Enter Linkiden" value="{{$card->linkedin}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="website">Website:</label>
-                            <input type="text" class="form-control" name="website" id="website"
-                                placeholder="Enter Website" value="{{$card->website}}">
-                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkiden">Linkiden:</label>
+                        <input type="text" class="form-control" name="linkiden" id="linkiden"
+                            placeholder="Enter Linkiden" value="{{$card->linkedin}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website:</label>
+                        <input type="text" class="form-control" name="website" id="website" placeholder="Enter Website"
+                            value="{{$card->website}}">
+                    </div>
 
 
 
+            </div>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="saveButton" class="btn btn-primary">Save changes</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Modal delete -->
+<div class="modal fade" id="deletecardmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-body">
+                    <p>Are you Sure to delete this card?</p>
                 </div>
-                </form>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" id="saveButton" class="btn btn-primary">Save changes</button>
+                    <a class="btn btn-primary" href="" role="button" id="modaldeletecard">Delete</a>
                 </div>
-
             </div>
         </div>
     </div>
-    <!-- Modal delete -->
-    <div class="modal fade" id="deletecardmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
+</div>
+<!-- Modal add profile warning -->
+<div class="modal fade" id="warningmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
                 <div class="modal-body">
-                    <div class="modal-body">
-                        <p>Are you Sure to delete this card?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <a class="btn btn-primary" href="" role="button" id="modaldeletecard">Delete</a>
-                    </div>
+                    <p>Add You Profile First !</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Modal add profile warning -->
-    <div class="modal fade" id="warningmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="modal-body">
-                        <p>Add You Profile First !</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 </div>
 <!-- //image crop modal -->
 <div class="modal fade" id="image_crop_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -909,37 +930,37 @@ $("#download_card").on('click', function() {
         });
 });
 $('#country').change(function() {
-        var selectedOption = $('option:selected', this);
-        var country_code = $('option:selected', this).attr('data-phone-code');
-        var phone_code = $('#phone_code');
-        //put phone code in phone_code div 
-        phone_code.text(country_code);
-    });
+    var selectedOption = $('option:selected', this);
+    var country_code = $('option:selected', this).attr('data-phone-code');
+    var phone_code = $('#phone_code');
+    //put phone code in phone_code div 
+    phone_code.text(country_code);
+});
 $('.delete-card').click(function(e) {
     $('#modaldeletecard').attr('href', '/delete_card/' + $(this).attr('data-delete-card-id'))
 });
 var country2 = document.getElementById("country");
-    var city2 = document.getElementById("city");
-    //country change event listener to get cities
-    country2.addEventListener('change', function() {
-        var country_id2 = this.value;
-        // alert(country_id);
-        var url = "/cities/" + country_id2;
-        $.ajax({
-            url: url,
-            type: 'GET',
-            success: function(data) {
-                console.log(city);
-                var cities = data;
-                var html = '<option value="">Select City</option>';
-                for (var i = 0; i < cities.length; i++) {
-                    html += '<option value="' + cities[i].id + '">' + cities[i].name +
-                        '</option>';
-                }
-                city2.innerHTML = html;
+var city2 = document.getElementById("city");
+//country change event listener to get cities
+country2.addEventListener('change', function() {
+    var country_id2 = this.value;
+    // alert(country_id);
+    var url = "/cities/" + country_id2;
+    $.ajax({
+        url: url,
+        type: 'GET',
+        success: function(data) {
+            console.log(city);
+            var cities = data;
+            var html = '<option value="">Select City</option>';
+            for (var i = 0; i < cities.length; i++) {
+                html += '<option value="' + cities[i].id + '">' + cities[i].name +
+                    '</option>';
             }
-        });
+            city2.innerHTML = html;
+        }
     });
+});
 // var qrcode = new QRCode("qrcode", {
 //     text: "{{route('view_profile', $card->id)}}",
 //     width: 80,
@@ -949,54 +970,52 @@ var country2 = document.getElementById("country");
 //     correctLevel: QRCode.CorrectLevel.H,
 // });
 var company_id = document.getElementById("company_id").value;
-if(company_id != 'none')
-{
+if (company_id != 'none') {
     var qrCode = new QRCodeStyling({
-    width: 120,
-    height: 120,
-    type: "canvas",
-    data: "{{route('view_profile', $card->id)}}",
-    image: "{{asset('company_logos')}}/{{empty($company) ? 'default.png' : $company->logo}}",
-    dotsOptions: {
-        color: "black",
-        type: "classy-rounded"
-    },
-    backgroundOptions: {
-        color: "#ffffff",
-    },
-    imageOptions: {
-        crossOrigin: "anonymous",
-        margin: 0,
-        imageSize: 0.4,
-    },
-    qrOptions: {
-        errorCorrectionLevel: "H",  
-    },
-});
-}
-else{
-var qrCode = new QRCodeStyling({
-    width: 120,
-    height: 120,
-    type: "canvas",
-    data: "{{route('view_profile', $card->id)}}",
-    image: "{{asset('frontend/img/qr_logo.svg')}}",
-    dotsOptions: {
-        color: "black",
-        type: "classy-rounded"
-    },
-    backgroundOptions: {
-        color: "#ffffff",
-    },
-    imageOptions: {
-        crossOrigin: "anonymous",
-        margin: 0,
-        imageSize: 0.4,
-    },
-    qrOptions: {
-        errorCorrectionLevel: "H",  
-    },
-});
+        width: 120,
+        height: 120,
+        type: "canvas",
+        data: "{{route('view_profile', $card->id)}}",
+        image: "{{asset('company_logos')}}/{{empty($company) ? 'default.png' : $company->logo}}",
+        dotsOptions: {
+            color: "black",
+            type: "classy-rounded"
+        },
+        backgroundOptions: {
+            color: "#ffffff",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 0,
+            imageSize: 0.4,
+        },
+        qrOptions: {
+            errorCorrectionLevel: "H",
+        },
+    });
+} else {
+    var qrCode = new QRCodeStyling({
+        width: 120,
+        height: 120,
+        type: "canvas",
+        data: "{{route('view_profile', $card->id)}}",
+        image: "{{asset('frontend/img/qr_logo.svg')}}",
+        dotsOptions: {
+            color: "black",
+            type: "classy-rounded"
+        },
+        backgroundOptions: {
+            color: "#ffffff",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 0,
+            imageSize: 0.4,
+        },
+        qrOptions: {
+            errorCorrectionLevel: "H",
+        },
+    });
 }
 qrCode.append(document.getElementById("qrcode"));
 $('#update_card').click(function() {
@@ -1162,32 +1181,26 @@ $(document).ready(function() {
 });
 
 //   JavaScript funtion for button setting and display options 
-    // function showSettingsBtn() {
-    // var settingsOptions = document.getElementById("settings-options");
-    //     if (settingsOptions.style.display === "none") 
-    //         {
-    //         settingsOptions.style.display = "inline";
-    //         } 
-    //     else {
-    //             settingsOptions.style.display = "none";
-    //         }
-    // }
+// function showSettingsBtn() {
+// var settingsOptions = document.getElementById("settings-options");
+//     if (settingsOptions.style.display === "none") 
+//         {
+//         settingsOptions.style.display = "inline";
+//         } 
+//     else {
+//             settingsOptions.style.display = "none";
+//         }
+// }
 
-    const button = document.getElementById('settings-button');
-    const menu = document.getElementById('settings-menu');
+const button = document.getElementById('settings-button');
+const menu = document.getElementById('settings-menu');
 
-        button.addEventListener('click', function()
-         {
-            if (menu.style.display === 'none') 
-                {
-                    menu.style.display = 'block';
-                } 
-
-            else 
-                {
-                    menu.style.display = 'none';
-                }
+button.addEventListener('click', function() {
+    if (menu.style.display === 'none') {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }
 });
-                  
 </script>
 @endsection
