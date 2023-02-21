@@ -381,7 +381,147 @@ z-index: -1;
         max-width: 100%;
     }
 }
+/* setting button style goes here */
+
+
+@-webkit-keyframes come-in {
+  0% {
+    -webkit-transform: translatey(100px);
+            transform: translatey(100px);
+    opacity: 0;
+  }
+  30% {
+    -webkit-transform: translateX(-50px) scale(0.4);
+            transform: translateX(-50px) scale(0.4);
+  }
+  70% {
+    -webkit-transform: translateX(0px) scale(1.2);
+            transform: translateX(0px) scale(1.2);
+  }
+  100% {
+    -webkit-transform: translatey(0px) scale(1);
+            transform: translatey(0px) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes come-in {
+  0% {
+    -webkit-transform: translatey(100px);
+            transform: translatey(100px);
+    opacity: 0;
+  }
+  30% {
+    -webkit-transform: translateX(-50px) scale(0.4);
+            transform: translateX(-50px) scale(0.4);
+  }
+  70% {
+    -webkit-transform: translateX(0px) scale(1.2);
+            transform: translateX(0px) scale(1.2);
+  }
+  100% {
+    -webkit-transform: translatey(0px) scale(1);
+            transform: translatey(0px) scale(1);
+    opacity: 1;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.floating-container {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* bottom: 100%;  */
+  right: 0;
+  margin: 35px 25px;
+}
+.floating-container {
+  height: 300px;
+}
+.floating-container .floating-button {
+  /* box-shadow: 0 10px 25px #AD021C; */
+  -webkit-transform: translatey(5px);
+          transform: translatey(5px);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.floating-container .element-container .float-element:nth-child(1) {
+  -webkit-animation: come-in 0.4s forwards 0.2s;
+          animation: come-in 0.4s forwards 0.2s;
+}
+.floating-container .element-container .float-element:nth-child(2) {
+  -webkit-animation: come-in 0.4s forwards 0.4s;
+          animation: come-in 0.4s forwards 0.4s;
+}
+.floating-container .element-container .float-element:nth-child(3) {
+  -webkit-animation: come-in 0.4s forwards 0.6s;
+          animation: come-in 0.4s forwards 0.6s;
+}
+.floating-container .floating-button {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: #AD021C;
+  bottom: 0;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: white;
+  line-height: 65px;
+  text-align: center;
+  font-size: 23px;
+  z-index: 100;
+  /* box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6); */
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  top: 660px;
+  /* left: 68px; */
+  
+}
+.floating-container .float-element {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 15px auto;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  line-height: 50px;
+  z-index: 0;
+  opacity: 0;
+  top: 300px;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+
+}
+.floating-container .float-element .material-icons {
+  vertical-align: middle;
+  font-size: 16px;
+}
+.floating-container .float-element:nth-child(1) {
+  background: #42A5F5;
+  box-shadow: 0 20px 20px -10px rgba(66, 165, 245, 0.5);
+}
+.floating-container .float-element:nth-child(2) {
+  background: #4CAF50;
+  box-shadow: 0 20px 20px -10px rgba(76, 175, 80, 0.5);
+}
+.floating-container .float-element:nth-child(3) {
+  background: #FF9800;
+  box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5);
+}
+.floating-container .float-element:nth-child(4) {
+  background: #ff00ff;
+  box-shadow: 0 20px 20px -10px rgba(25, 152, 0, 0.5);
+}
 </style>
+
 <div class="content-wrapper">
     <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
     <section class="content-header">
@@ -390,6 +530,8 @@ z-index: -1;
                 <div class='col-md-8'>
                     <h5 style="font-family:Palatino;font-weight:bold;">Note: Click QR Code to View Profile </h5>
                 </div>
+
+                
                 <div class='col-md-4'>
                     @if(empty($profile))
                     @if(isset($permissions['can_add_profile']))
@@ -398,7 +540,37 @@ z-index: -1;
                         Profile</a>
                     @endif
                     @endif
-                </div>
+                    <!-- Setting buttons goes here -->
+                    {{-- <button class = "btn btn-floating float-right"  id="settings-button" style="background-color: #AD021C; color:#eee " onclick="showSettingsBtn()"><i class="fa-solid fa-gear"></i></button>
+
+                    <div id="settings-options" style="display:none">
+                        <!-- Add your settings options here -->
+                        <option value=""></option>
+                        <button class="btn btn-primary" type="submit">Button</button>
+                        <button class="btn btn-primary" type="submit">Button</button>
+                        <button class="btn btn-primary" type="submit">Button</button>
+                        <button class="btn btn-primary" type="submit">Button</button>
+                        
+                  </div> --}}
+                  
+                  <div class="floating-container">
+                   
+                        <div class="floating-button" id="settings-button"><i class="fa-sharp fa-solid fa-gear"></i></div>
+                            <div class="element-container" id="settings-menu" style="display: none">
+                                
+                                 <span class="float-element">
+                                <i class="material-icons">phone</i>
+                                </span>
+                                <span class="float-element">
+                                <i class="material-icons">email</i>
+                                </span>
+                                <span class="float-element"><i class="material-icons">chat</i></span>
+                                <span class="float-element"><i class="material-icons">test</i></span>
+                                
+                              
+                            </div>
+                        </div>  
+                
             </div>
         </div>
     </section>
@@ -509,7 +681,9 @@ z-index: -1;
             </div>
         </div>
     </div>
+    
         <div class="row mt-3">
+            
             <div class="col-md-12 d-flex justify-content-center">
                 @if(isset($permissions['can_edit_card']))
                 <a href="#" id="update_card" class="btn btn-yellow"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
@@ -532,6 +706,7 @@ z-index: -1;
                 <a href="#" id="download_card" class="btn btn-yellow ml-4"><i class="fa-solid fa-download"></i> Download
                     Card</a>
                 @endif
+                
             </div>
         </div>
     </div>
@@ -985,5 +1160,34 @@ $(document).ready(function() {
         }
     });
 });
+
+//   JavaScript funtion for button setting and display options 
+    // function showSettingsBtn() {
+    // var settingsOptions = document.getElementById("settings-options");
+    //     if (settingsOptions.style.display === "none") 
+    //         {
+    //         settingsOptions.style.display = "inline";
+    //         } 
+    //     else {
+    //             settingsOptions.style.display = "none";
+    //         }
+    // }
+
+    const button = document.getElementById('settings-button');
+    const menu = document.getElementById('settings-menu');
+
+        button.addEventListener('click', function()
+         {
+            if (menu.style.display === 'none') 
+                {
+                    menu.style.display = 'block';
+                } 
+
+            else 
+                {
+                    menu.style.display = 'none';
+                }
+});
+                  
 </script>
 @endsection
