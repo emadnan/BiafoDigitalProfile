@@ -504,7 +504,7 @@ z-index: -1;
     cursor: pointer;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-    top: 660px;
+    top: 600px;
     /* left: 68px; */
 
 }
@@ -522,7 +522,7 @@ z-index: -1;
     line-height: 50px;
     z-index: 100;
     opacity: 0;
-    top: 300px;
+    top: 250px;
     -webkit-transform: translateY(100px);
     transform: translateY(100px);
 
