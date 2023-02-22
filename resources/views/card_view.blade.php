@@ -749,8 +749,10 @@ z-index: -1;
                     @csrf
                     <!-- //image -->
                     <div>
-                        <h5><u>Update Card Here</u></h5>
-                    </div>
+                            <h5
+                                style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c">
+                                Update Card Here</h5>
+                        </div>
                     <div class="mt-5 d-flex justify-content-center">
                         <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="image preview" id="image_preview"
                             style="width: 200px; height: 200px; border-radius:50%;border: 5px solid;">
