@@ -227,7 +227,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="about_content_text text-white text-justify mt-4" style="font-size: 1vw">
+                        <div class="about_content_text text-white text-justify mt-4" style="font-size: 15.5px">
                             <p>Welcome to our QR Generated Card application <strong>‘Cardify’</strong>
                                 where sharing your contact information has never been easier. Our mission is to
                                 revolutionize business communication, eliminating the need for traditional paper
