@@ -378,6 +378,23 @@ z-index: -1;
         max-width: 100%;
     }
 }
+.primary_color{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    -webkit-appearance: none;
+}
+
+.primary_color::-webkit-color-swatch-wrapper {
+    padding: 0; 
+}
+.primary_color::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
 </style>
 <div class="content-wrapper">
 <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
@@ -395,26 +412,26 @@ z-index: -1;
                                 <h6 style="font-family:Palatino;font-weight:bold;">Upper Color:</h6>
                             </div>
                             <div class="col-md-6">
-                                <input type="color" id="upper_color_picker" name="upper_color_picker" value="#d12229">
+                                <input type="color" id="upper_color_picker" class="primary_color" name="upper_color_picker" value="#d12229">
                             </div>
                             <div class="col-md-6 mt-1">
                                 <h6 style="font-family:Palatino;font-weight:bold;">Buttom Color:</h6>
                             </div>
                             <div class="col-md-6">
-                                <input type="color" id="buttom_color_picker" name="buttom_color_picker" value="#393939">
+                                <input type="color" id="buttom_color_picker" class="primary_color" name="buttom_color_picker" value="#393939">
                             </div>
                             <div class="col-md-6 mt-1">
                                 <h6 style="font-family:Palatino;font-weight:bold;">Back Color:</h6>
                             </div>
                             <div class="col-md-6">
-                                <input type="color" id="main_back_color_picker" name="main_back_color_picker"
+                                <input type="color" id="main_back_color_picker" class="primary_color" name="main_back_color_picker"
                                     value="#393939">
                             </div>
                             <div class="col-md-6 mt-1">
                                 <h6 style="font-family:Palatino;font-weight:bold;">Text Color:</h6>
                             </div>
                             <div class="col-md-6">
-                                <input type="color" id="text_color_picker" name="text_color_picker" value="#ffffff">
+                                <input type="color" id="text_color_picker" class="primary_color"  name="text_color_picker" value="#ffffff">
                             </div>
                         </div>
                         <div class="row">

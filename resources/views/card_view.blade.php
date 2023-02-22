@@ -550,7 +550,7 @@ z-index: -1;
 }
 
 .floating-container .float-element:nth-child(4) {
-    background:  #9900ff;
+    background: #9900ff;
     color: white;
     /* box-shadow: 0 20px 20px -10px rgba(25, 152, 0, 0.5); */
 }
@@ -609,7 +609,7 @@ z-index: -1;
         <div class='container-fluid'>
             <div class='row'>
                 <div class='col-md-8'>
-                    <h5 style="font-family:Palatino;font-weight:bold;">Note: Click QR Code to View Profile </h5>
+                    <!-- <h5 style="font-family:Palatino;font-weight:bold;">Note: Click QR Code to View Profile </h5> -->
                 </div>
                 <div class='col-md-4'>
                     @if(empty($profile))
@@ -728,6 +728,13 @@ z-index: -1;
                     </div>
                 </div>
             </div>
+        </div>
+        <div class='row mt-4'>
+            <div class='col-md-4'></div>
+            <div class='col-md-4 text-center'>
+                <h5 style="font-family:Palatino;font-weight:bold;">Click QR Code to View Profile </h5>
+            </div>
+            <div class='col-md-4'></div>
         </div>
     </div>
 </div>
