@@ -34,7 +34,7 @@ figure {
     perspective: 1000;
     /* margin-bottom: -900px; */
     /* top: 100%; */
-    
+
 }
 
 
@@ -77,13 +77,14 @@ figure .caption {
     height: 100%;
     /* text-transform: uppercase; */
     padding: 2.5em;
-    
-    
+
+
 }
 
-.caption{
+.caption {
     text-align: center;
 }
+
 /* .front .caption {
     font-size: 1.25em;
 } */
@@ -160,7 +161,8 @@ figure .caption {
     text-align: left;
     margin-left: 21px;
 }
-.phone{
+
+.phone {
     letter-spacing: 1px;
     font-size: 68.5%;
     position: absolute;
@@ -175,7 +177,8 @@ figure .caption {
     text-align: left;
     margin-left: 21px;
 }
-.email{
+
+.email {
     letter-spacing: 1px;
     font-size: 68.5%;
     position: absolute;
@@ -190,6 +193,7 @@ figure .caption {
     text-align: left;
     margin-left: 21px;
 }
+
 /* figure a{
   z-index: 1000;
   text-indent: 200%;
@@ -295,15 +299,151 @@ input[type="radio"]:checked+label>img {
         margin-left: -225px;
     }
 }
+
+/* Radio Color */
+input[name="color"] {
+    display: none;
+}
+
+.button {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.button span {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background: #eeeeee;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    transition: ease .3s;
+}
+
+.orange .button span {
+    background: #FF5722;
+}
+
+.amber .button span {
+    background: #FFC107;
+}
+
+.lime .button span {
+    background: #8BC34A;
+}
+
+.teal .button span {
+    background: #009688;
+}
+
+.blue .button span {
+    background: #2196F3;
+}
+
+.indigo .button span {
+    background: #3F51B5;
+}
+
+.black .button span {
+    background: black;
+}
+
+.white .button span {
+    background: white;
+}
+
+.layer {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    /*transition: ease .3s;*/
+    z-index: -1;
+}
+
+.primary_color {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    -webkit-appearance: none;
+}
+
+.primary_color::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.primary_color::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+.colorPickSelector {
+    /* border-radius: 5px; */
+    width: 36px;
+    height: 10px;
+    cursor: pointer;
+    -webkit-transition: all linear .2s;
+    -moz-transition: all linear .2s;
+    -ms-transition: all linear .2s;
+    -o-transition: all linear .2s;
+    transition: all linear .2s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    margin-right:12px;
+    /* margin-top: -2px; */
+}
+
+.colorPickSelector2 {
+    /* border-radius: 5px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer; */
+    -webkit-transition: all linear .2s;
+    -moz-transition: all linear .2s;
+    -ms-transition: all linear .2s;
+    -o-transition: all linear .2s;
+    transition: all linear .2s;
+    /* border: 1px solid black; */
+    width: 60px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1); */
+    /* colored Underline */
+}
+
+/* .colorPickSelector:hover {
+    transform: scale(1.1);
+} */
 </style>
 <div class="content-wrapper">
-<input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
+    <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
     <section class="content-header">
         <div class='container-fluid'>
             <div class='row'>
                 <div class='col-md-8'>
                 </div>
                 <div class='col-md-4'>
+                    <button class="btn btn-primary float-right" id="download">Download</button>
                 </div>
             </div>
     </section>
@@ -317,19 +457,24 @@ input[type="radio"]:checked+label>img {
                                 style="width: 450px;height: 270px;" />
                             <div class="caption" id="text">
                                 <h2 id="name_text"><b>{{$card->name}}</b></h2>
-                                
-                                @if ($card->designation)                                 
-                                <p class = 'designation'><i class="fa-solid fa-briefcase"></i>&nbsp;|&nbsp;<b>{{$card->designation}}</b></p> 
-                                @endif 
-                                
+
+                                @if ($card->designation)
+                                <p class='designation'><i
+                                        class="fa-solid fa-briefcase"></i>&nbsp;|&nbsp;<b>{{$card->designation}}</b></p>
+                                @endif
+
                                 @if($card->company)
                                 @if($type == "work")
-                                <p class="paragraph" id="company_text"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;<b>{{$card->company}}</b></p>
+                                <p class="paragraph" id="company_text"><i
+                                        class="fa-solid fa-building"></i>&nbsp;|&nbsp;<b>{{$card->company}}</b></p>
                                 @endif
                                 @endif
                                 <!-- <p class="paragraph" id="company_address"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;{{$card->company}}</p> -->
-                                <p class="phone" id="company_phone"><i class="fa-solid fa-square-phone-flip"></i>&nbsp;|&nbsp;<b>{{$card->phone}}</b></p>
-                                <p class="email" id="company_email"><i class="fa-solid fa-envelope"></i>&nbsp;|&nbsp;<b>{{$card->email}}</b></p>
+                                <p class="phone" id="company_phone"><i
+                                        class="fa-solid fa-square-phone-flip"></i>&nbsp;|&nbsp;<b>{{$card->phone}}</b>
+                                </p>
+                                <p class="email" id="company_email"><i
+                                        class="fa-solid fa-envelope"></i>&nbsp;|&nbsp;<b>{{$card->email}}</b></p>
                             </div>
                             <a href="{{route('view_profile', $card->id)}}">
                                 <div class="qricon" id="qrcode">
@@ -348,24 +493,84 @@ input[type="radio"]:checked+label>img {
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 mt-4 mb-3">
-                            <h5> <b>Text Color:</b></h5>
+                        <div class="col-md-2 mt-5 mb-3">
+                            <div class="colorPickSelector2">
+                                <h3><i class="fa-solid fa-font">
+                                        <span>
+                                         <i style="font-size:11px"class="fa-solid fa-caret-down drop_picker"></i>
+                                            <div class="colorPickSelector" id="line" style="background:black;"></div>
+                                        </span>
+                                    </i>
+                                </h3>
+                            </div>
                         </div>
-                        <div class="col-md-4 mt-3 mb-3">
-                            <input type="color" id="text_color" name="text_color" value="#ffffff">
-                        </div>
-                        <div class="col-md-4 mt-2 mb-3">
-                            <button class="btn btn-primary" id="save">Save Colors</button>
+                        <div class="col-md-6 mt-5 mb-3">
+                            <!-- <label class="orange">
+                                <input type="radio" name="color" id="color" value="#F4511E">
+                                <div class="layer"></div>
+                                <div class="button"><span></span></div>
+                            </label>
+
+                            <label class="amber">
+                                <input type="radio" name="color" id="color" value="#FFB300">
+                                <div class="layer"></div>
+                                <div class="button"><span></span></div>
+                            </label>
+
+                            <label class="lime">
+                                <input type="radio" name="color" id="color" value="#7CB342">
+                                <div class="layer"></div>
+                                <div class="button"><span></span></div>
+                            </label>
+
+                            <label class="teal">
+                                <input type="radio" name="color" id="color" value="#00897B">
+                                <div class="layer"></div>
+                                <div class="button"><span></span></div>
+                            </label>
+
+                            <label class="blue">
+                                <input type="radio" name="color" id="color" value="#1E88E5">
+                                <div class="layer"></div>
+                                <div class="button"><span></span></div>
+                            </label>
+
+                            <label class="indigo">
+                                <input type="radio" name="color" id="color" value="#3949AB">
+                                <div class="layer"></div>
+                                <div class="button"><span></span></div>
+                            </label>
+                            <label class="black">
+                                <input type="radio" name="color" id="color" value="black">
+                                <div class="layer"></div>
+                                <div class="button"><span></span></div>
+                            </label>
+                            <label class="white">
+                                <input type="radio" name="color" id="color" value="white">
+                                <div class="layer"></div>
+                                <div class="button"><span></span></div>
+                            </label> -->
                         </div>
                     </div>
+                    <!-- <div class="row">
+                        <div class="col-md-4 mt-5 mb-3">
+                            <h3> <b>Color Picker:</b></h3>
+                        </div>
+                        <div class="col-md-2 mt-5 mb-3">
+                            <input type="color" id="text_color" class="primary_color"name="text_color" value="#ffffff">
+                        </div>
+                        <div class="col-md-4 mt-5 mb-3">
+                            <button class="btn btn-primary" id="save">Save Colors</button>
+                        </div>
+                    </div> -->
                     <div class="col-md-6 mt-5">
-                        <button class="btn btn-primary" id="download">Download</button>
+
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row ml-4" style="margin-top:300px">
-        @if(auth()->user()->user_type != "company_user")
+        <div class="row ml-4" style="margin-top:100px">
+            @if(auth()->user()->user_type != "company_user")
             <div class="col-md-12 ml-4 mt-2 mb-4">
                 <h4 style="font-family:Palatino;font-weight:bold;">Background Images:</h4>
             </div>
@@ -434,55 +639,74 @@ input[type="radio"]:checked+label>img {
 @endsection
 @section('scripts')
 <script>
+$(".drop_picker").colorPick({
+    'initialColor': 'black',
+    'allowRecent': true,
+    'recentMax': 5,
+    'allowCustomColor': false,
+    'palette': ["#1abc9c", "#16a085", "#2ecc71", "#27ae60", "#3498db", "#2980b9", "#9b59b6", "#8e44ad",
+        "#34495e", "#2c3e50", "#f1c40f", "#f39c12", "#e67e22", "#d35400", "#e74c3c", "#c0392b", "#ecf0f1",
+        "#bdc3c7", "#95a5a6", "#7f8c8d"
+    ],
+    'onColorSelected': function() {
+        // this.element.css({
+        //     'backgroundColor': this.color,
+        //     'color': this.color
+        // });
+        var text_color = this.color;
+        document.getElementById("line").style.background = this.color;
+        document.getElementById("text").style.color = text_color;
+        document.getElementById("name_text").style.color = text_color;
+        document.getElementById("company_text").style.color = text_color;
+    }
+});
 var company_id = document.getElementById("company_id").value;
-if(company_id != 'none')
-{
+if (company_id != 'none') {
     var qrCode = new QRCodeStyling({
-    width: 120,
-    height: 120,
-    type: "canvas",
-    data: "{{route('view_profile', $card->id)}}",
-    image: "{{asset('company_logos')}}/{{empty($company) ? 'default.png' : $company->logo}}",
-    dotsOptions: {
-        color: "black",
-        type: "classy-rounded"
-    },
-    backgroundOptions: {
-        color: "#ffffff",
-    },
-    imageOptions: {
-        crossOrigin: "anonymous",
-        margin: 0,
-        imageSize: 0.4,
-    },
-    qrOptions: {
-        errorCorrectionLevel: "H",  
-    },
-});
-}
-else{
-var qrCode = new QRCodeStyling({
-    width: 120,
-    height: 120,
-    type: "canvas",
-    data: "{{route('view_profile', $card->id)}}",
-    image: "{{asset('frontend/img/qr_logo.svg')}}",
-    dotsOptions: {
-        color: "black",
-        type: "classy-rounded"
-    },
-    backgroundOptions: {
-        color: "#ffffff",
-    },
-    imageOptions: {
-        crossOrigin: "anonymous",
-        margin: 0,
-        imageSize: 0.4,
-    },
-    qrOptions: {
-        errorCorrectionLevel: "H",  
-    },
-});
+        width: 120,
+        height: 120,
+        type: "canvas",
+        data: "{{route('view_profile', $card->id)}}",
+        image: "{{asset('company_logos')}}/{{empty($company) ? 'default.png' : $company->logo}}",
+        dotsOptions: {
+            color: "black",
+            type: "classy-rounded"
+        },
+        backgroundOptions: {
+            color: "#ffffff",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 0,
+            imageSize: 0.4,
+        },
+        qrOptions: {
+            errorCorrectionLevel: "H",
+        },
+    });
+} else {
+    var qrCode = new QRCodeStyling({
+        width: 120,
+        height: 120,
+        type: "canvas",
+        data: "{{route('view_profile', $card->id)}}",
+        image: "{{asset('frontend/img/qr_logo.svg')}}",
+        dotsOptions: {
+            color: "black",
+            type: "classy-rounded"
+        },
+        backgroundOptions: {
+            color: "#ffffff",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 0,
+            imageSize: 0.4,
+        },
+        qrOptions: {
+            errorCorrectionLevel: "H",
+        },
+    });
 }
 
 qrCode.append(document.getElementById("qrcode"));
@@ -493,29 +717,37 @@ for (var i = 0; i < background_image.length; i++) {
         document.getElementById("back_image").src = background_image;
     });
 }
+var color = document.getElementsByName("color");
+for (var i = 0; i < color.length; i++) {
+    color[i].addEventListener("change", function() {
+        var text_color = document.querySelector('input[name="color"]:checked').value;
+        document.getElementById("text").style.color = text_color;
+        document.getElementById("name_text").style.color = text_color;
+        document.getElementById("company_text").style.color = text_color;
+    });
+}
 var image = document.getElementById("image");
 image.addEventListener("change", function() {
     var image = document.getElementById("image").files[0];
     var reader = new FileReader();
     reader.onload = function() {
         document.getElementById("back_image").src = reader.result;
-        base64=reader.result;
+        base64 = reader.result;
         //send base64 to server
         var company_id = document.getElementById("company_id").value;
-        if(company_id)
-        {
-        $.ajax({
-            type: "POST",
-            url: "{{route('save_visting_card_backgrounds')}}",
-            data: {
-                "_token": "{{ csrf_token() }}",
-                "image": base64,
-            },
-            success: function(data) {
-                console.log(data);
-            }
-        });
-    }
+        if (company_id) {
+            $.ajax({
+                type: "POST",
+                url: "{{route('save_visting_card_backgrounds')}}",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    "image": base64,
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+        }
     }
     reader.readAsDataURL(image);
 });

@@ -13,10 +13,12 @@ $permissions= session()->get('permissions');
     height: 100px;
     border-radius: 50%;
 }
-.contact-header{
+
+.contact-header {
     font-weight: bold;
     text-align: center;
 }
+
 /* .form-control{
         border-radius: 10px;
     } */
@@ -33,7 +35,7 @@ $permissions= session()->get('permissions');
         </div>
     </section>
     <div class="container-fluid">
-        <div class="row contact-header">
+        <div class="row contact-header" id="headings">
             <div class="col-md-2">
             </div>
             <div class="col-md-2 mt-4">
@@ -54,32 +56,32 @@ $permissions= session()->get('permissions');
         </div>
         @foreach($contact_book as $contact)
         <a style="text-decoration: none;" class="anchor" href="/view_profile/{{$contact->profile->card->id}}">
-        <div class="card">
-            <div class="card-body">
-                <div class="row text-center">
-                    <div class="col-md-2">
-                        <img src="{{asset('card_images')}}/{{$contact->profile->card->image_path}}" class="contact_img"
-                            alt="Responsive image">
-                    </div>
-                    <div class="col-md-2 mt-4">
-                        <h4>{{$contact->profile->name}}</h4>
-                    </div>
-                    <div class="col-md-2 mt-4">
-                        <p>{{$contact->profile->email}}</p>
-                    </div>
-                    <div class="col-md-2 mt-4">
-                        <p>{{$contact->profile->phone}}</p>
-                    </div>
-                    <div class="col-md-2 mt-4">
-                        <p>{{$contact->profile->card->company}}</p>
-                    </div>
-                    <div class="col-md-2 mt-4">
-                        <p>{{$contact->profile->card->designation}}</p>
-                    </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-2">
+                            <img src="{{asset('card_images')}}/{{$contact->profile->card->image_path}}"
+                                class="contact_img" alt="Responsive image">
+                        </div>
+                        <div class="col-md-2 mt-4">
+                            <h4>{{$contact->profile->name}}</h4>
+                        </div>
+                        <div class="col-md-2 mt-4">
+                            <p>{{$contact->profile->email}}</p>
+                        </div>
+                        <div class="col-md-2 mt-4">
+                            <p>{{$contact->profile->phone}}</p>
+                        </div>
+                        <div class="col-md-2 mt-4">
+                            <p>{{$contact->profile->card->company}}</p>
+                        </div>
+                        <div class="col-md-2 mt-4">
+                            <p>{{$contact->profile->card->designation}}</p>
+                        </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
         </a>
         @endforeach
     </div>
@@ -89,5 +91,10 @@ $permissions= session()->get('permissions');
 @endsection
 @section('scripts')
 <script>
+$(document).ready(function() {
+    if ($(window).width() < 797) {
+        $('#headings').remove();
+    }
+});
 </script>
 @endsection
