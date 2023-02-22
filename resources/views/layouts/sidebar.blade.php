@@ -10,7 +10,7 @@ $permissions= session()->get('permissions');
         <!-- <span class="font-weight-light">Comply Techs</span> -->
     </a>
 
-
+    <div style="border: 3px solid white;" class="border-top my-2"></div>
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
@@ -44,6 +44,8 @@ $permissions= session()->get('permissions');
                     <a href="{{ route('home') }}"
                         class="{{ request()->routeIs('home') ? 'nav-link active' : 'nav-link text-white' }}">
                         <i class="nav-icon fa-solid fa-address-card"></i>
+                        &nbsp;
+                        &nbsp;
                         <p>
                             @if(auth()->user()->user_type == 'company')
                             Employees
@@ -66,6 +68,8 @@ $permissions= session()->get('permissions');
                 <li>
                     <a class="{{ request()->routeIs('company_profile') ? 'nav-link active' : 'nav-link text-white' }}"
                         href="{{ route('company_profile') }}"><i class="nav-icon fa-solid fa-building"></i>
+                        &nbsp;
+                        &nbsp;
                         <p>
                             Company Profile
                         </p>
@@ -78,6 +82,8 @@ $permissions= session()->get('permissions');
                     <!-- Request features -->
                     <a class="{{ request()->routeIs('lists_feature_requets') ? 'nav-link active' : 'nav-link text-white' }}"
                         href="{{ route('lists_feature_requets') }}"><i class=" nav-icon fa-solid fa-list"></i>
+                        &nbsp;
+                        &nbsp;
                         <p>
                             Feature Requests
                         </p>
@@ -89,8 +95,10 @@ $permissions= session()->get('permissions');
                     <!-- Address Book-->
                     <a class="{{ request()->routeIs('contact_book') ? 'nav-link active' : 'nav-link text-white' }}"
                         href="{{ route('contact_book') }}"><i class="nav-icon fa-solid fa-address-book"></i>
+                        &nbsp;
+                        &nbsp;
                         <p>
-                           Contact Book
+                        Contact Book
                         </p>
                     </a>
                 </li>
