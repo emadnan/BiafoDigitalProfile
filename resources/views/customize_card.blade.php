@@ -812,7 +812,6 @@ $(".line_bottom").colorPick({
     'onColorSelected': function() {
         document.getElementById("line_bottom").style.background = this.color;
         document.getElementById("buttom_color").style.background  = this.color;
-
     }
 });
 $(".line_back").colorPick({
@@ -827,7 +826,6 @@ $(".line_back").colorPick({
     'onColorSelected': function() {
         document.getElementById("line_back").style.background = this.color;
         document.getElementById("main_back_color").style.background  = this.color;
-
     }
 });
 var company_id = document.getElementById("company_id").value;
@@ -902,7 +900,6 @@ qrCode.append(document.getElementById("qrcode"));
 // var background_image = document.querySelector('input[name="background_image"]:checked').value;
 // document.getElementById("back_image").src = background_image;
 //     //console.log(test);
-
 // });
 //download download-able
 $(document).ready(function() {

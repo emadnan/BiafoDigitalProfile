@@ -406,8 +406,23 @@ input[name="color"] {
     -o-transition: all linear .2s;
     transition: all linear .2s;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-    margin-right:12px;
+    margin-right: 12px;
     /* margin-top: -2px; */
+}
+
+.selector {
+    /* border-radius: 5px; */
+    width: 70px;
+    height: 20px;
+    cursor: pointer;
+    -webkit-transition: all linear .2s;
+    -moz-transition: all linear .2s;
+    -ms-transition: all linear .2s;
+    -o-transition: all linear .2s;
+    transition: all linear .2s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    margin-top: -2px;
 }
 
 .colorPickSelector2 {
@@ -456,32 +471,31 @@ input[name="color"] {
                             <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" id="back_image" alt="front"
                                 style="width: 450px;height: 270px;" />
                             <div class="caption" id="text">
-                                <h2 id="name_text"><b>{{$card->name}}</b></h2>
+                                <h2 class="drag" id="name_text"><b>{{$card->name}}</b></h2>
 
                                 @if ($card->designation)
-                                <p class='designation'><i
+                                <p class='designation drag'><i
                                         class="fa-solid fa-briefcase"></i>&nbsp;|&nbsp;<b>{{$card->designation}}</b></p>
                                 @endif
 
                                 @if($card->company)
                                 @if($type == "work")
-                                <p class="paragraph" id="company_text"><i
+                                <p class="paragraph drag" id="company_text"><i
                                         class="fa-solid fa-building"></i>&nbsp;|&nbsp;<b>{{$card->company}}</b></p>
                                 @endif
                                 @endif
                                 <!-- <p class="paragraph" id="company_address"><i class="fa-solid fa-building"></i>&nbsp;|&nbsp;{{$card->company}}</p> -->
-                                <p class="phone" id="company_phone"><i
+                                <p class="phone drag" id="company_phone"><i
                                         class="fa-solid fa-square-phone-flip"></i>&nbsp;|&nbsp;<b>{{$card->phone}}</b>
                                 </p>
-                                <p class="email" id="company_email"><i
+                                <p class="email drag" id="company_email"><i
                                         class="fa-solid fa-envelope"></i>&nbsp;|&nbsp;<b>{{$card->email}}</b></p>
                             </div>
-                            <a href="{{route('view_profile', $card->id)}}">
-                                <div class="qricon" id="qrcode">
-                                </div>
-                            </a>
+                            <div class="qricon drag" id="qrcode">
+                            </div>
                         </figure>
                     </div>
+                    <h6 class="mt-3">*Drag to Change Position</h6>
                 </div>
 
                 <div class="col-md-6">
@@ -497,7 +511,7 @@ input[name="color"] {
                             <div class="colorPickSelector2">
                                 <h3><i class="fa-solid fa-font">
                                         <span>
-                                         <i style="font-size:11px"class="fa-solid fa-caret-down drop_picker"></i>
+                                            <i style="font-size:11px" class="fa-solid fa-caret-down drop_picker"></i>
                                             <div class="colorPickSelector" id="line" style="background:black;"></div>
                                         </span>
                                     </i>
@@ -552,7 +566,73 @@ input[name="color"] {
                             </label> -->
                         </div>
                     </div>
-                    <!-- <div class="row">
+                    <h5>Adjust Font Sizes</h5> 
+                    <div class="row text-center d-flex-justify-content-center">
+                        
+                        <div class="col-md-2 mt-3 mb-3">
+                            <h1><i class="fa-solid fa-user">
+                                    <span>
+                                    <select id="name_size" style="font-size:11px;">
+                                            <option value="1">Small</option>
+                                            <option value="2">Meduim</option>
+                                            <option value="3">Large</option>
+                                        </select>
+                                    </span>
+                                </i>
+                            </h1>
+                        </div>
+                        <div class="col-md-2 mt-3 mb-3">
+                            <h1><i class="fa-solid fa-briefcase">
+                                    <span>
+                                    <select id="designation_size" style="font-size:11px;">
+                                            <option value="1">Small</option>
+                                            <option value="2">Meduim</option>
+                                            <option value="3">Large</option>
+                                        </select>
+                                    </span>
+                                </i>
+                            </h1>
+                        </div>
+                        <div class="col-md-2 mt-3 mb-3">
+                            <h1><i class="fa-solid fa-building">
+                                    <span>
+                                    <select id="company_size" style="font-size:11px;">
+                                            <option value="1">Small</option>
+                                            <option value="2">Meduim</option>
+                                            <option value="3">Large</option>
+                                        </select>
+                                    </span>
+                                </i>
+                            </h1>
+                        </div>
+                        <div class="col-md-2 mt-3 mb-3">
+                            <h1><i class="fa-solid fa-square-phone-flip">
+                                    <span>
+                                    <select id="phone_size" style="font-size:11px;">
+                                            <option value="1">Small</option>
+                                            <option value="2">Meduim</option>
+                                            <option value="3">Large</option>
+                                        </select>
+                                    </span>
+                                </i>
+                            </h1>
+                        </div>
+                        <div class="col-md-2 mt-3 mb-3">
+                            <h1><i class="fa-solid fa-envelope">
+                                    <span>
+                                    <select id="email_size" style="font-size:11px;">
+                                            <option value="1">Small</option>
+                                            <option value="2">Meduim</option>
+                                            <option value="3">Large</option>
+                                        </select>
+                                    </span>
+                                </i>
+                            </h1>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <div class="row">
                         <div class="col-md-4 mt-5 mb-3">
                             <h3> <b>Color Picker:</b></h3>
                         </div>
@@ -563,90 +643,92 @@ input[name="color"] {
                             <button class="btn btn-primary" id="save">Save Colors</button>
                         </div>
                     </div> -->
-                    <div class="col-md-6 mt-5">
+                <div class="col-md-6 mt-5">
 
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="row ml-4" style="margin-top:100px">
-            @if(auth()->user()->user_type != "company_user")
-            <div class="col-md-12 ml-4 mt-2 mb-4">
-                <h4 style="font-family:Palatino;font-weight:bold;">Background Images:</h4>
-            </div>
-            <div class="col-md-4">
-                <input type="radio" name="background_image" id="background_image1" class="input-hidden"
-                    value="{{asset('frontend/img/visting_imges/front.jpg')}}" checked>
-                <label for="background_image1">
-                    <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" alt="" class="back_image_temp">
-                </label>
-            </div>
-            <div class="col-md-4">
-                <input type="radio" name="background_image" id="background_image2" class="input-hidden"
-                    value="{{asset('frontend/img/visting_imges/1.jpg')}}">
-                <label for="background_image2">
-                    <img src="{{asset('frontend/img/visting_imges/1.jpg')}}" alt="" class="back_image_temp">
-                </label>
-            </div>
-            <div class="col-md-4">
-                <input type="radio" name="background_image" id="background_image3" class="input-hidden"
-                    value="{{asset('frontend/img/visting_imges/2.png')}}">
-                <label for="background_image3">
-                    <img src="{{asset('frontend/img/visting_imges/2.png')}}" alt="" class="back_image_temp">
-                </label>
-            </div>
-            <div class="col-md-4">
-                <input type="radio" name="background_image" id="background_image4" class="input-hidden"
-                    value="{{asset('frontend/img/visting_imges/3.jpg')}}">
-                <label for="background_image4">
-                    <img src="{{asset('frontend/img/visting_imges/3.jpg')}}" alt="" class="back_image_temp">
-                </label>
-            </div>
-            <div class="col-md-4">
-                <input type="radio" name="background_image" id="background_image5" class="input-hidden"
-                    value="{{asset('frontend/img/visting_imges/4.jpg')}}">
-                <label for="background_image5">
-                    <img src="{{asset('frontend/img/visting_imges/4.jpg')}}" alt="" class="back_image_temp">
-                </label>
-            </div>
-            <div class="col-md-4">
-                <input type="radio" name="background_image" id="background_image6" class="input-hidden"
-                    value="{{asset('frontend/img/visting_imges/5.jpg')}}">
-                <label for="background_image6">
-                    <img src="{{asset('frontend/img/visting_imges/5.jpg')}}" alt="" class="back_image_temp">
-                </label>
-            </div>
-            @endif
+    </div>
+    <div class="row ml-4" style="margin-top:100px">
+        @if(auth()->user()->user_type != "company_user")
+        <div class="col-md-12 ml-4 mt-2 mb-4">
+            <h4 style="font-family:Palatino;font-weight:bold;">Background Images:</h4>
         </div>
-        @if($visting_card_backgrounds)
-        <div class="row ml-4">
-            <div class="col-md-12 ml-4 mt-2 mb-4">
-                <h4 style="font-family:Palatino;font-weight:bold;">Company's Background Images:</h4>
-            </div>
-            @foreach($visting_card_backgrounds as $image)
-            <div class="col-md-4">
-                <input type="radio" name="background_image" id="background_image{{$image->id}}C" class="input-hidden"
-                    value="{{asset('visting_card_images')}}/{{$image->image}}">
-                <label for="background_image{{$image->id}}C">
-                    <img src="{{asset('visting_card_images')}}/{{$image->image}}" alt="" class="back_image_temp">
-                </label>
-            </div>
-            @endforeach
+        <div class="col-md-4">
+            <input type="radio" name="background_image" id="background_image1" class="input-hidden"
+                value="{{asset('frontend/img/visting_imges/front.jpg')}}" checked>
+            <label for="background_image1">
+                <img src="{{asset('frontend/img/visting_imges/front.jpg')}}" alt="" class="back_image_temp">
+            </label>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="background_image" id="background_image2" class="input-hidden"
+                value="{{asset('frontend/img/visting_imges/1.jpg')}}">
+            <label for="background_image2">
+                <img src="{{asset('frontend/img/visting_imges/1.jpg')}}" alt="" class="back_image_temp">
+            </label>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="background_image" id="background_image3" class="input-hidden"
+                value="{{asset('frontend/img/visting_imges/2.png')}}">
+            <label for="background_image3">
+                <img src="{{asset('frontend/img/visting_imges/2.png')}}" alt="" class="back_image_temp">
+            </label>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="background_image" id="background_image4" class="input-hidden"
+                value="{{asset('frontend/img/visting_imges/3.jpg')}}">
+            <label for="background_image4">
+                <img src="{{asset('frontend/img/visting_imges/3.jpg')}}" alt="" class="back_image_temp">
+            </label>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="background_image" id="background_image5" class="input-hidden"
+                value="{{asset('frontend/img/visting_imges/4.jpg')}}">
+            <label for="background_image5">
+                <img src="{{asset('frontend/img/visting_imges/4.jpg')}}" alt="" class="back_image_temp">
+            </label>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="background_image" id="background_image6" class="input-hidden"
+                value="{{asset('frontend/img/visting_imges/5.jpg')}}">
+            <label for="background_image6">
+                <img src="{{asset('frontend/img/visting_imges/5.jpg')}}" alt="" class="back_image_temp">
+            </label>
         </div>
         @endif
     </div>
+    @if($visting_card_backgrounds)
+    <div class="row ml-4">
+        <div class="col-md-12 ml-4 mt-2 mb-4">
+            <h4 style="font-family:Palatino;font-weight:bold;">Company's Background Images:</h4>
+        </div>
+        @foreach($visting_card_backgrounds as $image)
+        <div class="col-md-4">
+            <input type="radio" name="background_image" id="background_image{{$image->id}}C" class="input-hidden"
+                value="{{asset('visting_card_images')}}/{{$image->image}}">
+            <label for="background_image{{$image->id}}C">
+                <img src="{{asset('visting_card_images')}}/{{$image->image}}" alt="" class="back_image_temp">
+            </label>
+        </div>
+        @endforeach
+    </div>
+    @endif
+</div>
 </div>
 @endsection
 @section('scripts')
 <script>
+$('.drag').dragmove();
 $(".drop_picker").colorPick({
     'initialColor': 'black',
     'allowRecent': true,
     'recentMax': 5,
     'allowCustomColor': false,
     'palette': ["#1abc9c", "#16a085", "#2ecc71", "#27ae60", "#3498db", "#2980b9", "#9b59b6", "#8e44ad",
-        "#34495e", "#2c3e50", "#f1c40f", "#f39c12", "#e67e22", "#d35400", "#e74c3c", "#c0392b", "#ecf0f1",
-        "#bdc3c7", "#95a5a6", "#7f8c8d"
+        "#34495e", "#2c3e50", "#f1c40f", "#f39c12", "#e67e22", "#d35400", "#e74c3c", "#c0392b",
+        "#ecf0f1",
+        "#bdc3c7", "#95a5a6", "#7f8c8d", "white"
     ],
     'onColorSelected': function() {
         // this.element.css({
