@@ -340,7 +340,5 @@ class CardController extends Controller
             $profile->save();
         }
         return redirect()->back()->with('success', 'CSV File Imported Successfully');
-
-        
     }
 }

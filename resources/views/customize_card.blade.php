@@ -616,7 +616,7 @@ z-index: -1;
                             <div class="head">
                                 <div>
                                     @if($type=="work")
-                                    <h2>{{$card->company}}</h2>
+                                    <h2 class="drag">{{$card->company}}</h2>
                                     @endif
 
                                     <!-- <p>Tagline goes here</p> -->
@@ -625,14 +625,14 @@ z-index: -1;
                         </div>
                         <div class="avatar">
                             <div>
-                                <img src="{{asset('card_images')}}/{{$card->image_path}}" class="profile_img" alt="" />
+                                <img src="{{asset('card_images')}}/{{$card->image_path}}" class="profile_img drag" alt="" />
                             </div>
                         </div>
                         <div class="name_and_designation text-center">
                             <div>
-                                <p>{{$card->name}}</p>
+                                <p class="drag">{{$card->name}}</p>
                                 @if($type=="work")
-                                <p>{{$card->designation}}</p>
+                                <p class="drag">{{$card->designation}}</p>
                                 @endif
                             </div>
                         </div>
@@ -641,7 +641,7 @@ z-index: -1;
 
                         <div class="infos">
                             <!-- Logo for email -->
-                            <div>
+                            <div class="drag">
 
                                 <i class="fa-solid fa-envelope"></i>
                                 <div class="ml-2">
@@ -650,7 +650,7 @@ z-index: -1;
 
                             </div>
                             <!-- Logo for phone Number -->
-                            <div>
+                            <div class="drag">
                                 <i class="fa-solid fa-phone"></i>
                                 <div class="ml-2">
                                     <p>{{$card->phone}}</p>
@@ -658,7 +658,7 @@ z-index: -1;
                             </div>
                             @if($type=="work")
                             <!-- Logo for website -->
-                            <div>
+                            <div class="drag">
                                 @if ($card->website)
                                 <i class="fa-solid fa-globe"></i>
                                 <div class="ml-2">
@@ -667,7 +667,7 @@ z-index: -1;
                                 @endif
                             </div>
                             <!-- Logo for LinkedIn -->
-                            <div>
+                            <div class="drag">
                                 @if ($card->linkedin)
                                 <i class="fa-brands fa-linkedin"></i>
                                 <div class="ml-2">
@@ -676,7 +676,7 @@ z-index: -1;
                                 @endif
                             </div>
                             @endif
-                            <div>
+                            <div class="drag">
                                 <!-- Logo of current location -->
                                 <i class="fa-solid fa-map-marker-alt"></i>
                                 <div class="ml-2">
@@ -698,8 +698,8 @@ z-index: -1;
                             <img src="{{asset('frontend/img/dubai_burjkhalifa.jpg')}}" id="back_image" alt=""
                                 class="back_image">
                         </div>
-                        <div class="qricon">
-                            <a class="qr_anchor" href="/view_profile/{{$card->id}}">
+                        <div class="qricon drag">
+                            <a class="qr_anchor" href="">
                                 <div id="qrcode">
                                 </div>
                             </a>
@@ -878,6 +878,11 @@ if (company_id != 'none') {
 }
 
 qrCode.append(document.getElementById("qrcode"));
+// qrCode.download({
+//     name: "{{$card->name}}.png",
+//     extension: "png",
+//     size: 500,
+// });
 
 
 // var upper_color_picker = document.getElementById("upper_color_picker").value;
@@ -903,7 +908,10 @@ qrCode.append(document.getElementById("qrcode"));
 // });
 //download download-able
 $(document).ready(function() {
+    $('.drag').dragmove();
     $("#download").on('click', function() {
+        //dowmload qr code 
+        var qr_code = document.getElementById("qricon");
         var node = document.getElementById('download_able');
         domtoimage.toPng(node)
             .then(function(dataUrl) {
@@ -912,6 +920,11 @@ $(document).ready(function() {
                 link.href = dataUrl;
                 link.click();
             });
+            qrCode.download({
+    name: "QrCode",
+    extension: "png",
+    size: 500,
+});
     });
 });
 //on radio button change image
