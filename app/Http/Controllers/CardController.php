@@ -317,11 +317,11 @@ class CardController extends Controller
             $card ->name = $data[0];
             $card->email = $data[1];
             $card->phone = $data[2];
-            $card->company = $data[3];
-            $card->designation = $data[4];
-            $card->address = $data[5];
-            $card->linkedin = $data[6];
-            $card->website = $data[7];
+            $card->company = $company->company_name;
+            $card->designation = $data[3];
+            $card->address = $company->address;
+            $card->linkedin = $company->linkedin;
+            $card->website = $company->website;
             $card->is_csv = $is_csv;
             $card->image_path="avatar.jpg";
             $card->save();
@@ -333,10 +333,10 @@ class CardController extends Controller
             $profile->name = $data[0];
             $profile->email = $data[1];
             $profile->phone = $data[2];
-            $profile->address = $data[5];
+            $profile->address = $company->address;
             $profile->country_id = $country_id;
             $profile->city_id = $city_id;
-            $profile->description = "This is a description";
+            $profile->description = "Write Your Description Here";
             $profile->save();
         }
         return redirect()->back()->with('success', 'CSV File Imported Successfully');
