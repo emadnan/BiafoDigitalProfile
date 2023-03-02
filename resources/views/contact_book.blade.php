@@ -94,6 +94,7 @@ $permissions= session()->get('permissions');
                 <h3 class="text-center">Add contacts to your contact book</h3>
             </div>
         </div>
+        @endif
     </div>
 
 </div>
