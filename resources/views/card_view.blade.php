@@ -720,7 +720,7 @@ z-index: -1;
                                 class="back_image">
                         </div>
                         <div class="qricon">
-                            <a class="qr_anchor" href="/view_profile/{{$card->id}}">
+                            <a class="qr_anchor" href="/view_profile/{{$card->username}}">
                                 <div id="qrcode">
                                 </div>
                             </a>
@@ -828,7 +828,7 @@ z-index: -1;
                                     </div>
                                 </span>
                             </div>
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone">
+                            <input type="text" class="form-control" name="phone" id="phone" value="{{$card->phone}}" placeholder="Enter Phone">
                         </div>
                     </div>
                     <div class="form-group">
@@ -981,10 +981,10 @@ country2.addEventListener('change', function() {
 var company_id = document.getElementById("company_id").value;
 if (company_id != 'none') {
     var qrCode = new QRCodeStyling({
-        width: 120,
-        height: 120,
+        width: 123,
+        height: 123,
         type: "canvas",
-        data: "{{route('view_profile', $card->id)}}",
+        data: "{{route('view_profile',$card->username)}}",
         image: "{{asset('company_logos')}}/{{empty($company) ? 'default.png' : $company->logo}}",
         dotsOptions: {
             color: "black",
@@ -1004,10 +1004,10 @@ if (company_id != 'none') {
     });
 } else {
     var qrCode = new QRCodeStyling({
-        width: 120,
-        height: 120,
+        width: 123,
+        height: 123,
         type: "canvas",
-        data: "{{route('view_profile', $card->id)}}",
+        data: "{{route('view_profile',$card->username)}}",
         image: "{{asset('frontend/img/qr_logo.svg')}}",
         dotsOptions: {
             color: "black",
@@ -1027,6 +1027,7 @@ if (company_id != 'none') {
     });
 }
 qrCode.append(document.getElementById("qrcode"));
+
 $('#update_card').click(function() {
     $('#update_card_modal').modal('show');
 });

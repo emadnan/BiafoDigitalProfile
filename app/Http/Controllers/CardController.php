@@ -78,6 +78,7 @@ class CardController extends Controller
         $card->user_id = auth()->user()->id;
         $card->company_user_id = $company_user_id;
         $card->name = $request->name;
+        $card->username=$this->generate_username($request->name);
         $card->email = $request->email;
         $card->phone = $request->phone;
         $card->company = $request->company;
@@ -93,6 +94,7 @@ class CardController extends Controller
         $profile = new Profile();
         $profile->card_id = $card->id;
         $profile->user_id = auth()->user()->id;
+        $profile->card_username = $card->username;
         $profile->company_user_id = $company_user_id;
         $profile->name = $request->name;
         $profile->email = $request->email;
@@ -317,6 +319,7 @@ class CardController extends Controller
             $card ->name = $data[0];
             $card->email = $data[1];
             $card->phone = $data[2];
+            $card->username=$this->generate_username($data[0]);
             $card->company = $company->company_name;
             $card->designation = $data[3];
             $card->address = $company->address;
@@ -333,6 +336,7 @@ class CardController extends Controller
             $profile->name = $data[0];
             $profile->email = $data[1];
             $profile->phone = $data[2];
+            $profile->card_username=$card->username;
             $profile->address = $company->address;
             $profile->country_id = $country_id;
             $profile->city_id = $city_id;
@@ -341,4 +345,21 @@ class CardController extends Controller
         }
         return redirect()->back()->with('success', 'CSV File Imported Successfully');
     }
+    public function generate_username($name)
+    {
+        $full_name = $name;
+        // Generate username from full name
+        $username = strtolower(str_replace(" ", "-", $full_name));
+        // Check if username already exists in database
+        while (Card::where('username', $username)->exists()) {
+        // Username already exists, generate a new one by appending a number
+        $i = 1;
+        while (Card::where('username', $username ."-". $i)->exists())
+            {
+              $i++;
+            }
+        $username = $username ."-". $i;
+        }
+        return $username;
+     }
 }
