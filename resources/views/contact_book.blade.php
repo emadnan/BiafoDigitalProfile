@@ -69,19 +69,30 @@ $permissions= session()->get('permissions');
                                 class="contact_img" alt="Responsive image">
                         </div>
                         <div class="col-md-2 mt-4">
+                            @if($contact->profile->name)
                             <h4>{{$contact->profile->name}}</h4>
+                            @endif
+
                         </div>
                         <div class="col-md-2 mt-4">
+                            @if($contact->profile->email)
                             <p>{{$contact->profile->email}}</p>
+                            @endif
                         </div>
                         <div class="col-md-2 mt-4">
+                            @if($contact->profile->phone)
                             <p>{{$contact->profile->phone}}</p>
+                            @endif
                         </div>
                         <div class="col-md-2 mt-4">
+                            @if($contact->profile->card->company)
                             <p>{{$contact->profile->card->company}}</p>
+                            @endif
                         </div>
                         <div class="col-md-2 mt-4">
+                            @if($contact->profile->card->designation)
                             <p>{{$contact->profile->card->designation}}</p>
+                            @endif
                         </div>
 
                     </div>
