@@ -56,11 +56,7 @@ $permissions= session()->get('permissions');
         </div>
         @if($contact_book->count() != 0)
         @foreach($contact_book as $contact)
-        <a style="text-decoration: none;" class="anchor" 
-        @if($contact->profile)
-        href="/view_profile/{{$contact->profile->card->id}}"
-        @endif
-        >
+        <a style="text-decoration: none;" class="anchor" href="/view_profile/{{$contact->profile->card->id}}">
             <div class="card">
                 <div class="card-body">
                     <div class="row text-center">
@@ -69,30 +65,19 @@ $permissions= session()->get('permissions');
                                 class="contact_img" alt="Responsive image">
                         </div>
                         <div class="col-md-2 mt-4">
-                            @if($contact->profile->name)
                             <h4>{{$contact->profile->name}}</h4>
-                            @endif
-
                         </div>
                         <div class="col-md-2 mt-4">
-                            @if($contact->profile->email)
                             <p>{{$contact->profile->email}}</p>
-                            @endif
                         </div>
                         <div class="col-md-2 mt-4">
-                            @if($contact->profile->phone)
                             <p>{{$contact->profile->phone}}</p>
-                            @endif
                         </div>
                         <div class="col-md-2 mt-4">
-                            @if($contact->profile->card->company)
                             <p>{{$contact->profile->card->company}}</p>
-                            @endif
                         </div>
                         <div class="col-md-2 mt-4">
-                            @if($contact->profile->card->designation)
                             <p>{{$contact->profile->card->designation}}</p>
-                            @endif
                         </div>
 
                     </div>
@@ -100,15 +85,6 @@ $permissions= session()->get('permissions');
             </div>
         </a>
         @endforeach
-        @else
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="text-center">No contacts found</h3>
-            </div>
-            <div class="col-md-12">
-                <h3 class="text-center">Add contacts to your contact book</h3>
-            </div>
-        </div>
         @endif
     </div>
 
