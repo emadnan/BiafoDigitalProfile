@@ -57,7 +57,7 @@ $permissions= session()->get('permissions');
         @if($contact_book->count() != 0)
         @foreach($contact_book as $contact)
         <a style="text-decoration: none;" class="anchor" 
-        @if($contact->profile->card->id)
+        @if($contact->profile)
         href="/view_profile/{{$contact->profile->card->id}}"
         @endif
         >
