@@ -273,7 +273,7 @@ $is_new = session()->get('is_new');
                             <label for="csv_file">CSV File: <span style="color:red;">*</span></label>
                             <input type="file" class="form-control" name="csv_file" id="csv_file"
                                 placeholder="Enter CSV File">
-                            <help>CSV file should be in this format: <a href="{{asset('sample_csv/sample.csv')}}">Download Sample</a></help>
+                            <help>CSV file should be in this format: <a href="{{asset('sample_csv/sample.csv')}}">Download Sample</a> and don't forget to format as text phone cell</help>
                         </div>
 
                         <div class="modal-footer">
