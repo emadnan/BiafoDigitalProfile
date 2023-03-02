@@ -54,6 +54,7 @@ $permissions= session()->get('permissions');
                 <p>Designation</p>
             </div>
         </div>
+        @if($contact_book->count() != 0)
         @foreach($contact_book as $contact)
         <a style="text-decoration: none;" class="anchor" href="/view_profile/{{$contact->profile->card->id}}">
             <div class="card">
@@ -84,6 +85,15 @@ $permissions= session()->get('permissions');
             </div>
         </a>
         @endforeach
+        @else
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">No contacts found</h3>
+            </div>
+            <div class="col-md-12">
+                <h3 class="text-center">Add contacts to your contact book</h3>
+            </div>
+        </div>
     </div>
 
 </div>
