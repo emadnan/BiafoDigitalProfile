@@ -129,7 +129,7 @@ html {
     display: none;
     position: fixed;
     z-index: 999;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, 50%);
     background-color: #fff;
@@ -180,7 +180,7 @@ html {
     </a>
     @endif
     <div class="container">
-        <div class="row">
+        <div class="row" id="content">
             <div class="col-sm-4"></div>
             <div class="col-lg-4">
                 <!-- Profile Here -->
@@ -437,11 +437,16 @@ const closeBtn = document.getElementById('closeBtn');
 const bottomSheet = document.getElementById('bottomSheet');
 
 openBtn.addEventListener('click', () => {
-  bottomSheet.style.display = 'block';
+    //animationcome from buttom
+    bottomSheet.classList.add('bottom-sheet--open');
+    bottomSheet.style.display = 'block';
+    //blur all the body content exept the bottom sheet
+    document.getElementById('content').style.filter = 'blur(5px)';
 });
 
 closeBtn.addEventListener('click', () => {
   bottomSheet.style.display = 'none';
+  document.getElementById('content').style.filter = 'blur(0px)';
 });
 </script>
 </html>
