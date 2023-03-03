@@ -9,6 +9,21 @@ use Illuminate\Support\Facades\Auth;
 
 class ContactBookController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function index()
     {
         $contact_book = ContactBook::where('user_id', Auth::user()->id)->get();
