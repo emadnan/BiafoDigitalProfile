@@ -484,6 +484,10 @@ z-index: -1;
     -webkit-animation: come-in 0.4s forwards 1s;
     animation: come-in 0.4s forwards 1s;
 }
+.floating-container .element-container .float-element:nth-child(6) {
+    -webkit-animation: come-in 0.4s forwards 1.2s;
+    animation: come-in 0.4s forwards 1.2s;
+}
 
 .floating-container .floating-button {
     position: absolute;
@@ -522,7 +526,7 @@ z-index: -1;
     line-height: 50px;
     z-index: 100;
     opacity: 0;
-    top: 250px;
+    top: 200px;
     -webkit-transform: translateY(100px);
     transform: translateY(100px);
 
@@ -557,6 +561,11 @@ z-index: -1;
 
 .floating-container .float-element:nth-child(5) {
     background: green;
+    color: white;
+    /* box-shadow: 0 20px 20px -10px rgba(25, 152, 0, 0.5); */
+}
+.floating-container .float-element:nth-child(6) {
+    background: #393939;
     color: white;
     /* box-shadow: 0 20px 20px -10px rgba(25, 152, 0, 0.5); */
 }
@@ -600,6 +609,13 @@ z-index: -1;
             </a>
         </span>
         @endif
+        @if(isset($permissions['can_download_card']))
+        <span class="float-element">
+            <a id="download_qr">
+            <i class="fa-solid fa-qrcode"></i>
+            </a>
+         </span>
+         @endif
 
     </div>
 </div>
@@ -1027,7 +1043,14 @@ if (company_id != 'none') {
     });
 }
 qrCode.append(document.getElementById("qrcode"));
-
+var download_qr = document.getElementById("download_qr");
+download_qr.addEventListener('click', function() {
+    qrCode.download({
+    name: "QrCode",
+    extension: "png",
+    size: 500,
+});
+});
 $('#update_card').click(function() {
     $('#update_card_modal').modal('show');
 });
