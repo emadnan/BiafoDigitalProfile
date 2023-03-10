@@ -484,6 +484,7 @@ z-index: -1;
     -webkit-animation: come-in 0.4s forwards 1s;
     animation: come-in 0.4s forwards 1s;
 }
+
 .floating-container .element-container .float-element:nth-child(6) {
     -webkit-animation: come-in 0.4s forwards 1.2s;
     animation: come-in 0.4s forwards 1.2s;
@@ -564,6 +565,7 @@ z-index: -1;
     color: white;
     /* box-shadow: 0 20px 20px -10px rgba(25, 152, 0, 0.5); */
 }
+
 .floating-container .float-element:nth-child(6) {
     background: #393939;
     color: white;
@@ -612,10 +614,10 @@ z-index: -1;
         @if(isset($permissions['can_download_card']))
         <span class="float-element">
             <a id="download_qr">
-            <i class="fa-solid fa-qrcode"></i>
+                <i class="fa-solid fa-qrcode"></i>
             </a>
-         </span>
-         @endif
+        </span>
+        @endif
 
     </div>
 </div>
@@ -625,6 +627,8 @@ z-index: -1;
         <div class='container-fluid'>
             <div class='row'>
                 <div class='col-md-8'>
+                    <div id="test">
+                    </div>
                     <!-- <h5 style="font-family:Palatino;font-weight:bold;">Note: Click QR Code to View Profile </h5> -->
                 </div>
                 <div class='col-md-4'>
@@ -765,10 +769,10 @@ z-index: -1;
                     @csrf
                     <!-- //image -->
                     <div>
-                            <h5
-                                style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c">
-                                Update Card Here</h5>
-                        </div>
+                        <h5
+                            style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c">
+                            Update Card Here</h5>
+                    </div>
                     <div class="mt-5 d-flex justify-content-center">
                         <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="image preview" id="image_preview"
                             style="width: 200px; height: 200px; border-radius:50%;border: 5px solid;">
@@ -844,7 +848,8 @@ z-index: -1;
                                     </div>
                                 </span>
                             </div>
-                            <input type="text" class="form-control" name="phone" id="phone" value="{{$card->phone}}" placeholder="Enter Phone">
+                            <input type="text" class="form-control" name="phone" id="phone" value="{{$card->phone}}"
+                                placeholder="Enter Phone">
                         </div>
                     </div>
                     <div class="form-group">
@@ -1018,6 +1023,28 @@ if (company_id != 'none') {
             errorCorrectionLevel: "H",
         },
     });
+    var qrCode2 = new QRCodeStyling({
+        width: 5000,
+        height: 5000,
+        type: "canvas",
+        data: "{{route('view_profile',$card->username)}}",
+        image: "{{asset('company_logos')}}/{{empty($company) ? 'default.png' : $company->logo}}",
+        dotsOptions: {
+            color: "black",
+            type: "classy-rounded"
+        },
+        backgroundOptions: {
+            color: "#ffffff",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 0,
+            imageSize: 0.4,
+        },
+        qrOptions: {
+            errorCorrectionLevel: "H",
+        },
+    });
 } else {
     var qrCode = new QRCodeStyling({
         width: 123,
@@ -1041,15 +1068,37 @@ if (company_id != 'none') {
             errorCorrectionLevel: "H",
         },
     });
+    var qrCode2 = new QRCodeStyling({
+        width: 5000,
+        height: 5000,
+        type: "png",
+        data: "{{route('view_profile',$card->username)}}",
+        image: "{{asset('frontend/img/qr_logo.svg')}}",
+        dotsOptions: {
+            color: "black",
+            type: "classy-rounded"
+        },
+        backgroundOptions: {
+            color: "#ffffff",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 0,
+            imageSize: 0.4,
+        },
+        qrOptions: {
+            errorCorrectionLevel: "H",
+        },
+    });
 }
 qrCode.append(document.getElementById("qrcode"));
+// qrCode2.append(document.getElementById("test"));
 var download_qr = document.getElementById("download_qr");
 download_qr.addEventListener('click', function() {
-    qrCode.download({
-    name: "QrCode",
-    extension: "png",
-    size: 500,
-});
+    qrCode2.download({
+        name: "{{$card->name}}_QrCode",
+        extension: "png",
+    });
 });
 $('#update_card').click(function() {
     $('#update_card_modal').modal('show');
