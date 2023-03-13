@@ -613,7 +613,7 @@ z-index: -1;
         @endif
         @if(isset($permissions['can_download_card']))
         <span class="float-element">
-            <a id="download_qr">
+            <a id="qr_modal">
                 <i class="fa-solid fa-qrcode"></i>
             </a>
         </span>
@@ -937,10 +937,49 @@ z-index: -1;
         </div>
     </div>
 </div>
+<!-- //Qr Code Options modal -->
+<div class="modal fade" id="qr_code_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Qr Code Options</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Qr Color -->
+                <div class="form-group">
+                    <label for="qr_color">QR Color: <span style="color:red;">*</span></label>
+                    <input type="color" class="form-control" name="qr_color" id="qr_color" value="#000000">
+                </div>
+                <div class="form-group">
+                    <label for="qr_background">Want QR Background ? <span style="color:red;">*</span></label>
+                    <select class="form-control" id="qr_background">
+                        <option value="#ffffff">Yes</option>
+                        <option value="transparent">No</option>
+                    </select>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="download_qr" class="btn btn-primary"><i class="fa-solid fa-crop"></i>
+                    Download Qr-Code</button>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 @endsection
 @section('scripts')
 <script>
+var qr_btn = document.getElementById('qr_modal');
+qr_btn.addEventListener('click', function() {
+    //open modal
+    $('#qr_code_modal').modal('show');
+});
 $("#download_card").on('click', function() {
     // qrCode.download({name: "my-qr-code.png"});
     // html2canvas(element, {
@@ -1009,29 +1048,7 @@ if (company_id != 'none') {
         image: "{{asset('company_logos')}}/{{empty($company) ? 'default.png' : $company->logo}}",
         dotsOptions: {
             color: "black",
-            type: "classy-rounded"
-        },
-        backgroundOptions: {
-            color: "#ffffff",
-        },
-        imageOptions: {
-            crossOrigin: "anonymous",
-            margin: 0,
-            imageSize: 0.4,
-        },
-        qrOptions: {
-            errorCorrectionLevel: "H",
-        },
-    });
-    var qrCode2 = new QRCodeStyling({
-        width: 5000,
-        height: 5000,
-        type: "canvas",
-        data: "{{route('view_profile',$card->username)}}",
-        image: "{{asset('company_logos')}}/{{empty($company) ? 'default.png' : $company->logo}}",
-        dotsOptions: {
-            color: "black",
-            type: "classy-rounded"
+            // type: "classy-rounded"
         },
         backgroundOptions: {
             color: "#ffffff",
@@ -1054,29 +1071,7 @@ if (company_id != 'none') {
         image: "{{asset('frontend/img/qr_logo.svg')}}",
         dotsOptions: {
             color: "black",
-            type: "classy-rounded"
-        },
-        backgroundOptions: {
-            color: "#ffffff",
-        },
-        imageOptions: {
-            crossOrigin: "anonymous",
-            margin: 0,
-            imageSize: 0.4,
-        },
-        qrOptions: {
-            errorCorrectionLevel: "H",
-        },
-    });
-    var qrCode2 = new QRCodeStyling({
-        width: 5000,
-        height: 5000,
-        type: "png",
-        data: "{{route('view_profile',$card->username)}}",
-        image: "{{asset('frontend/img/qr_logo.svg')}}",
-        dotsOptions: {
-            color: "black",
-            type: "classy-rounded"
+            // type: "classy-rounded"
         },
         backgroundOptions: {
             color: "#ffffff",
@@ -1094,7 +1089,25 @@ if (company_id != 'none') {
 qrCode.append(document.getElementById("qrcode"));
 // qrCode2.append(document.getElementById("test"));
 var download_qr = document.getElementById("download_qr");
+console.log($("#qr_background").val())
 download_qr.addEventListener('click', function() {
+    console.log($("#is_background").val())
+    qrCode2 = new QRCodeStyling({
+        width: 3000,
+        height: 3000,
+        type: "canvas",
+        data: "{{route('view_profile',$card->username)}}",
+        dotsOptions: {
+            color: $("#qr_color").val(),
+            // type: "classy-rounded"
+        },
+        backgroundOptions: {
+            color: $("#qr_background").val(),
+        },
+        qrOptions: {
+            errorCorrectionLevel: "H",
+        },
+    });
     qrCode2.download({
         name: "{{$card->name}}_QrCode",
         extension: "png",

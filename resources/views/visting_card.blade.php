@@ -739,7 +739,10 @@ $(".drop_picker").colorPick({
         document.getElementById("line").style.background = this.color;
         document.getElementById("text").style.color = text_color;
         document.getElementById("name_text").style.color = text_color;
+        if(document.getElementById("company_text"))
+        {
         document.getElementById("company_text").style.color = text_color;
+        }
     }
 });
 var company_id = document.getElementById("company_id").value;
@@ -805,7 +808,11 @@ for (var i = 0; i < color.length; i++) {
         var text_color = document.querySelector('input[name="color"]:checked').value;
         document.getElementById("text").style.color = text_color;
         document.getElementById("name_text").style.color = text_color;
+        var company_text = document.getElementById("company_text");
+        if(company_text != null)
+        {
         document.getElementById("company_text").style.color = text_color;
+        }
     });
 }
 var image = document.getElementById("image");
