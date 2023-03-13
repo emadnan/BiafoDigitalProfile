@@ -120,10 +120,11 @@ class ProfileController extends Controller
         {
             return redirect('view_card/'.$card_id.'/work')->with('error','Please add your profile first');
         }
+        $is_login = auth()->user()->id;
         $skills=(explode(",",$profile->skills));
         $interests=(explode(",",$profile->interests));
         $languages=(explode(",",$profile->languages));
-        $data=compact('card','profile','skills','interests','languages');
+        $data=compact('card','profile','skills','interests','languages','is_login');
         return view('view_profile_new')->with($data);
     }
     public function editProfile($card_id)

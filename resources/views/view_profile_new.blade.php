@@ -154,7 +154,15 @@ html {
     border-radius: 5px;
     cursor: pointer;
 }
-
+#saveBtn{
+    margin-top: 10px;
+    background-color: #ad021c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 #closeBtn:hover {
     background-color: #ff9d00;
 }
@@ -166,6 +174,8 @@ html {
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 #openBtn:hover {
@@ -401,13 +411,13 @@ html {
         <div class="row mt-5 mb-4">
             <div class="col-md-5"></div>
             <div class="col-md-2">
-                <button id="openBtn">Save Contact</button>
+                <button id="openBtn"><i class="fa-solid fa-floppy-disk"></i> Save Contact</button>
                 <div id="bottomSheet">
                     <div id="bottomSheetContent">
-                        <h2>Bottom Sheet Content</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis libero sed malesuada
-                            finibus. Donec euismod elit nec turpis blandit, vel feugiat mauris mollis.</p>
-                        <button id="closeBtn">Close</button>
+                        <h2>Save Contact</h2>
+                        <p>Want to save contact?</p>
+                        <button id="saveBtn" data-profile-id="{{$profile->id}}"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+                        <button id="closeBtn"><i class="fa-solid fa-square-xmark"></i> Close</button>
                     </div>
                 </div>
             </div>
@@ -435,7 +445,7 @@ html {
 const openBtn = document.getElementById('openBtn');
 const closeBtn = document.getElementById('closeBtn');
 const bottomSheet = document.getElementById('bottomSheet');
-
+const saveBtn = document.getElementById('saveBtn');
 openBtn.addEventListener('click', () => {
     //animationcome from buttom
     bottomSheet.classList.add('bottom-sheet--open');
@@ -447,6 +457,36 @@ openBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
   bottomSheet.style.display = 'none';
   document.getElementById('content').style.filter = 'blur(0px)';
+});
+saveBtn.addEventListener('click', () => {
+ //download a contact file
+ var contact = {
+    name: "{{$profile->name}}",
+    email: "{{$profile->email}}",
+    phone: "{{$profile->phone}}",
+    address: "{{$profile->address}}"
+};
+
+// Convert the contact information to a vCard format
+var vcard = "BEGIN:VCARD\n" +
+    "VERSION:3.0\n" +
+    "N:" + contact.name + "\n" +
+    "EMAIL:" + contact.email + "\n" +
+    "TEL:" + contact.phone + "\n" +
+    "ADR:" + contact.address + "\n" +
+    "END:VCARD";
+
+// Create a blob with the vCard data
+var blob = new Blob([vcard], {type: "text/vcard"});
+
+// Create a download link for the contact file
+var downloadLink = document.createElement("a");
+downloadLink.href = URL.createObjectURL(blob);
+downloadLink.download = contact.name + ".vcf";
+
+// Add the download link to the page and click it
+document.body.appendChild(downloadLink);
+downloadLink.click();
 });
 </script>
 </html>
