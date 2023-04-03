@@ -99,7 +99,7 @@ class CardController extends Controller
         $profile->name = $request->name;
         $profile->email = $request->email;
         $profile->phone = $request->phone;
-        $profile->description = "This is my description";
+        $profile->description = " ";
         $profile->address = $request->address;
         $profile->country_id = $request->country;
         $profile->city_id = $request->city;

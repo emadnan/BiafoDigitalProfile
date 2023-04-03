@@ -228,6 +228,7 @@ html {
                                     <h3 style="font-family:Palatino;font-weight:bold;">{{$profile->name}}</h3>
                                     <h5 class="card-title" style="font-family:Palatino;">{{$card->designation}}</h5>
                                     <p class="card-text" style="font-family:Palatino;">{{$card->company}}</p>
+                                    @if($profile->description != "")
                                     <p class="card-text" style="font-family:Palatino;">{{$profile->description}}</p>
                                 </div>
                             </div>
@@ -268,6 +269,7 @@ html {
                                     </p>
                                 </div>
                             </div>
+                            @if($profile->dob != null)
                             <div class="row mt-3">
                                 <div class="col-md-2">
                                     <div class="icon">
@@ -280,6 +282,7 @@ html {
                                     </p>
                                 </div>
                             </div>
+                            @endif
                             @if($skills[0] != null)
                             <div class="row mt-2">
                                 <div class="col-md-12">
