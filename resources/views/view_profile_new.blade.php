@@ -230,6 +230,7 @@ html {
                                     <p class="card-text" style="font-family:Palatino;">{{$card->company}}</p>
                                     @if($profile->description != "")
                                     <p class="card-text" style="font-family:Palatino;">{{$profile->description}}</p>
+                                    @endif
                                 </div>
                             </div>
                         </div>
