@@ -184,11 +184,9 @@ html {
 </style>
 
 <body style="background-color:#f2f2f2;">
-    @if($profile->user_id == Auth::user()->id || $profile->company_user_id == Auth::user()->id)
-    <a href="/edit_profile/{{$profile->card_id}}" class="float" role="button">
+    <!-- <a href="/edit_profile/{{$profile->card_id}}" class="float" role="button">
         <i class="fa-solid fa-pen-to-square my-float"></i>
-    </a>
-    @endif
+    </a> -->
     <div class="container">
         <div class="row" id="content">
             <div class="col-sm-4"></div>
