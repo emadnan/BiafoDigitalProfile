@@ -406,7 +406,7 @@ html {
             </div>
             <div class="col-sm-4"></div>
         </div>
-        <div class="row mt-5 mb-4">
+        <div class="row mt-5 mb-4 bottomSheetRow">
             <div class="col-md-5"></div>
             <div class="col-md-2">
                 <button id="openBtn"><i class="fa-solid fa-floppy-disk"></i> Save Contact</button>
@@ -449,13 +449,10 @@ openBtn.addEventListener('click', () => {
     bottomSheet.classList.add('bottom-sheet--open');
     bottomSheet.style.display = 'block';
     //blur all the body content exept the bottom sheet
-    document.getElementById('content').style.filter = 'blur(5px)';
-    document.getElementById('bottomSheet').style.filter = 'blur(0px)';
 });
 
 closeBtn.addEventListener('click', () => {
   bottomSheet.style.display = 'none';
-  document.getElementById('content').style.filter = 'blur(0px)';
 });
 saveBtn.addEventListener('click', () => {
  //download a contact file
