@@ -832,7 +832,7 @@ if (company_id != 'none') {
         width: 120,
         height: 120,
         type: "canvas",
-        data: "{{route('view_profile', $card->id)}}",
+        data: "{{route('view_profile', $card->username)}}",
         image: "{{asset('company_logos')}}/{{empty($company) ? 'default.png' : $company->logo}}",
         dotsOptions: {
             color: "black",
@@ -855,7 +855,7 @@ if (company_id != 'none') {
         width: 120,
         height: 120,
         type: "canvas",
-        data: "{{route('view_profile', $card->id)}}",
+        data: "{{route('view_profile', $card->username)}}",
         image: "{{asset('frontend/img/qr_logo.svg')}}",
         dotsOptions: {
             color: "black",

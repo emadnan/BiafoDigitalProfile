@@ -280,7 +280,7 @@ html {
                                     </p>
                                 </div>
                             </div>
-                            @if($skills)
+                            @if($skills[0] != null)
                             <div class="row mt-2">
                                 <div class="col-md-12">
                                     <h3 style="font-family:Palatino;font-weight:bold;">Skills</h3>
@@ -297,7 +297,7 @@ html {
                             </div>
                             @endif
                             <!-- Experinece -->
-                            @if($profile->experiences)
+                            @if(!$profile->experiences->isEmpty())
                             <div class="row mt-2">
                                 <div class="col-md-12">
                                     <h3 style="font-family:Palatino;font-weight:bold;">Experience</h3>
@@ -332,7 +332,7 @@ html {
                             </div>
                             @endif
                             <!-- Education -->
-                            @if($profile->educations)
+                            @if(!$profile->educations->isEmpty())
                             <div class="row mt-2">
                                 <div class="col-md-12">
                                     <h3 style="font-family:Palatino;font-weight:bold;">Education</h3>
@@ -367,7 +367,7 @@ html {
                                 </div>
                             </div>
                             @endif
-                            @if($languages)
+                            @if($languages[0] != null)
                             <div class="row mt-2">
                                 <div class="col-md-12">
                                     <h3 style="font-family:Palatino;font-weight:bold;">Languages</h3>
@@ -383,7 +383,7 @@ html {
                                 @endforeach
                             </div>
                             @endif
-                            @if($interests)
+                            @if($interests[0] != null)
                             <div class="row mt-2">
                                 <div class="col-md-12">
                                     <h3 style="font-family:Palatino;font-weight:bold;">Interests</h3>
