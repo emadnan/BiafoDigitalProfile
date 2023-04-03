@@ -450,6 +450,7 @@ openBtn.addEventListener('click', () => {
     bottomSheet.style.display = 'block';
     //blur all the body content exept the bottom sheet
     document.getElementById('content').style.filter = 'blur(5px)';
+    document.getElementById('bottomSheet').style.filter = 'blur(0px)';
 });
 
 closeBtn.addEventListener('click', () => {
