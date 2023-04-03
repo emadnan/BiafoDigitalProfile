@@ -43,7 +43,7 @@ Route::post('/update_card',[CardController::class, 'update_card'])->name('update
 // Route::get('/profiles', [ProfileController::class,'index'])->name('profiles');
 Route::get('/add_profile/{card_id}/{type}', [ProfileController::class,'addProfile'])->name('add_profile');
 Route::post('/insert_profile', [ProfileController::class,'insertProfile'])->name('insert_profile');
-Route::get('/view_profile/{card_id}', [ProfileController::class,'viewProfile'])->name('view_profile');
+Route::get('/v/{card_id}', [ProfileController::class,'viewProfile'])->name('view_profile');
 Route::get('/edit_profile/{card_id}', [ProfileController::class,'editProfile'])->name('edit_profile');
 Route::post('/update_profile', [ProfileController::class,'updateProfile'])->name('update_profile');
 Route::get('/faq', [FaqController::class,'faq'])->name('faq');

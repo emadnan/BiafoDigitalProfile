@@ -740,7 +740,7 @@ z-index: -1;
                                 class="back_image">
                         </div>
                         <div class="qricon">
-                            <a class="qr_anchor" href="/view_profile/{{$card->username}}">
+                            <a class="qr_anchor" href="/v/{{$card->username}}">
                                 <div id="qrcode">
                                 </div>
                             </a>

@@ -699,10 +699,8 @@ z-index: -1;
                                 class="back_image">
                         </div>
                         <div class="qricon drag">
-                            <a class="qr_anchor" href="">
                                 <div id="qrcode">
                                 </div>
-                            </a>
                         </div>
                     </div>
                 </div>
