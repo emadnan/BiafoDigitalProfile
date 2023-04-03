@@ -41,22 +41,32 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="name">Full Name:</label>
+                                    @if(Auth::user()->user_type == 'company_user')
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        placeholder="Enter Your Full Name" value="{{$profile->name}}" readonly>
+                                    @else
                                     <input type="text" class="form-control" id="name" name="name"
                                         placeholder="Enter Your Full Name" value="{{$profile->name}}">
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="email">Email:</label>
+                                    @if(Auth::user()->user_type == 'company_user')
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Enter Your Email" value="{{$profile->email}}" readonly>
+                                    @else
                                     <input type="email" class="form-control" id="email" name="email"
                                         placeholder="Enter Your Email" value="{{$profile->email}}">
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="personal_email">Personal Email:</label>
                                     <input type="email" class="form-control" id="personal_email" name="personal_email"
-                                        placeholder="Enter Your Personal Email">
+                                        placeholder="Enter Your Personal Email" value="{{$profile->personal_email}}">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -69,13 +79,30 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="address">Address:</label>
+                                    @if(Auth::user()->user_type == 'company_user')
+                                    <input type="text" class="form-control" id="address" name="address"
+                                        placeholder="Enter Your Address" value="{{$profile->address}}" readonly>
+                                    @else
                                     <input type="text" class="form-control" id="address" name="address"
                                         placeholder="Enter Your Address" value="{{$profile->address}}">
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="city">City:</label>
+                                    @if(Auth::user()->user_type == 'company_user')
+                                    <select name="city" id="city" class="form-control" readonly>
+                                        <option value="">Select City</option>
+                                        @foreach($cities as $city)
+                                        @if($profile->city_id == $city->id)
+                                        <option value="{{$city->id}}" selected>{{$city->name}}</option>
+                                        @else
+                                        <option value="{{$city->id}}">{{$city->name}}</option>
+                                        @endif
+                                        @endforeach
+                                    </select>
+                                    @else
                                     <select name="city" id="city" class="form-control">
                                         <option value="">Select City</option>
                                         @foreach($cities as $city)
@@ -86,11 +113,24 @@
                                         @endif
                                         @endforeach
                                     </select>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="country">Country:</label>
+                                    @if(Auth::user()->user_type == 'company_user')
+                                    <select name="country" id="country" class="form-control" readonly>
+                                        <option value="">Select Country</option>
+                                        @foreach ($countries as $country)
+                                        @if($profile->country_id == $country->id)
+                                        <option value="{{$country->id}}" selected>{{$country->name}}</option>
+                                        @else
+                                        <option value="{{$country->id}}">{{$country->name}}</option>
+                                        @endif
+                                        @endforeach
+                                    </select>
+                                    @else
                                     <select name="country" id="country" class="form-control">
                                         <option value="">Select Country</option>
                                         @foreach ($countries as $country)
@@ -101,6 +141,7 @@
                                         @endif
                                         @endforeach
                                     </select>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -538,8 +579,8 @@ $(document).ready(function() {
             },
             phone: {
                 required: true,
-                minlength: 11,
-                maxlength: 15
+                minlength: 10,
+                maxlength: 10
             },
             address: {
                 required: true,

@@ -90,9 +90,7 @@ $permissions= session()->get('permissions');
                     </a>
                 </li>
                 @endif
-                <li>
-
-                    <!-- Address Book-->
+                <!-- <li>
                     <a class="{{ request()->routeIs('contact_book') ? 'nav-link active' : 'nav-link text-white' }}"
                         href="{{ route('contact_book') }}"><i class="nav-icon fa-solid fa-address-book"></i>
                         &nbsp;
@@ -101,7 +99,7 @@ $permissions= session()->get('permissions');
                         Contact Book
                         </p>
                     </a>
-                </li>
+                </li> -->
                 <!-- <li  >
                     <a class="nav-link text-white"
                         href="#"><i class="nav-icon fas fa-bell"></i>

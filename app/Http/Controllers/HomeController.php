@@ -30,6 +30,7 @@ class HomeController extends Controller
     {
         // print_r("hello");
         // die;
+        $is_first=1;
         $user_id=auth()->user()->id;
         // print_r($user_id);
         // die;
@@ -47,6 +48,12 @@ class HomeController extends Controller
         // echo '<pre>';
         // print_r($data);
         // die;
+        if(auth()->user()->user_type == 'company_user' && $is_first = 1) 
+        {
+            $card_id = Card::where('company_user_id',$user_id)->first();
+            $is_first=0;
+            return redirect('/edit_profile/'.$card_id->id);
+        }
         return view('home')->with($data);
     }
     public function fetch_cities($country_id)
