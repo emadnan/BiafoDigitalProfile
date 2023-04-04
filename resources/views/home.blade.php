@@ -20,6 +20,15 @@ $is_new = session()->get('is_new');
             <div class='container-fluid'>
                 <div class='row'>
                     <div class='col-md-8'>
+                        <!-- Live Search -->
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search" id="search">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fa-solid fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class='col-md-4'>
                         @if(isset($permissions['can_create_card']))
@@ -41,7 +50,7 @@ $is_new = session()->get('is_new');
             </div>
         </section>
         <div class="container-fluid">
-            <div class="row">
+            <div class="row" id="card_divs">
                 @foreach ($cards as $card)
                 @if(Auth::user()->user_type=='individual')
                 <div class="col-md-3">
@@ -273,7 +282,9 @@ $is_new = session()->get('is_new');
                             <label for="csv_file">CSV File: <span style="color:red;">*</span></label>
                             <input type="file" class="form-control" name="csv_file" id="csv_file"
                                 placeholder="Enter CSV File">
-                            <help>CSV file should be in this format: <a href="{{asset('sample_csv/sample.csv')}}">Download Sample</a> and don't forget to format as text phone cell</help>
+                            <help>CSV file should be in this format: <a
+                                    href="{{asset('sample_csv/sample.csv')}}">Download Sample</a> and don't forget to
+                                format as text phone cell</help>
                         </div>
 
                         <div class="modal-footer">
@@ -373,6 +384,16 @@ $is_new = session()->get('is_new');
 @endsection
 @section('scripts')
 <script>
+    //live search card divs by name
+    $(document).ready(function() {
+        $("#search").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#card_divs").filter(function() {
+                var test = $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+            console.log(test);
+        });
+    });
 $(document).ready(function() {
     $('#csv').click(function() {
         $('#add_csv_modal').modal('show');
