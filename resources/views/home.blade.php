@@ -53,7 +53,7 @@ $is_new = session()->get('is_new');
             <div class="row" id="card_divs">
                 @foreach ($cards as $card)
                 @if(Auth::user()->user_type=='individual')
-                <div class="col-md-3">
+                <div class="col-md-3 scard">
                     <a style="text-decoration: none;" href="/view_card/{{$card->id}}/personal" class="anchor">
                         <div class="card" style="color:#ad021;border-radius:7%">
                             <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
@@ -67,7 +67,7 @@ $is_new = session()->get('is_new');
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 scard">
                     <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
                         <div class="card" style="color:#ad021;border-radius:7%">
                             <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
@@ -86,7 +86,7 @@ $is_new = session()->get('is_new');
                     </a>
                 </div>
                 @else
-                <div class="col-md-2">
+                <div class="col-md-2 scard">
                     <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
                         <div class="d-flex justify-content-center employee_image" id="employee_image">
                             @if($card->image_path==null)
@@ -388,7 +388,7 @@ $is_new = session()->get('is_new');
     $(document).ready(function() {
         $("#search").on("keyup", function() {
             var value = $(this).val().toLowerCase();
-            $("#card_divs").filter(function() {
+            $("#card_divs .scard").filter(function() {
                 var test = $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
             console.log(test);
