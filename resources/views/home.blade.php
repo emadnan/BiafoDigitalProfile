@@ -391,7 +391,6 @@ $is_new = session()->get('is_new');
             $("#card_divs .scard").filter(function() {
                 var test = $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
-            console.log(test);
         });
     });
 $(document).ready(function() {
