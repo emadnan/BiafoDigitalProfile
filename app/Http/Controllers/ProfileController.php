@@ -120,7 +120,6 @@ class ProfileController extends Controller
         {
             return redirect('view_card/'.$card_id.'/work')->with('error','Please add your profile first');
         }
-        print_r($profile);
         $skills=(explode(",",$profile->skills));
         $interests=(explode(",",$profile->interests));
         $languages=(explode(",",$profile->languages));
@@ -131,7 +130,7 @@ class ProfileController extends Controller
     {
         $card=Card::where('id',$card_id)->orwhere('username',$card_id)->first();
         $profile=Profile::with('social_links','educations','experiences')->where('card_id',$card->id)->orwhere('card_username',$card->id)->first();
-        print_r($card);
+        print_r($profile);
         die;
         $countries=Country::all();
         $cities=City::where('country_id',$profile->country_id)->get();
