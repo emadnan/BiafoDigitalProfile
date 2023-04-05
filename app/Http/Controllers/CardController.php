@@ -124,35 +124,56 @@ class CardController extends Controller
     function delete_card($id)
     {
         $card = Card::where('id', $id)->first();
+        $card_email = $card->email;
+        $card = Card::where('id', $id)->delete();
+        //delete profile
+        $profiles = Profile::where('card_id', $id)->get();
+        if($profiles)
+        {
+            foreach ($profiles as $profile) {
+                $profile->delete();
+            }
+        }
+        //delete user
         if(auth()->user()->user_type=="company")
         {
-            // $user = User::where('id',$card->company_user_id)->delete();
-            $card=Card::where('id',$id)->delete();
+            $user = User::where('email',$card_email)->get();
+            if($user)
+            {
+                foreach ($user as $user) {
+                    $user->delete();
+                }
+            }
+        }
+    //     if(auth()->user()->user_type=="company")
+    //     {
+    //         // $user = User::where('id',$card->company_user_id)->delete();
+    //         $card=Card::where('id',$id)->delete();
         
-        $profile = Profile::where('card_id', $id)->first();
-        $email=null;
-        //send mail
-        $mail = [
-            "title" => "Card Deleted",
-            "body" => "Your Card has been deleted. If you want to continue using our services please click on the Yes below. ",
-            'link' => route('continue_card', $id)
-        ];
-        if($profile->personal_email!=null)
-        {
-            $email=$profile->personal_email;
-        }
-        else
-        {
-            $email=$card->email;
-        }
-        $check = Mail::to($email)->send(new CardDeleteMailable($mail));
-        // print_r($check);
-        // die;
-    }
-    else
-    {
-        $card=Card::where('id',$id)->delete();
-    }
+    //     $profile = Profile::where('card_id', $id)->first();
+    //     // $email=null;
+    //     // //send mail
+    //     // $mail = [
+    //     //     "title" => "Card Deleted",
+    //     //     "body" => "Your Card has been deleted. If you want to continue using our services please click on the Yes below. ",
+    //     //     'link' => route('continue_card', $id)
+    //     // ];
+    //     // if($profile->personal_email!=null)
+    //     // {
+    //     //     $email=$profile->personal_email;
+    //     // }
+    //     // else
+    //     // {
+    //     //     $email=$card->email;
+    //     // }
+    //     // $check = Mail::to($email)->send(new CardDeleteMailable($mail));
+    //     // print_r($check);
+    //     // die;
+    // }
+    // else
+    // {
+    //     $card=Card::where('id',$id)->delete();
+    // }
         return redirect('/home');
     }
 

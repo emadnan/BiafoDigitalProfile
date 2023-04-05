@@ -115,7 +115,7 @@ class ProfileController extends Controller
     public function viewProfile($card_id)
     {
         $card=Card::where('id',$card_id)->orwhere('username',$card_id)->first();
-        $profile=Profile::with('social_links','educations','experiences')->where('card_id',$card_id)->orwhere('card_username',$card_id)->first();
+        $profile=Profile::with('social_links','educations','experiences')->where('card_id',$card->id)->where('card_username',$card->username)->first();
         if(empty($profile))
         {
             return redirect('view_card/'.$card_id.'/work')->with('error','Please add your profile first');
@@ -218,6 +218,6 @@ class ProfileController extends Controller
             }
         }
         $data=compact('card','profile');
-        return redirect('/v/'.$card->username);
+        return redirect('/home')->with('success','Profile Updated Successfully');
     }
 }
