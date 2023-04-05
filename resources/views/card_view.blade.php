@@ -633,8 +633,7 @@ z-index: -1;
                 </div>
                 <div class='col-md-4'>
                     <a href="/edit_profile/{{$card->id}}" class="btn btn-primary"
-                        style="float:right;margin-top:10px;">Edit Profile
-                        Profile</a>
+                        style="float:right;margin-top:10px;">Edit Profile</a>
 
                 </div>
             </div>
