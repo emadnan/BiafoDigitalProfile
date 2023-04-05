@@ -661,8 +661,8 @@ $(document).ready(function() {
             },
             phone: {
                 required: "Please enter your phone number",
-                minlength: "Your phone number must be at least 11 characters long",
-                maxlength: "Your phone number must be at most 15 characters long"
+                minlength: "Your phone number must be at least 10 characters long",
+                maxlength: "Your phone number must be at most 10 characters long"
             },
             address: {
                 required: "Please enter your address",
