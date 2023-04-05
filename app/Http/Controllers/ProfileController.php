@@ -130,7 +130,7 @@ class ProfileController extends Controller
     {
         $card=Card::where('id',$card_id)->orwhere('username',$card_id)->first();
         $profile=Profile::with('social_links','educations','experiences')->where('card_id',$card_id)->orwhere('card_username',$card->id)->first();
-        print_r($profile);
+        print_r($card);
         die;
         $countries=Country::all();
         $cities=City::where('country_id',$profile->country_id)->get();
