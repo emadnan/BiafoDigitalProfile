@@ -633,11 +633,9 @@ z-index: -1;
                 </div>
                 <div class='col-md-4'>
                     @if(empty($profile))
-                    @if(isset($permissions['can_add_profile']))
-                    <a href="/add_profile/{{$card->id}}/{{$type}}" class="btn btn-primary"
+                    <a href="/edit_profile/{{$card->id}}" class="btn btn-primary"
                         style="float:right;margin-top:10px;">Add
                         Profile</a>
-                    @endif
                     @endif
 
                 </div>
