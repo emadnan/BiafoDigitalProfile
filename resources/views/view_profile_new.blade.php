@@ -26,7 +26,7 @@ html {
     height: 90px;
     bottom: 40px;
     right: 40px;
-    background-color: #ff9d00;
+    background-color: #E5F2FF;
     color: black;
     border-radius: 50px;
     text-align: center;
@@ -36,7 +36,7 @@ html {
 
 /* On Hover REd Color */
 .float:hover {
-    background-color: #ad021c;
+    background-color: #0056D2;
     color: white;
 
 }
@@ -57,11 +57,11 @@ html {
     /* border-bottom-left-radius: 10%; */
     border-bottom-right-radius: 50%;
     border-bottom-left-radius: 5%;
-    border-bottom: 30px solid #ad021c;
+    border-bottom: 30px solid #0056D2;
 }
 
 .line {
-    border-bottom: 10px solid #ad021c;
+    border-bottom: 10px solid #0056D2;
     width: 100%;
     margin-top: 10px;
 }
@@ -75,7 +75,7 @@ html {
 .icon {
     width: 50px;
     height: 50px;
-    background-color: #ad021c;
+    background-color: #0056D2;
     border-radius: 50%;
     text-align: center;
     padding-top: 10px;
@@ -86,7 +86,7 @@ html {
 .social_icon {
     width: 40px;
     height: 40px;
-    background-color: #ad021c;
+    background-color: #0056D2;
     border-radius: 50%;
     text-align: center;
     padding-top: 10px;
@@ -95,7 +95,7 @@ html {
 }
 
 .pills {
-    background-color: #ff9d00;
+    background-color: #E5F2FF;
     color: black;
     border-radius: 25px;
     padding: 5px;
@@ -104,25 +104,25 @@ html {
 }
 
 .btn-red {
-    background-color: #ad021c;
-    border-color: #ad021c;
+    background-color: #0056D2;
+    border-color: #0056D2;
 }
 
 .btn-red {
     padding: 5px 10px;
-    background-color: #ad021c;
+    background-color: #0056D2;
     color: white;
     text-align: center;
     border-radius: 25px;
-    border-color: #ad021c;
+    border-color: #0056D2;
     width: 100%;
     height: 100%;
 }
 
 .btn-red:hover {
-    background-color: #ff9d00;
+    background-color: #E5F2FF;
     color: black;
-    border-color: #ff9d00;
+    border-color: #E5F2FF;
 }
 
 #bottomSheet {
@@ -147,7 +147,7 @@ html {
 
 #closeBtn {
     margin-top: 10px;
-    background-color: #ad021c;
+    background-color: #0056D2;
     color: #fff;
     border: none;
     padding: 8px 16px;
@@ -156,7 +156,7 @@ html {
 }
 #saveBtn{
     margin-top: 10px;
-    background-color: #ad021c;
+    background-color: #0056D2;
     color: #fff;
     border: none;
     padding: 8px 16px;
@@ -164,11 +164,11 @@ html {
     cursor: pointer;
 }
 #closeBtn:hover {
-    background-color: #ff9d00;
+    background-color: #E5F2FF;
 }
 
 #openBtn {
-    background-color: #ad021c;
+    background-color: #0056D2;
     color: #fff;
     border: none;
     padding: 8px 16px;
@@ -179,7 +179,7 @@ html {
 }
 
 #openBtn:hover {
-    background-color: #ff9d00;
+    background-color: #E5F2FF;
 }
 </style>
 
@@ -256,7 +256,7 @@ html {
                             </div>
                             <div class="col-md-10 mt-2">
                                 <p class="card-text" style="font-family:Palatino;font-size:20px;">
-                                    {{$profile->country->phonecode}}-{{$profile->phone}}</p>
+                                    {{$profile->phone}}</p>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-2">

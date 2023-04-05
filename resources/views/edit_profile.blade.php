@@ -73,7 +73,8 @@
                                 <div class="form-group">
                                     <label for="phone">Phone No:</label>
                                     <input type="phone" class="form-control" id="phone" name="phone"
-                                        placeholder="Enter Your Phone No" value="{{$profile->country->phonecode}}-{{$profile->phone}}">
+                                        placeholder="Enter Your Phone No" value="{{$profile->phone}}">
+                                        <help class="">e.g+92-331********</help>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -580,7 +581,7 @@ $(document).ready(function() {
             phone: {
                 required: true,
                 minlength: 10,
-                maxlength: 15
+                maxlength: 16
             },
             address: {
                 required: true,
@@ -662,7 +663,7 @@ $(document).ready(function() {
             phone: {
                 required: "Please enter your phone number",
                 minlength: "Your phone number must be at least 10 characters long",
-                maxlength: "Your phone number must be at most 15 characters long"
+                maxlength: "Your phone number must be at most 16 characters long"
             },
             address: {
                 required: "Please enter your address",

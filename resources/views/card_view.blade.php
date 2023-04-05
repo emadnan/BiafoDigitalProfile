@@ -830,22 +830,10 @@ z-index: -1;
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone: <span style="color:red;">*</span></label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">
-                                    <div class="phone_code" id="phone_code">
-                                        @if(!empty($card))
-                                        {{$card->country->phonecode}}
-                                        @else
-                                        +##
-                                        @endif
-                                    </div>
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" name="phone" id="phone" value="{{$card->phone}}"
-                                placeholder="Enter Phone">
-                        </div>
+                        <label for="phone">Phone No:</label>
+                        <input type="phone" class="form-control" id="phone" name="phone"
+                         placeholder="Enter Your Phone No" value="{{$card->phone}}">
+                        <help class="">e.g+92-331********</help>
                     </div>
                     <div class="form-group">
                         <label for="linkiden">Linkiden:</label>
