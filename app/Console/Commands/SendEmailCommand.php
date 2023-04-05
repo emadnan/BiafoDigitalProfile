@@ -55,8 +55,6 @@ class SendEmailCommand extends Command
      */
     public function handle()
     {
-        print_r(route('login'));
-        exit;
         $cards = Card::where('user_id',27)->where('is_csv',1)->get();
         $uploder = User::where('id',27)->first();
         foreach($cards as $card)
@@ -83,7 +81,7 @@ class SendEmailCommand extends Command
                 'link' => route('login')
             ];
             Mail::to($card->email)->send(new CardMailable($mail));
+            echo "email to ".$card->name." sent successfully.";
         }
-        print_r("Email Sent");
     }
 }
