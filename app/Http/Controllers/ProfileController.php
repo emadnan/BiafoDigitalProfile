@@ -120,6 +120,7 @@ class ProfileController extends Controller
         {
             return redirect('view_card/'.$card_id.'/work')->with('error','Please add your profile first');
         }
+        print_r($profile);
         $skills=(explode(",",$profile->skills));
         $interests=(explode(",",$profile->interests));
         $languages=(explode(",",$profile->languages));
