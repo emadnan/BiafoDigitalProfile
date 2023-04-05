@@ -632,11 +632,9 @@ z-index: -1;
                     <!-- <h5 style="font-family:Palatino;font-weight:bold;">Note: Click QR Code to View Profile </h5> -->
                 </div>
                 <div class='col-md-4'>
-                    @if(empty($profile))
                     <a href="/edit_profile/{{$card->id}}" class="btn btn-primary"
-                        style="float:right;margin-top:10px;">Add
+                        style="float:right;margin-top:10px;">Edit Profile
                         Profile</a>
-                    @endif
 
                 </div>
             </div>
