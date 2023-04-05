@@ -218,6 +218,6 @@ class ProfileController extends Controller
             }
         }
         $data=compact('card','profile');
-        return redirect('/v/'.$card->username);
+        return redirect('/home')->with('success','Profile Updated Successfully');
     }
 }

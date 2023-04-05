@@ -72,8 +72,15 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="phone">Phone No:</label>
-                                    <input type="phone" class="form-control" id="phone" name="phone"
-                                        placeholder="Enter Your Phone No" value="{{$profile->phone}}">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"
+                                                id="basic-addon1">{{$profile->country->phonecode}}</span>
+                                        </div>
+                                        <input type="phone" type="phone" class="form-control" id="phone" name="phone"
+                                            placeholder="Enter Your Phone No" value="{{$profile->phone}}"
+                                            aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-3">

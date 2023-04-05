@@ -270,7 +270,7 @@ html {
                                     </p>
                                 </div>
                             </div>
-                            @if($profile->dob != null)
+                            <!-- @if($profile->dob != null)
                             <div class="row mt-3">
                                 <div class="col-md-2">
                                     <div class="icon">
@@ -283,7 +283,7 @@ html {
                                     </p>
                                 </div>
                             </div>
-                            @endif
+                            @endif -->
                             @if($skills[0] != null)
                             <div class="row mt-2">
                                 <div class="col-md-12">
