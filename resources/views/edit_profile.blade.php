@@ -72,15 +72,8 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="phone">Phone No:</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"
-                                                id="basic-addon1">{{$profile->country->phonecode}}</span>
-                                        </div>
-                                        <input type="phone" type="phone" class="form-control" id="phone" name="phone"
-                                            placeholder="Enter Your Phone No" value="{{$profile->phone}}"
-                                            aria-label="Username" aria-describedby="basic-addon1">
-                                    </div>
+                                    <input type="phone" class="form-control" id="phone" name="phone"
+                                        placeholder="Enter Your Phone No" value="{{$profile->country->phonecode}}-{{$profile->phone}}">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -587,7 +580,7 @@ $(document).ready(function() {
             phone: {
                 required: true,
                 minlength: 10,
-                maxlength: 10
+                maxlength: 15
             },
             address: {
                 required: true,
@@ -669,7 +662,7 @@ $(document).ready(function() {
             phone: {
                 required: "Please enter your phone number",
                 minlength: "Your phone number must be at least 10 characters long",
-                maxlength: "Your phone number must be at most 10 characters long"
+                maxlength: "Your phone number must be at most 15 characters long"
             },
             address: {
                 required: "Please enter your address",
