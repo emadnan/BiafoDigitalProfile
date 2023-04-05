@@ -55,6 +55,8 @@ class SendEmailCommand extends Command
      */
     public function handle()
     {
+        print_r(route('login'));
+        exit;
         $cards = Card::where('user_id',27)->where('is_csv',1)->get();
         $uploder = User::where('id',27)->first();
         foreach($cards as $card)
