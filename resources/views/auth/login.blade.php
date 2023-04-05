@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .btn-yellow {
-  background-color: #ff9d00
+  background-color: #0056D2;
 }
 .btn-white {
   background-color: #ffffff;
@@ -13,7 +13,7 @@
 <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-8 mt-5">
-        <div class="card mt-5" style="background-color: #ad021c; border-radius: 25px;">
+        <div class="card mt-5" style="background-color: #ECF5FF; border-radius: 25px;">
 
                 <div class="card-body ">
                 <div  align="center"class="image">
@@ -23,13 +23,13 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end text-white">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end text-black">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
-                                    <span class="invalid-feedback text-white" role="alert">
+                                    <span class="invalid-feedback text-black" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -37,13 +37,13 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end text-white">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-end text-black">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback text-white" role="alert">
+                                    <span class="invalid-feedback text-black" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -55,7 +55,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label text-white" for="remember">
+                                    <label class="form-check-label text-black" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
@@ -64,18 +64,18 @@
 
                         <div class="row mb-4">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-yellow rounded-pill px-5 py-2">
+                                <button type="submit" class="btn btn-yellow rounded-pill px-5 py-2 text-white">
                                     {{ __('Login') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link text-white" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link text-black" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
-                                <a href="{{ url('auth/google') }}" style="margin-top: 20px;" class="btn btn-white">
+                                {{-- <a href="{{ url('auth/google') }}" style="margin-top: 20px;" class="btn btn-white">
                                 <img src="{{asset('frontend\img\google.svg')}}" alt="AdminLTE Logo" width="30" hieght="30">&nbsp; <b>Login with Google</b>
-                                </a> 
+                                </a>  --}}
                             </div>
                         </div>
                     </form>

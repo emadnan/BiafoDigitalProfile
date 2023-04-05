@@ -20,13 +20,12 @@
     html {
         scroll-behavior: smooth;
     }
-
 </style>
 
 <body>
     <header>
         <!-- NAVBAR-BAR -->
-        <section class="navbar fixed-top navbar-bg">
+        <section class="navbar navbar-bg" style="background-color: #ECF5FF">
             <nav class="navbar navbar-expand-lg w-100 p-0">
                 <div class="container">
                     <a class="navbar-brand text-white fs-3" href="#">
@@ -40,25 +39,24 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link text-white text-center active" aria-current="page" href="#"
-                                    style="position: relative;">
+                            <li class="nav-item" id="homeId">
+                                <a class="nav-link text-center active" aria-current="page" href="#">
                                     Home
                                     <!-- <div class="overlay_menu"></div> -->
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#feature" data-name="feature">
+                            <li class="nav-item" id="featuresId">
+                                <a class="nav-link text-black text-center" href="#feature" data-name="feature">
                                     Features
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#about">
-                                    About Us
+                            <li class="nav-item" id="aboutUsId">
+                                <a class="nav-link text-black text-center" href="#about">
+                                    About us
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#pricing">
+                            <li class="nav-item" id="pricingId">
+                                <a class="nav-link text-black text-center" href="#pricing">
                                     Pricing
                                 </a>
                             </li>
@@ -67,18 +65,18 @@
                           Reviews
                         </a>
                       </li> -->
-                            <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#request_a_feature">
-                                    Request A Feature
+                            <li class="nav-item" id="requestFeaturesId">
+                                <a class="nav-link text-black text-center" href="#request_a_feature">
+                                    Request
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="#contact_us">
-                                    Contact Us
+                            <li class="nav-item" id="contactUsId">
+                                <a class="nav-link text-black text-center" href="#contact_us">
+                                    Contact
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white text-center" href="/faq">
+                            <li class="nav-item" id="faqID">
+                                <a class="nav-link text-black text-center" href="/faq">
                                     FAQ
                                 </a>
                             </li>
@@ -87,13 +85,13 @@
                             {{-- <a class="btn btn-yellow rounded-pill px-5 py-2" >Login</a> --}}
                             @guest
                                 @if (Route::has('login'))
-                                    <a class="btn btn-yellow rounded-pill px-5 py-2"
+                                    <a class="btn btn-yellow rounded-pill px-5 py-2 mt-3 text-white"
                                         href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
-                                    <a class="btn btn-yellow rounded-pill px-5 py-2 ml-4"
+                                    <a class="btn btn-blue text-white rounded-pill px-5 py-2 ml-4 mt-3"
                                         href="#pricing"><b>{{ __('Create Card') }}</b></a>
                                 @endif
                             @else
-                                <a class="btn btn-yellow rounded-pill px-5 py-2 "
+                                <a class="btn btn-yellow rounded-pill px-5 py-2 text-white"
                                     href="#pricing"><b>{{ __('Create Card') }}</b></a>
                                 <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                             @endguest
@@ -107,14 +105,15 @@
             <div class="hero_bg_img">
                 <div class="container">
                     <div class="position-relative">
-                        <div class="position-absolute text-white customize__absolute__text">
-                            <h1>Digital Business Card</h1>
+                        <div class="position-absolute text-black customize__absolute__text">
+                            <h1>Digital Business </h1>
+                            <h1 style="color:#3387FF">Card</h1>
                             <p>A digital business card (also referred to as a QR code business card, virtual business
                                 card, electronic business card or mobile business card) is a profile that connects all
                                 your digital contact information. They give people the ability to share who they are,
                                 with anyone, wherever they go.</p>
                         </div>
-                        <img src="{{ asset('frontend/img/landing_3.png') }}" alt=""
+                        <img src="{{ asset('frontend/img/landing_3.png') }}" alt="ID Cards"
                             class="position-absolute customize__absolute__img">
                     </div>
                 </div>
@@ -128,19 +127,16 @@
                 <div class="row">
                     <div class="col-md-4 mt-2"></div>
                     <div class="col-md-4 mt-5">
-                        <!-- <div style="background-color:#ff9d00"> -->
-                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">
+                        <h3 class="text-center mt-3 rounded-pill px-4 py-2">
                             <b>FEATURES</b>
                         </h3>
-
-                        <!-- </div> -->
                     </div>
                     <div class="col-md-4"></div>
                 </div>
                 <div class="row mt-5 mb-5">
                     <div class="col-md-3">
                         <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px">
-                            <div class="card-header btn-yellow text-center"
+                            <div class="card-header btn-blue text-center text-white"
                                 style="border-top-right-radius:25px;border-top-left-radius:25px">
                                 <h6 class="card-title">Create Digital Business Card</h6>
                             </div>
@@ -156,7 +152,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px">
-                            <div class="card-header btn-yellow text-center"
+                            <div class="card-header btn-blue text-center text-white"
                                 style="border-top-right-radius:25px;border-top-left-radius:25px">
                                 <h6 class="card-title">Sharing Your Business Card</h6>
                             </div>
@@ -173,7 +169,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px">
-                            <div class="card-header btn-yellow text-center"
+                            <div class="card-header btn-blue text-white text-center"
                                 style="border-top-right-radius:25px;border-top-left-radius:25px">
                                 <h6 class="card-title">Address Book</h6>
                             </div>
@@ -190,7 +186,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px">
-                            <div class="card-header btn-yellow text-center"
+                            <div class="card-header btn-blue text-center text-white"
                                 style="border-top-right-radius:25px;border-top-left-radius:25px">
                                 <h6 class="card-title">Virtual Background</h6>
                             </div>
@@ -213,7 +209,7 @@
                 <div class="row">
                     <div class="col-md-4 mt-2"></div>
                     <div class="col-md-4 mt-5">
-                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00">
+                        <h3 class="text-center mt-3 rounded-pill px-4 py-2">
                             <b>ABOUT US</b>
                         </h3>
                     </div>
@@ -221,14 +217,12 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6 mt-5">
-                        <div>
-                            <img src="{{ asset('frontend/img/about_6.png') }}" alt="" height="80%"
-                                width="80%">
-                        </div>
+                    <div class="col-md-6 ml-1">
+                        <img src="{{ asset('frontend/img/about_6.png') }}" alt="About Us" class="img-fluid float-left">
                     </div>
+
                     <div class="col-md-6">
-                        <div class="about_content_text text-white text-justify mt-4" style="font-size: 15.5px">
+                        <div class="about_content_text text-black text-justify mt-4" style="font-size: 15.5px">
                             <p>Welcome to our QR Generated Card application <strong>‘Cardify’</strong>
                                 where sharing your contact information has never been easier. Our mission is to
                                 revolutionize business communication, eliminating the need for traditional paper
@@ -246,7 +240,8 @@
                             </p>
                             <p> Our company is committed to providing innovative
                                 solutions that help people improve their communication and productivity. We strive to
-                                create technology that is easy to use, reliable, and environmentally friendly.With <strong>Cardify</strong>, you can make a great first impression every time.
+                                create technology that is easy to use, reliable, and environmentally friendly.With
+                                <strong>Cardify</strong>, you can make a great first impression every time.
                             </p>
                         </div>
                     </div>
@@ -260,7 +255,7 @@
                     <div class="col-md-4 mt-2"></div>
                     <div class="col-md-4 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h3 class="text-center mt-3 rounded-pill px-4 py-2" style="background-color:#ff9d00;">
+                        <h3 class="text-center mt-3 rounded-pill px-4 py-2">
                             <b>PRICING</b>
                         </h3>
 
@@ -274,7 +269,7 @@
                         <div class="row">
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
-                                    <button type="submit" class="btn btn-yellow">
+                                    <button type="submit" class="btn btn-blue">
                                         <a class="nav-link text-black text-center" href="/register"
                                             data-name="feature">
                                             <b>
@@ -328,7 +323,7 @@
                                     </ul>
                                     <div class="card-body text-center">
                                         <button type="submit" class="rounded-pill px-5 py-2"
-                                            style="background-color: #ad021c">
+                                            style="background-color: #0056D2">
                                             <a class="nav-link text-white text-center" href="/register"
                                                 data-name="feature">
                                                 <b>
@@ -341,7 +336,7 @@
                             </div>
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
-                                    <button type="submit" class="btn btn-yellow ">
+                                    <button type="submit" class="btn btn-blue ">
                                         <a class="nav-link text-black text-center" href="/register"
                                             data-name="feature">
                                             <b>
@@ -397,7 +392,7 @@
                                     </ul>
                                     <div class="card-body text-center">
                                         <button type="submit" class="rounded-pill px-5 py-2"
-                                            style="background-color: #ad021c">
+                                            style="background-color: #0056D2">
                                             <a class="nav-link text-white text-center" href="/register"
                                                 data-name="feature">
                                                 <b>
@@ -410,7 +405,7 @@
                             </div>
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
-                                    <button type="submit" class="btn btn-yellow">
+                                    <button type="submit" class="btn btn-blue">
                                         <a class="nav-link text-black text-center" href="/register"
                                             data-name="feature">
                                             <b>
@@ -468,7 +463,7 @@
                                     </ul>
                                     <div class="card-body text-center">
                                         <button type="submit" class="rounded-pill px-5 py-2"
-                                            style="background-color: #ad021c">
+                                            style="background-color: #0056D2">
                                             <a class="nav-link text-white text-center" href="/register"
                                                 data-name="feature">
                                                 <b>
@@ -481,7 +476,7 @@
                             </div>
                             <div class="col-lg-3 mb-4">
                                 <div class="card h-100 shadow-lg">
-                                    <button type="submit" class="btn btn-yellow  " s>
+                                    <button type="submit" class="btn btn-blue  " s>
                                         <a class="nav-link text-black text-center" href="/register"
                                             data-name="feature">
                                             <b>
@@ -543,7 +538,7 @@
                                     </ul>
                                     <div class="card-body text-center">
                                         <button type="submit" class="rounded-pill px-5 py-2"
-                                            style="background-color: #ad021c">
+                                            style="background-color: #0056D2">
                                             <a class="nav-link text-white text-center" href="/register"
                                                 data-name="feature">
                                                 <b>
@@ -566,8 +561,8 @@
                     <div class="col-md-3 mt-2"></div>
                     <div class="col-md-6 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h3 class="text-center mt-3 rounded-pill px-6 py-2" style="background-color:#ff9d00;">
-                            <b>REQUEST A FEATURES</b>
+                        <h3 class="text-center mt-3 rounded-pill px-6 py-2">
+                            <b>JUST SEND REQUEST</b>
                         </h3>
 
                         <!-- </div> -->
@@ -580,7 +575,7 @@
                             <div class="row py-4 section-contact">
                                 <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                     <div class="contact_form">
-                                        <h3 class="mb-5 fw-bolder">JUST SEND REQUEST</h3>
+                                        {{-- <h3 class="mb-5 fw-bolder">JUST SEND REQUEST</h3> --}}
                                         <form id="contactForm" action="/add_featureRequest" method="post">
                                             @csrf
                                             <!-- Name input-->
@@ -642,7 +637,7 @@
                                             </div>
                                             <!-- Submit Button-->
                                             <button id="submitButton" type="submit"
-                                                class="btn rounded-pill btn-yellow text-white w-50 fw-bold">Send
+                                                class="btn rounded-pill btn-blue text-white w-50 fw-bold">Send
                                                 Request</button>
                                         </form>
                                     </div>
@@ -721,7 +716,7 @@
                     <div class="col-md-4 mt-2"></div>
                     <div class="col-md-4 mt-5">
                         <!-- <div style="background-color:#ff9d00"> -->
-                        <h3 class="text-center mt-3 rounded-pill px-6 py-2" style="background-color:#ff9d00;">
+                        <h3 class="text-center mt-3 rounded-pill px-6 py-2">
                             <b>CONTACT
                                 US</b>
                         </h3>
@@ -730,7 +725,7 @@
                     </div>
                     <div class="col-md-4b "></div>
                 </div>
-                <div class="card mt-5">
+                <div class="card mt-5" style="background-color: #ECF5FF">
                     <div class="card-body">
                         <div class="section-content">
                             <div class="row py-4 section-contact">
@@ -795,7 +790,7 @@
                                             </div>
                                             <!-- Submit Button-->
                                             <button id="submitButton" type="submit"
-                                                class="btn rounded-pill btn-yellow text-white w-50 fw-bold">Send
+                                                class="btn rounded-pill btn-blue text-white w-50 fw-bold">Send
                                                 Messages</button>
                                         </form>
                                     </div>
@@ -859,17 +854,17 @@
     </main>
 
     <footer>
-        <section class="text-white text-center bg_main_content_yellowish mt-5" style="padding: 15px;">
+        <section class="text-black text-center bg_main_content_yellowish mt-5" style="padding: 15px; background-color:#ECF5FF">
 
             <div class="container">
-                <div class="d-flex justify-content-between text-white">
+                <div class="d-flex justify-content-between text-black">
                     <div class="py-2">
-                        <a href="#contact" class="text-white text-decoration-none">Contact us</a> <span
-                            style="color:#304367">|</span> <a href="/privacy-policy"
-                            class="text-white text-decoration-none">Privacy Policy</a>
+                        <a href="#contact" class="text-black text-decoration-none">Contact us</a> <span
+                            style="color:black">|</span> <a href="/privacy-policy"
+                            class="text-black text-decoration-none">Privacy Policy</a>
                     </div>
                     <div class="py-2">
-                        <p class="mb-0">Copyright @ 2022. <a href="#" class="text-white">Cardify.</a> All
+                        <p class="mb-0">Copyright @ 2022. <a href="#" class="text-black">Cardify.</a> All
                             rights
                             reserved.</p>
                     </div>
@@ -886,7 +881,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('frontend\css\bootstrap5.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend\css\custom.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('frontend\css\custom.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('frontend\css\fontawesome\css\all.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend\css\jquery.multiselect.css') }}" rel="stylesheet">
 </body>

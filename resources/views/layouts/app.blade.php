@@ -79,7 +79,7 @@
 <body>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#ad021c;">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#0056D2;">
             <div class="container">
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
                 <img src="{{ asset('frontend/img/logo_4.png') }}" alt="" width="100" height="40"
@@ -100,13 +100,13 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
+                                <li class="nav-item text-black">
                                     <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item text-black">
                                     <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Signup') }}</a>
                                 </li>
                             @endif
