@@ -55,7 +55,7 @@ class SendEmailCommand extends Command
      */
     public function handle()
     {
-        $cards = Card::where('user_id',27)->get();
+        $cards = Card::where('user_id',27)->where('is_csv',1)->get();
         $uploder = User::where('id',27)->first();
         foreach($cards as $card)
         {
@@ -74,8 +74,8 @@ class SendEmailCommand extends Command
             $card->company_user_id = $user_id;
             $card->save();
             $mail = [
-                "title" => "Card Created",
-                "body" => "Your Card has been created. Please login with your email and password Kindly Login and Update Your Profile. Your Cridentials are: ",
+                "title" => "Your Cardify Account has been created.",
+                "body" => "Please login with initial email and password and update Your Cardify Profile. Initial email and password is given below.",
                 "password" => $password,
                 "email" => $card->email,
                 'link' => route('login')

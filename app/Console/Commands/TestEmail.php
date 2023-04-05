@@ -55,12 +55,12 @@ class TestEmail extends Command
     public function handle()
     {
         $mail = [
-            "title" => "Email Title",
-            "body" => "Your Card has been created. Please login with your email and password Kindly Login and Update Your Profile. Your Cridentials are: ",
+            "title" => "Your Cardify Account has been created.",
+            "body" => "Please login with initial email and password and update Your Cardify Profile. Initial email and password is given below.",
             "password" => "test",
-            "email" => "imabdulrafayy@gmail.com",
+            "email" => "adnan.klassen786@gmail.com",
             'link' => "http://localhost:8000/login"
         ];
-        Mail::to("imabdulrafayy@gmail.com")->send(new CardMailable($mail));
+        Mail::to("adnan.klassen786@gmail.com")->send(new CardMailable($mail));
     }
 }
