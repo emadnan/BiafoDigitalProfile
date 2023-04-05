@@ -59,7 +59,7 @@ class TestEmail extends Command
             "body" => "Please login with initial email and password and update Your Cardify Profile. Initial email and password is given below.",
             "password" => "test",
             "email" => "adnan.klassen786@gmail.com",
-            'link' => "route('login')"
+            'link' => route('login')
         ];
         Mail::to("adnan.klassen786@gmail.com")->send(new CardMailable($mail));
     }
