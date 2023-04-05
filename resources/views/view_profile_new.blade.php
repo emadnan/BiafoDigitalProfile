@@ -120,7 +120,7 @@ html {
 }
 
 .btn-red:hover {
-    background-color: #E5F2FF;
+    background-color: black;
     color: black;
     border-color: #E5F2FF;
 }
@@ -163,8 +163,11 @@ html {
     border-radius: 5px;
     cursor: pointer;
 }
+#saveBtn:hover{
+    background-color: black;
+}
 #closeBtn:hover {
-    background-color: #E5F2FF;
+    background-color: black;
 }
 
 #openBtn {
@@ -179,7 +182,7 @@ html {
 }
 
 #openBtn:hover {
-    background-color: #E5F2FF;
+    background-color: black;
 }
 </style>
 
@@ -412,7 +415,7 @@ html {
         </div>
         <div class="row mt-5 mb-4 bottomSheetRow">
             <div class="col-md-5"></div>
-            <div class="col-md-2">
+            <div class="col-md-2 d-flex justify-content-center">
                 <button id="openBtn"><i class="fa-solid fa-floppy-disk"></i> Save Contact</button>
                 <div id="bottomSheet">
                     <div id="bottomSheetContent">

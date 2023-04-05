@@ -1,5 +1,10 @@
 @extends('layouts.admin')
 @section('content')
+<style>
+    .bg-light {
+        background-color: #E5F2FF
+    }
+    </style>
 <div class="content-wrapper">
     <section class="content-header">
         <div class='container-fluid'>
@@ -409,7 +414,7 @@ $(document).ready(function() {
             '{{$skill->skill_name}}',
             @endforeach
         ],
-        defaultTagClass: 'bg-warning',
+        defaultTagClass: 'bg-light',
         // whiteList: true
     });
 });
@@ -523,7 +528,7 @@ $(document).ready(function() {
             '{{$language->language_name}}',
             @endforeach
         ],
-        defaultTagClass: 'bg-warning',
+        defaultTagClass: 'bg-light',
         // whiteList: true
     });
 });
@@ -553,7 +558,7 @@ $(document).ready(function() {
             '{{$interest->interest_name}}',
             @endforeach
         ],
-        defaultTagClass: 'bg-warning',
+        defaultTagClass: 'bg-light',
         // whiteList: true
     });
 });
