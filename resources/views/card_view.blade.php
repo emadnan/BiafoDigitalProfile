@@ -494,7 +494,7 @@ z-index: -1;
     position: absolute;
     width: 65px;
     height: 65px;
-    background: #AD021C;
+    background: #0056D2;
     bottom: 0;
     border-radius: 50%;
     left: 0;
