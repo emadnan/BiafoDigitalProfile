@@ -109,7 +109,7 @@
     .loader {
         /* border: 12px solid #f3f3f3; */
         border-radius: 50%;
-        border-top: 5px solid #ad021c;
+        border-top: 5px solid #0056D2;
         width: 70px;
         height: 70px;
         animation: spin 1s linear infinite;
