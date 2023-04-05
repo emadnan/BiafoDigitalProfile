@@ -83,9 +83,9 @@
                                     href="/#pricing"><b>{{ __('Create Card') }}</b></a>
                             @endif
                         @else
-                            <a class="btn btn-yellow rounded-pill px-5 py-2 "
+                            <a class="btn btn-yellow rounded-pill px-5 py-2 text-white"
                                 href="#/pricing"><b>{{ __('Create Card') }}</b></a>
-                            <a class="btn btn-yellow ml-4" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
+                            <a class="btn btn-yellow rounded-pill px-5 py-2 text-white ml-4" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                         @endguest
 
                     </form>
