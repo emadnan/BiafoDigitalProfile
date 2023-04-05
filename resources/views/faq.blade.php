@@ -20,7 +20,7 @@
 
 <header>
     <!-- NAVBAR-BAR -->
-    <section class="navbar fixed-top navbar-bg">
+    <section class="navbar fixed-top navbar-bg" style="background-color: #0056D2">
         <nav class="navbar navbar-expand-lg w-100 p-0">
             <div class="container">
                 <a class="navbar-brand text-white fs-3" href="#">
@@ -129,29 +129,29 @@
 
                                     <h2><b>Contents</b></h2>
                                     <p>
-                                        <a style="text-decoration:none; color:#ad021c" href="#general">
+                                        <a style="text-decoration:none; color:#0056D2" href="#general">
                                             <h5>General</h5>
                                         </a>
                                     </p>
                                     <p>
-                                        <a style="text-decoration:none; color:#ad021c"
+                                        <a style="text-decoration:none; color:#0056D2"
                                             href="#creating-your-digital-business-cards">
                                             <h5>Creating your digital business cards</h5>
                                         </a>
                                     </p>
                                     <p>
-                                        <a style="text-decoration:none; color:#ad021c"
+                                        <a style="text-decoration:none; color:#0056D2"
                                             href="#sharing-your-digital-business-cards">
                                             <h5>Sharing your digital business cards</h5>
                                         </a>
                                     </p>
                                     <p>
-                                        <a style="text-decoration:none; color:#ad021c" href="#Profile">
+                                        <a style="text-decoration:none; color:#0056D2" href="#Profile">
                                             <h5>Profile</h5>
                                         </a>
                                     </p>
                                     <p>
-                                        <a style="text-decoration:none; color:#ad021c" href="#virtual-backgrounds">
+                                        <a style="text-decoration:none; color:#0056D2" href="#virtual-backgrounds">
                                             <h5>Virtual backgrounds</h5>
                                         </a>
                                     </p>
