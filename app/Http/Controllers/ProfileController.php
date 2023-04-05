@@ -128,7 +128,7 @@ class ProfileController extends Controller
     }
     public function editProfile($card_id)
     {
-        $card=Card::where('id',$card_id)->first();
+        $card=Card::where('id',$card_id)->orwhere('username',$card_id)->first();
         $profile=Profile::with('social_links','educations','experiences')->where('card_id',$card_id)->orwhere('card_username',$card->id)->first();
         print_r($profile);
         die;
