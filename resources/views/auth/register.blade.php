@@ -8,7 +8,7 @@
 
                     <div class="card-body">
                         <div align="center"class="image">
-                            <img src="{{ asset('frontend\img\logo_3.png') }}" alt="AdminLTE Logo" width="300"
+                            <img src="{{ asset('frontend\img\cardify_logo.png') }}" alt="AdminLTE Logo" width="300"
                                 hieght="300">
                         </div>
                         <form method="POST" action="{{ route('register') }}">
