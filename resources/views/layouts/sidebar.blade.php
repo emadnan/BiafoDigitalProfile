@@ -4,8 +4,8 @@ $permissions= session()->get('permissions');
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{url('/home')}}" class="brand-link" style="text-decoration: none;">
-        <img src="{{asset('frontend\img\logo_3.png')}}" alt="Logo" class="img-fluid" style="width: 100%; height: 100%;">
+    <a href="{{url('/home')}}" class="brand-link mt-5 mb-5" style="text-decoration: none;">
+        <img src="{{asset('frontend\img\cardify_white.png')}}" alt="Logo" class="img-fluid mt-5 mb-5" style="width: 80%; height: 100%;">
         <!-- <p>Comply Techs</p> -->
         <!-- <span class="font-weight-light">Comply Techs</span> -->
     </a>

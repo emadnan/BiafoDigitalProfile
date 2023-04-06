@@ -23,8 +23,9 @@
     <section class="navbar fixed-top navbar-bg" style="background-color: #0056D2">
         <nav class="navbar navbar-expand-lg w-100 p-0">
             <div class="container">
-                <a class="navbar-brand text-white fs-3" href="#">
-                    <h2>Cardify</h2>
+            <a class="navbar-brand text-white" href="{{ url('/') }}">
+                <img src="{{ asset('frontend/img/cardify_white.png') }}" alt="" width="120" height="40"
+                            class="d-inline-block align-text-top">
                 </a>
                 <button class="navbar-toggler btn-yellow text-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

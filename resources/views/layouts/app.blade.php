@@ -82,7 +82,7 @@
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#0056D2;">
             <div class="container">
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
-                <img src="{{ asset('frontend/img/logo_4.png') }}" alt="" width="100" height="40"
+                <img src="{{ asset('frontend/img/cardify_white.png') }}" alt="" width="120" height="40"
                             class="d-inline-block align-text-top">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
