@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\StripePaymentController;
+use App\Http\Controllers\RoleController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/card', function () {
-    return view('card_view');
+Route::get('/test', function () {
+    print_r(env('APP_URL'));
 });
+Route::get('/testenv',[RoleController::class,'testenv'])->name('testenv');
+// Route::get('testEnv',RoleController::class,'testEnv');

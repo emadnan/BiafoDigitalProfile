@@ -14,6 +14,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactBookController;
+use App\Http\Controllers\StripePaymentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -78,3 +79,10 @@ Route::post('save_visting_card_backgrounds',[CardController::class,'save_visting
 Route::post('/csv_import',[CardController::class,'import_csv_file'])->name('csv_import');
 Route::get('/contact_book',[ContactBookController::class,'index'])->name('contact_book');
 Route::get('/add_contact/{profile_id}',[ContactBookController::class,'addContact'])->name('add_contact_book');
+Route::controller(StripePaymentController::class)->group(function(){
+    Route::get('stripe', 'stripe');
+    Route::post('stripe', 'stripePost')->name('stripe.post');
+});
+// Route::get('/login_new', function () {
+//     return view('auth.login_new');
+// });

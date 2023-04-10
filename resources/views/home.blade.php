@@ -9,6 +9,50 @@ $is_new = session()->get('is_new');
     margin-top: 6%;
 }
 
+.profile_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border : 2px solid #fff;
+}
+
+.name {
+    font-size: 25px;
+    /* time new roman */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.designation {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.card {
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border: none;
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    background-color: #E49700;
+    color: #fff;
+}
+.detail{
+    line-height: 0.5;
+    margin-top: 35px;
+}
+@media  only screen and (max-width: 800px) {
+    .detail {
+        text-align: center;
+        line-height: 1.5;
+        margin-left: 10px;
+    }
+}
+
 /* .form-control{
         border-radius: 10px;
     } */
@@ -52,63 +96,24 @@ $is_new = session()->get('is_new');
         <div class="container-fluid">
             <div class="row" id="card_divs">
                 @foreach ($cards as $card)
-                @if(Auth::user()->user_type=='individual')
-                <div class="col-md-3 scard">
-                    <a style="text-decoration: none;" href="/view_card/{{$card->id}}/personal" class="anchor">
-                        <div class="card" style="color:#ad021;border-radius:7%">
-                            <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
-                                style="border-top-left-radius:7%;border-top-right-radius:7%;height:250px;">
+                <div class="col-md-4">
+                    <a style="text-decoration: none; color: black;" href="/view_card/{{$card->id}}/work">
+                        <div class="card scard">
                             <div class="card-body">
-                                <div class="justify-content-center text-center">
-                                    <h3 style="font-family:Palatino;font-weight:bold;">{{$card->name}}</h3>
-                                    <h5 style="font-family:Optima;font-weight:bold;">Personal</h5>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="image preview"
+                                            class="profile_img" id="image_preview">
+                                    </div>
+                                    <div class="col-md-8 detail">
+                                        <p class="name">{{$card->name}}</p>
+                                        <p class="designation">{{$card->designation}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3 scard">
-                    <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
-                        <div class="card" style="color:#ad021;border-radius:7%">
-                            <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
-                                style="border-top-left-radius:7%;border-top-right-radius:7%;height:250px;">
-                            <div class="card-body">
-                                <div class="justify-content-center text-center">
-                                    <h3 style="font-family:Palatino;font-weight:bold;">{{$card->name}}</h3>
-                                    @if(Auth::user()->user_type=='individual')
-                                    <h5 style="font-family:Optima;font-weight:bold;">Workspace</h5>
-                                    @else
-                                    <h5 style="font-family:Optima;font-weight:bold;">{{$card->designation}}</h5>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @else
-                <div class="col-md-2 scard">
-                    <a style="text-decoration: none;" href="/view_card/{{$card->id}}/work" class="anchor">
-                        <div class="d-flex justify-content-center employee_image" id="employee_image">
-                            @if($card->image_path==null)
-                            <img src="{{asset('frontend/img/avatar.jpg')}}" class="card-img-top" alt="..."
-                                style="border-radius:50%;height:150px; width:150px">
-                            @else
-                            <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
-                                style="border-radius:50%;height:150px; width:150px">
-                            @endif
-                            <!-- <div class="card-body"> -->
-                        </div>
-                        <div class="justify-content-center text-center mt-2 " id="employee_detail">
-                            <h3 style="font-family:Palatino;font-weight:bold;">{{$card->name}}</h3>
-                            @if(Auth::user()->user_type=='individual')
-                            <h6 style="font-family:Optima;font-weight:bold;">Workspace</h6>
-                            @else
-                            <span style="font-family:Optima;font-weight:bold;">{{$card->designation}}</span>
-                            @endif
-                        </div>
-                    </a>
-                </div>
-                @endif
                 @endforeach
             </div>
         </div>
@@ -196,12 +201,12 @@ $is_new = session()->get('is_new');
                                 @endif
                             </select>
                         </div>
-                    <div class="form-group">
-                        <label for="phone">Phone No:</label>
-                        <input type="phone" class="form-control" id="phone" name="phone"
-                         placeholder="Enter Your Phone No">
-                        <help class="">e.g+92-331********</help>
-                    </div>
+                        <div class="form-group">
+                            <label for="phone">Phone No:</label>
+                            <input type="phone" class="form-control" id="phone" name="phone"
+                                placeholder="Enter Your Phone No">
+                            <help class="">e.g+92-331********</help>
+                        </div>
                         <div class="form-group">
                             <label for="linkiden">Linkiden:</label>
                             <input type="text" class="form-control" name="linkiden" id="linkiden"
@@ -372,15 +377,15 @@ $is_new = session()->get('is_new');
 @endsection
 @section('scripts')
 <script>
-    //live search card divs by name
-    $(document).ready(function() {
-        $("#search").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#card_divs .scard").filter(function() {
-                var test = $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
+//live search card divs by name
+$(document).ready(function() {
+    $("#search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#card_divs .scard").filter(function() {
+            var test = $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
+});
 $(document).ready(function() {
     $('#csv').click(function() {
         $('#add_csv_modal').modal('show');

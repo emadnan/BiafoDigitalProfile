@@ -63,4 +63,8 @@ class RoleController extends Controller
         }
         return redirect()->route('roles')->with('success', 'Permission added successfully');
     }
+    public function testenv()
+    {
+        print_r(env('STRIPE_KEY'));
+    }
 }
