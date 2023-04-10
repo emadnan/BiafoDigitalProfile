@@ -34,10 +34,37 @@
 .btn-yellow {
   background-color: var(--yellowish) !important;
 }
-.btn-blue{
+
+.btn-blue {
   background-color: var(--blueish) !important;
 }
 
+.card-icon {
+  /* position: absolute; */
+  box-sizing: border-box;
+  width: 80px;
+  background-color: #0056D2;
+  color: white;
+  padding: 20px 8px;
+  border-radius: 16px;
+  background: #0056D2;
+  opacity: 1;
+  /* right: 211px; */
+}
+.card-icon-blue {
+
+  box-sizing: border-box;
+  width: 80px;
+  color: white;
+  padding: 20px 8px;
+  border-radius: 16px;
+  background: white;
+  opacity: 1;
+
+}
+#cardIconId{
+  margin-right: 30px;
+}
 
 #homeId {
   top: 66px;
@@ -169,7 +196,7 @@
 }
 
 .customize__absolute__text p {
-  padding-right: 150px;
+  /* padding-right: 150px; */
   margin-top: 20px;
   line-height: 1.8;
 }
