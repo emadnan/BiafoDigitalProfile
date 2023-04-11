@@ -102,7 +102,7 @@ $is_new = session()->get('is_new');
         <div class="container-fluid">
             <div class="row" id="card_divs">
                 @foreach ($cards as $card)
-                <div class="col-md-4 row-eq-height">
+                <div class="col-md-4">
                     <a style="text-decoration: none; color: black;" href="/view_card/{{$card->id}}/work">
                         <div class="card scard">
                             <div class="card-body">
