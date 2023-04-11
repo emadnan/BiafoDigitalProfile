@@ -42,6 +42,15 @@ $is_new = session()->get('is_new');
     background-color: #E49700;
     color: #fff;
 }
+.row-eq-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-eq-height > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
 @media  only screen and (max-width: 800px) {
     .detail {
         text-align: center;
@@ -91,7 +100,7 @@ $is_new = session()->get('is_new');
             </div>
         </section>
         <div class="container-fluid">
-            <div class="row" id="card_divs">
+            <div class="row row-eq-height" id="card_divs">
                 @foreach ($cards as $card)
                 <div class="col-md-4">
                     <a style="text-decoration: none; color: black;" href="/view_card/{{$card->id}}/work">
