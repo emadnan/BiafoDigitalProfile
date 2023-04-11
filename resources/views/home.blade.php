@@ -9,23 +9,24 @@ $is_new = session()->get('is_new');
     margin-top: 6%;
 }
 
-.profile_img {
-    width: 100%;
-    height: 100%;
+.profile_card_img {
+    /* width: 100%;
+    height: 100%; */
     object-fit: cover;
+    width: 100%;
     border-radius: 50%;
     border : 2px solid #fff;
 }
 
 .name {
-    font-size: 25px;
+    font-size: 1.1rem;
     /* time new roman */
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
 
 .designation {
-    font-size: 20px;
+    font-size: 0.9rem;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -34,7 +35,7 @@ $is_new = session()->get('is_new');
     border-radius: 20px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     border: none;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 .card:hover {
@@ -42,8 +43,8 @@ $is_new = session()->get('is_new');
     color: #fff;
 }
 .detail{
-    line-height: 0.5;
-    margin-top: 35px;
+    line-height: 1.5;
+    margin-top: 20px;
 }
 @media  only screen and (max-width: 800px) {
     .detail {
@@ -103,7 +104,7 @@ $is_new = session()->get('is_new');
                                 <div class="row">
                                     <div class="col-md-4">
                                         <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="image preview"
-                                            class="profile_img" id="image_preview">
+                                            class="profile_card_img">
                                     </div>
                                     <div class="col-md-8 detail">
                                         <p class="name">{{$card->name}}</p>
