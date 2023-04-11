@@ -42,10 +42,6 @@ $is_new = session()->get('is_new');
     background-color: #E49700;
     color: #fff;
 }
-.detail{
-    line-height: 1.5;
-    margin-top: 20px;
-}
 @media  only screen and (max-width: 800px) {
     .detail {
         text-align: center;
@@ -106,7 +102,7 @@ $is_new = session()->get('is_new');
                                         <img src="{{asset('card_images')}}/{{$card->image_path}}" alt="image preview"
                                             class="profile_card_img">
                                     </div>
-                                    <div class="col-md-8 detail">
+                                    <div class="col-md-8 mt-3">
                                         <p class="name">{{$card->name}}</p>
                                         <p class="designation">{{$card->designation}}</p>
                                     </div>
