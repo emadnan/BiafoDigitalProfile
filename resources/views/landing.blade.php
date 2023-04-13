@@ -82,16 +82,17 @@
                             </li>
                         </ul>
                         <form class="d-flex ms-5 customize_mob_menu">
-                            {{-- <a class="btn btn-yellow rounded-pill px-5 py-2" >Login</a> --}}
                             @guest
                                 @if (Route::has('login'))
-                                    <a class="btn btn-yellow rounded-pill px-5 py-2 mt-3 text-white"
+                                    <a class="btn btn-yellow px-5 py-2 mt-3 text-white"
+                                        style="border-radius: 15px; height:3rem"
                                         href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
-                                    <a class="btn btn-blue text-white rounded-pill px-5 py-2 ml-4 mt-3"
+                                    <a class="btn btn-blue text-white px-5 py-2 ml-4 mt-3"
+                                        style="border-radius: 15px; height:3rem"
                                         href="#pricing"><b>{{ __('Create Card') }}</b></a>
                                 @endif
                             @else
-                                <a class="btn btn-yellow rounded-pill px-5 py-2 text-white"
+                                <a class="btn btn-yellow px-5 py-2 text-white"
                                     href="#pricing"><b>{{ __('Create Card') }}</b></a>
                                 <a class="btn btn-blue rounded-pill px-5 py-2 text-white ml-4"
                                     href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
@@ -142,9 +143,10 @@
                     <div class="col-md-4"></div>
                 </div>
                 <div class="row mt-5 mb-5">
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-1">
                         {{-- 1st column --}}
-                        <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px;">
+                        <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px;"
+                            id="feature_hover">
                             <div class="container mt-4 justify-content-around">
                                 <div class="row card-icon">
                                     <div class="col-md-2 rounded float-left">
@@ -153,9 +155,9 @@
                                     <div class="col-md-10"></div>
                                 </div>
                             </div>
-                            <h6 class="card-title" style="margin-top: 40px; margin-left:20px; color:#0056D2">Create Digital Business
+                            <h6 class="card-title" style="margin-top: 40px; margin-left:20px;">Create Digital Business
                                 Card</h6>
-                            <div class="card-body">
+                            <div class="card-body" id="card_body">
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">Create and customize stylish digital business cards.
                                     </li>
@@ -166,8 +168,9 @@
                         </div>
                     </div>
                     {{-- 2nd Column --}}
-                    <div class="col-md-3">
-                        <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px; background-color: #0056D2">
+                    <div class="col-md-3 mb-1">
+                        <div class="card h-100 shadow-lg"
+                            style="width: 100%; height:100%; border-radius:25px; background-color: #0056D2">
                             <div class="container mt-4 justify-content-around">
                                 <div class="row card-icon-blue">
                                     <div class="col-md-2 rounded float-left">
@@ -176,18 +179,22 @@
                                     <div class="col-md-10"></div>
                                 </div>
                             </div>
-                            <h6 class="card-title" style="margin-top: 40px; margin-left:20px; color:white">Sharing Your Business Card</h6>
+                            <h6 class="card-title" style="margin-top: 40px; margin-left:20px; color:white">Sharing
+                                Your Business Card</h6>
                             <div class="card-body">
-                                <ul class="list-group list-group-flush" style="color: #ECF5FF">
-                                    <li class="list-group-item" style="background-color: #0056D2;color:white">Share your virtual business card using a QR code or send it through email, text, social media, and more.
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="background-color: #0056D2;color:white">Share
+                                        your virtual business card using a QR code or send it through email, text,
+                                        social media, and more.
                                     </li>
-                                    <li class="list-group-item" style="background-color: #0056D2;color:white"> Anyone can receive your digital card, even if they don't have the app.</li>
+                                    <li class="list-group-item" style="background-color: #0056D2;color:white"> Anyone
+                                        can receive your digital card, even if they don't have the app.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     {{-- 3rd column --}}
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-1">
                         <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px;">
                             <div class="container mt-4 justify-content-around">
                                 <div class="row card-icon">
@@ -197,42 +204,48 @@
                                     <div class="col-md-10"></div>
                                 </div>
                             </div>
-                            <h6 class="card-title" style="margin-top: 40px; margin-left:20px; color:#0056D2">Address Book</h6>
+                            <h6 class="card-title" style="margin-top: 40px; margin-left:20px; color:#0056D2">Address
+                                Book</h6>
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">When you share your digital business card using QR Code, the contact information of the person.
+                                    <li class="list-group-item">When you share your digital business card using QR
+                                        Code, the contact information of the person.
                                     </li>
-                                    <li class="list-group-item"> When you share your digital business card using QR Code, the contact information of the person.</li>
+                                    <li class="list-group-item"> When you share your digital business card using QR
+                                        Code, the contact information of the person.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                        {{-- 4th columnn --}}
-                        <div class="col-md-3">
-                            <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px;">
-                                <div class="container mt-4 justify-content-around">
-                                    
-                                        <div class="card-icon" id="cardIconId">
-                                            <i class="fa-solid fa-palette fa-2xl"></i>
-                                        </div>
-                                        {{-- <div class="col-md-6"></div> --}}
-                                    
+                    {{-- 4th columnn --}}
+                    <div class="col-md-3 mb-1">
+                        <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px;">
+                            <div class="container mt-4 justify-content-around">
+
+                                <div class="card-icon" id="cardIconId">
+                                    <i class="fa-solid fa-palette fa-2xl"></i>
                                 </div>
-                                <h6 class="card-title" style="margin-top: 40px; margin-left:20px; color:#0056D2">Virtual Background</h6>
-                                <div class="card-body">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Virtual background images or upload your image.
-                                        </li>
-                                        <li class="list-group-item"> Your virtual background will encompass the information on your digital business card, including your: QR code, Name, Pronouns, Preferred Name, Title, Company, and Logo.</li>
-                                    </ul>
-                                </div>
+                                {{-- <div class="col-md-6"></div> --}}
+
+                            </div>
+                            <h6 class="card-title" style="margin-top: 40px; margin-left:20px; color:#0056D2">Virtual
+                                Background</h6>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Virtual background images or upload your image.
+                                    </li>
+                                    <li class="list-group-item"> Your virtual background will encompass the information
+                                        on your digital business card, including your: QR code, Name, Pronouns,
+                                        Preferred Name, Title, Company, and Logo.</li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- ABOUT US -->
-        <section class="about_curved_bg mt-5" id="about">
+        <section class="mt-5" id="about">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mt-2"></div>
@@ -243,13 +256,11 @@
                     </div>
                     <div class="col-md-4"></div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-6 ml-1">
                         <img src="{{ asset('frontend/img/about_6.png') }}" alt="About Us"
                             class="img-fluid float-left">
                     </div>
-
                     <div class="col-md-6">
                         <div class="about_content_text text-black text-justify mt-4" style="font-size: 15.5px">
                             <p>Welcome to our QR Generated Card application <strong>‘Cardify’</strong>
@@ -281,39 +292,27 @@
         <section id="pricing">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 mt-2"></div>
-                    <div class="col-md-4 mt-5">
-                        <!-- <div style="background-color:#ff9d00"> -->
-                        <h3 class="text-center mt-3 rounded-pill px-4 py-2">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <h3 class="text-center px-4 py-2">
                             <b>PRICING</b>
                         </h3>
-
-                        <!-- </div> -->
                     </div>
                     <div class="col-md-4"></div>
                 </div>
-                <div class="card-ll mt-5" style=" border-radius: 25px;">
+                <div class="card-ll">
                     <div class="container p-5">
-
                         <div class="row">
-                            <div class="col-lg-3 mb-4">
-                                <div class="card h-100 shadow-lg">
-                                    <button type="submit" class="btn btn-blue">
-                                        <a class="nav-link text-black text-center" href="/register"
-                                            data-name="feature">
-                                            <b>
-                                                Free
-                                            </b>
-                                        </a>
-                                    </button>
+                            {{-- 1st price card --}}
+                            <div class="col-md-3 mb-5">
+                                <div class="card h-100 shadow-lg" id="price_cards">
+                                    <h5 class="mt-4" style="margin-left: 30px; color:#0056D2">
+                                        <b>Free</b>
+                                    </h5>
                                     <div class="card-body">
-                                        <div class="text-center p-3">
-                                            <div class="card-body text-center">
-
-                                            </div>
-                                            <small>1 User</small>
-                                            <br><br>
-                                            <span class="h2">$0</span>/month
+                                        <div class="p-3">
+                                            <p>1 User</p>
+                                            <span class="h2">$0</span><span>/month</span>
                                             <br><br>
                                         </div>
                                         <p class="card-text">Some quick example text to build on the card title and
@@ -351,8 +350,8 @@
                                             </svg> Additional card designs</li>
                                     </ul>
                                     <div class="card-body text-center">
-                                        <button type="submit" class="rounded-pill px-5 py-2"
-                                            style="background-color: #0056D2">
+                                        <button type="submit" class="px-5 py-2"
+                                            style="background-color: #0056D2; border-radius: 20px;">
                                             <a class="nav-link text-white text-center" href="/register"
                                                 data-name="feature">
                                                 <b>
@@ -363,24 +362,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 mb-4">
-                                <div class="card h-100 shadow-lg">
-                                    <button type="submit" class="btn btn-blue ">
-                                        <a class="nav-link text-black text-center" href="/register"
-                                            data-name="feature">
-                                            <b>
-                                                Professional
-                                            </b>
-                                        </a>
-                                    </button>
+                            {{-- 2nd price card --}}
+                            <div class="col-md-3 mb-5">
+                                <div class="card h-100 shadow-lg" id="price_cards">
+                                    <h5 class="mt-4" style="margin-left: 30px; color:#0056D2">
+                                        <b>Professional</b>
+                                    </h5>
                                     <div class="card-body">
-                                        <div class="text-center p-3">
-                                            <div class="card-body text-center">
-
-                                            </div>
-                                            <small>2 User</small>
-                                            <br><br>
-                                            <span class="h2">$5</span>/month
+                                        <div class="p-3">
+                                            <p>2 User</p>
+                                            <span class="h2">$5</span><span>/month</span>
                                             <br><br>
                                         </div>
                                         <p class="card-text">Some quick example text to build on the card title and
@@ -420,8 +411,8 @@
                                             </svg> Additional card designs</li>
                                     </ul>
                                     <div class="card-body text-center">
-                                        <button type="submit" class="rounded-pill px-5 py-2"
-                                            style="background-color: #0056D2">
+                                        <button type="submit" class="px-5 py-2"
+                                            style="background-color: #0056D2; border-radius: 20px;">
                                             <a class="nav-link text-white text-center" href="/register"
                                                 data-name="feature">
                                                 <b>
@@ -432,24 +423,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 mb-4">
-                                <div class="card h-100 shadow-lg">
-                                    <button type="submit" class="btn btn-blue">
-                                        <a class="nav-link text-black text-center" href="/register"
-                                            data-name="feature">
-                                            <b>
-                                                Business
-                                            </b>
-                                        </a>
-                                    </button>
+                            {{-- 3rd price card --}}
+                            <div class="col-md-3 mb-5">
+                                <div class="card h-100 shadow-lg" id="price_cards">
+                                    <h5 class="mt-4" style="margin-left: 30px; color:#0056D2">
+                                        <b>Business</b>
+                                    </h5>
                                     <div class="card-body">
-                                        <div class="text-center p-3">
-                                            <div class="card-body text-center">
-
-                                            </div>
-                                            <small>10 Users</small>
-                                            <br><br>
-                                            <span class="h4"><b>Contact Sales</b></span>
+                                        <div class="p-3">
+                                            <p>10 User</p>
+                                            <span class="h2">Contact Sales</span>
                                             <br><br>
                                         </div>
                                         <p class="card-text">Some quick example text to build on the card title and
@@ -491,8 +474,8 @@
                                             </svg> Additional card designs</li>
                                     </ul>
                                     <div class="card-body text-center">
-                                        <button type="submit" class="rounded-pill px-5 py-2"
-                                            style="background-color: #0056D2">
+                                        <button type="submit" class="px-5 py-2"
+                                            style="background-color: #0056D2; border-radius: 20px;">
                                             <a class="nav-link text-white text-center" href="/register"
                                                 data-name="feature">
                                                 <b>
@@ -503,24 +486,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 mb-4">
-                                <div class="card h-100 shadow-lg">
-                                    <button type="submit" class="btn btn-blue  " s>
-                                        <a class="nav-link text-black text-center" href="/register"
-                                            data-name="feature">
-                                            <b>
-                                                Enterprise
-                                            </b>
-                                        </a>
-                                    </button>
+                            {{-- 4th price card --}}
+                            <div class="col-md-3 mb-5">
+                                <div class="card h-100 shadow-lg" id="price_cards">
+                                    <h5 class="mt-4" style="margin-left: 30px; color:#0056D2">
+                                        <b>Enterprise</b>
+                                    </h5>
                                     <div class="card-body">
-                                        <div class="text-center p-3">
-                                            <div class="card-body text-center">
-
-                                            </div>
-                                            <small>100+ Users</small>
-                                            <br><br>
-                                            <span class="h4"><b>Contact Sales</b></span>
+                                        <div class="p-3">
+                                            <p>100+ User</p>
+                                            <span class="h2">Contact Sales</span>
                                             <br><br>
                                         </div>
                                         <p class="card-text">Some quick example text to build on the card title and
@@ -566,8 +541,8 @@
                                             </svg> Additional card designs</li>
                                     </ul>
                                     <div class="card-body text-center">
-                                        <button type="submit" class="rounded-pill px-5 py-2"
-                                            style="background-color: #0056D2">
+                                        <button type="submit" class="px-5 py-2"
+                                            style="background-color: #0056D2; border-radius: 20px;">
                                             <a class="nav-link text-white text-center" href="/register"
                                                 data-name="feature">
                                                 <b>
@@ -578,310 +553,268 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
+                </div>
         </section>
         <!-- request a feature-->
 
-        <section id="request_a_feature">
+        <section id="request_a_feature" style="background-color: #F5F5F5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 mt-2"></div>
-                    <div class="col-md-6 mt-5">
-                        <!-- <div style="background-color:#ff9d00"> -->
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 mt-3 mb-3">
                         <h3 class="text-center mt-3 rounded-pill px-6 py-2">
                             <b>JUST SEND REQUEST</b>
                         </h3>
-
-                        <!-- </div> -->
                     </div>
                     <div class="col-md-3"></div>
                 </div>
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <div class="section-content">
-                            <div class="row py-4 section-contact">
-                                <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                    <div class="contact_form">
-                                        {{-- <h3 class="mb-5 fw-bolder">JUST SEND REQUEST</h3> --}}
-                                        <form id="contactForm" action="/add_featureRequest" method="post">
-                                            @csrf
-                                            <!-- Name input-->
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="name" name="name"
-                                                    type="text" placeholder="Enter your name..."
-                                                    data-sb-validations="required" />
-                                                <label for="name">Full name</label>
-                                                <div class="invalid-feedback" data-sb-feedback="name:required">A name
-                                                    is
-                                                    required.</div>
-                                            </div>
-                                            <!-- Email address input-->
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="email" name="email"
-                                                    type="email" placeholder="name@example.com"
-                                                    data-sb-validations="required,email" />
-                                                <label for="email">Email address</label>
-                                                <div class="invalid-feedback" data-sb-feedback="email:required">An
-                                                    email
-                                                    is required.</div>
-                                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is
-                                                    not valid.</div>
-                                            </div>
-                                            <!-- Phone number input-->
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="phone" name="phone"
-                                                    type="tel" placeholder="(123) 456-7890"
-                                                    data-sb-validations="required" />
-                                                <label for="phone">Phone number</label>
-                                                <div class="invalid-feedback" data-sb-feedback="phone:required">A
-                                                    phone
-                                                    number is required.</div>
-                                            </div>
-                                            <!-- Message input-->
-                                            <div class="form-floating mb-3">
-                                                <textarea class="form-control" id="message" type="text" name="request"
-                                                    placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                                <label for="message">Enter Request Details</label>
-                                                <div class="invalid-feedback" data-sb-feedback="message:required">A
-                                                    Request is required.</div>
-                                            </div>
-                                            <!-- Submit success message-->
-                                            <!---->
-                                            <!-- This is what your users will see when the form-->
-                                            <!-- has successfully submitted-->
-                                            <div class="d-none" id="submitSuccessMessage">
-                                                <div class="text-center mb-3">
-                                                    <div class="fw-bolder">Form submission successful!</div>
-                                                    To activate this form, sign up at
-                                                </div>
-                                            </div>
-                                            <!-- Submit error message-->
-                                            <!---->
-                                            <!-- This is what your users will see when there is-->
-                                            <!-- an error submitting the form-->
-                                            <div class="d-none" id="submitErrorMessage">
-                                                <div class="text-center text-danger mb-3">Error sending message!</div>
-                                            </div>
-                                            <!-- Submit Button-->
-                                            <button id="submitButton" type="submit"
-                                                class="btn rounded-pill btn-blue text-white w-50 fw-bold">Send
-                                                Request</button>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
 
-                                    <img src="/frontend/img/request_2.png"
-                                        style="padding-left: 15%; height: 100%; width: 100%;">
-                                    <!-- <div class="contat_info">
-                        <h3 class="mb-1 fw-bolder">REQUEST INFO</h3>
-                        <p>You Can Do Request From Following Details</p>
-                        <div class="d-flex">
-                          <div class="icons_contact_info ms-2">
-                            <i class="fa-solid fa-envelope fs-3 mt-4 p-3"></i>
-                          </div>
-                          <div class="mt-3 ms-3">
-                            <p class="mb-0 pb-0 text-black fw-bold text-uppercase">email</p>
-                            <small class="text-muted">example@example.com</small>
-                          </div>
+                <form id="contactForm" action="/add_featureRequest" method="post">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-6 mt-5">
+                            <img src="/frontend/img/request_2.png" style="height: 80%; width: 80%;">
                         </div>
-                        <div class="d-flex mt-1">
-                          <div class="icons_contact_info ms-2">
-                            <i class="fa-solid fa-phone fs-3 mt-4 p-3"></i>
-                          </div>
-                          <div class="mt-3 ms-3">
-                            <p class="mb-0 pb-0 text-black fw-bold text-uppercase">phone</p>
-                            <small class="d-block text-muted">+9202302222</small>
-                            <small class="text-muted">+93232344433</small>
-                          </div>
-                        </div>
-                        <div class="d-flex mt-1">
-                          <div class="icons_contact_info ms-2">
-                            <i class="fa-solid fa-map-location-dot fs-3 mt-4 p-3"></i>
-                          </div>
-                          <div class="mt-3 ms-3">
-                            <p class="mb-0 pb-0 text-black fw-bold text-uppercase">Address</p>
-                            <small class="d-block text-muted">Adress here</small>
-                          </div>
-                        </div>
-                        <div class="d-flex mt-4">
-                        </div>
-                        <div class="social_icons mt-4">
-                          <p>Visit our social profile and get connected.</p>
-                          <div class="d-flex mt-2">
-                            <a href="#">
-                              <i class="fa-brands fa-facebook-f fs-3 me-2 mt-2" style="padding: 8px 12px !important;"></i>
-                            </a>
-                            <a href="#">
-                              <i class="fa-brands fa-instagram fs-3 p-2 me-2 mt-2"></i>
-                            </a>
-                            <a href="#">
-                              <i class="fa-brands fa-linkedin-in fs-3 p-2 me-2 mt-2"></i>
-                            </a>
-                            <a href="#">
-                              <i class="fa-brands fa-youtube fs-3 p-2 me-2 mt-2"></i>
-                            </a>
-                            <a href="#">
-                              <i class="fa-brands fa-twitter fs-3 p-2 me-2 mt-2"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div> -->
-                                </div>
+                        <div class="col-md-3 mb-5 bg-white">
+                            <!-- Name input-->
+                            <div class="form-group mb-3 mt-5">
+                                <label for="name" class="mb-2">Name<span style="color:red">*</span></label>
+                                <input class="form-control mb-5" id="name" name="name" type="text"
+                                    placeholder="Enter your name" data-sb-validations="required"
+                                    style="height: 3rem;border-radius:15px;border:1px solid #0056D2;" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A
+                                    name
+                                    is
+                                    required.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-group mb-3">
+                                <label for="email" class="mb-2">Email address<span
+                                        style="color:red">*</span></label>
+                                <input class="form-control mb-5" id="email" name="email" type="email"
+                                    placeholder="name@example.com" data-sb-validations="required,email"
+                                    style="height: 3rem;border-radius:15px;border:1px solid #0056D2;" />
+
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An
+                                    email
+                                    is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">
+                                    Email
+                                    is
+                                    not valid.</div>
+                            </div>
+                            <!-- Phone number input-->
+                            <div class="form-group mb-3 ">
+                                <label for="phone" class="mb-2">Phone number<span style="color:red">*</label>
+                                <input class="form-control" id="phone" name="phone" type="tel"
+                                    placeholder="(123) 456-7890" data-sb-validations="required"
+                                    style="height: 3rem;border-radius:15px; border:1px solid #0056D2;" />
+
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A
+                                    phone
+                                    number is required.</div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+
+                        <div class="col-md-3 mb-5 bg-white">
+                            <!-- Message input-->
+                            <div class="form-group mb-3 mr-5 mt-5">
+                                <label for="phone" class="mb-2">Message<span style="color:red">*</span></label>
+                                <textarea class="form-control" id="message" type="text" name="request" placeholder="How we can help you?"
+                                    style="height: 10rem; border-radius: 10px;border:1px solid #0056D2;" data-sb-validations="required"></textarea>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">
+                                    A
+                                    Request is required.</div>
+                            </div>
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!
+                                    </div>
+                                    To activate this form, sign up at
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage">
+                                <div class="text-center text-danger mb-3">Error sending
+                                    message!
+                                </div>
+                            </div>
+                            <!-- Submit Button-->
+                            <div class="mt-5">
+                                <button id="submitButton" type="submit"
+                                    class="btn btn-blue text-white w-100 fw-bold mt-5"
+                                    style="height: 3rem;border-radius: 15px; width:20px;">Send
+                                    Request</button>
+                            </div>
+                        </div>
+                </form>
             </div>
         </section>
 
-        <!-- Contract US-->
-        <section id="contact_us">
+        <!-- Contact US-->
+        <section id="contact_us" style="background-color: #ECF5FF">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 mt-2"></div>
-                    <div class="col-md-4 mt-5">
-                        <!-- <div style="background-color:#ff9d00"> -->
-                        <h3 class="text-center mt-3 rounded-pill px-6 py-2">
-                            <b>CONTACT
-                                US</b>
-                        </h3>
-
-                        <!-- </div> -->
+                    <div class="col-md-12 mt-5">
                     </div>
-                    <div class="col-md-4b "></div>
                 </div>
-                <div class="card mt-5" style="background-color: #ECF5FF">
-                    <div class="card-body">
-                        <div class="section-content">
-                            <div class="row py-4 section-contact">
-                                <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                    <div class="contact_form">
-                                        <h3 class="mb-5 fw-bolder">JUST SAY HELLO</h3>
-                                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                            <!-- Name input-->
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="name" type="text"
-                                                    placeholder="Enter your name..." data-sb-validations="required" />
-                                                <label for="name">Full name</label>
-                                                <div class="invalid-feedback" data-sb-feedback="name:required">A name
-                                                    is
-                                                    required.</div>
-                                            </div>
-                                            <!-- Email address input-->
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="email" type="email"
-                                                    placeholder="name@example.com"
-                                                    data-sb-validations="required,email" />
-                                                <label for="email">Email address</label>
-                                                <div class="invalid-feedback" data-sb-feedback="email:required">An
-                                                    email
-                                                    is required.</div>
-                                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is
-                                                    not valid.</div>
-                                            </div>
-                                            <!-- Phone number input-->
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="phone" type="tel"
-                                                    placeholder="(123) 456-7890" data-sb-validations="required" />
-                                                <label for="phone">Phone number</label>
-                                                <div class="invalid-feedback" data-sb-feedback="phone:required">A
-                                                    phone
-                                                    number is required.</div>
-                                            </div>
-                                            <!-- Message input-->
-                                            <div class="form-floating mb-3">
-                                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..."
-                                                    style="height: 10rem" data-sb-validations="required"></textarea>
-                                                <label for="message">Message</label>
-                                                <div class="invalid-feedback" data-sb-feedback="message:required">A
-                                                    message is required.</div>
-                                            </div>
-                                            <!-- Submit success message-->
-                                            <!---->
-                                            <!-- This is what your users will see when the form-->
-                                            <!-- has successfully submitted-->
-                                            <div class="d-none" id="submitSuccessMessage">
-                                                <div class="text-center mb-3">
-                                                    <div class="fw-bolder">Form submission successful!</div>
-                                                    To activate this form, sign up at
-                                                </div>
-                                            </div>
-                                            <!-- Submit error message-->
-                                            <!---->
-                                            <!-- This is what your users will see when there is-->
-                                            <!-- an error submitting the form-->
-                                            <div class="d-none" id="submitErrorMessage">
-                                                <div class="text-center text-danger mb-3">Error sending message!</div>
-                                            </div>
-                                            <!-- Submit Button-->
-                                            <button id="submitButton" type="submit"
-                                                class="btn rounded-pill btn-blue text-white w-50 fw-bold">Send
-                                                Messages</button>
-                                        </form>
-                                    </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="mb-5 fw-bolder">How We Can Help You</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="mb-5 fw-bolder">Contact</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <div class="contact_form">
+                                <!-- Name input-->
+                                <div class="form-group mb-3 mr-5">
+                                    <label for="name" class="mb-2">Name<span style="color:red">*</span></label>
+                                    <input class="form-control" id="name" type="text"
+                                        placeholder="Enter your name..." data-sb-validations="required"
+                                        style="height: 3rem;border-radius:15px; border:1px solid #0056D2;" />
+
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name
+                                        is
+                                        required.</div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="contat_info">
-                                        <h3 class="mb-1 fw-bolder">CONTACT INFO</h3>
-                                        <p>You Can Contact Us From Following Details</p>
-                                        <div class="d-flex">
-                                            <div class="icons_contact_info ms-2">
-                                                <i class="fa-solid fa-envelope fs-3 mt-4 p-3"></i>
-                                            </div>
-                                            <div class="mt-3 ms-3">
-                                                <p class="mb-0 pb-0 text-black fw-bold text-uppercase">email</p>
-                                                <small class="text-muted">info@biafotech.com</small>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex mt-1">
-                                            <div class="icons_contact_info ms-2">
-                                                <i class="fa-solid fa-phone fs-3 mt-4 p-3"></i>
-                                            </div>
-                                            <div class="mt-3 ms-3">
-                                                <p class="mb-0 pb-0 text-black fw-bold text-uppercase">phone</p>
-                                                <small class="d-block text-muted">+92 4232303230</small>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex mt-1">
-                                            <div class="icons_contact_info ms-2">
-                                                <i class="fa-solid fa-map-location-dot fs-3 mt-4 p-3"></i>
-                                            </div>
-                                            <div class="mt-3 ms-3">
-                                                <p class="mb-0 pb-0 text-black fw-bold text-uppercase">Address</p>
-                                                <small class="d-block text-muted">Lake City Near Jalal Sons, Lahore,
-                                                    Punjab, Pakistan </small>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex mt-4">
-                                        </div>
-                                        <div class="social_icons mt-4">
-                                            <p>Visit our social profile and get connected.</p>
-                                            <div class="d-flex mt-2">
-                                                <a href="https://www.facebook.com/BIAFOTECH/" target="_blank">
-                                                    <i class="fa-brands fa-facebook-f fs-3 me-2 mt-2"
-                                                        style="padding: 8px 12px !important;"></i>
-                                                </a>
-                                                <a href="https://www.linkedin.com/company/biafotech-pvt-ltd?original_referer=https%3A%2F%2Fwww.biafotech.com%2F"
-                                                    target="_blank">
-                                                    <i class="fa-brands fa-linkedin-in fs-3 p-2 me-2 mt-2"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <!-- Email address input-->
+                                <div class="form-group mb-3 mr-5 mt-5">
+                                    <label for="email" class="mb-2">Email<span
+                                            style="color:red">*</span></label>
+                                    <input class="form-control" id="email" type="email"
+                                        placeholder="name@example.com" data-sb-validations="required,email"
+                                        style="height: 3rem;border-radius:15px; border:1px solid #0056D2;" />
+
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">An
+                                        email
+                                        is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is
+                                        not valid.</div>
+                                </div>
+                                <!-- Phone number input-->
+                                <div class="form-group mb-3 mr-5 mt-5">
+                                    <label for="phone" class="mb-2">Phone number<span
+                                            style="color:red">*</span></label>
+                                    <input class="form-control" id="phone" type="tel"
+                                        placeholder="(123) 456-7890" data-sb-validations="required"
+                                        style="height: 3rem;border-radius:15px; border:1px solid #0056D2;" />
+                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A
+                                        phone
+                                        number is required.</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Message input-->
+                    <div class="col-lg-4 mb-3">
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <div class="form-group mb-3 mt-1">
+                                <label for="message" class="mb-2">Message</label>
+                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..."
+                                    style="height: 10rem;border-radius:15px; border:1px solid #0056D2;" data-sb-validations="required"></textarea>
+
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A
+                                    message is required.</div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage">
+                                <div class="text-center text-danger mb-3">Error sending message!</div>
+                            </div>
+                            <!-- Submit Button-->
+                            <div class="mt-5">
+                                <button id="submitButton" type="submit"
+                                    class="btn btn-blue text-white w-100 fw-bold mt-5"
+                                    style="height: 3rem;border-radius: 10px;">Send
+                                    Messages</button>
+                                <p>By clicking on the submit entry button you agree with our <span
+                                        style="color: #0056D2">privacy policy</span></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="contat_info"
+                            style="background-color: #0056D2; border-radius:20px; padding-right:20px">
+                            {{-- <h3 class="mb-1 fw-bolder">CONTACT INFO</h3> --}}
+                            {{-- <p>You Can Contact Us From Following Details</p> --}}
+                            <div class="d-flex">
+                                <div class="icons_contact_info ms-2">
+                                    <i class="fa-solid fa-envelope fs-3 mt-4 p-3"></i>
+                                </div>
+                                <div class="mt-5 ml-4">
+                                    {{-- <p class="mb-0 pb-0 text-black fw-bold text-uppercase">email</p> --}}
+                                    <p class="">info@biafotech.com</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="icons_contact_info ms-2">
+                                    <i class="fa-solid fa-phone fs-3 mt-4 p-3"></i>
+                                </div>
+                                <div class="mt-5">
+                                    {{-- <p class="mb-0 pb-0 text-black fw-bold text-uppercase">phone</p> --}}
+                                    <p class="d-block mb-1 pb-0 text-white fw-bold text-uppercase">+92 4232303230
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-1">
+                                <div class="icons_contact_info ms-2">
+                                    <i class="fa-solid fa-map-location-dot fs-3 mt-4 p-3"></i>
+                                </div>
+                                <div class="mt-4">
+                                    {{-- <p class="mb-0 pb-0 text-black fw-bold text-uppercase">Address</p> --}}
+                                    <p class="text-white">Lake City Near Jalal Sons, Lahore,
+                                        Punjab, Pakistan </p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-4">
+                            </div>
+                            <div class="social_icons mt-4">
+                                <p>Visit our social profile and get connected.</p>
+                                <div class="d-flex mt-2">
+                                    <a href="https://www.facebook.com/BIAFOTECH/" target="_blank">
+                                        <i class="fa-brands fa-facebook-f fs-3 me-2 mt-2 mb-3"
+                                            style="padding: 8px 12px !important;"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/biafotech-pvt-ltd?original_referer=https%3A%2F%2Fwww.biafotech.com%2F"
+                                        target="_blank">
+                                        <i class="fa-brands fa-linkedin-in fs-3 p-2 me-2 mt-2"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col-md-12 mb-5">
+
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-
     <footer>
         <section class="text-black text-center bg_main_content_yellowish mt-5"
             style="padding: 15px; background-color:#ECF5FF">
@@ -946,6 +879,7 @@
         background: #007bff;
     }
 </style>
+
 <script>
     // Add active class to the current button (highlight it)
     var header = document.getElementById("navbarSupportedContent");
