@@ -303,7 +303,7 @@ html {
                                         @endif
                                     </div>
                                 </div>
-                                <div class="col-md-6 mt-2">
+                                <div class="col-md-10 mt-2">
                                     <p class="card-text" style="font-family:Palatino;font-size:18px;">
                                         https://cardify.com/link-shortner</p>
                                 </div>
