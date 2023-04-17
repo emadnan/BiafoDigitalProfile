@@ -135,7 +135,7 @@ $is_new = session()->get('is_new');
                         <!-- //image -->
                         <div>
                             <h5
-                                style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c">
+                                style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#0056D2 ;color:white; border:2px solid #0056D2">
                                 Add Card Here</h5>
                         </div>
                         <div class="mt-5 d-flex justify-content-center">
@@ -274,7 +274,7 @@ $is_new = session()->get('is_new');
                         @csrf
                         <div>
                             <h5
-                                style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c">
+                                style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#0056D2 ;color:white; border:2px solid #0056D2">
                                 CSV Upload</h5>
                         </div>
                         <div class="form-group">
@@ -305,7 +305,7 @@ $is_new = session()->get('is_new');
                     @csrf
                     <div class="modal-body">
                         <h5
-                            style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c">
+                            style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#0056D2 ;color:white; border:2px solid #0056D2">
                             Setup Your Company Profile</h5>
                         <div class="row mt-3 mb-3">
                             <div class="col-md-12 d-flex justify-content-center">

@@ -85,7 +85,7 @@
                 <form id="company_profile_form" action="/update_company/{{$company->id}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
-                        <h5 style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c"> Update Your Company Profile</h5>
+                        <h5 style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#0056D2 ;color:white; border:2px solid #0056D2"> Update Your Company Profile</h5>
                         <div class="row mt-3 mb-3">
                             <div class="col-md-12 d-flex justify-content-center">
                                 <img src="{{asset('company_logos')}}/{{$company->logo}}" alt="image preview"

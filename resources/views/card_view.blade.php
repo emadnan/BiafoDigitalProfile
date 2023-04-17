@@ -454,7 +454,7 @@
         }
 
         .floating-container .floating-button {
-            /* box-shadow: 0 10px 25px #AD021C; */
+            /* box-shadow: 0 10px 25px #0056D2; */
             -webkit-transform: translatey(5px);
             transform: translatey(5px);
             -webkit-transition: all 0.3s;
@@ -764,7 +764,7 @@
                         <!-- //image -->
                         <div>
                             <h5
-                                style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#ad021c ;color:white; border:2px solid #ad021c">
+                                style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#0056D2 ;color:white; border:2px solid #0056D2">
                                 Update Card Here</h5>
                         </div>
                         <div class="mt-5 d-flex justify-content-center">
