@@ -124,7 +124,7 @@ class ProfileController extends Controller
         $interests=(explode(",",$profile->interests));
         $languages=(explode(",",$profile->languages));
         $data=compact('card','profile','skills','interests','languages');
-        return view('view_profile_new')->with($data);
+        return view('view_profile_new2')->with($data);
     }
     public function editProfile($card_id)
     {
