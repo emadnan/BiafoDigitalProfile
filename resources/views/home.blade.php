@@ -393,6 +393,19 @@ $(document).ready(function() {
     });
 });
 $(document).ready(function() {
+    //never close modal on click outside
+    $('#add_card_modal').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+    $('#add_csv_modal').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+    $('#company_profile_modal').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
     $('#csv').click(function() {
         $('#add_csv_modal').modal('show');
     });
