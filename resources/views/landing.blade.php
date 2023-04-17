@@ -29,8 +29,8 @@
             <nav class="navbar navbar-expand-lg w-100 p-0">
                 <div class="container">
                     <a class="navbar-brand text-white fs-3" href="#">
-                        <img src="{{ asset('frontend/img/cardify_logo.png') }}" alt="" width="250"
-                            height="200" class="d-inline-block align-text-top mt-2">
+                        <img src="{{ asset('frontend/img/cardify_logo_footer.png') }}" alt="" width="200px"
+                            height="70px" class="d-inline-block align-text-top mt-2">
                     </a>
                     <button class="navbar-toggler btn-yellow text-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
