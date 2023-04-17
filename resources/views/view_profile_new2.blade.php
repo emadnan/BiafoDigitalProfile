@@ -287,6 +287,29 @@ html {
                                 </p>
                             </div>
                         </div>
+                        @foreach($profile->social_links as $link)
+                        <a href="{{$link->social_link}}" style= "text-decoration: none;">
+                        <div class="row mt-3">
+                            <div class="col-md-2">
+                                <div class="icon">
+                                    @if($link->social_name == 'facebook')
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    @elseif($link->social_name == 'github')
+                                    <i class="fa-brands fa-github"></i>
+                                    @elseif($link->social_name == 'website')
+                                    <i class="fa-solid fa-globe"></i>
+                                    @elseif($link->social_name == 'linkedin')
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-md-10 mt-2">
+                                <p class="card-text" style="font-family:Palatino;font-size:18px;">
+                                    {{$link->social_link}}</p>
+                            </div>
+                        </div>
+                        </a>
+                        @endforeach
                     </div>
                 </div>
                 <!-- skills -->
