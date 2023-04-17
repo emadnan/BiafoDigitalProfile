@@ -305,7 +305,7 @@ html {
                                 </div>
                                 <div class="col-md-6 mt-2">
                                     <p class="card-text" style="font-family:Palatino;font-size:18px;">
-                                        {{$link->social_link}}</p>
+                                        https://cardify.com/link-shortner</p>
                                 </div>
                             </div>
                         </a>
