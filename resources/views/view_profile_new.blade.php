@@ -54,10 +54,7 @@ html {
 
 .card-img-top {
     /* give buttom waved curve */
-    /* border-bottom-left-radius: 10%; */
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 5%;
-    border-bottom: 30px solid #0056D2;
+    border-bottom: 10px solid #0056D2;
 }
 
 .line {
@@ -154,7 +151,8 @@ html {
     border-radius: 5px;
     cursor: pointer;
 }
-#saveBtn{
+
+#saveBtn {
     margin-top: 10px;
     background-color: #0056D2;
     color: #fff;
@@ -163,9 +161,11 @@ html {
     border-radius: 5px;
     cursor: pointer;
 }
-#saveBtn:hover{
+
+#saveBtn:hover {
     background-color: black;
 }
+
 #closeBtn:hover {
     background-color: black;
 }
@@ -195,33 +195,32 @@ html {
             <div class="col-sm-4"></div>
             <div class="col-lg-4">
                 <!-- Profile Here -->
-                <div class="card" style="color:#ad021;border-top-left-radius:7%;border-top-right-radius:7%">
-                    <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="..."
-                        style="border-top-left-radius:7%;border-top-right-radius:7%;">
+                <div class="card">
+                    <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="...">
                     <!-- <div class="line"></div> -->
 
                     <div class="card-body">
                         <div class="row mb-3">
-                            <div class="col-md-3"></div>
-                            <div class="col-md-3"></div>
-                            <div class="col-md-6 d-flex justify-content-center">
-                                @foreach($profile->social_links as $link)
-                                <div class="col-md-3">
-                                    <a href="{{$link->social_link}}">
-                                        <div class="social_icon">
-                                            @if($link->social_name == 'facebook')
-                                            <i class="fa-brands fa-facebook"></i>
-                                            @elseif($link->social_name == 'github')
-                                            <i class="fa-brands fa-github"></i>
-                                            @elseif($link->social_name == 'website')
-                                            <i class="fa-solid fa-globe"></i>
-                                            @elseif($link->social_name == 'linkedin')
-                                            <i class="fa-brands fa-linkedin-in"></i>
-                                            @endif
-                                        </div>
-                                    </a>
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <div class="row">
+                                    @foreach($profile->social_links as $link)
+                                    <div class="col-md-2 mt-1">
+                                        <a href="{{$link->social_link}}">
+                                            <div class="social_icon">
+                                                @if($link->social_name == 'facebook')
+                                                <i class="fa-brands fa-facebook"></i>
+                                                @elseif($link->social_name == 'github')
+                                                <i class="fa-brands fa-github"></i>
+                                                @elseif($link->social_name == 'website')
+                                                <i class="fa-solid fa-globe"></i>
+                                                @elseif($link->social_name == 'linkedin')
+                                                <i class="fa-brands fa-linkedin-in"></i>
+                                                @endif
+                                            </div>
+                                        </a>
+                                    </div>
+                                    @endforeach
                                 </div>
-                                @endforeach
 
                             </div>
                         </div>
@@ -421,7 +420,8 @@ html {
                     <div id="bottomSheetContent">
                         <h2>Save Contact</h2>
                         <p>Want to save contact?</p>
-                        <button id="saveBtn" data-profile-id="{{$profile->id}}"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+                        <button id="saveBtn" data-profile-id="{{$profile->id}}"><i class="fa-solid fa-floppy-disk"></i>
+                            Save</button>
                         <button id="closeBtn"><i class="fa-solid fa-square-xmark"></i> Close</button>
                     </div>
                 </div>
@@ -459,37 +459,40 @@ openBtn.addEventListener('click', () => {
 });
 
 closeBtn.addEventListener('click', () => {
-  bottomSheet.style.display = 'none';
+    bottomSheet.style.display = 'none';
 });
 saveBtn.addEventListener('click', () => {
- //download a contact file
- var contact = {
-    name: "{{$profile->name}}",
-    email: "{{$profile->email}}",
-    phone: "{{$profile->phone}}",
-    address: "{{$profile->address}}"
-};
+    //download a contact file
+    var contact = {
+        name: "{{$profile->name}}",
+        email: "{{$profile->email}}",
+        phone: "{{$profile->phone}}",
+        address: "{{$profile->address}}"
+    };
 
-// Convert the contact information to a vCard format
-var vcard = "BEGIN:VCARD\n" +
-    "VERSION:3.0\n" +
-    "N:" + contact.name + "\n" +
-    "EMAIL:" + contact.email + "\n" +
-    "TEL:" + contact.phone + "\n" +
-    "ADR:" + contact.address + "\n" +
-    "END:VCARD";
+    // Convert the contact information to a vCard format
+    var vcard = "BEGIN:VCARD\n" +
+        "VERSION:3.0\n" +
+        "N:" + contact.name + "\n" +
+        "EMAIL:" + contact.email + "\n" +
+        "TEL:" + contact.phone + "\n" +
+        "ADR:" + contact.address + "\n" +
+        "END:VCARD";
 
-// Create a blob with the vCard data
-var blob = new Blob([vcard], {type: "text/vcard"});
+    // Create a blob with the vCard data
+    var blob = new Blob([vcard], {
+        type: "text/vcard"
+    });
 
-// Create a download link for the contact file
-var downloadLink = document.createElement("a");
-downloadLink.href = URL.createObjectURL(blob);
-downloadLink.download = contact.name + ".vcf";
+    // Create a download link for the contact file
+    var downloadLink = document.createElement("a");
+    downloadLink.href = URL.createObjectURL(blob);
+    downloadLink.download = contact.name + ".vcf";
 
-// Add the download link to the page and click it
-document.body.appendChild(downloadLink);
-downloadLink.click();
+    // Add the download link to the page and click it
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
 });
 </script>
+
 </html>

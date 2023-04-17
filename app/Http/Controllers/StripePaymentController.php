@@ -30,15 +30,14 @@ class StripePaymentController extends Controller
         Stripe\Stripe::setApiKey($api_key);
     
         Stripe\Charge::create ([
-                "amount" => 100 * 100,
+                "amount" => 100*100,
                 "currency" => "usd",
                 "source" => $request->stripeToken,
-                "description" => "Test payment from Rafay." 
+                "description" => "Test payment from Rafay." ,
+                "metadata" => ["product_id" => "prod_Ni6iiqzPNgmWKe"]
         ]);
-      
-        Session::flash('success', 'Payment successful!');
-              
-        return back();
+    return redirect()->back()->with('success', 'Payment successful!');
+        // return redirect('/home')->with('success', 'Payment successful!');
     }
     public function testenv()
     {
