@@ -31,11 +31,20 @@
   color: white;
   padding: 20px 8px;
   border-radius: 16px;
-  background: #0056D2;
   opacity: 1;
-  /* right: 211px; */
 }
-.card-icon-blue {
+/* .card-icon:hover{
+  box-sizing: border-box;
+  width: 80px;
+  padding: 20px 8px;
+  border-radius: 16px;
+  color: #0056D2;
+  background-color: white;
+  opacity: 1;
+  background-color: w;
+  transition: background-color 0.3s ease;
+} */
+/* .card-icon-blue {
 
   box-sizing: border-box;
   width: 80px;
@@ -45,7 +54,7 @@
   background: white;
   opacity: 1;
 
-}
+} */
 #cardIconId{
   margin-right: 30px;
 }
@@ -62,21 +71,21 @@
   /* font-weight: 700; */
 }
 
-#feature_hover {
+/* #feature_hover {
   background-color: white;
   padding: 10px;
   transition: background-color 0.3s ease;
-}
+} */
 #feature_hover h6{
   color: #0056D2;
 }
 #feature_hover:hover .list-group-item {
   background-color: white;
-  /* color: white; */
-  transition: background-color 0.3s ease;
 }
 #feature_hover:hover{
   background-color: #0056D2;
+  color: white;
+  /* transition: background-color 0.3s ease; */
 }
 #feature_hover:hover h6{
   color: white;
@@ -84,7 +93,11 @@
 #feature_hover:hover .list-group-item {
   background-color: #0056D2;
   color: white;
-  transition: background-color 0.3s ease;
+  
+}
+#feature_hover:hover .card-icon{
+  background-color: white;
+  color: #0056D2;
 }
 
 #featuresId {
@@ -136,7 +149,7 @@
 #contactUsId {
   top: 66px;
   left: 1256px;
-  width: 76px;
+  width: 100px;
   height: 24px;
   text-align: left;
   letter-spacing: 0px;
