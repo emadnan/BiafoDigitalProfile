@@ -79,17 +79,17 @@
                             @guest
                                 @if (Route::has('login'))
                                     <div class="d-grid gap-2 d-md-flex text-wrap">
-                                        <a class="btn btn-yellow text-white me-md-3 px-4" role="button"
+                                        <a class="btn btn-yellow text-white me-md-3 px-4 mt-3" role="button"
                                             style="border-radius: 10px;"
                                             href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
-                                        <a class="btn btn-blue text-white text-wrap" role="button"
+                                        <a class="btn btn-blue text-white text-wrap mt-3" role="button"
                                             style="border-radius: 10px;" href="#pricing"><b>{{ __('Create Card') }}</b></a>
                                     </div>
                                 @endif
                             @else
-                                <a class="btn btn-yellow px-4 text-white text-wrap" role="button"
+                                <a class="btn btn-yellow text-white me-md-3 px-4 mt-3" role="button"
                                     style="border-radius: 10px;" href="#pricing"><b>{{ __('Create Card') }}</b></a>
-                                <a class="btn btn-blue text-white px-4 text-wrap" role="button"
+                                <a class="btn btn-blue text-white px-4 text-wrap mt-3" role="button"
                                     style="border-radius: 10px;" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                             @endguest
                         </form>
@@ -97,7 +97,7 @@
                 </div>
             </nav>
         </section>
-        <!-- HERO-IMG -->
+
         <section class="img-fluid customize_for_mob">
             <div class="hero_bg_img">
                 <div class="container">
@@ -212,12 +212,12 @@
                         </div>
                     </div>
                     {{-- 4th columnn --}}
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-2">
                         <div class="card h-100 shadow-lg" style="width: 100%; height:100%; border-radius:25px;"
                             id="feature_hover">
                             <div class="container mt-4 justify-content-around">
                                 <div class="row card-icon">
-                                    <div class="col-md-2 rounded float-left" style="margin-left: 5px">
+                                    <div class="col-md-2 rounded float-left" style="margin-left: 3px">
                                         <i class="fa-solid fa-palette fa-2xl"></i>
                                     </div>
                                     <div class="col-md-10"></div>
@@ -295,7 +295,7 @@
                     <div class="col-md-4"></div>
                 </div>
 
-                <div class="container p-5">
+                <div class="container-sm p-5">
                     <div class="row">
                         {{-- 1st price card --}}
                         <div class="col-md-3 mb-5">
@@ -344,7 +344,7 @@
                                         </svg> Additional card designs</li>
                                 </ul>
                                 <div class="card-body text-center">
-                                    <button type="submit" class="px-5 py-2"
+                                    {{-- <button type="submit" class="px-5 py-2"
                                         style="background-color: #0056D2; border-radius: 20px;">
                                         <a class="nav-link text-white text-center" href="/register"
                                             data-name="feature">
@@ -352,7 +352,10 @@
                                                 SignUp
                                             </b>
                                         </a>
-                                    </button>
+                                    </button> --}}
+                                    <a class="btn btn-primary col-8 mx-auto" href="/register" role="button"
+                                        type="submit"
+                                        style="background-color: #0056D2; border-radius: 12px;px"><strong>SignUp</strong></a>
                                 </div>
                             </div>
                         </div>
@@ -405,7 +408,7 @@
                                         </svg> Additional card designs</li>
                                 </ul>
                                 <div class="card-body text-center">
-                                    <button type="submit" class="px-5 py-2"
+                                    {{-- <button type="submit" class="px-5 py-2"
                                         style="background-color: #0056D2; border-radius: 20px;">
                                         <a class="nav-link text-white text-center" href="/register"
                                             data-name="feature">
@@ -413,7 +416,10 @@
                                                 SignUp
                                             </b>
                                         </a>
-                                    </button>
+                                    </button> --}}
+                                    <a class="btn btn-primary col-8 mx-auto" href="/register" role="button"
+                                        type="submit"
+                                        style="background-color: #0056D2; border-radius: 12px;px"><strong>SignUp</strong></a>
                                 </div>
                             </div>
                         </div>
@@ -468,7 +474,7 @@
                                         </svg> Additional card designs</li>
                                 </ul>
                                 <div class="card-body text-center">
-                                    <button type="submit" class="px-5 py-2"
+                                    {{-- <button type="submit" class="px-5 py-2"
                                         style="background-color: #0056D2; border-radius: 20px;">
                                         <a class="nav-link text-white text-center" href="/register"
                                             data-name="feature">
@@ -476,7 +482,10 @@
                                                 SignUp
                                             </b>
                                         </a>
-                                    </button>
+                                    </button> --}}
+                                    <a class="btn btn-primary col-8 mx-auto" href="/register" role="button"
+                                        type="submit"
+                                        style="background-color: #0056D2; border-radius: 12px;px"><strong>SignUp</strong></a>
                                 </div>
                             </div>
                         </div>
@@ -535,7 +544,7 @@
                                         </svg> Additional card designs</li>
                                 </ul>
                                 <div class="card-body text-center">
-                                    <button type="submit" class="px-5 py-2"
+                                    {{-- <button type="submit" class="px-5 py-2"
                                         style="background-color: #0056D2; border-radius: 20px;">
                                         <a class="nav-link text-white text-center" href="/register"
                                             data-name="feature">
@@ -543,7 +552,10 @@
                                                 SignUp
                                             </b>
                                         </a>
-                                    </button>
+                                    </button> --}}
+                                    <a class="btn btn-primary col-8 mx-auto" href="/register" role="button"
+                                        type="submit"
+                                        style="background-color: #0056D2; border-radius: 12px;px"><strong>SignUp</strong></a>
                                 </div>
                             </div>
                         </div>
@@ -801,7 +813,7 @@
                         <div col-md-></div>
 
                     </div> --}}
-                    {{-- <div class="py-2">
+    {{-- <div class="py-2">
                         <a href="#contact" class="text-black text-decoration-none">Contact us</a> <span
                             style="color:black">|</span> <a href="/privacy-policy"
                             class="text-black text-decoration-none">Privacy Policy</a>
@@ -811,7 +823,7 @@
                             rights
                             reserved.</p>
                     </div> --}}
-                {{-- </div>
+    {{-- </div>
             </div>
         </section>
     </footer> --}}
@@ -821,21 +833,20 @@
                 <div class="col-xl-6 mt-5">
                     <div>
                         <a class="navbar-brand text-white fs-3" href="#">
-                        <img src="{{ asset('frontend/img/cardify_logo_footer.png') }}" alt="" width="300"
-                            height="100" class="d-inline-block align-text-top">
-                    </a>
-                        <div class="social_icons contat_info mt-4">
-                                <div class="d-flex">
-                                    <a href="https://www.facebook.com/BIAFOTECH/" target="_blank">
-                                        <i class="fa-brands fa-facebook-f fs-3 me-2 mt-2 mb-3"
-                                            style="padding: 8px 12px !important; backgoround"></i>
-                                    </a>
-                                    <a href="https://www.linkedin.com/company/biafotech-pvt-ltd?original_referer=https%3A%2F%2Fwww.biafotech.com%2F"
-                                        target="_blank">
-                                        <i class="fa-brands fa-linkedin-in fs-3 p-2 me-2 mt-2"></i>
-                                    </a>
-                                </div>
+                            <img src="{{ asset('frontend/img/cardify_logo_footer.png') }}" alt=""
+                                width="300" height="100" class="d-inline-block align-text-top">
+                        </a>
+                        <div class="mt-4">
+                            <div class="d-flex">
+                                <a href="https://www.facebook.com/BIAFOTECH/" target="_blank">
+                                    <i class="fa-brands fa-facebook fa-2xl me-3 mb-4 ml-4"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/company/biafotech-pvt-ltd?original_referer=https%3A%2F%2Fwww.biafotech.com%2F"
+                                    target="_blank">
+                                    <i class="fa-brands fa-linkedin fa-2xl"></i>
+                                </a>
                             </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-6">
@@ -849,10 +860,12 @@
                                 <a href="#pricing" class="text-decoration-none" style="color: black">Share Card</a>
                             </li>
                             <li>
-                                <a href="#contact_us" class="text-decoration-none" style="color: black">Address Book</a>
+                                <a href="#contact_us" class="text-decoration-none" style="color: black">Address
+                                    Book</a>
                             </li>
                             <li>
-                                <a href="#pricing" class="text-decoration-none" style="color: black">Virtual Background</a>
+                                <a href="#pricing" class="text-decoration-none" style="color: black">Virtual
+                                    Background</a>
                             </li>
                         </ul>
                     </div>
@@ -868,7 +881,8 @@
                                 <a href="#pricing" class="text-decoration-none" style="color: black">Pricing</a>
                             </li>
                             <li>
-                                <a href="#request_a_feature" class="text-decoration-none" style="color: black">Request</a>
+                                <a href="#request_a_feature" class="text-decoration-none"
+                                    style="color: black">Request</a>
                             </li>
                         </ul>
                     </div>
@@ -906,22 +920,24 @@
     {{-- <link href="{{ asset('frontend\css\custom.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('frontend\css\fontawesome\css\all.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend\css\jquery.multiselect.css') }}" rel="stylesheet">
+
+    <script>
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("navbarSupportedContent");
+        var btns = header.getElementsByClassName("nav-link");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+                if (this.attr('data-name') == "feature") {
+                    alert('hello');
+                }
+            });
+        }
+    </script>
 </body>
 
-<script>
-    // Add active class to the current button (highlight it)
-    var header = document.getElementById("navbarSupportedContent");
-    var btns = header.getElementsByClassName("nav-link");
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-            if (this.attr('data-name') == "feature") {
-                alert('hello');
-            }
-        });
-    }
-</script>
+
 
 </html>
