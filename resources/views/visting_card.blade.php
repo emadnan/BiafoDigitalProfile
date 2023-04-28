@@ -49,9 +49,9 @@
             left: 0;
             text-align: center;
             /* cursor: pointer;
-                  transition: 0.6s;
-                  transform-style: preserve-3d;
-                  box-shadow: 0 1px 5px rgba(0,0,0,0.9); */
+                                                  transition: 0.6s;
+                                                  transform-style: preserve-3d;
+                                                  box-shadow: 0 1px 5px rgba(0,0,0,0.9); */
             border-radius: 15px;
             /*Border Radius*/
         }
@@ -86,17 +86,17 @@
         }
 
         /* .front .caption {
-                    font-size: 1.25em;
-                } */
+                                                    font-size: 1.25em;
+                                                } */
 
         /* .front .caption:before {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                   
-                } */
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                   
+                                                } */
 
 
         .front h2 {
@@ -141,7 +141,7 @@
             text-align: left;
             opacity: 1;
             /* word-wrap: break-word;
-                    white-space: pre-wrap; */
+                                                    white-space: pre-wrap; */
             margin-left: 21px;
 
         }
@@ -195,17 +195,17 @@
         }
 
         /* figure a{
-                  z-index: 1000;
-                  text-indent: 200%;
-                  white-space: nowrap;
-                  font-size: 0;
-                  opacity: 0;
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                } */
+                                                  z-index: 1000;
+                                                  text-indent: 200%;
+                                                  white-space: nowrap;
+                                                  font-size: 0;
+                                                  opacity: 0;
+                                                  position: absolute;
+                                                  top: 0;
+                                                  left: 0;
+                                                  width: 100%;
+                                                  height: 100%;
+                                                } */
         .qricon {
             /* background-color: var(--red); */
             border-radius: 10%;
@@ -427,9 +427,9 @@
 
         .colorPickSelector2 {
             /* border-radius: 5px;
-                  width: 36px;
-                  height: 36px;
-                  cursor: pointer; */
+                                                  width: 36px;
+                                                  height: 36px;
+                                                  cursor: pointer; */
             -webkit-transition: all linear .2s;
             -moz-transition: all linear .2s;
             -ms-transition: all linear .2s;
@@ -447,8 +447,8 @@
         }
 
         /* .colorPickSelector:hover {
-                    transform: scale(1.1);
-                } */
+                                                    transform: scale(1.1);
+                                                } */
     </style>
     <div class="content-wrapper">
         <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
@@ -536,6 +536,8 @@
                                                 <option value="1">Small</option>
                                                 <option value="2">Meduim</option>
                                                 <option value="3">Large</option>
+                                                <option value="default" selected>Default</option>
+
                                             </select>
                                         </span>
                                     </i>
@@ -548,6 +550,7 @@
                                                 <option value="1">Small</option>
                                                 <option value="2">Meduim</option>
                                                 <option value="3">Large</option>
+                                                <option value="default" selected>Default</option>
                                             </select>
                                         </span>
                                     </i>
@@ -560,6 +563,7 @@
                                                 <option value="1">Small</option>
                                                 <option value="2">Meduim</option>
                                                 <option value="3">Large</option>
+                                                <option value="default" selected>Default</option>
                                             </select>
                                         </span>
                                     </i>
@@ -572,6 +576,7 @@
                                                 <option value="1">Small</option>
                                                 <option value="2">Meduim</option>
                                                 <option value="3">Large</option>
+                                                <option value="default" selected>Default</option>
                                             </select>
                                         </span>
                                     </i>
@@ -584,6 +589,7 @@
                                                 <option value="1">Small</option>
                                                 <option value="2">Meduim</option>
                                                 <option value="3">Large</option>
+                                                <option value="default" selected>Default</option>
                                             </select>
                                         </span>
                                     </i>
@@ -593,16 +599,16 @@
 
                     </div>
                     <!-- <div class="row">
-                                        <div class="col-md-4 mt-5 mb-3">
-                                            <h3> <b>Color Picker:</b></h3>
-                                        </div>
-                                        <div class="col-md-2 mt-5 mb-3">
-                                            <input type="color" id="text_color" class="primary_color"name="text_color" value="#ffffff">
-                                        </div>
-                                        <div class="col-md-4 mt-5 mb-3">
-                                            <button class="btn btn-primary" id="save">Save Colors</button>
-                                        </div>
-                                    </div> -->
+                                                                        <div class="col-md-4 mt-5 mb-3">
+                                                                            <h3> <b>Color Picker:</b></h3>
+                                                                        </div>
+                                                                        <div class="col-md-2 mt-5 mb-3">
+                                                                            <input type="color" id="text_color" class="primary_color"name="text_color" value="#ffffff">
+                                                                        </div>
+                                                                        <div class="col-md-4 mt-5 mb-3">
+                                                                            <button class="btn btn-primary" id="save">Save Colors</button>
+                                                                        </div>
+                                                                    </div> -->
                     <div class="col-md-6 mt-5">
 
                     </div>
@@ -696,7 +702,7 @@
                 "#34495e", "#2c3e50", "#f1c40f", "#f39c12", "#e67e22", "#d35400", "#e74c3c", "#c0392b",
                 "#ecf0f1",
                 "#bdc3c7", "#95a5a6", "#7f8c8d", "white",
-                "#ff0000", "#00ff00", "#0000ff", "#ffff00", "#00ffff", "#ff00ff","black"
+                "#ff0000", "#00ff00", "#0000ff", "#ffff00", "#00ffff", "#ff00ff", "black"
             ],
             'onColorSelected': function() {
                 // this.element.css({
@@ -845,28 +851,56 @@
         // Add event listeners to the dropdowns
         fontSizeDropdown.addEventListener("change", (event) => {
             const value = event.target.value;
-            userName.style.fontSize = getFontSize(value);
+            if (value === "default") {
+                userName.style.fontSize = "20.8px";
+            } else {
+                userName.style.fontSize = getFontSize(value);
+            }
         });
+
 
         designationSizeDropdown.addEventListener("change", (event) => {
             const value = event.target.value;
-            userDesignation.style.fontSize = getFontSize(value);
+            if (value === "default") {
+                userDesignation.style.fontSize = "10.96px";
+            } else {
+                userDesignation.style.fontSize = getFontSize(value);
+            }
         });
+
 
         companySizeDropdown.addEventListener("change", (event) => {
             const value = event.target.value;
-            userCompany.style.fontSize = getFontSize(value);
+            if (value === "default") {
+                userCompany.style.fontSize = "10.96px";
+            } else {
+                userCompany.style.fontSize = getFontSize(value);
+            }
         });
+
 
         phoneSizeDropdown.addEventListener("change", (event) => {
             const value = event.target.value;
-            userPhone.style.fontSize = getFontSize(value);
+            if (value === "default") {
+                userPhone.style.fontSize = "10.96px";
+            } else {
+                userPhone.style.fontSize = getFontSize(value);
+            }
         });
+
+
 
         emailSizeDropdown.addEventListener("change", (event) => {
             const value = event.target.value;
-            userEmail.style.fontSize = getFontSize(value);
+            if (value === "default") {
+                userEmail.style.fontSize = "10.96px";
+            } else {
+                userEmail.style.fontSize = getFontSize(value);
+            }
         });
+
+
+        // end code
 
         // Helper function to get the font size value based on the dropdown option
         function getFontSize(optionValue) {
@@ -877,8 +911,8 @@
                     return "20px"; // medium
                 case "3":
                     return "24px"; // large
-                default:
-                    return "20.8px"; // default to small
+                    // default:
+                    //     return "20.8px"; // default to small
             }
         }
     </script>

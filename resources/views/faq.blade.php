@@ -36,8 +36,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center" aria-current="page" href="/"
-                                    style="position: relative;">
+                                <a class="nav-link text-white text-center" aria-current="page" href="/">
                                     Home
                                     <!-- <div class="overlay_menu"></div> -->
                                 </a>
@@ -78,15 +77,15 @@
                             {{-- <a class="btn btn-yellow rounded-pill px-5 py-2" >Login</a> --}}
                             @guest
                                 @if (Route::has('login'))
-                                    <a class="btn btn-yellow px-5 py-2 text-white"
+                                    <a class="btn btn-yellow px-4 py-2 text-white"
                                     style="border-radius: 10px;" href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
-                                    <a class="btn btn-yellow  px-5 py-2 ml-4 text-white"
+                                    <a class="btn btn-yellow  px-4 py-2 ml-4 text-white"
                                         href="/#pricing" style="border-radius: 10px;"><b>{{ __('Create Card') }}</b></a>
                                 @endif
                             @else
-                                <a class="btn btn-yellow  px-5 py-2 text-white" style="border-radius: 10px;"
+                                <a class="btn btn-yellow  px-4 py-2 text-white" style="border-radius: 10px;"
                                     href="#/pricing"><b>{{ __('Create Card') }}</b></a>
-                                <a class="btn btn-yellow  px-5 py-2 text-white ml-4" style="border-radius: 10px;"
+                                <a class="btn btn-yellow  px-4 py-2 text-white ml-4" style="border-radius: 10px;"
                                     href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                             @endguest
 
@@ -98,9 +97,8 @@
     </header>
     <main>
         <!-- <div style ="margin-left:10%"> -->
-        <div class="card-ll" style=" margin-top: 3%;">
+        <div class="" style=" margin-top: 3%;">
             <div class="container p-5">
-
                 <div class="row">
                     <div class="col-lg-12 mb-1">
                         <div class="card shadow-lg">

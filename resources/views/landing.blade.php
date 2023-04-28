@@ -111,8 +111,8 @@
                                 your digital contact information. They give people the ability to share who they are,
                                 with anyone, wherever they go.</p>
                             <div class="mt-4 mx-3">
-                                <a role="button" class="btn btn-primary text-wrap" href="#pricing"
-                                    style="border-radius: 9px; height: 45px;">Get Started</a>
+                                <a role="button" class="btn text-wrap" href="#pricing"
+                                    style="border-radius: 9px; height: 45px; background-color:#0056D2; color:white"><b>Get Started</b></a>
                                 <button type="button" value="submit" class="btn btn-outline-primary mx-4"
                                     style="border-radius: 9px; height: 45px;">How it Works</button>
                             </div>
