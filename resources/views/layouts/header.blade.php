@@ -24,7 +24,7 @@ $permissions= session()->get('permissions');
      <!-- Right navbar links -->
      <ul class="navbar-nav ml-auto">
          <!-- Navbar Search -->
-         <li class="nav-item">
+         <!-- <li class="nav-item">
              <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                  <i class="fas fa-search"></i>
              </a>
@@ -44,7 +44,7 @@ $permissions= session()->get('permissions');
                      </div>
                  </form>
              </div>
-         </li>
+         </li> -->
 
          <!-- Notifications -->
          <style>
@@ -58,7 +58,7 @@ $permissions= session()->get('permissions');
              color: white;
          }
          </style>
-         <li class="nav-item dropdown">
+         <!-- <li class="nav-item dropdown">
              <a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                  <i class="fas fa-bell"></i>
                  <span class="badge bg-danger count"></span>
@@ -68,16 +68,16 @@ $permissions= session()->get('permissions');
 
 
                  <a href="" class="dropdown-item dropdown-footer">See All Notifications</a>
-             </div>
+             </div> -->
          <li class="nav-item">
              <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                  <i class="fas fa-expand-arrows-alt"></i>
              </a>
          </li>
          <li class="nav-item">
-             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+             <!-- <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
                  <i class="fas fa-th-large"></i>
-             </a>
+             </a> -->
              @guest
              @if (Route::has('login'))
          <li class="nav-item">
