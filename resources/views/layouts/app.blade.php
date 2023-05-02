@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Cardify</title>
-
+    <link rel="icon" href="{{asset('frontend/img/favIcon.png')}}" />
     <!-- Scripts -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{{asset('frontend/js/jquery-3.6.0.min.js')}}"></script>
