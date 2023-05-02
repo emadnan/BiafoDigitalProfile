@@ -404,11 +404,18 @@ html {
                 <div class="languages">
                     <h5 class="card-title" style="font-size: 18px; color:#0056D2">Languages</h5>
                     <div class="row">
+                    <div class="col-md-12 mt-1">
+                        
+                        <p>
                         @foreach($languages as $language)
-                        <div class="col-md-2 mt-1">
-                            <p>{{$language}}</p>
-                        </div>
+                        @if($loop->iteration == $loop->count)
+                            {{$language}}
+                        @else
+                            {{$language}}, 
+                        @endif
                         @endforeach
+                        </p>
+                        </div>
                     </div>
                 </div>
                 @endif
@@ -418,7 +425,15 @@ html {
                     <h5 class="card-title" style="font-size: 18px; color:#0056D2">Interests</h5>
                     <div class="row">
                         <div class="col-md-12 mt-1">
-                            <p>{{$profile->interests}}</p>
+                        <p>
+                        @foreach($interests as $interest)
+                        @if($loop->iteration == $loop->count)
+                            {{$interest}}
+                        @else
+                            {{$interest}}, 
+                        @endif
+                        @endforeach
+                        </p>
                         </div>
                     </div>
                 </div>
