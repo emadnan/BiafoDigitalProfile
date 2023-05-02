@@ -263,8 +263,8 @@
                             </div>
                             <div class="col-md-6" id="exist_experice_end_date_{{$experience->id}}">
                                 <div class="form-group"><label for="end_date">End Date:</label><input type="date"
-                                        class="form-control" id="end_date_exp" name="end_date_exp[]"
-                                        placeholder="Enter Your End Date" value="{{$experience->end_date}}"><a
+                                        class="form-control" id="end_date_exp{{$experience->id}}" name="end_date_exp[]"
+                                        placeholder="Enter Your End Date" value="{{$experience->end_date}}"><input type="checkbox" id="{{$experience->id}}" class="present-checkbox exp{{$experience->id}} mt-2" onclick="toggleEndDateExpExist(this.id)"><label for="{{$experience->id}}">&nbsp;Present</label><a
                                         class="btn btn-danger btn-sm float-right mt-3" id="{{$experience->id}}"
                                         style="float:right;" onclick="removeExperience_exist(this.id)"><i
                                             class="fa-solid fa-trash"></i></a></div>
@@ -305,8 +305,8 @@
                             </div>
                             <div class="col-md-6" id="exist_end_{{$education->id}}">
                                 <div class="form-group"><label for="end_date">End Date:</label><input type="date"
-                                        class="form-control" id="end_date" name="end_date[]"
-                                        placeholder="Enter Your End Date" value="{{$education->end_date}}"><a
+                                        class="form-control" id="end_date_edu{{$education->id}}" name="end_date[]"
+                                        placeholder="Enter Your End Date" value="{{$education->end_date}}"><input type="checkbox" id="{{$education->id}}" class="present-checkbox mt-2" onclick="toggleEndDateEduExist(this.id)"><label for="{{$education->id}}">&nbsp;Present</label><a
                                         class="btn btn-danger btn-sm float-right mt-3" id="{{$education->id}}"
                                         style="float:right;" onclick="removeEductionexist(this.id)"><i
                                             class="fa-solid fa-trash"></i></a></div>
@@ -434,11 +434,20 @@ $(document).ready(function() {
             i +
             '"><div class="form-group"><label for="start_date">Start Date:</label><input type="date" class="form-control" id="start_date_exp" name="start_date_exp[]" placeholder="Enter Your Start Date" required></div></div><div class="col-md-6" id="experice_row_end_date' +
             i +
-            '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date_exp" name="end_date_exp[]" placeholder="Enter Your End Date"><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
+            '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date_exp' + i + '" name="end_date_exp[]" placeholder="Enter Your End Date"><input type="checkbox" id="present' + i + '" class="present-checkbox mt-2" onclick="toggleEndDate(' + i + ')"><label for="present' + i + '">&nbsp;Present</label><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
             i +
             '" style="float:right;" onclick="removeExperience(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
         );
     });
+    
+    toggleEndDate = (id) => {
+        if ($('#present' + id).is(':checked')) {
+            $('#end_date_exp' + id).hide();
+        } else {
+            $('#end_date_exp' + id).show();
+        }
+    }
+    
     removeExperience = (id) => {
         $('#experice_row_company' + id).remove();
         $('#experice_row_position' + id).remove();
@@ -446,11 +455,22 @@ $(document).ready(function() {
         $('#experice_row_end_date' + id).remove();
     }
 });
+
 removeExperience_exist = (id) => {
     $('#exist_experice_company_' + id).remove();
     $('#exist_experice_position_' + id).remove();
     $('#exist_experice_start_date_' + id).remove();
     $('#exist_experice_end_date_' + id).remove();
+}
+toggleEndDateEduExist=(id)=>{
+    var enddate= $('#end_date_edu_exist' + id).val();
+    if ($('#' + id).is(':checked')) {
+        $('#end_date_edu' + id).hide();
+        $('#end_date_edu' + id).val('');
+    } else {
+        $('#end_date_edu' + id).show();
+        $('#end_date_edu' + id).val(enddate);
+    }
 }
 //add education
 $(document).ready(function() {
@@ -464,10 +484,17 @@ $(document).ready(function() {
             i +
             '"><div class="form-group"><label for="start_date">Start Date:</label><input type="date" class="form-control" id="start_date" name="start_date[]" placeholder="Enter Your Start Date" required></div></div><div class="col-md-6" id="end_row' +
             i +
-            '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date" name="end_date[]" placeholder="Enter Your End Date"><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
+            '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date' + i + '" name="end_date[]" placeholder="Enter Your End Date"><input type="checkbox" id="edu_present' + i + '" class="present-checkbox mt-2" onclick="toggleEndDateEdu(' + i + ')"><label for="present' + i + '">&nbsp;Present</label><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
             i +
             '" style="float:right;" onclick="removeEduction(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
         );
+        toggleEndDateEdu = (id) => {
+        if ($('#edu_present' + id).is(':checked')) {
+            $('#end_date' + id).hide();
+        } else {
+            $('#end_date' + id).show();
+        }
+    }
         removeEduction = (id) => {
             $('#school_row' + id).remove();
             $('#degree_row' + id).remove();
@@ -481,6 +508,16 @@ removeEductionexist = (id) => {
     $('#exist_degree_' + id).remove();
     $('#exist_start_' + id).remove();
     $('#exist_end_' + id).remove();
+}
+toggleEndDateExpExist=(id)=>{
+    var enddate= $('#end_date_edu_exist' + id).val();
+    if ($('.exp' + id).is(':checked')) {
+        $('#end_date_exp' + id).hide();
+        $('#end_date_exp' + id).val('');
+    } else {
+        $('#end_date_exp' + id).show();
+        $('#end_date_exp' + id).val(enddate);
+    }
 }
 //add social link
 $(document).ready(function() {
