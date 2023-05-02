@@ -6,6 +6,9 @@
 .main-sidebar, .main-sidebar::before {
     width: 255px;
 }
+.content-wrapper{
+    background-color: #e5f3ff !important;
+}
 .navbar-dark .btn-navbar, .navbar-dark .form-control-navbar,
 body:not(.layout-fixed) .main-sidebar ,[class*=sidebar-dark-], .navbar-dark {
     background-color: #0056D2 !important;
