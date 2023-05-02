@@ -428,11 +428,11 @@ $(document).ready(function() {
     $('#add_experience').click(function() {
         i++;
         $('#experiences').append('<div class="col-md-6" id="experice_row_company' + i +
-            '"><div class="form-group"><label for="company">Company:</label><input type="text" class="form-control" id="company" name="company[]" placeholder="Enter Your Company"></div></div><div class="col-md-6" id="experice_row_position' +
+            '"><div class="form-group"><label for="company">Company:</label><input type="text" class="form-control" id="company" name="company[]" placeholder="Enter Your Company" required></div></div><div class="col-md-6" id="experice_row_position' +
             i +
-            '"><div class="form-group"><label for="position">Position:</label><input type="text" class="form-control" id="position" name="position[]" placeholder="Enter Your Position"></div></div><div class="col-md-6" id="experice_row_start_date' +
+            '"><div class="form-group"><label for="position">Position:</label><input type="text" class="form-control" id="position" name="position[]" placeholder="Enter Your Position" required></div></div><div class="col-md-6" id="experice_row_start_date' +
             i +
-            '"><div class="form-group"><label for="start_date">Start Date:</label><input type="date" class="form-control" id="start_date_exp" name="start_date_exp[]" placeholder="Enter Your Start Date"></div></div><div class="col-md-6" id="experice_row_end_date' +
+            '"><div class="form-group"><label for="start_date">Start Date:</label><input type="date" class="form-control" id="start_date_exp" name="start_date_exp[]" placeholder="Enter Your Start Date" required></div></div><div class="col-md-6" id="experice_row_end_date' +
             i +
             '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date_exp" name="end_date_exp[]" placeholder="Enter Your End Date"><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
             i +
@@ -458,11 +458,11 @@ $(document).ready(function() {
     $('#add_education').click(function() {
         i++;
         $('#educations').append('<div class="col-md-6" id="school_row' + i +
-            '"><div class="form-group"><label for="school">School:</label><input type="text" class="form-control" id="school" name="school[]" placeholder="Enter Your School"></div></div><div class="col-md-6" id="degree_row' +
+            '"><div class="form-group"><label for="school">School:</label><input type="text" class="form-control" id="school" name="school[]" placeholder="Enter Your School" required></div></div><div class="col-md-6" id="degree_row' +
             i +
-            '"><div class="form-group"><label for="degree">Degree:</label><input type="text" class="form-control" id="degree" name="degree[]" placeholder="Enter Your Degree"></div></div><div class="col-md-6" id="start_row' +
+            '"><div class="form-group"><label for="degree">Degree:</label><input type="text" class="form-control" id="degree" name="degree[]" placeholder="Enter Your Degree" required></div></div><div class="col-md-6" id="start_row' +
             i +
-            '"><div class="form-group"><label for="start_date">Start Date:</label><input type="date" class="form-control" id="start_date" name="start_date[]" placeholder="Enter Your Start Date"></div></div><div class="col-md-6" id="end_row' +
+            '"><div class="form-group"><label for="start_date">Start Date:</label><input type="date" class="form-control" id="start_date" name="start_date[]" placeholder="Enter Your Start Date" required></div></div><div class="col-md-6" id="end_row' +
             i +
             '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date" name="end_date[]" placeholder="Enter Your End Date"><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
             i +
