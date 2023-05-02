@@ -587,39 +587,21 @@
                             <div class="form-group mb-3 mt-5">
                                 <label for="name" class="mb-2">Name<span style="color:red">*</span></label>
                                 <input class="form-control mb-5" id="name" name="name" type="text"
-                                    placeholder="Enter your name" data-sb-validations="required"
+                                    placeholder="Enter your name" required
                                     style="height: 3rem;border-radius:15px;border:1px solid #0056D2;" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A
-                                    name
-                                    is
-                                    required.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-group mb-3">
                                 <label for="email" class="mb-2">Email address<span
                                         style="color:red">*</span></label>
                                 <input class="form-control mb-5" id="email" name="email" type="email"
-                                    placeholder="name@example.com" data-sb-validations="required,email"
-                                    style="height: 3rem;border-radius:15px;border:1px solid #0056D2;" />
-
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An
-                                    email
-                                    is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">
-                                    Email
-                                    is
-                                    not valid.</div>
+                                    placeholder="name@example.com" style="height: 3rem;border-radius:15px;border:1px solid #0056D2;" required/>
                             </div>
                             <!-- Phone number input-->
                             <div class="form-group mb-3 ">
                                 <label for="phone" class="mb-2">Phone number<span style="color:red">*</label>
                                 <input class="form-control" id="phone" name="phone" type="tel"
-                                    placeholder="(123) 456-7890" data-sb-validations="required"
-                                    style="height: 3rem;border-radius:15px; border:1px solid #0056D2;" />
-
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A
-                                    phone
-                                    number is required.</div>
+                                    placeholder="(123) 456-7890" style="height: 3rem;border-radius:15px; border:1px solid #0056D2;" required/>
                             </div>
                         </div>
 
@@ -628,27 +610,7 @@
                             <div class="form-group mb-3 mr-5 mt-5">
                                 <label for="phone" class="mb-2">Message<span style="color:red">*</span></label>
                                 <textarea class="form-control" id="message" type="text" name="request" placeholder="How we can help you?"
-                                    style="height: 10rem; border-radius: 10px;border:1px solid #0056D2;" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">
-                                    A
-                                    Request is required.</div>
-                            </div>
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!
-                                    </div>
-                                    To activate this form, sign up at
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage">
-                                <div class="text-center text-danger mb-3">Error sending
-                                    message!
-                                </div>
-                            </div>
+                                    style="height: 10rem; border-radius: 10px;border:1px solid #0056D2;" required></textarea>
                             <!-- Submit Button-->
                             <div class="mt-5">
                                 <button id="submitButton" type="submit"
@@ -832,16 +794,14 @@
             <div class="row">
                 <div class="col-xl-6 mt-5">
                     <div>
-                        <a class="navbar-brand text-white fs-3" href="#">
                             <img src="{{ asset('frontend/img/cardify_logo_footer.png') }}" alt=""
                                 width="300" height="100" class="d-inline-block align-text-top">
-                        </a>
                         <div class="mt-4">
                             <div class="d-flex">
-                                <a href="https://www.facebook.com/BIAFOTECH/" target="_blank">
+                                <a href="#" target="_blank">
                                     <i class="fa-brands fa-facebook fa-2xl me-3 mb-4 ml-4"></i>
                                 </a>
-                                <a href="https://www.linkedin.com/company/biafotech-pvt-ltd?original_referer=https%3A%2F%2Fwww.biafotech.com%2F"
+                                <a href="#"
                                     target="_blank">
                                     <i class="fa-brands fa-linkedin fa-2xl"></i>
                                 </a>
