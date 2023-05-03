@@ -8,6 +8,7 @@ use App\Models\Company;
 use App\Models\Country;
 use App\Models\City;
 use App\Models\User;
+use App\Models\PermissionRole;
 
 class HomeController extends Controller
 {
@@ -44,6 +45,13 @@ class HomeController extends Controller
         } else{
         $cities=null;
         }
+        $role_id=auth()->user()->role_id;
+       $permission_roles=PermissionRole::where('role_id',$role_id)->get();
+       $permissions=[];
+        foreach($permission_roles as $permission_role){
+            $permissions[$permission_role->permissions->permission]=$permission_role->permissions->permission;
+            }
+        session()->put('permissions',$permissions);
         $data=compact('cards','company','countries','cities');
         // echo '<pre>';
         // print_r($data);

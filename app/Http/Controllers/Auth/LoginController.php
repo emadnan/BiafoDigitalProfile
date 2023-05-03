@@ -44,10 +44,10 @@ class LoginController extends Controller
     {
        $role_id=auth()->user()->role_id;
        $permission_roles=PermissionRole::where('role_id',$role_id)->get();
-         $permissions=[];
-            foreach($permission_roles as $permission_role){
-                $permissions[$permission_role->permissions->permission]=$permission_role->permissions->permission;
+       $permissions=[];
+        foreach($permission_roles as $permission_role){
+            $permissions[$permission_role->permissions->permission]=$permission_role->permissions->permission;
             }
-            session()->put('permissions',$permissions);
+        session()->put('permissions',$permissions);
     }
 }
