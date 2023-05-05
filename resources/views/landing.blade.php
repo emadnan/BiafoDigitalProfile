@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<link rel="icon" href="{{asset('frontend/img/favIcon.png')}}" />
+    <link rel="icon" href="{{ asset('frontend/img/favIcon.png') }}" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -30,8 +30,8 @@
             <nav class="navbar navbar-expand-lg w-100 p-0">
                 <div class="container">
                     <a class="navbar-brand text-white fs-3" href="#">
-                        <img src="{{ asset('frontend/img/cardify_logo_footer.png') }}" alt="" width="200px"
-                            height="70px" class="d-inline-block align-text-top mt-2">
+                        <img src="{{ asset('frontend/img/cardify_logo_footer.png') }}" alt=""
+                            class="d-inline-block mt-2" width="200px" height="70px">
                     </a>
                     <button class="navbar-toggler btn-yellow text-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -39,7 +39,7 @@
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <ul class="navbar-nav ms-auto mb-lg-0">
                             <li class="nav-item" id="homeId">
                                 <a class="nav-link text-center active" aria-current="page" href="#">
                                     Home
@@ -91,7 +91,8 @@
                                 <a class="btn btn-yellow text-white me-md-3 px-4 mt-3" role="button"
                                     style="border-radius: 10px;" href="#pricing"><b>{{ __('Create Card') }}</b></a>
                                 <a class="btn btn-blue text-white px-4 text-wrap mt-3" role="button"
-                                    style="border-radius: 10px;" href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
+                                    style="border-radius: 10px;"
+                                    href="{{ route('home') }}"><b>{{ __('Dashboard') }}</b></a>
                             @endguest
                         </form>
                     </div>
@@ -99,30 +100,32 @@
             </nav>
         </section>
 
-        <section class="img-fluid customize_for_mob">
-            <div class="hero_bg_img">
-                <div class="container">
-                    <div class="position-relative">
-                        <div class="position-absolute text-black customize__absolute__text">
-                            <h1>Digital Business </h1>
-                            <h1 style="color:#3387FF">Card</h1>
-                            <p class="text-justify mb-4">A digital business card (also referred to as a QR code business
-                                card, virtual business
-                                card, electronic business card or mobile business card) is a profile that connects all
-                                your digital contact information. They give people the ability to share who they are,
-                                with anyone, wherever they go.</p>
-                            <div class="mt-4 mx-3">
-                                <a role="button" class="btn text-wrap" href="#pricing"
-                                    style="border-radius: 9px; height: 45px; background-color:#0056D2; color:white"><b>Get Started</b></a>
-                                <button type="button" value="submit" class="btn btn-outline-primary mx-4"
-                                    style="border-radius: 9px; height: 45px;">How it Works</button>
-                            </div>
+        <section class="customize_for_mob" style="background-color: #ECF5FF">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-black mt-5">
+                        <h1><b>Digital Business</b> </h1>
+                        <h1 style="color:#3387FF"><b>Card</b></h1>
+                        <p class="text-justify">A digital business card (also referred to as a QR code business
+                            card, virtual business
+                            card, electronic business card or mobile business card) is a profile that connects all
+                            your digital contact information. They give people the ability to share who they are,
+                            with anyone, wherever they go.</p>
+                        <div class="mx-3">
+                            <a role="button" class="btn text-wrap text-center" href="#pricing"
+                                style="border-radius: 9px;  background-color:#0056D2; color:white;padding:10px;text-align:center; vertical-align:middle"><b>Get
+                                    Started</b></a>
+                            <button type="button" value="submit" class="btn btn-outline-primary mx-4"
+                                style="border-radius: 9px; height: 45px;">How it Works</button>
                         </div>
+                    </div>
+                    <div class="col-md-6">
                         <img src="{{ asset('frontend/img/landing_3.png') }}" alt="ID Cards"
-                            class="position-absolute customize__absolute__img">
+                            class="customize__absolute__img">
                     </div>
                 </div>
             </div>
+
         </section>
     </header>
     <main>
@@ -596,13 +599,15 @@
                                 <label for="email" class="mb-2">Email address<span
                                         style="color:red">*</span></label>
                                 <input class="form-control mb-5" id="email" name="email" type="email"
-                                    placeholder="name@example.com" style="height: 3rem;border-radius:15px;border:1px solid #0056D2;" required/>
+                                    placeholder="name@example.com"
+                                    style="height: 3rem;border-radius:15px;border:1px solid #0056D2;" required />
                             </div>
                             <!-- Phone number input-->
                             <div class="form-group mb-3 ">
                                 <label for="phone" class="mb-2">Phone number<span style="color:red">*</label>
                                 <input class="form-control" id="phone" name="phone" type="tel"
-                                    placeholder="(123) 456-7890" style="height: 3rem;border-radius:15px; border:1px solid #0056D2;" required/>
+                                    placeholder="(123) 456-7890"
+                                    style="height: 3rem;border-radius:15px; border:1px solid #0056D2;" required />
                             </div>
                         </div>
 
@@ -612,14 +617,14 @@
                                 <label for="phone" class="mb-2">Message<span style="color:red">*</span></label>
                                 <textarea class="form-control" id="message" type="text" name="request" placeholder="How we can help you?"
                                     style="height: 10rem; border-radius: 10px;border:1px solid #0056D2;" required></textarea>
-                            <!-- Submit Button-->
-                            <div class="mt-5">
-                                <button id="submitButton" type="submit"
-                                    class="btn btn-blue text-white w-100 fw-bold mt-5"
-                                    style="height: 3rem;border-radius: 15px; width:20px;">Send
-                                    Request</button>
+                                <!-- Submit Button-->
+                                <div class="mt-5">
+                                    <button id="submitButton" type="submit"
+                                        class="btn btn-blue text-white w-100 fw-bold mt-5"
+                                        style="height: 3rem;border-radius: 15px; width:20px;">Send
+                                        Request</button>
+                                </div>
                             </div>
-                        </div>
                 </form>
             </div>
         </section>
@@ -795,15 +800,14 @@
             <div class="row">
                 <div class="col-xl-6 mt-5">
                     <div>
-                            <img src="{{ asset('frontend/img/cardify_logo_footer.png') }}" alt=""
-                                width="300" height="100" class="d-inline-block align-text-top">
+                        <img src="{{ asset('frontend/img/cardify_logo_footer.png') }}" alt="" width="300"
+                            height="100" class="d-inline-block align-text-top">
                         <div class="mt-4">
                             <div class="d-flex">
                                 <a href="#" target="_blank">
                                     <i class="fa-brands fa-facebook fa-2xl me-3 mb-4 ml-4"></i>
                                 </a>
-                                <a href="#"
-                                    target="_blank">
+                                <a href="#" target="_blank">
                                     <i class="fa-brands fa-linkedin fa-2xl"></i>
                                 </a>
                             </div>

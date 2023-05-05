@@ -194,9 +194,9 @@
 
 .hero_bg_img {
   /* background-image: url(../img/bg_3.png); */
-  height: 600px;
-  background-repeat: round;
-  background-size: cover;
+  height: 500px;
+  /* background-repeat: round; */
+  /* background-size: cover; */
   background-color: #ECF5FF;
 }
 
