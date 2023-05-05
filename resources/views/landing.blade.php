@@ -41,7 +41,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-lg-0">
                             <li class="nav-item" id="homeId">
-                                <a class="nav-link active" aria-current="page" href="#">
+                                <a class="nav-link" aria-current="page" href="#" style="color: black">
                                     Home
                                 </a>
                             </li>
