@@ -26,7 +26,7 @@
 <body>
     <header>
         <!-- NAVBAR-BAR -->
-        <section class="navbar navbar-bg" style="background-color: #ECF5FF">
+        <section class="navbar" style="background-color: #ECF5FF">
             <nav class="navbar navbar-expand-lg w-100 p-0">
                 <div class="container">
                     <a class="navbar-brand text-white fs-3" href="#">
@@ -41,37 +41,37 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-lg-0">
                             <li class="nav-item" id="homeId">
-                                <a class="nav-link text-center active" aria-current="page" href="#">
+                                <a class="nav-link active" aria-current="page" href="#">
                                     Home
                                 </a>
                             </li>
                             <li class="nav-item" id="featuresId">
-                                <a class="nav-link text-black text-center" href="#feature" data-name="feature">
+                                <a class="nav-link text-black" href="#feature" data-name="feature">
                                     Features
                                 </a>
                             </li>
                             <li class="nav-item" id="aboutUsId">
-                                <a class="nav-link text-black text-center" href="#about">
+                                <a class="nav-link text-black" href="#about">
                                     About us
                                 </a>
                             </li>
                             <li class="nav-item" id="pricingId">
-                                <a class="nav-link text-black text-center" href="#pricing">
+                                <a class="nav-link text-black" href="#pricing">
                                     Pricing
                                 </a>
                             </li>
                             <li class="nav-item" id="requestFeaturesId">
-                                <a class="nav-link text-black text-center" href="#request_a_feature">
+                                <a class="nav-link text-black" href="#request_a_feature">
                                     Request
                                 </a>
                             </li>
                             <li class="nav-item" id="contactUsId">
-                                <a class="nav-link text-black text-center" href="#contact_us">
+                                <a class="nav-link text-black" href="#contact_us">
                                     Contact Us
                                 </a>
                             </li>
                             <li class="nav-item" id="faqID">
-                                <a class="nav-link text-black text-center" href="/faq">
+                                <a class="nav-link text-black" href="/faq">
                                     FAQs
                                 </a>
                             </li>
@@ -798,10 +798,10 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 mt-5">
+                <div class="col-xl-6 mt-4">
                     <div>
-                        <img src="{{ asset('frontend/img/cardify_logo_footer.png') }}" alt="" width="300"
-                            height="100" class="d-inline-block align-text-top">
+                        <img src="{{ asset('frontend/img/cardify_logo_footer.png') }}" alt="" width="150"
+                            height="50" class="d-inline-block align-text-top">
                         <div class="mt-4">
                             <div class="d-flex">
                                 <a href="#" target="_blank">
@@ -874,7 +874,7 @@
         </div>
     </footer>
     <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> --}}
     <!-- Core theme JS-->
     <script src="{{ asset('frontend/js/scripts.js') }}"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
@@ -900,6 +900,22 @@
                 }
             });
         }
+        // Get the navbar collapse element
+        var navbarCollapse = document.getElementById("navbarSupportedContent");
+
+        // Get all the links in the navbar
+        var navbarLinks = navbarCollapse.querySelectorAll("a.nav-link");
+
+        // Add click event listener to each link
+        navbarLinks.forEach(function(link) {
+            link.addEventListener("click", function() {
+                // Check if the navbar collapse element is open
+                if (navbarCollapse.classList.contains("show")) {
+                    // If it is, close it
+                    navbarCollapse.classList.remove("hide");
+                }
+            });
+        })
     </script>
 </body>
 

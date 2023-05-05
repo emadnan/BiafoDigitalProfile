@@ -49,9 +49,9 @@
             left: 0;
             text-align: center;
             /* cursor: pointer;
-                                                  transition: 0.6s;
-                                                  transform-style: preserve-3d;
-                                                  box-shadow: 0 1px 5px rgba(0,0,0,0.9); */
+                                                          transition: 0.6s;
+                                                          transform-style: preserve-3d;
+                                                          box-shadow: 0 1px 5px rgba(0,0,0,0.9); */
             border-radius: 15px;
             /*Border Radius*/
         }
@@ -86,17 +86,17 @@
         }
 
         /* .front .caption {
-                                                    font-size: 1.25em;
-                                                } */
+                                                            font-size: 1.25em;
+                                                        } */
 
         /* .front .caption:before {
-                                                    position: absolute;
-                                                    top: 0;
-                                                    left: 0;
-                                                    width: 100%;
-                                                    height: 100%;
-                                                   
-                                                } */
+                                                            position: absolute;
+                                                            top: 0;
+                                                            left: 0;
+                                                            width: 100%;
+                                                            height: 100%;
+                                                           
+                                                        } */
 
 
         .front h2 {
@@ -141,7 +141,7 @@
             text-align: left;
             opacity: 1;
             /* word-wrap: break-word;
-                                                    white-space: pre-wrap; */
+                                                            white-space: pre-wrap; */
             margin-left: 21px;
 
         }
@@ -195,17 +195,17 @@
         }
 
         /* figure a{
-                                                  z-index: 1000;
-                                                  text-indent: 200%;
-                                                  white-space: nowrap;
-                                                  font-size: 0;
-                                                  opacity: 0;
-                                                  position: absolute;
-                                                  top: 0;
-                                                  left: 0;
-                                                  width: 100%;
-                                                  height: 100%;
-                                                } */
+                                                          z-index: 1000;
+                                                          text-indent: 200%;
+                                                          white-space: nowrap;
+                                                          font-size: 0;
+                                                          opacity: 0;
+                                                          position: absolute;
+                                                          top: 0;
+                                                          left: 0;
+                                                          width: 100%;
+                                                          height: 100%;
+                                                        } */
         .qricon {
             /* background-color: var(--red); */
             border-radius: 10%;
@@ -427,9 +427,9 @@
 
         .colorPickSelector2 {
             /* border-radius: 5px;
-                                                  width: 36px;
-                                                  height: 36px;
-                                                  cursor: pointer; */
+                                                          width: 36px;
+                                                          height: 36px;
+                                                          cursor: pointer; */
             -webkit-transition: all linear .2s;
             -moz-transition: all linear .2s;
             -ms-transition: all linear .2s;
@@ -447,8 +447,8 @@
         }
 
         /* .colorPickSelector:hover {
-                                                    transform: scale(1.1);
-                                                } */
+                                                            transform: scale(1.1);
+                                                        } */
     </style>
     <div class="content-wrapper">
         <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
@@ -599,16 +599,16 @@
 
                     </div>
                     <!-- <div class="row">
-                                                                        <div class="col-md-4 mt-5 mb-3">
-                                                                            <h3> <b>Color Picker:</b></h3>
-                                                                        </div>
-                                                                        <div class="col-md-2 mt-5 mb-3">
-                                                                            <input type="color" id="text_color" class="primary_color"name="text_color" value="#ffffff">
-                                                                        </div>
-                                                                        <div class="col-md-4 mt-5 mb-3">
-                                                                            <button class="btn btn-primary" id="save">Save Colors</button>
-                                                                        </div>
-                                                                    </div> -->
+                                                                                <div class="col-md-4 mt-5 mb-3">
+                                                                                    <h3> <b>Color Picker:</b></h3>
+                                                                                </div>
+                                                                                <div class="col-md-2 mt-5 mb-3">
+                                                                                    <input type="color" id="text_color" class="primary_color"name="text_color" value="#ffffff">
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-5 mb-3">
+                                                                                    <button class="btn btn-primary" id="save">Save Colors</button>
+                                                                                </div>
+                                                                            </div> -->
                     <div class="col-md-6 mt-5">
 
                     </div>
@@ -688,7 +688,7 @@
             </div>
         @endif
     </div>
-    </div>
+
 @endsection
 @section('scripts')
     <script>
