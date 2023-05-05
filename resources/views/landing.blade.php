@@ -26,12 +26,12 @@
 <body>
     <header>
         <!-- NAVBAR-BAR -->
-        <section class="navbar" style="background-color: #ECF5FF">
+        <section class="navbar fixed-top" style="background-color: #ECF5FF">
             <nav class="navbar navbar-expand-lg w-100 p-0">
                 <div class="container">
                     <a class="navbar-brand text-white fs-3" href="#">
                         <img src="{{ asset('frontend/img/cardify_logo_footer.png') }}" alt=""
-                            class="d-inline-block mt-2" width="200px" height="70px">
+                            class="d-inline-block mt-2" width="150px" height="50px">
                     </a>
                     <button class="navbar-toggler btn-yellow text-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -102,7 +102,7 @@
 
         <section class="customize_for_mob" style="background-color: #ECF5FF">
             <div class="container">
-                <div class="row">
+                <div class="row" style="margin-top: 80px">
                     <div class="col-md-6 text-black mt-5">
                         <h1><b>Digital Business</b> </h1>
                         <h1 style="color:#3387FF"><b>Card</b></h1>
@@ -873,9 +873,6 @@
             </div>
         </div>
     </footer>
-    <!-- Bootstrap core JS-->
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> --}}
-    <!-- Core theme JS-->
     <script src="{{ asset('frontend/js/scripts.js') }}"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -900,22 +897,6 @@
                 }
             });
         }
-        // Get the navbar collapse element
-        var navbarCollapse = document.getElementById("navbarSupportedContent");
-
-        // Get all the links in the navbar
-        var navbarLinks = navbarCollapse.querySelectorAll("a.nav-link");
-
-        // Add click event listener to each link
-        navbarLinks.forEach(function(link) {
-            link.addEventListener("click", function() {
-                // Check if the navbar collapse element is open
-                if (navbarCollapse.classList.contains("show")) {
-                    // If it is, close it
-                    navbarCollapse.classList.remove("hide");
-                }
-            });
-        })
     </script>
 </body>
 

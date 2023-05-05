@@ -9,6 +9,7 @@
     <title>Cardify</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    
     <script src="{{ asset('frontend/js/bootstrap5.bundle.min.js') }}"></script>
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
@@ -21,9 +22,9 @@
 </head>
 
 
-<body>
+<body  style="background-color: #ECF5FF">
     <!-- NAVBAR-BAR -->
-    <section class="navbar fixed-top" style="background-color: #ECF5FF">
+    <section class="navbar fixed-top"  style="background-color: #ECF5FF">
         <nav class="navbar navbar-expand-lg w-100 p-0 ">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -94,7 +95,7 @@
     </section>
 
 
-    <div class="container card shadow-lg">
+    <div class="container" style="background-color: #ECF5FF">
         <div class="card-body">
             {{-- <div class="row">
                 <div class="col-md-12 mt-5">
