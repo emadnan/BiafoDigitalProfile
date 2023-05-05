@@ -327,8 +327,8 @@ html {
                             </div>
                         </div>
                     </div>
-                    @endif
                 </div>
+                @endif
                 <!-- experience -->
                 @if(!$profile->experiences->isEmpty())
                 <div class="experience">
