@@ -9,6 +9,17 @@
 .content-wrapper{
     background-color: #e5f3ff !important;
 }
+.form-control {
+    background-color:white;
+    border: 2px solid #0056D2;
+    border-radius: 10px;
+    /* padding: 20px; */
+    /* font-size: 20px; */
+    /* font-family:Palatino; */
+    /* font-weight:bold; */
+    color:black;
+    /* pointer-events: none; */
+}
 .navbar-dark .btn-navbar, .navbar-dark .form-control-navbar,
 body:not(.layout-fixed) .main-sidebar ,[class*=sidebar-dark-], .navbar-dark {
     background-color: #0056D2 !important;

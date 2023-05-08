@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('content')
 <style>
-    .bg-light {
-        background-color: #E5F2FF
-    }
-    </style>
+.bg-light {
+    background-color: #E5F2FF
+}
+</style>
 <div class="content-wrapper">
     <section class="content-header">
         <div class='container-fluid'>
@@ -18,8 +18,8 @@
     </section>
     <div class='container-fluid'>
         <div class="container">
-            <div class="card">
-                <div class="card-body">
+            <!-- <div class="card">
+                <div class="card-body"> -->
                     <div class="justify-content-center text-center">
                         <h3 style="font-family:Palatino;font-weight:bold;">Update Profile</h3>
                     </div>
@@ -79,7 +79,7 @@
                                     <label for="phone">Phone No:</label>
                                     <input type="phone" class="form-control" id="phone" name="phone"
                                         placeholder="Enter Your Phone No" value="{{$profile->phone}}">
-                                        <help class="">e.g+92-331********</help>
+                                    <help class="">e.g+92-331********</help>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -180,7 +180,7 @@
                             @foreach($profile->social_links as $social)
                             <div class="col-md-6" id="exist_social_name_{{$social->id}}">
                                 <div class="form-group"><label for="social">Social Name:</label><select
-                                        class="form-select" id="social_name" name="social_name[]"
+                                        class="form-control" id="social_name" name="social_name[]"
                                         aria-label="Default select example">
                                         @if($social->social_name == 'website')
                                         <option value="website" selected>Website</option>
@@ -205,12 +205,11 @@
                                     </select></div>
                             </div>
                             <div class="col-md-6" id="exist_social_link_{{$social->id}}">
-                                <div class="form-group"><label for="social_link">Social Link:</label><input type="text"
-                                        class="form-control" id="social_link" name="social_link[]"
-                                        placeholder="Enter Your Social Link" value="{{$social->social_link}}"><a
-                                        class="btn btn-danger btn-sm float-right mt-3" id="{{$social->id}}"
-                                        style="float:right;" onclick="removeSocialexist(this.id)"><i
-                                            class="fa-solid fa-trash"></i></a>
+                                <div class="form-group">
+                                    <label for="social_link">Social Link:</label>
+                                    <input type="text" class="form-control" name="social_link[]"
+                                        placeholder="Enter Your Social Link" value="{{$social->social_link}}">
+                                    <a class="btn btn-danger btn-sm float-right mt-3" id="{{$social->id}}" style="float:right;" onclick="removeSocialexist(this.id)"><i class="fa-solid fa-trash"></i></a>
                                 </div>
                             </div>
                             @endforeach
@@ -264,7 +263,11 @@
                             <div class="col-md-6" id="exist_experice_end_date_{{$experience->id}}">
                                 <div class="form-group"><label for="end_date">End Date:</label><input type="date"
                                         class="form-control" id="end_date_exp{{$experience->id}}" name="end_date_exp[]"
-                                        placeholder="Enter Your End Date" value="{{$experience->end_date}}"><input type="checkbox" id="{{$experience->id}}" class="present-checkbox exp{{$experience->id}} mt-2" onclick="toggleEndDateExpExist(this.id)"><label for="{{$experience->id}}">&nbsp;Present</label><a
+                                        placeholder="Enter Your End Date" value="{{$experience->end_date}}"><input
+                                        type="checkbox" id="{{$experience->id}}"
+                                        class="present-checkbox exp{{$experience->id}} mt-2"
+                                        onclick="toggleEndDateExpExist(this.id)"><label
+                                        for="{{$experience->id}}">&nbsp;Present</label><a
                                         class="btn btn-danger btn-sm float-right mt-3" id="{{$experience->id}}"
                                         style="float:right;" onclick="removeExperience_exist(this.id)"><i
                                             class="fa-solid fa-trash"></i></a></div>
@@ -306,7 +309,10 @@
                             <div class="col-md-6" id="exist_end_{{$education->id}}">
                                 <div class="form-group"><label for="end_date">End Date:</label><input type="date"
                                         class="form-control" id="end_date_edu{{$education->id}}" name="end_date[]"
-                                        placeholder="Enter Your End Date" value="{{$education->end_date}}"><input type="checkbox" id="{{$education->id}}" class="present-checkbox mt-2" onclick="toggleEndDateEduExist(this.id)"><label for="{{$education->id}}">&nbsp;Present</label><a
+                                        placeholder="Enter Your End Date" value="{{$education->end_date}}"><input
+                                        type="checkbox" id="{{$education->id}}" class="present-checkbox mt-2"
+                                        onclick="toggleEndDateEduExist(this.id)"><label
+                                        for="{{$education->id}}">&nbsp;Present</label><a
                                         class="btn btn-danger btn-sm float-right mt-3" id="{{$education->id}}"
                                         style="float:right;" onclick="removeEductionexist(this.id)"><i
                                             class="fa-solid fa-trash"></i></a></div>
@@ -352,8 +358,8 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
+        <!-- </div>
+    </div> -->
 </div>
 @endsection
 @section('scripts')
@@ -434,12 +440,17 @@ $(document).ready(function() {
             i +
             '"><div class="form-group"><label for="start_date">Start Date:</label><input type="date" class="form-control" id="start_date_exp" name="start_date_exp[]" placeholder="Enter Your Start Date" required></div></div><div class="col-md-6" id="experice_row_end_date' +
             i +
-            '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date_exp' + i + '" name="end_date_exp[]" placeholder="Enter Your End Date"><input type="checkbox" id="present' + i + '" class="present-checkbox mt-2" onclick="toggleEndDate(' + i + ')"><label for="present' + i + '">&nbsp;Present</label><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
+            '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date_exp' +
+            i +
+            '" name="end_date_exp[]" placeholder="Enter Your End Date"><input type="checkbox" id="present' +
+            i + '" class="present-checkbox mt-2" onclick="toggleEndDate(' + i +
+            ')"><label for="present' + i +
+            '">&nbsp;Present</label><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
             i +
             '" style="float:right;" onclick="removeExperience(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
         );
     });
-    
+
     toggleEndDate = (id) => {
         if ($('#present' + id).is(':checked')) {
             $('#end_date_exp' + id).hide();
@@ -447,7 +458,7 @@ $(document).ready(function() {
             $('#end_date_exp' + id).show();
         }
     }
-    
+
     removeExperience = (id) => {
         $('#experice_row_company' + id).remove();
         $('#experice_row_position' + id).remove();
@@ -462,8 +473,8 @@ removeExperience_exist = (id) => {
     $('#exist_experice_start_date_' + id).remove();
     $('#exist_experice_end_date_' + id).remove();
 }
-toggleEndDateEduExist=(id)=>{
-    var enddate= $('#end_date_edu_exist' + id).val();
+toggleEndDateEduExist = (id) => {
+    var enddate = $('#end_date_edu_exist' + id).val();
     if ($('#' + id).is(':checked')) {
         $('#end_date_edu' + id).hide();
         $('#end_date_edu' + id).val('');
@@ -484,17 +495,22 @@ $(document).ready(function() {
             i +
             '"><div class="form-group"><label for="start_date">Start Date:</label><input type="date" class="form-control" id="start_date" name="start_date[]" placeholder="Enter Your Start Date" required></div></div><div class="col-md-6" id="end_row' +
             i +
-            '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date' + i + '" name="end_date[]" placeholder="Enter Your End Date"><input type="checkbox" id="edu_present' + i + '" class="present-checkbox mt-2" onclick="toggleEndDateEdu(' + i + ')"><label for="present' + i + '">&nbsp;Present</label><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
+            '"><div class="form-group"><label for="end_date">End Date:</label><input type="date" class="form-control" id="end_date' +
+            i +
+            '" name="end_date[]" placeholder="Enter Your End Date"><input type="checkbox" id="edu_present' +
+            i + '" class="present-checkbox mt-2" onclick="toggleEndDateEdu(' + i +
+            ')"><label for="present' + i +
+            '">&nbsp;Present</label><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
             i +
             '" style="float:right;" onclick="removeEduction(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
         );
         toggleEndDateEdu = (id) => {
-        if ($('#edu_present' + id).is(':checked')) {
-            $('#end_date' + id).hide();
-        } else {
-            $('#end_date' + id).show();
+            if ($('#edu_present' + id).is(':checked')) {
+                $('#end_date' + id).hide();
+            } else {
+                $('#end_date' + id).show();
+            }
         }
-    }
         removeEduction = (id) => {
             $('#school_row' + id).remove();
             $('#degree_row' + id).remove();
@@ -509,8 +525,8 @@ removeEductionexist = (id) => {
     $('#exist_start_' + id).remove();
     $('#exist_end_' + id).remove();
 }
-toggleEndDateExpExist=(id)=>{
-    var enddate= $('#end_date_edu_exist' + id).val();
+toggleEndDateExpExist = (id) => {
+    var enddate = $('#end_date_edu_exist' + id).val();
     if ($('.exp' + id).is(':checked')) {
         $('#end_date_exp' + id).hide();
         $('#end_date_exp' + id).val('');
@@ -525,9 +541,9 @@ $(document).ready(function() {
     $('#add_social').click(function() {
         i++;
         $('#socials').append('<div class="col-md-6" id="social_row_name' + i +
-            '"><div class="form-group"><label for="social">Social Name:</label><select class="form-select" id="social_name" name="social_name[]" aria-label="Default select example"><option value="website" selected>Website</option><option value="github">Github</option><option value="linkedin">Linkedin</option><option value="facebook">Facebook</option></select></div></div><div class="col-md-6" id="social_row_link' +
+            '"><div class="form-group"><label for="social">Social Name:</label><select class="form-control" id="social_name" name="social_name[]" aria-label="Default select example"><option value="website" selected>Website</option><option value="github">Github</option><option value="linkedin">Linkedin</option><option value="facebook">Facebook</option></select></div></div><div class="col-md-6" id="social_row_link' +
             i +
-            '"><div class="form-group"><label for="social_link">Social Link:</label><input type="text" class="form-control" id="social_link" name="social_link[]" placeholder="Enter Your Social Link"><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
+            '"><div class="form-group"><label for="social_link">Social Link:</label><input type="text" class="form-control"  name="social_link[]" placeholder="Enter Your Social Link" required><a  class="btn btn-danger btn-sm float-right mt-3" id="' +
             i +
             '" style="float:right;" onclick="removeSocial(this.id)"><i class="fa-solid fa-trash"></i></a></div></div>'
         );
