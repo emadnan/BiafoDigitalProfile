@@ -2,8 +2,8 @@
 @section('content')
 <style>
 .canvas-container {
-    height: 250px;
-    width: 500px;
+    height: 270px;
+    width: 450px;
     background-color: white;
     border-radius: 25px;
     background-image: url('{{ asset('frontend/img/visting_imges/front.jpg') }}');
@@ -198,10 +198,10 @@ input[type="radio"]:checked+label>img {
     </section>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="canvas-container" id="canvas-container"></div>
             </div>
-            <div class="col-md-8" id="out_side">
+            <div class="col-md-6" id="out_side">
                 <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-3">
@@ -337,8 +337,10 @@ image.addEventListener("change", function() {
 });
 
 //canvas container widht and height
-const width = 500;
-const height = 250;
+const width = 450;
+const height = 270;
+console.log(width);
+console.log(height);
 const stage = new Konva.Stage({
     container: 'canvas-container',
     width: width,
@@ -489,7 +491,6 @@ if (company_id !== 'none') {
         },
     });
 }
-var qrCodeKonva;
 qrCode.getRawData("image/png", 120).then(
     function(dataURL) {
         // convert blob to base64
@@ -500,9 +501,9 @@ qrCode.getRawData("image/png", 120).then(
             console.log(base64);
             qrCodeImage.src = base64;
             qrCodeImage.onload = function() {
-                qrCodeKonva = new Konva.Image({
-                    x: 355,
-                    y: 100,
+               const qrCodeKonva = new Konva.Image({
+                    x: 320,
+                    y: 130,
                     image: qrCodeImage,
                     width: 120,
                     height: 120,
