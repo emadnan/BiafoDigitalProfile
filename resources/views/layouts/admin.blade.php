@@ -52,6 +52,7 @@
     <script src="https://unpkg.com/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
     <script src="{{asset('frontend/color_picker/colorPick.js')}}"></script>
     <script src="{{asset('frontend/dragmove/dragmove.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/konva@8.2.0/konva.min.js"></script>
     <script type="text/javascript">
     jQuery.validator.setDefaults({
         errorElement: 'span',

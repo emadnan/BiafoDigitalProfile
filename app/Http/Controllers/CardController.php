@@ -286,7 +286,7 @@ class CardController extends Controller
         $company = Company::where('id', $company_id)->first();
         $visting_card_backgrounds=VistingCardBackground::where('company_id',$company_id)->get();
         $data = compact('card', 'type', 'company','visting_card_backgrounds');
-        return view('visting_card')->with($data);
+        return view('visting_card_new')->with($data);
     }
     public function save_visting_card_backgrounds(Request $request)
     {
