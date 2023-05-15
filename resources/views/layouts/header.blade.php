@@ -18,7 +18,11 @@ $permissions= session()->get('permissions');
              <a class="nav-link" href="/permissions" role="button">Permissions</a>
          </li>
             @endif
-
+            @if(Auth::user()->user_type == "super_admin")
+         <li class="nav-item ml-4">
+             <a class="nav-link" href="/subscription" role="button">Subscription</a>
+         </li>
+            @endif
      </ul>
 
      <!-- Right navbar links -->

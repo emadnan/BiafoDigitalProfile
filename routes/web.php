@@ -15,6 +15,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactBookController;
 use App\Http\Controllers\StripePaymentController;
+use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\SubscriptionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,3 +88,10 @@ Route::controller(StripePaymentController::class)->group(function(){
 // Route::get('/login_new', function () {
 //     return view('auth.login_new');
 // });
+Route::get('/registration/{type}',[RegistrationController::class,'index'])->name('registration');
+Route::post('/add_registration',[RegistrationController::class,'register'])->name('add_registration');
+//subscription routes
+Route::get('/subscription',[SubscriptionController::class,'index'])->name('subscription');
+Route::post('/add_subscription',[SubscriptionController::class,'add_subscription'])->name('add_subscription');
+Route::get('/delete_subscription/{id}',[SubscriptionController::class,'delete_subscription'])->name('delete_subscription');
+Route::post('/update_subscription/{id}',[SubscriptionController::class,'update_subscription'])->name('update_subscription');
