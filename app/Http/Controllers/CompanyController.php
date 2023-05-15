@@ -8,6 +8,7 @@ use App\Models\Company;
 use App\Models\Country;
 use App\Models\City;
 use App\Models\User;
+use App\Models\SubscriptionInvoice;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -51,6 +52,16 @@ class CompanyController extends Controller
         $user->save();
         //remove is_new from session
         $request->session()->forget('is_new');
+        //create subscription invoice
+        $subscription_invoice = new SubscriptionInvoice;
+        $subscription_invoice->stripe_id = "Free";
+        $subscription_invoice->company_id = $company_id;
+        $subscription_invoice->subscription_id = 1;
+        $subscription_invoice->amount = 0;
+        $subscription_invoice->is_active = 1;
+        $subscription_invoice->start_date = date('Y-m-d');
+        $subscription_invoice->end_date = "Lifetime";
+        $subscription_invoice->save();
         return redirect('/company_profile')->with('success','Company Profile Setup Successfully');
     }
     public function update_company(Request $request,$id)

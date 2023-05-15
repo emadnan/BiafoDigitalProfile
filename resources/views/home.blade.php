@@ -87,6 +87,7 @@ $is_new = session()->get('is_new');
                             <i class="fa-solid fa-arrow-up-from-bracket"></i> CSV Upload
                         </a>
                         @endif
+                        @if($can_add_card == 1)
                         <a type="button" id="add_card" class="anchor btn btn-primary">
                             @if(Auth::user()->user_type=='company')
                             Add Employee Card
@@ -94,6 +95,12 @@ $is_new = session()->get('is_new');
                             Add Card
                             @endif
                         </a>
+                        @endif
+                        @if($can_add_card == 2)
+                        <a type="button" href="/stripe" class="anchor btn btn-primary">
+                            Add Employee Card
+                        </a>
+                        @endif
                         @endif
                     </div>
                 </div>
