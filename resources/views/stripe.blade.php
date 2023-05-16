@@ -80,7 +80,7 @@
                     <img src="{{ asset('frontend/img/cardify_logo.png') }}" alt="" width="250" height="200"
                         class="d-inline-block align-text-top logo">
                         <p class="paragraph">Subscribe to Premium Plan</p>
-                        <p class="price">$100.00
+                        <p class="price">$100.00{{ env('STRIPE_KEY') }}
                             <span style="font-size: 20px; color: grey;">/year</span>
                         </p>
                 </div>
