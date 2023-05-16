@@ -365,6 +365,15 @@ class CardController extends Controller
         $city_id = $company->city_id;
         $is_csv = 1;
         $i=0;
+        $csv_file = fgetcsv($handle);
+        //get no of rows in cvsfile
+        $row_count = count(file($file)) -1;
+        $company = Company::where('id',auth()->user()->company_id)->first();
+        $subscription = Subscription::where('id',$company->subscription_id)->first();
+        $cards = Card::where('user_id',auth()->user()->id)->count();
+        if($subscription->no_of_cards < $cards + $row_count){
+            return redirect()->back()->with('error', 'You can not upload more than '.$subscription->no_of_cards.' cards');
+        }
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE){
             if($i==0){
                 $i++;
