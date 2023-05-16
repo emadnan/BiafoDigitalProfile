@@ -108,6 +108,7 @@ input[type="radio"]:checked+label>img {
     border-radius: 5px;
     margin-left: 10px;
 }
+
 @media screen and (max-width: 600px) {
     .canvas-container {
         height: 200px;
@@ -118,6 +119,7 @@ input[type="radio"]:checked+label>img {
 </style>
 <div class="content-wrapper">
     <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
+    <input type="hidden" id="use_username" value="{{ $use_username }}">
     <section class="content-header">
         <div class='container-fluid'>
             <div class='row'>
@@ -442,6 +444,11 @@ layer.add(company);
 layer.draw();
 //add QR code
 var company_id = document.getElementById("company_id").value;
+var use_username = document.getElementById("use_username").value;
+url = "{{ route('view_profile', $card->id) }}";
+if (use_username == 1) {
+    url = "{{ route('view_profile', $card->username) }}";
+}
 var qrCodeImage = new Image();
 
 if (company_id !== 'none') {
@@ -449,7 +456,7 @@ if (company_id !== 'none') {
         width: 120,
         height: 120,
         type: "canvas",
-        data: "{{ route('view_profile', $card->username) }}",
+        data: url,
         image: "{{ asset('company_logos') }}/{{ empty($company) ? 'default.png' : $company->logo }}",
         dotsOptions: {
             color: "black",
@@ -472,7 +479,7 @@ if (company_id !== 'none') {
         width: 120,
         height: 120,
         type: "canvas",
-        data: "{{ route('view_profile', $card->username) }}",
+        data: url,
         image: "{{ asset('frontend/img/qr_logo.svg') }}",
         dotsOptions: {
             color: "black",
@@ -501,7 +508,7 @@ qrCode.getRawData("image/png", 120).then(
             console.log(base64);
             qrCodeImage.src = base64;
             qrCodeImage.onload = function() {
-               const qrCodeKonva = new Konva.Image({
+                const qrCodeKonva = new Konva.Image({
                     x: 320,
                     y: 130,
                     image: qrCodeImage,
@@ -691,11 +698,11 @@ $(".line_upper").colorPick({
 //     layer.batchDraw();
 // }
 function updateFontFamily(selectElement) {
-        var selectedFont = selectElement.value;
-        selectElement.style.fontFamily = selectedFont;
-        selectedText.fontFamily(selectedFont);
-        layer.batchDraw();
-    }
+    var selectedFont = selectElement.value;
+    selectElement.style.fontFamily = selectedFont;
+    selectedText.fontFamily(selectedFont);
+    layer.batchDraw();
+}
 //click outside to remove selection
 out_side = document.getElementById('out_side');
 out_side.addEventListener('click', () => {

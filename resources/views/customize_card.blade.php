@@ -534,6 +534,7 @@
     </style>
     <div class="content-wrapper">
         <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
+        <input type="hidden" id="use_username" value="{{ $use_username }}">
         <section class="content-header">
             <!-- <div class='container-fluid'> -->
             <div class='row ml-3'>
@@ -857,12 +858,18 @@
             }
         });
         var company_id = document.getElementById("company_id").value;
+        var use_username = document.getElementById("use_username").value;
+        url= "{{ route('view_profile', $card->id) }}";
+        if(use_username == 1)
+        {
+            url = "{{ route('view_profile', $card->username) }}";
+        }
         if (company_id != 'none') {
             var qrCode = new QRCodeStyling({
                 width: 120,
                 height: 120,
                 type: "canvas",
-                data: "{{ route('view_profile', $card->username) }}",
+                data: url,
                 image: "{{ asset('company_logos') }}/{{ empty($company) ? 'default.png' : $company->logo }}",
                 dotsOptions: {
                     color: "black",
@@ -885,7 +892,7 @@
                 width: 120,
                 height: 120,
                 type: "canvas",
-                data: "{{ route('view_profile', $card->username) }}",
+                data: url,
                 image: "{{ asset('frontend/img/qr_logo.svg') }}",
                 dotsOptions: {
                     color: "black",

@@ -2,6 +2,11 @@
 @section('content')
     @php
         $permissions = session()->get('permissions');
+        if($use_username == 1){
+            $url = $card->username;
+        }else{
+            $url = $card->id;
+        }
     @endphp
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
@@ -623,6 +628,7 @@
     </div>
     <div class="content-wrapper">
         <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
+        <input type="hidden" id="use_username" value="{{ $use_username }}">
         <section class="content-header">
             <div class='container-fluid'>
                 <div class='row'>
@@ -734,7 +740,7 @@
                                     class="back_image">
                             </div>
                             <div class="qricon">
-                                <a class="qr_anchor" href="/v/{{ $card->username }}">
+                                <a class="qr_anchor" href="/v/{{ $url }}">
                                     <div id="qrcode">
                                     </div>
                                 </a>
@@ -1024,12 +1030,18 @@
         //     correctLevel: QRCode.CorrectLevel.H,
         // });
         var company_id = document.getElementById("company_id").value;
+        var use_username = document.getElementById("use_username").value;
+        url= "{{ route('view_profile', $card->id) }}";
+        if(use_username == 1)
+        {
+            url = "{{ route('view_profile', $card->username) }}";
+        }
         if (company_id != 'none') {
             var qrCode = new QRCodeStyling({
                 width: 123,
                 height: 123,
                 type: "canvas",
-                data: "{{ route('view_profile', $card->username) }}",
+                data: url,
                 image: "{{ asset('company_logos') }}/{{ empty($company) ? 'default.png' : $company->logo }}",
                 dotsOptions: {
                     color: "black",
@@ -1052,7 +1064,7 @@
                 width: 123,
                 height: 123,
                 type: "canvas",
-                data: "{{ route('view_profile', $card->username) }}",
+                data: url,
                 image: "{{ asset('frontend/img/qr_logo.svg') }}",
                 dotsOptions: {
                     color: "black",

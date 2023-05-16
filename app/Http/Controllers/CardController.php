@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Company;
 use App\Models\Country;
 use App\Models\City;
+use App\Models\Subscription;
 use App\Models\VistingCardBackground;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -109,7 +110,16 @@ class CardController extends Controller
 
     function getcard($card_id, $type)
     {
-
+        $use_username = 0;
+        if(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
+        {
+            $company = Company::where('id', auth()->user()->company_id)->first();
+            $subscription = Subscription::where('id', $company->subscription_id)->first();
+            if($subscription->use_username == 1)
+            {
+                $use_username = 1;
+            }
+        }
         $card = Card::where('id', $card_id)->first();
         $type = $type;
         $profile = Profile::where('card_id', $card_id)->first();
@@ -117,7 +127,7 @@ class CardController extends Controller
         $company = Company::where('id', $company_id)->first();
         $countries = Country::all();
         $cities = City::where('country_id', $card->country_id)->get();
-        $data = compact('card', 'type', 'profile', 'company', 'countries', 'cities');
+        $data = compact('card', 'type', 'profile', 'company', 'countries', 'cities', 'use_username');
         return view('card_view')->with($data);
     }
 
@@ -213,11 +223,21 @@ class CardController extends Controller
     }
     public function customize_card_index($card_id, $type)
     {
+        $use_username = 0;
+        if(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
+        {
+            $company = Company::where('id', auth()->user()->company_id)->first();
+            $subscription = Subscription::where('id', $company->subscription_id)->first();
+            if($subscription->use_username == 1)
+            {
+                $use_username = 1;
+            }
+        }
         $card = Card::where('id', $card_id)->first();
         $type = $type;
         $company_id = auth()->user()->company_id;
         $company = Company::where('id', $company_id)->first();
-        $data = compact('card', 'type', 'company');
+        $data = compact('card', 'type', 'company','use_username');
         return view('customize_card')->with($data);
     }
     public function validate_email(Request $request)
@@ -280,12 +300,22 @@ class CardController extends Controller
     }
     public function visting_card($card_id,$type)
     {
+        $use_username = 0;
+        if(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
+        {
+            $company = Company::where('id', auth()->user()->company_id)->first();
+            $subscription = Subscription::where('id', $company->subscription_id)->first();
+            if($subscription->use_username == 1)
+            {
+                $use_username = 1;
+            }
+        }
         $card = Card::where('id', $card_id)->first();
         $type = $type;
         $company_id = auth()->user()->company_id;
         $company = Company::where('id', $company_id)->first();
         $visting_card_backgrounds=VistingCardBackground::where('company_id',$company_id)->get();
-        $data = compact('card', 'type', 'company','visting_card_backgrounds');
+        $data = compact('card', 'type', 'company','visting_card_backgrounds','use_username');
         return view('visting_card_new')->with($data);
     }
     public function save_visting_card_backgrounds(Request $request)
