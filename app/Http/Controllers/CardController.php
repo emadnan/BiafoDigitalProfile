@@ -41,8 +41,15 @@ class CardController extends Controller
         $user_type=auth()->user()->user_type;
         $image_path = "";
         $company_user_id =null;
+        $cards = Card::where('user_id',auth()->user()->id)->orwhere('company_user_id',auth()->user()->id)->get();
         if($user_type=="company")
         {
+            $company = Company::where('id',auth()->user()->company_id)->first();
+            $subscription = Subscription::where('id',$company->subscription_id)->first();
+            if($subscription->no_of_cards <= $cards->count())
+            {
+                return response()->json(['error'=>'You have reached your card limit. Please upgrade your subscription to add more cards.'],403);
+            }
             $company_user = new User();
             $company_user->name = $request->name;
             $company_user->email = $request->email;

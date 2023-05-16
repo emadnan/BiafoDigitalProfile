@@ -582,12 +582,18 @@ $(document).ready(function() {
                     $('#add_card_modal').modal('hide');
                     //show success message
                     toastr.success('Card Added Successfully');
+                    console.log('Card Added Successfully');
                     //reload page
                     location.reload();
                 },
                 error: function(data) {
                     //show error message
-                    toastr.error('Something Went Wrong');
+                    document.querySelector("body").style.visibility = "visible";
+                document.querySelector("#loader").style.visibility = "hidden";
+                //  iferror code 403 
+                if(data.status == 403){
+                    toastr.error('Your Limit Exceeds Upgrade Your Plan');
+                }
                 }
             });
         }
