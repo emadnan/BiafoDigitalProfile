@@ -494,6 +494,7 @@ saveBtn.addEventListener('click', () => {
     var contact = {
         name: "{{$profile->name}}",
         email: "{{$profile->email}}",
+        designation: "{{$card->designation}}",
         phone: "{{$profile->phone}}",
         address: "{{$profile->address}}"
     };
@@ -504,6 +505,7 @@ saveBtn.addEventListener('click', () => {
         "N:" + contact.name + "\n" +
         "EMAIL:" + contact.email + "\n" +
         "TEL:" + contact.phone + "\n" +
+        "TITLE:" + contact.designation + "\n" +
         "ADR:" + contact.address + "\n" +
         "END:VCARD";
 
