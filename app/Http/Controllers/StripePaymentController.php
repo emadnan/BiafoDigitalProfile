@@ -8,6 +8,7 @@ use Stripe;
 use App\Models\SubscriptionInvoice;
 use App\Models\Subscription;
 use App\Models\Company;
+use Barryvdh\DomPDF\Facade\Pdf;
      
 class StripePaymentController extends Controller
 {
@@ -109,11 +110,17 @@ class StripePaymentController extends Controller
         $subscription_invoice->save();
         $company->subscription_id = 2;
         $company->save();
-    // return redirect()->back()->with('success', 'Payment successful!');
         return redirect('/home')->with('success', 'Payment successful! Now you can Add Cards');
     }
     public function testenv()
     {
         print_r(env('STRIPE_SECRET'));
+    }
+    function generatePDF()
+    {
+        $subscription_invoice = SubscriptionInvoice::where('company_id', auth()->user()->company_id)->where('is_active', 1)->first();
+        $data = compact('subscription_invoice');
+        $pdf = PDF::loadView('pdf.invoice', $data);
+        return $pdf->stream();
     }
 }

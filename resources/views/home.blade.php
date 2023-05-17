@@ -3,6 +3,7 @@
 @php
 $permissions= session()->get('permissions');
 $is_new = session()->get('is_new');
+$message = session()->get('success');
 @endphp
 <style>
 .modal-dialog {
@@ -65,6 +66,7 @@ $is_new = session()->get('is_new');
 </style>
 <div class="content-wrapper">
     <input type="hidden" id="is_new" value="{{$is_new}}">
+    <input type="hidden" id="message" value="{{$message}}">
     <div class="container">
         <section class="content-header">
             <div class='container-fluid'>
@@ -384,14 +386,37 @@ $is_new = session()->get('is_new');
             </div>
         </div>
     </div>
+    <!-- Invoice Modal -->
+    <div class="modal fade" id="invoice_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                        <div>
+                            <h5
+                                style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#0056D2 ;color:white; border:2px solid #0056D2">
+                                Invoice</h5>
+                        </div>
+                        <iframe id="invoice_frame" src="{{route('invoicePdf')}}" frameborder="0" style="width:100%; height:500px;"></iframe>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 @endsection
 @section('scripts')
 <script>
+;
 //live search card divs by name
 $(document).ready(function() {
+    // $('#invoice_modal').modal('show')
     $("#search").on("keyup", function() {
         var value = $(this).val().toLowerCase();
         $("#card_divs .scard").filter(function() {
@@ -420,8 +445,12 @@ $(document).ready(function() {
         $('#add_card_modal').modal('show');
     });
     var is_new = $('#is_new').val();
+    var message = $('#message').val();
     if (is_new == '1') {
         $('#company_profile_modal').modal('show');
+    }
+    if(message == 'Payment successful! Now you can Add Cards'){
+        $('#invoice_modal').modal('show');
     }
     var logo = document.getElementById("logo");
     var logo_preview = document.getElementById("logo_preview");
