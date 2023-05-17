@@ -57,6 +57,10 @@
       margin-top: 40px;
       font-size: 14px;
     }
+    .invoice .stamp{
+      margin-top: 40px;
+      text-align: right;
+    }
   </style>
 </head>
 <body>
@@ -85,6 +89,9 @@
       <p>- Payment Method: Credit Card</p>
       <p>- Payment Due Date: {{$subscription_invoice->start_date}}
       </p>
+    </div>
+    <div class="stamp">
+    <img src="./frontend/img/stamp.png" alt="Cardify Logo" width="150">
     </div>
   </div>
 </body>
