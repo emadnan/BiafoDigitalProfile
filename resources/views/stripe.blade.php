@@ -21,7 +21,7 @@
     text-align: center;
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
-    margin-top: 90px;
+    margin-top: 60px;
 }
 
 .form-fields {
@@ -39,10 +39,10 @@
     font-family: 'Times New Roman', Times, serif;
     background-color: #0056D2;
 }
-.detail_side{
 
-}
-.paragraph{
+.detail_side {}
+
+.paragraph {
     font-weight: bold;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
@@ -50,23 +50,59 @@
     margin-left: 40px;
     color: grey;
 }
-.logo{
+
+.logo {
     margin-top: 20px;
 }
-.price{
+
+.price {
     font-weight: bold;
     font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
     margin-top: 0px;
     margin-left: 40px;
 }
-.details{
+
+.details {
     color: grey;
     font-size: 14px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 90px;
+}
+
+.labl {
+    display: block;
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #0056D2;
+    background-color: white;
+}
+
+.labl>input {
+    /* HIDE RADIO */
+    visibility: hidden;
+    /* Makes input not-clickable */
+    position: absolute;
+    /* Remove input from document flow */
+}
+
+.labl>input+div {
+    /* DIV STYLES */
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.labl>input:checked+div {
+    /* (RADIO CHECKED) DIV STYLES */
+    background-color: #0056D2;
+    color : white;
+    border: 1px solid #0056D2;
 }
 </style>
 
@@ -79,10 +115,7 @@
                 <div class="detail_side">
                     <img src="{{ asset('frontend/img/cardify_logo.png') }}" alt="" width="250" height="200"
                         class="d-inline-block align-text-top logo">
-                        <p class="paragraph">Subscribe to Premium Plan</p>
-                        <p class="price">$100.00
-                            <span style="font-size: 20px; color: grey;">/year</span>
-                        </p>
+                    <p class="paragraph">Subscribe to Cardify</p>
                 </div>
             </div>
             <div class="col-md-6">
@@ -105,6 +138,39 @@
                         @csrf
                         <div class="heading">
                             <h1>Payment</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="labl text-center">
+                                    <input type="radio" name="subscription_type" value="Professional"
+                                        checked="checked" />
+                                    <div>
+                                        <div class="card-type">
+                                            <p>
+                                                Professional
+                                            </p>
+                                            <p>
+                                                $99.99/year
+                                            </p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="labl text-center">
+                                    <input type="radio" name="subscription_type" value="Bussiness" />
+                                    <div>
+                                        <div class="card-type">
+                                            <p>
+                                                Bussiness
+                                            </p>
+                                            <p>
+                                                $199.99/year
+                                            </p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
                         <div class="form-fields">
                             <div class='form-row row'>
@@ -147,7 +213,10 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now</button>
-                                <p class = "details">By clicking the button above, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, you allow to charge your card for this payment and future payments in accordance with their terms. You can always cancel your subscription</p>
+                                <p class="details">By clicking the button above, you agree to our <a href="#">Terms of
+                                        Service</a> and <a href="#">Privacy Policy</a>, you allow to charge your card
+                                    for this payment and future payments in accordance with their terms. You can always
+                                    cancel your subscription</p>
                             </div>
                         </div>
 

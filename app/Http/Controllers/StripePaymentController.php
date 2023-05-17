@@ -28,16 +28,24 @@ class StripePaymentController extends Controller
      */
     public function stripePost(Request $request)
     {
+        // echo "<pre>";
+        // print_r($request->all());
+        // exit;
+        $subscription_type = $request->subscription_type;
+        $subscription = Subscription::where('name', $subscription_type)->first();
+        $amount = $subscription->amount * 100;
+        $description = $subscription->name;
+
         //$api_key = env('APP_NAME');
         try {
             $api_key = env('STRIPE_SECRET');
             Stripe\Stripe::setApiKey($api_key);
         
             $stripe = Stripe\Charge::create([
-                "amount" => 200 * 100,
-                "currency" => "pkr",
+                "amount" => $amount,
+                "currency" => "usd",
                 "source" => $request->stripeToken,
-                "description" => "Test payment from Cardify."
+                "description" => $description." Subcription from Cardify."
                 // "metadata" => ["product_id" => "prod_Ni6iiqzPNgmWKe"]
             ]);
         
