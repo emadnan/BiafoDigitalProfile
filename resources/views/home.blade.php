@@ -123,6 +123,7 @@ $message = session()->get('success');
                                     <div class="col-md-8 mt-3">
                                         <p class="name">{{$card->name}}</p>
                                         <p class="designation">{{$card->designation}}</p>
+                                        <small class="text-muted">Views: {{$card->cardLogs->count()}}</small>
                                     </div>
                                 </div>
                             </div>

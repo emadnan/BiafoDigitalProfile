@@ -19,4 +19,7 @@ class Card extends Model
     function city(){
         return $this->belongsTo('App\Models\City','city_id','id');
     }
+    function cardLogs(){
+        return $this->hasMany('App\Models\CardLog','card_id','id');
+    }
 }
