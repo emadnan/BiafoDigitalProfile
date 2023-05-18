@@ -496,7 +496,8 @@ saveBtn.addEventListener('click', () => {
         email: "{{$profile->email}}",
         designation: "{{$card->designation}}",
         phone: "{{$profile->phone}}",
-        address: "{{$profile->address}}"
+        address: "{{$profile->address}}",
+        photo: "{{asset('card_images')}}/{{$card->image_path}}" // Replace with the actual path to the photo file
     };
 
     // Convert the contact information to a vCard format
@@ -507,22 +508,34 @@ saveBtn.addEventListener('click', () => {
         "TEL:" + contact.phone + "\n" +
         "TITLE:" + contact.designation + "\n" +
         "ADR:" + contact.address + "\n" +
-        "END:VCARD";
+        "PHOTO;TYPE=JPEG;ENCODING=BASE64:";
 
-    // Create a blob with the vCard data
-    var blob = new Blob([vcard], {
-        type: "text/vcard"
-    });
+    // Fetch the photo file
+    fetch(contact.photo)
+        .then(response => response.blob())
+        .then(blob => {
+            // Create a FileReader to read the Blob as Data URL
+            var reader = new FileReader();
+            reader.onload = function() {
+                // Encode the photo as Base64
+                var base64 = reader.result.split(',')[1];
 
-    // Create a download link for the contact file
-    var downloadLink = document.createElement("a");
-    downloadLink.href = URL.createObjectURL(blob);
-    downloadLink.download = contact.name + ".vcf";
+                // Complete the vCard with the Base64 encoded photo
+                vcard += base64 + "\nEND:VCARD";
 
-    // Add the download link to the page and click it
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
+                // Create a blob with the vCard data
+                var vcardBlob = new Blob([vcard], { type: "text/vcard" });
+
+                // Perform the file download
+                var downloadLink = document.createElement("a");
+                downloadLink.href = URL.createObjectURL(vcardBlob);
+                downloadLink.download = "{{$profile->name}}.vcf";
+                downloadLink.click();
+            };
+            reader.readAsDataURL(blob);
+        });
 });
+
 </script>
 
 </html>
