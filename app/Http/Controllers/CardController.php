@@ -135,9 +135,16 @@ class CardController extends Controller
         $countries = Country::all();
         $cities = City::where('country_id', $card->country_id)->get();
         $data = compact('card', 'type', 'profile', 'company', 'countries', 'cities', 'use_username');
-        return view('card_view')->with($data);
+        return view('card_view_new')->with($data);
     }
-
+    function edit_card($id){
+        $card = Card::where('id', $id)->first();
+        $profile = Profile::where('card_id', $id)->first();
+        $countries = Country::all();
+        $cities = City::where('country_id', $card->country_id)->get();
+        $data = compact('card', 'profile', 'countries', 'cities');
+        return view('edit_card')->with($data);
+    }
     function delete_card($id)
     {
         $card = Card::where('id', $id)->first();
