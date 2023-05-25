@@ -337,7 +337,7 @@ tml {
                                 {{$card->email}}
                             </p>
                         </div>
-
+                        @if($card->linkedin)
                         <div style="display: flex; align-items: center;">
                             <i class="fa-brands fa-linkedin icon"></i>
                             <p
@@ -345,7 +345,7 @@ tml {
                                 {{$card->linkedin}}
                             </p>
                         </div>
-
+                        @endif
                         <div style="display: flex; align-items: center;">
                             <i class="fa-solid fa-phone icon"></i>
                             <p
@@ -353,7 +353,7 @@ tml {
                                 {{$card->phone}}
                             </p>
                         </div>
-
+                        @if($card->website)
                         <div style="display: flex; align-items: center;">
                             <i class="fa-solid fa-globe icon"></i>
                             <p
@@ -361,7 +361,7 @@ tml {
                                 {{$card->website}}
                             </p>
                         </div>
-
+                        @endif
                         <div style="display: flex; align-items: center;">
                             <i class="fa-solid fa-map-marker-alt icon"></i>
                             <p
