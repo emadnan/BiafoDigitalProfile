@@ -56,7 +56,7 @@ html {
 
 .card-img-top {
     /* give buttom waved curve */
-    border-bottom: 10px solid #0056D2;
+    border-bottom: 10px solid {{$card->primary_color}};
 }
 
 .line {
@@ -74,12 +74,13 @@ html {
 .icon {
     width: 50px;
     height: 50px;
-    background-color: #0056D2;
+    background-color: {{$card->primary_color}};
     border-radius: 50%;
     text-align: center;
-    padding-top: 10px;
-    color: white;
+    padding-top: 15px;
+    color: {{$card->secondary_color}};
     font-size: 20px;
+    margin-top: 10px;
 }
 
 .icon2 {
@@ -158,7 +159,7 @@ html {
 
 #closeBtn {
     margin-top: 10px;
-    background-color: #0056D2;
+    background-color: {{$card->primary_color}};
     color: #fff;
     border: none;
     padding: 8px 16px;
@@ -168,7 +169,7 @@ html {
 
 #saveBtn {
     margin-top: 10px;
-    background-color: #0056D2;
+    background-color: {{$card->primary_color}};
     color: #fff;
     border: none;
     padding: 8px 16px;
@@ -185,7 +186,7 @@ html {
 }
 
 #openBtn {
-    background-color: #0056D2;
+    background-color: {{$card->primary_color}};
     color: #fff;
     border: none;
     padding: 8px 16px;
@@ -222,6 +223,9 @@ html {
 .interests {
     padding: 15px;
 }
+p{
+    color: {{$card->text_color}};
+}
 </style>
 
 <body style="background-color:#f1f1f1;">
@@ -240,9 +244,9 @@ html {
                     <div class="card-body">
                         <p style="text-align: left; font-size: 30px; font-weight: bold;">
                             {{$card->name}}</p>
-                        <p style="text-align: left; font-size: 25px; font-weight: bold; color:#0056D2">
+                        <p style="text-align: left; font-size: 25px; font-weight: bold; color:{{$card->primary_color}}">
                             {{$card->designation}}</p>
-                        <p style="text-align: left; font-size: 20px; font-weight: bold; color:#0056D2">
+                        <p style="text-align: left; font-size: 20px; font-weight: bold; color:{{$card->primary_color}}">
                             {{$card->company}}</p>
                         <p style="text-align: left; font-size: 17px; font-weight: bold; color:grey">
                             {{$profile->description}}</p>
@@ -250,74 +254,54 @@ html {
                 </div>
                 <!-- personal details -->
                 <div class="details">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="icon">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-10 mt-2">
-                            <p class="card-text" style="font-family:Palatino;font-size:18px;">{{$card->email}}
+                    <div style="display: flex; align-items: center;">
+                            <i class="fa-solid fa-envelope icon"></i>
+                            <p style="text-align: left; font-size: 16px; font-weight: bold; margin: 10px; max-width: 270px;"
+                                id="card_email" class="secondry-text">
+                                {{$card->email}}
                             </p>
                         </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-md-2">
-                            <!-- <a href="tel:{{$card->phone}}" class="btn btn-primary btn-sm"
-                                style="border-radius: 50px;"><i class="fa-solid fa-phone"></i>
-                            </a> -->
-                            <div class="icon">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fa-solid fa-phone icon"></i>
+                            <p style="text-align: left; font-size: 16px; font-weight: bold; margin: 10px; max-width: 270px;"
+                                id="card_phone" class="secondry-text">
+                                {{$card->phone}}
+                            </p>
                         </div>
-                        <div class="col-md-10 mt-2">
-                            <p class="card-text" style="font-family:Palatino;font-size:18px;">
-                                {{$profile->phone}}</p>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fa-solid fa-map-marker-alt icon"></i>
+                            <p style="text-align: left; font-size: 16px; font-weight: bold; margin: 10px; max-width: 270px;"
+                                id="card_address" class="secondry-text">
+                                {{$card->address}}, {{$card->city->name}}, {{$card->country->name}}
+                            </p>
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-md-2">
-                                <div class="icon">
-                                    <i class="fa-solid fa-map-marker-alt"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-10 mt-2">
-                                <p class="card-text" style="font-family:Palatino;font-size:18px;">
-                                    {{$profile->address}}, {{$profile->city->name}}, {{$profile->country->name}}
-                                </p>
-                            </div>
+                        @foreach($profile->social_links as $social_link)
+                        <a href="{{$social_link->social_link}}" target="_blank" style="text-decoration:none">
+                        <div style="display: flex; align-items: center;">
+                        @if($social_link->social_name == "github")
+                            <i class="fa-brands fa-github icon"></i>
+                        @elseif($social_link->social_name == "linkedin")
+                            <i class="fa-brands fa-linkedin icon"></i>
+                        @elseif($social_link->social_name == "facebook")
+                            <i class="fa-brands fa-facebook icon"></i>
+                        @elseif($social_link->social_name == "website")
+                            <i class="fa-solid fa-globe icon"></i>
+                        @endif
+                            <p style="text-align: left; font-size: 16px; font-weight: bold; margin: 10px; max-width: 270px;"
+                                id="card_address" class="secondry-text">
+                                {{$social_link->social_link}}
+                            </p>
                         </div>
-                        @foreach($profile->social_links as $link)
-                        <a href="{{$link->social_link}}" style="text-decoration: none;">
-                            <div class="row mt-3">
-                                <div class="col-md-2">
-                                    <div class="icon">
-                                        @if($link->social_name == 'facebook')
-                                        <i class="fa-brands fa-facebook-f"></i>
-                                        @elseif($link->social_name == 'github')
-                                        <i class="fa-brands fa-github"></i>
-                                        @elseif($link->social_name == 'website')
-                                        <i class="fa-solid fa-globe"></i>
-                                        @elseif($link->social_name == 'linkedin')
-                                        <i class="fa-brands fa-linkedin-in"></i>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-md-10 mt-2">
-                                    <p class="card-text" style="font-family:Palatino;font-size:18px;">
-                                        https://cardify.com/link-shortner</p>
-                                </div>
-                            </div>
                         </a>
-                        @endforeach
-                    </div>
+                     @endforeach
+
                 </div>
                 <!-- skills -->
                 @if($skills[0] != null)
                 <div class="skills">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title" style="font-size: 18px; color:#0056D2">Skills</h5>
+                            <h5 class="card-title" style="font-size: 18px; color:{{$card->primary_color}}">Skills</h5>
                             <div class="row">
                                 @foreach($skills as $skill)
                                 <div class="pills mt-1">
@@ -334,7 +318,7 @@ html {
                 <div class="experience">
                     <div class="card" style="border-radius:15px">
                         <div class="card-body">
-                            <h5 class="card-title" style="font-size: 18px; color:#0056D2">Experience</h5>
+                            <h5 class="card-title" style="font-size: 18px; color:{{$card->primary_color}}">Experience</h5>
                             @foreach($profile->experiences as $experience)
                             <p class="card-text" style=";font-size:18px; font-weight:bold;">
                                 {{$experience->position}}
@@ -369,7 +353,7 @@ html {
                 <div class="education">
                     <div class="card" style="border-radius:15px">
                         <div class="card-body">
-                            <h5 class="card-title" style="font-size: 18px; color:#0056D2">Education</h5>
+                            <h5 class="card-title" style="font-size: 18px; color:{{$card->primary_color}}">Education</h5>
                             @foreach($profile->educations as $education)
                             <p class="card-text" style=";font-size:18px; font-weight:bold;">
                                 {{$education->degree}}
@@ -402,7 +386,7 @@ html {
                 <!-- languages -->
                 @if($languages[0] != null)
                 <div class="languages">
-                    <h5 class="card-title" style="font-size: 18px; color:#0056D2">Languages</h5>
+                    <h5 class="card-title" style="font-size: 18px; color:{{$card->primary_color}}">Languages</h5>
                     <div class="row">
                     <div class="col-md-12 mt-1">
                         
@@ -422,7 +406,7 @@ html {
                 <!-- interests -->
                 @if($interests[0] != null)
                 <div class="interests">
-                    <h5 class="card-title" style="font-size: 18px; color:#0056D2">Interests</h5>
+                    <h5 class="card-title" style="font-size: 18px; color:{{$card->primary_color}}">Interests</h5>
                     <div class="row">
                         <div class="col-md-12 mt-1">
                         <p>

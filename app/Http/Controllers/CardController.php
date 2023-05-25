@@ -231,6 +231,9 @@ class CardController extends Controller
         $card->linkedin = $request->linkiden;
         $card->website = $request->website;
         $card->image_path = $image_path;
+        $card->primary_color = $request->primary_color;
+        $card->secondary_color = $request->secondary_color;
+        $card->text_color = $request->text_color;
         $card->save();
 
         return response()->json(['success' => 'Card Updated Successfully']);

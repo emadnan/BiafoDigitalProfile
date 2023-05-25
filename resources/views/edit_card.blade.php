@@ -44,7 +44,7 @@ tml {
 
 .card-img-top {
     /* give buttom waved curve */
-    border-bottom: 10px solid #0056D2;
+    border-bottom: 10px solid {{$card->primary_color }};
     /* border raduis only top left and right */
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
@@ -66,11 +66,11 @@ tml {
     width: 33px;
     height: 33px;
     min-width: 33px;
-    background-color: #0056D2;
+    background-color: {{$card->primary_color }};
     border-radius: 50%;
     text-align: center;
     padding-top: 9px;
-    color: white;
+    color: {{$card->secondry_color }};
     font-size: 15px;
 }
 
@@ -312,6 +312,9 @@ tml {
     border: 1px solid #ccc;
     background-color: red;
 }
+.secondry-text{
+    color: {{$card->text_color}};
+}
 </style>
 <div class="content-wrapper">
     <section class="content-header">
@@ -337,14 +340,14 @@ tml {
                         </div>
 
                         <div style="display: flex; align-items: center;">
-                            <p style="text-align: left; font-size: 20px; font-weight: bold; color:#0056D2"
+                            <p style="text-align: left; font-size: 20px; font-weight: bold; color:{{$card->primary_color}}"
                                 id="card_designation" class="primary-text">
                                 {{$card->designation}}
                             </p>
                         </div>
 
                         <div style="display: flex; align-items: center;">
-                            <p style="text-align: left; font-size: 17px; font-weight: bold; color:#0056D2"
+                            <p style="text-align: left; font-size: 17px; font-weight: bold; color:{{$card->primary_color}}"
                                 id="card_company" class="primary-text">
                                 {{$card->company}}
                             </p>
@@ -477,7 +480,6 @@ tml {
                             <div class="tab">
                                 <hr></hr>
                                 <h5 style="font-family:Plantino; font-weight:bold">Color :</h5>
-
                                 <div class="row">
                                     <div class="col-md-4">
                                         <h5 style="font-family:Plantino">Primary Color</h5>
@@ -499,6 +501,7 @@ tml {
                                     </div>
                                 </div>
                                 <hr></hr>
+
                             </div>
 
                         </div>
@@ -541,8 +544,11 @@ tml {
 
 @section('scripts')
 <script>
+    var primaryColor = "{{$card->primary_color}}";
+    var secondryColor = "{{$card->secondry_color}}";
+    var textColor = "{{$card->text_color}}";
 $("#primaryColor").colorPick({
-    'initialColor': '#0056D2',
+    'initialColor': '{{$card->primary_color}}',
     'allowRecent': true,
     'recentMax': 5,
     'allowCustomColor': false,
@@ -565,10 +571,11 @@ $("#primaryColor").colorPick({
         for (var i = 0; i < primary_text.length; i++) {
             primary_text[i].style.color = this.color;
         }
+        primaryColor = this.color;
     }
 });
 $("#secondryColor").colorPick({
-    'initialColor': '#ffffff',
+    'initialColor': '{{$card->secondary_color}}',
     'allowRecent': true,
     'recentMax': 5,
     'allowCustomColor': false,
@@ -583,10 +590,11 @@ $("#secondryColor").colorPick({
         for (var i = 0; i < icons.length; i++) {
             icons[i].style.color = this.color;
         }
+        secondryColor = this.color;
     }
 });
 $("#textColor").colorPick({
-    'initialColor': '#000000',
+    'initialColor': '{{$card->text_color}}',
     'allowRecent': true,
     'recentMax': 5,
     'allowCustomColor': false,
@@ -601,6 +609,7 @@ $("#textColor").colorPick({
         for (var i = 0; i < secondry_text.length; i++) {
             secondry_text[i].style.color = this.color;
         }
+        textColor = this.color;
     }
 });
 var update_name = document.getElementById("update_name");
@@ -764,6 +773,9 @@ saveButton.addEventListener("click", () => {
         data.append('company', $('#update_company').val());
         data.append('designation', $('#update_designation').val());
         data.append('linkiden', $('#update_linkiden').val());
+        data.append('primary_color', primaryColor);
+        data.append('secondary_color', secondryColor);
+        data.append('text_color', textColor);
 
         //ajax request
         $.ajax({

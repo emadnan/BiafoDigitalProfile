@@ -49,7 +49,7 @@ tml {
 
 .card-img-top {
     /* give buttom waved curve */
-    border-bottom: 10px solid #0056D2;
+    border-bottom: 10px solid {{$card->primary_color}};
     /* border raduis only top left and right */
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
@@ -71,11 +71,11 @@ tml {
     width: 33px;
     height: 33px;
     min-width: 33px;
-    background-color: #0056D2;
+    background-color: {{$card->primary_color}};
     border-radius: 50%;
     text-align: center;
     padding-top: 9px;
-    color: white;
+    color: {{$card->secondary_color}};
     font-size: 15px;
 }
 
@@ -261,6 +261,9 @@ tml {
     cursor: pointer;
     text-align: center;
 }
+.secondry-text{
+    color:{{$card->text_color}};
+}
 </style>
 <div class="content-wrapper">
     <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
@@ -272,30 +275,30 @@ tml {
                     <nav class="toolbar">
                         <ul>
                             <li>
-                                <a href="/edit_card/{{ $card->id }}" style="text-decoration:none;"><i
+                                <a href="/edit_card/{{ $card->id }}" style="text-decoration:none; color:black;"><i
                                         class="fa fa-pencil"></i> Edit</a>
                             </li>
                             @if (isset($permissions['can_download_card']))
                             <li>
-                                <a id="qr_modal" href="#" style="text-decoration:none;"><i
+                                <a id="qr_modal" href="#" style="text-decoration:none; color:black;"><i
                                         class="fa-solid fa-download"></i> Download QR Code</a>
                             </li>
                             @endif
                             @if (isset($permissions['can_delete_card']))
                             <li>
                                 <a class="delete-card" data-delete-card-id="{{ $card->id }}" data-bs-toggle="modal"
-                                    data-bs-target="#deletecardmodal" style="text-decoration:none;">
+                                    data-bs-target="#deletecardmodal" style="text-decoration:none; color:black;">
                                     <i class="fa-solid fa-trash"></i> Delete
                                 </a>
                             </li>
                             @endif
 
                             <li>
-                                <a href="/visting_card/{{ $card->id }}/{{ $type }}" style="text-decoration:none;"><i
+                                <a href="/visting_card/{{ $card->id }}/{{ $type }}" style="text-decoration:none; color:black;"><i
                                         class="fa-solid fa-address-card"></i> Visting Card</a>
                             </li>
                             <li>
-                                <a href="/edit_profile/{{ $card->id }}" style="text-decoration:none;"><i
+                                <a href="/edit_profile/{{ $card->id }}" style="text-decoration:none; color:black;"><i
                                         class="fa fa-pencil"></i> Edit Profile</a>
                             </li>
                         </ul>
@@ -310,19 +313,19 @@ tml {
                     <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div style="display: flex; align-items: center;">
-                            <p style="text-align: left; font-size: 30px; font-weight: bold;">
+                            <p style="text-align: left; font-size: 30px; font-weight: bold;" class="secondry-text">
                                 {{$card->name}}
                             </p>
                         </div>
 
                         <div style="display: flex; align-items: center;">
-                            <p style="text-align: left; font-size: 20px; font-weight: bold; color:#0056D2">
+                            <p style="text-align: left; font-size: 20px; font-weight: bold; color:{{$card->primary_color}}" class="primary-text"> 
                                 {{$card->designation}}
                             </p>
                         </div>
 
                         <div style="display: flex; align-items: center;">
-                            <p style="text-align: left; font-size: 17px; font-weight: bold; color:#0056D2">
+                            <p style="text-align: left; font-size: 17px; font-weight: bold; color:{{$card->primary_color}}">
                                 {{$card->company}}
                             </p>
                         </div>
@@ -330,7 +333,7 @@ tml {
                         <div style="display: flex; align-items: center;">
                             <i class="fa-solid fa-envelope icon"></i>
                             <p
-                                style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;">
+                                style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;" class="secondry-text">
                                 {{$card->email}}
                             </p>
                         </div>
@@ -338,7 +341,7 @@ tml {
                         <div style="display: flex; align-items: center;">
                             <i class="fa-brands fa-linkedin icon"></i>
                             <p
-                                style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;">
+                                style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;" class="secondry-text">
                                 {{$card->linkedin}}
                             </p>
                         </div>
@@ -346,7 +349,7 @@ tml {
                         <div style="display: flex; align-items: center;">
                             <i class="fa-solid fa-phone icon"></i>
                             <p
-                                style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;">
+                                style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;" class="secondry-text">
                                 {{$card->phone}}
                             </p>
                         </div>
@@ -354,7 +357,7 @@ tml {
                         <div style="display: flex; align-items: center;">
                             <i class="fa-solid fa-globe icon"></i>
                             <p
-                                style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;">
+                                style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;" class="secondry-text">
                                 {{$card->website}}
                             </p>
                         </div>
@@ -362,7 +365,7 @@ tml {
                         <div style="display: flex; align-items: center;">
                             <i class="fa-solid fa-map-marker-alt icon"></i>
                             <p
-                                style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;">
+                                style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;" class="secondry-text">
                                 {{$card->address}}
                             </p>
                         </div>
