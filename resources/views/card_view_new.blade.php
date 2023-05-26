@@ -283,7 +283,7 @@ tml {
 }
 .card_header{
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 </style>
 <div class="content-wrapper">
