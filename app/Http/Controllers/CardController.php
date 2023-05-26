@@ -234,6 +234,7 @@ class CardController extends Controller
         $card->primary_color = $request->primary_color;
         $card->secondary_color = $request->secondary_color;
         $card->text_color = $request->text_color;
+        $card->design_html=$request->design_html;
         $card->save();
 
         return response()->json(['success' => 'Card Updated Successfully']);

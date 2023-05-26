@@ -315,6 +315,27 @@ tml {
 .secondry-text{
     color: {{$card->text_color}};
 }
+.card_headings{
+    /* line-height: 0.3; */
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #fff;
+    padding: 10px;
+    /* border-radius: 5px; */
+    /* shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 600px;
+    border-radius: 10px;
+    /* border: 3px solid {{$card->primary_color}}; */
+}
+.card_header{
+    position: relative;
+    margin-bottom: 20px;
+}
 </style>
 <div class="content-wrapper">
     <section class="content-header">
@@ -328,31 +349,14 @@ tml {
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" id="card_image"
-                        alt="...">
+                    <div id="design">
+                    @if($card->design_html == 'Flat')
+                        <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" id="card_image" alt="..."><div style="display: flex; align-items: center;"><p style="margin:15px; text-align: left; font-size: 30px; font-weight: bold;" id="card_name" class="secondry-text">{{$card->name}}</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 20px; font-weight: bold; color:#8E44AD" id="card_designation" class="primary-text">{{$card->designation}}</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 17px; font-weight: bold; color:#8E44AD" id="card_company" class="primary-text">{{$card->company}}</p></div>
+                        @elseif($card->design_html == 'Sleek')
+                        <div class="card_header"><img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" style="border-bottom-left-radius: 30%; border-bottom-right-radius: 30%;" id="card_image" alt="..."><div class="card_headings"><p style="text-align: center; font-size:20px; font-weight: bold;" id="card_name" class="secondry-text"> {{$card->name}}</p><p style="text-align: center; font-size:18px; font-weight: bold; color:#8E44AD" id="card_designation" class="primary-text">{{$card->designation}}</p><p style="text-align: center; font-size:14px; font-weight: bold; color:#8E44AD" id="card_company" class="primary-text"> {{$card->company}}</p></div></div>
+                        @endif
+                        </div>
                     <div class="card-body">
-
-                        <div style="display: flex; align-items: center;">
-                            <p style="text-align: left; font-size: 30px; font-weight: bold;" id="card_name"
-                                class="secondry-text">
-                                {{$card->name}}
-                            </p>
-                        </div>
-
-                        <div style="display: flex; align-items: center;">
-                            <p style="text-align: left; font-size: 20px; font-weight: bold; color:{{$card->primary_color}}"
-                                id="card_designation" class="primary-text">
-                                {{$card->designation}}
-                            </p>
-                        </div>
-
-                        <div style="display: flex; align-items: center;">
-                            <p style="text-align: left; font-size: 17px; font-weight: bold; color:{{$card->primary_color}}"
-                                id="card_company" class="primary-text">
-                                {{$card->company}}
-                            </p>
-                        </div>
-
                         <div style="display: flex; align-items: center;">
                             <i class="fa-solid fa-envelope icon"></i>
                             <p style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;"
@@ -478,6 +482,18 @@ tml {
                             <input type="radio" id="tabsilver" name="mytabs">
                             <label for="tabsilver">Display</label>
                             <div class="tab">
+                            <hr></hr>
+                            <h5 style="font-family:Plantino; font-weight:bold">Design :</h5>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <input type="radio" id="design1" name="design" value='Flat' checked>
+                                    <label for="design1">Flat</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="radio" id="design2" name="design" value='Sleek'>
+                                    <label for="design2">Sleek</label>
+                                </div>
+                            </div>
                                 <hr></hr>
                                 <h5 style="font-family:Plantino; font-weight:bold">Color :</h5>
                                 <div class="row">
@@ -544,9 +560,20 @@ tml {
 
 @section('scripts')
 <script>
+    var update_name = document.getElementById("update_name");
+    var update_email = document.getElementById("update_email");
+    var update_company = document.getElementById("update_company");
+    var update_designation = document.getElementById("update_designation");
+    var update_address = document.getElementById("update_address");
+    var update_phone = document.getElementById("update_phone");
+    var update_linkiden = document.getElementById("update_linkiden");
+    var update_website = document.getElementById("update_website");
     var primaryColor = "{{$card->primary_color}}";
     var secondryColor = "{{$card->secondry_color}}";
     var textColor = "{{$card->text_color}}";
+    var design = document.getElementById("design");
+    // console.log(design_html);
+
 $("#primaryColor").colorPick({
     'initialColor': '{{$card->primary_color}}',
     'allowRecent': true,
@@ -612,14 +639,6 @@ $("#textColor").colorPick({
         textColor = this.color;
     }
 });
-var update_name = document.getElementById("update_name");
-var update_email = document.getElementById("update_email");
-var update_company = document.getElementById("update_company");
-var update_designation = document.getElementById("update_designation");
-var update_address = document.getElementById("update_address");
-var update_phone = document.getElementById("update_phone");
-var update_linkiden = document.getElementById("update_linkiden");
-var update_website = document.getElementById("update_website");
 //name change event listener to get name
 update_name.addEventListener('keyup', function() {
     var name = this.value;
@@ -738,15 +757,47 @@ $('#image').change(function() {
     };
     reader.readAsDataURL(event.target.files[0]);
 });
+var image_path = "{{asset('card_images')}}/{{$card->image_path}}";
 //crop button click
 cropButton.addEventListener("click", () => {
     //get cropped image
     var croppedImage = cropper.getCroppedCanvas().toDataURL();
     //show cropped image in image preview
-    croppedImageContainer.src = croppedImage;
+    image_path = croppedImage;
+    document.getElementById("card_image").src = croppedImage;
+    
     //hide image crop modal
     $('#image_crop_modal').modal('hide');
 });
+
+var radio = document.getElementsByName("design");
+    var desgin1 = document.getElementById("design1");
+    var desgin2 = document.getElementById("design2");
+    
+    var type = '{{$card->design_html}}';
+    if(desgin2.value == '{{$card->design_html}}'){
+        desgin2.checked = true;
+        type = 'Sleek';
+    }
+    else{
+        desgin1.checked = true;
+        type = 'Flat';
+    }
+for (var i = 0; i < radio.length; i++) {
+    radio[i].addEventListener("change", function() {
+        var radio = document.querySelector('input[name="design"]:checked').value;
+        if(radio == 'Flat'){
+            var flat  = '<img src="'+image_path+'" class="card-img-top" id="card_image" alt="..."><div style="display: flex; align-items: center;"><p style="margin:15px; text-align: left; font-size: 30px; font-weight: bold;" id="card_name" class="secondry-text">'+update_name.value+'</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 20px; font-weight: bold; color:'+primaryColor+'" id="card_designation" class="primary-text">'+update_designation.value+'</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 17px; font-weight: bold; color:'+primaryColor+'" id="card_company" class="primary-text">'+update_company.value+'</p></div>';
+            design.innerHTML = flat;
+            type = 'Flat';
+        }
+        else{
+    var sleek = '<div class="card_header"><img src="'+image_path+'" class="card-img-top" style="border-bottom-left-radius: 30%; border-bottom-right-radius: 30%;" id="card_image" alt="..."><div class="card_headings"><p style="text-align: center; font-size:20px; font-weight: bold;" id="card_name" class="secondry-text">'+update_name.value+'</p><p style="text-align: center; font-size:18px; font-weight: bold; color:'+primaryColor+'" id="card_designation" class="primary-text">'+update_designation.value+'</p><p style="text-align: center; font-size:14px; font-weight: bold; color:'+primaryColor+'" id="card_company" class="primary-text"> '+update_company.value+'</p></div></div>';
+            design.innerHTML = sleek;
+            type = 'Sleek';
+        }
+    });
+}
 saveButton.addEventListener("click", () => {
     //if form validate true then save data
     if ($('#update_card_form').valid()) {
@@ -776,6 +827,7 @@ saveButton.addEventListener("click", () => {
         data.append('primary_color', primaryColor);
         data.append('secondary_color', secondryColor);
         data.append('text_color', textColor);
+        data.append('design_html', type);
 
         //ajax request
         $.ajax({

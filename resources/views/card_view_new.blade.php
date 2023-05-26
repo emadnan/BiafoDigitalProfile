@@ -264,6 +264,27 @@ tml {
 .secondry-text{
     color:{{$card->text_color}};
 }
+.card_headings{
+    /* line-height: 0.3; */
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #fff;
+    padding: 10px;
+    /* border-radius: 5px; */
+    /* shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 600px;
+    border-radius: 10px;
+    /* border: 3px solid {{$card->primary_color}}; */
+}
+.card_header{
+    position: relative;
+    margin-bottom: 20px;
+}
 </style>
 <div class="content-wrapper">
     <input type="hidden" id="company_id" value="{{ empty($company) ? 'none' : $company->id }}">
@@ -310,26 +331,14 @@ tml {
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" alt="...">
+                    <div id="design">
+                        @if($card->design_html == 'Flat')
+                        <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" id="card_image" alt="..."><div style="display: flex; align-items: center;"><p style="margin:15px; text-align: left; font-size: 30px; font-weight: bold;" id="card_name" class="secondry-text">{{$card->name}}</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 20px; font-weight: bold; color:{{$card->primary_color}}" id="card_designation" class="primary-text">{{$card->designation}}</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 17px; font-weight: bold; color:{{$card->primary_color}}" id="card_company" class="primary-text">{{$card->company}}</p></div>
+                        @elseif($card->design_html == 'Sleek')
+                        <div class="card_header"><img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" style="border-bottom-left-radius: 30%; border-bottom-right-radius: 30%;" id="card_image" alt="..."><div class="card_headings"><p style="text-align: center; font-size:20px; font-weight: bold;" id="card_name" class="secondry-text"> {{$card->name}}</p><p style="text-align: center; font-size:18px; font-weight: bold; color:{{$card->primary_color}}" id="card_designation" class="primary-text">{{$card->designation}}</p><p style="text-align: center; font-size:14px; font-weight: bold; color:{{$card->primary_color}}" id="card_company" class="primary-text"> {{$card->company}}</p></div></div>
+                        @endif
+                        </div>
                     <div class="card-body">
-                        <div style="display: flex; align-items: center;">
-                            <p style="text-align: left; font-size: 30px; font-weight: bold;" class="secondry-text">
-                                {{$card->name}}
-                            </p>
-                        </div>
-
-                        <div style="display: flex; align-items: center;">
-                            <p style="text-align: left; font-size: 20px; font-weight: bold; color:{{$card->primary_color}}" class="primary-text"> 
-                                {{$card->designation}}
-                            </p>
-                        </div>
-
-                        <div style="display: flex; align-items: center;">
-                            <p style="text-align: left; font-size: 17px; font-weight: bold; color:{{$card->primary_color}}">
-                                {{$card->company}}
-                            </p>
-                        </div>
-
                         <div style="display: flex; align-items: center;">
                             <i class="fa-solid fa-envelope icon"></i>
                             <p
