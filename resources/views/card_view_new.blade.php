@@ -242,7 +242,7 @@ tml {
     justify-content: space-between;
     align-items: center;
     /* font-faimly plantino*/
-    font-family: 'Plantino';
+    /* font-family: 'Plantino'; */
 }
 
 .toolbar ul {
