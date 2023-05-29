@@ -354,6 +354,8 @@ tml {
                         <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" id="card_image" alt="..."><div style="display: flex; align-items: center;"><p style="margin:15px; text-align: left; font-size: 30px; font-weight: bold;" id="card_name" class="secondry-text">{{$card->name}}</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 20px; font-weight: bold; color:#8E44AD" id="card_designation" class="primary-text">{{$card->designation}}</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 17px; font-weight: bold; color:#8E44AD" id="card_company" class="primary-text">{{$card->company}}</p></div>
                         @elseif($card->design_html == 'Sleek')
                         <div class="card_header"><img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" style="border-bottom-left-radius: 30%; border-bottom-right-radius: 30%;" id="card_image" alt="..."><div class="card_headings"><p style="text-align: center; font-size:20px; font-weight: bold;" id="card_name" class="secondry-text"> {{$card->name}}</p><p style="text-align: center; font-size:18px; font-weight: bold; color:#8E44AD" id="card_designation" class="primary-text">{{$card->designation}}</p><p style="text-align: center; font-size:14px; font-weight: bold; color:#8E44AD" id="card_company" class="primary-text"> {{$card->company}}</p></div></div>
+                        @elseif($card->design_html == 'Classic')
+                        <img src="{{asset('card_images')}}/{{$card->image_path}}" class="card-img-top" style="border-bottom-left-radius: 50%; border-bottom-right-radius: 50%; border-bottom: 20px solid {{$card->primary_color}}"  id="card_image" alt="..."><div style="display: flex; align-items: center;"><p style="margin:15px; text-align: left; font-size: 30px; font-weight: bold;" id="card_name" class="secondry-text">{{$card->name}}</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 20px; font-weight: bold; color:{{$card->primary_color}}" id="card_designation" class="primary-text">{{$card->designation}}</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 17px; font-weight: bold; color:{{$card->primary_color}}" id="card_company" class="primary-text">{{$card->company}}</p></div>
                         @endif
                         </div>
                     <div class="card-body">
@@ -492,6 +494,10 @@ tml {
                                 <div class="col-md-4">
                                     <input type="radio" id="design2" name="design" value='Sleek'>
                                     <label for="design2">Sleek</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="radio" id="design3" name="design" value='Classic'>
+                                    <label for="design3">Classic</label>
                                 </div>
                             </div>
                                 <hr></hr>
@@ -773,15 +779,21 @@ cropButton.addEventListener("click", () => {
 var radio = document.getElementsByName("design");
     var desgin1 = document.getElementById("design1");
     var desgin2 = document.getElementById("design2");
+    var desgin3 = document.getElementById("design3");
     
     var type = '{{$card->design_html}}';
     if(desgin2.value == '{{$card->design_html}}'){
         desgin2.checked = true;
         type = 'Sleek';
     }
-    else{
+    else if(desgin1.value == '{{$card->design_html}}')
+    {
         desgin1.checked = true;
         type = 'Flat';
+    }
+    else{
+        desgin3.checked = true;
+        type = 'Classic';
     }
 for (var i = 0; i < radio.length; i++) {
     radio[i].addEventListener("change", function() {
@@ -791,10 +803,15 @@ for (var i = 0; i < radio.length; i++) {
             design.innerHTML = flat;
             type = 'Flat';
         }
-        else{
+        else if(radio == 'Sleek'){
     var sleek = '<div class="card_header"><img src="'+image_path+'" class="card-img-top" style="border-bottom-left-radius: 30%; border-bottom-right-radius: 30%;" id="card_image" alt="..."><div class="card_headings"><p style="text-align: center; font-size:20px; font-weight: bold;" id="card_name" class="secondry-text">'+update_name.value+'</p><p style="text-align: center; font-size:18px; font-weight: bold; color:'+primaryColor+'" id="card_designation" class="primary-text">'+update_designation.value+'</p><p style="text-align: center; font-size:14px; font-weight: bold; color:'+primaryColor+'" id="card_company" class="primary-text"> '+update_company.value+'</p></div></div>';
             design.innerHTML = sleek;
             type = 'Sleek';
+        }
+        else{
+            var classic = '<img src="'+image_path+'" class="card-img-top" style="border-bottom-left-radius: 50%; border-bottom-right-radius: 50%; border-bottom: 20px solid '+primaryColor+'" id="card_image" alt="..."><div style="display: flex; align-items: center;"><p style="margin:15px; text-align: left; font-size: 30px; font-weight: bold;" id="card_name" class="secondry-text">'+update_name.value+'</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 20px; font-weight: bold; color:'+primaryColor+'" id="card_designation" class="primary-text">'+update_designation.value+'</p></div><div style="display: flex; align-items: center;"><p style="margin-left:15px; text-align: left; font-size: 17px; font-weight: bold; color:'+primaryColor+'" id="card_company" class="primary-text">'+update_company.value+'</p></div>';
+            design.innerHTML = classic;
+            type = 'Classic';
         }
     });
 }
