@@ -22,4 +22,7 @@ class Card extends Model
     function cardLogs(){
         return $this->hasMany('App\Models\CardLog','card_id','id');
     }
+    function contactLogs(){
+        return $this->hasMany('App\Models\ContactLog','card_id','id');
+    }
 }

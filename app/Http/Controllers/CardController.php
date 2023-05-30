@@ -9,6 +9,7 @@ use App\Models\Profile;
 use App\Models\User;
 use App\Models\Company;
 use App\Models\Country;
+use App\Models\ContactLog;
 use App\Models\City;
 use App\Models\Subscription;
 use App\Models\VistingCardBackground;
@@ -439,5 +440,11 @@ class CardController extends Controller
         $username = $username ."-". $i;
         }
         return $username;
+     }
+     public function addContactLogs($id){
+        $contactLog = new ContactLog();
+        $contactLog->card_id = $id;
+        $contactLog->save();
+        return response()->json(['success' => 'Contact Log Added Successfully']);
      }
 }

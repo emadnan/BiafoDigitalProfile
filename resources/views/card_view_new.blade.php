@@ -409,6 +409,13 @@ tml {
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                    <canvas id="cardAnalytics" style="width:100%;max-width:600px;height: 500px;"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Delete Model -->
@@ -566,5 +573,28 @@ function copyLink() {
             console.error("Failed to copy text: ", error);
         });
 }
+var xValues = ["Profile Views","Save Contacts"];
+var yValues = [{{ $card->cardLogs->count() }},{{ $card->contactLogs->count() }}];
+var barColors = [
+  "#0056D2",
+  "#ffa300"
+];
+
+new Chart("cardAnalytics", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Card Analytics"
+    }
+  }
+});
 </script>
 @endsection

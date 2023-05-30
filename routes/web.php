@@ -99,3 +99,4 @@ Route::get('/delete_subscription/{id}',[SubscriptionController::class,'delete_su
 Route::post('/update_subscription/{id}',[SubscriptionController::class,'update_subscription'])->name('update_subscription');
 //test
 Route::get('/invoicePdf',[StripePaymentController::class,'generatePDF'])->name('invoicePdf');
+Route::get('/addContactLogs/{id}',[CardController::class,'addContactLogs'])->name('addContactLogs');

@@ -14,6 +14,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('frontend\css\bootstrap5.min.css') }}" rel="stylesheet">
+    <script src="{{asset('frontend/js/jquery-3.6.0.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
+    </script>
 </head>
 <style>
 html {
@@ -539,6 +543,18 @@ saveBtn.addEventListener('click', () => {
                 downloadLink.click();
             };
             reader.readAsDataURL(blob);
+        });
+        //save contactlog  to database
+        // var profile_id = saveBtn.getAttribute('data-profile-id');
+        $.ajax({
+            url: "/addContactLogs/{{$card->id}}",
+            method:"GET",
+            dataType:"json",
+            success: function(response) {
+                console.log(response);
+                //close the bottom sheet
+                bottomSheet.style.display = 'none';
+            }
         });
 });
 

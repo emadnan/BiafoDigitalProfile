@@ -489,15 +489,21 @@ tml {
                             <div class="row">
                                 <div class="col-md-4">
                                     <input type="radio" id="design1" name="design" value='Flat' checked>
-                                    <label for="design1">Flat</label>
+                                    <label for="design1" class="text-center">
+                                    <img src="{{ asset('frontend/img/flat.png') }}" alt="Flat" width="120px" height="100px">
+                                        Flat</label>
                                 </div>
                                 <div class="col-md-4">
                                     <input type="radio" id="design2" name="design" value='Sleek'>
-                                    <label for="design2">Sleek</label>
+                                    <label for="design2" class="text-center">
+                                    <img src="{{ asset('frontend/img/sleek.png') }}" alt="Sleek" width="110px" height="100px">
+                                        Sleek</label>
                                 </div>
                                 <div class="col-md-4">
                                     <input type="radio" id="design3" name="design" value='Classic'>
-                                    <label for="design3">Classic</label>
+                                    <label for="design3" class="text-center">
+                                    <img src="{{ asset('frontend/img/classic.png') }}" alt="Classic" width="110px" height="100px">    
+                                    Classic</label>
                                 </div>
                             </div>
                                 <hr></hr>
