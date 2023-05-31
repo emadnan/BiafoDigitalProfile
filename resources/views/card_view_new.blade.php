@@ -474,36 +474,6 @@ tml {
 
 @section('scripts')
 <script>
-var qr_btn = document.getElementById('qr_modal');
-qr_btn.addEventListener('click', function() {
-    //open modal
-    $('#qr_code_modal').modal('show');
-});
-var download_qr = document.getElementById("download_qr");
-console.log($("#qr_background").val())
-download_qr.addEventListener('click', function() {
-    console.log($("#is_background").val())
-    qrCode2 = new QRCodeStyling({
-        width: 3000,
-        height: 3000,
-        type: "canvas",
-        data: "{{ route('view_profile', $card->username) }}",
-        dotsOptions: {
-            color: $("#qr_color").val(),
-            // type: "classy-rounded"
-        },
-        backgroundOptions: {
-            color: $("#qr_background").val(),
-        },
-        qrOptions: {
-            errorCorrectionLevel: "H",
-        },
-    });
-    qrCode2.download({
-        name: "{{ $card->name }}_QrCode",
-        extension: "png",
-    });
-});
 $('.delete-card').click(function(e) {
     $('#modaldeletecard').attr('href', '/delete_card/' + $(this).attr('data-delete-card-id'))
 });
@@ -561,7 +531,44 @@ if (company_id != 'none') {
     });
 }
 qrCode.append(document.getElementById("qrcode"));
-
+var qr_btn = document.getElementById('qr_modal');
+qr_btn.addEventListener('click', function() {
+    //open modal
+    $('#qr_code_modal').modal('show');
+});
+var download_qr = document.getElementById("download_qr");
+console.log($("#qr_background").val())
+download_qr.addEventListener('click', function() {
+    // console.log($("#is_background").val())
+    var qrCode2 = new QRCodeStyling({
+        width: 500,
+        height: 500,
+        type: "canvas",
+        data: url,
+        // image: "{{ asset('frontend/img/qr_logo.svg') }}",
+        dotsOptions: {
+            color: $("#qr_color").val(),
+            // type: "classy-rounded"
+        },
+        backgroundOptions: {
+            color: $("#qr_background").val(),
+        },
+        // imageOptions: {
+        //     crossOrigin: "anonymous",
+        //     margin: 0,
+        //     imageSize: 0.4,
+        // },
+        qrOptions: {
+            errorCorrectionLevel: "H",
+        },
+    });
+    qrCode2.download({
+        name: "{{ $card->name }}_QrCode",
+        extension: "png",
+    });
+    console.log($("#qr_background").val())
+    console.log($("#qr_color").val())
+});
 function copyLink() {
     var textToCopy = url;
 
