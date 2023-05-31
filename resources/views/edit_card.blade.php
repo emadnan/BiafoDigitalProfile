@@ -496,7 +496,7 @@ tml {
                                 <div class="col-md-4">
                                     <input type="radio" id="design2" name="design" value='Sleek'>
                                     <label for="design2" class="text-center">
-                                    <img src="{{ asset('frontend/img/sleek.png') }}" alt="Sleek" width="110px" height="100px">
+                                    <img src="{{ asset('frontend/img/sleek2.png') }}" alt="Sleek" width="120px" height="100px">
                                         Sleek</label>
                                 </div>
                                 <div class="col-md-4">

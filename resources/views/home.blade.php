@@ -398,7 +398,7 @@ $message = session()->get('success');
                                 style="text-transform:uppercase; padding:12px; text-align:center; border-radius:25px 10px; background-color:#0056D2 ;color:white; border:2px solid #0056D2">
                                 Invoice</h5>
                         </div>
-                        <iframe id="invoice_frame" src="{{route('invoicePdf')}}" frameborder="0" style="width:100%; height:500px;"></iframe>
+                        <iframe id="invoice_frame" src="" frameborder="0" style="width:100%; height:500px;"></iframe>
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -451,6 +451,8 @@ $(document).ready(function() {
         $('#company_profile_modal').modal('show');
     }
     if(message == 'Payment successful! Now you can Add Cards'){
+        var invoice_frame = document.getElementById("invoice_frame");
+        invoice_frame.src = "{{route('invoicePdf')}}";
         $('#invoice_modal').modal('show');
     }
     var logo = document.getElementById("logo");
