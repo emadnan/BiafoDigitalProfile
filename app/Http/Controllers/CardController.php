@@ -23,6 +23,7 @@ use App\Mail\CardMailable;
 use App\Mail\CardDeleteMailable;
 use App\Mail\UserCreateMailable;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\File;
 use Auth;
 
 class CardController extends Controller
@@ -39,17 +40,15 @@ class CardController extends Controller
         //     $image_path = time().$image->getClientOriginalName();
         //     $image->move(public_path().'/card_images/', $image_path);
         // }
-        $user_type=auth()->user()->user_type;
+        $user_type = auth()->user()->user_type;
         $image_path = "";
-        $company_user_id =null;
-        $cards = Card::where('user_id',auth()->user()->id)->orwhere('company_user_id',auth()->user()->id)->get();
-        if($user_type=="company")
-        {
-            $company = Company::where('id',auth()->user()->company_id)->first();
-            $subscription = Subscription::where('id',$company->subscription_id)->first();
-            if($subscription->no_of_cards <= $cards->count())
-            {
-                return response()->json(['error'=>'You have reached your card limit. Please upgrade your subscription to add more cards.'],403);
+        $company_user_id = null;
+        $cards = Card::where('user_id', auth()->user()->id)->orwhere('company_user_id', auth()->user()->id)->get();
+        if ($user_type == "company") {
+            $company = Company::where('id', auth()->user()->company_id)->first();
+            $subscription = Subscription::where('id', $company->subscription_id)->first();
+            if ($subscription->no_of_cards <= $cards->count()) {
+                return response()->json(['error' => 'You have reached your card limit. Please upgrade your subscription to add more cards.'], 403);
             }
             $company_user = new User();
             $company_user->name = $request->name;
@@ -68,7 +67,7 @@ class CardController extends Controller
                 'link' => route('login')
             ];
             Mail::to($request->email)->send(new CardMailable($mail));
-            $company_user_id=$company_user->id;
+            $company_user_id = $company_user->id;
         }
         if ($request->image != null) {
             $image = $request->image;
@@ -87,7 +86,7 @@ class CardController extends Controller
         $card->user_id = auth()->user()->id;
         $card->company_user_id = $company_user_id;
         $card->name = $request->name;
-        $card->username=$this->generate_username($request->name);
+        $card->username = $this->generate_username($request->name);
         $card->email = $request->email;
         $card->phone = $request->phone;
         $card->company = $request->company;
@@ -119,12 +118,10 @@ class CardController extends Controller
     function getcard($card_id, $type)
     {
         $use_username = 0;
-        if(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
-        {
+        if (auth()->user()->role_id == 2 || auth()->user()->role_id == 3) {
             $company = Company::where('id', auth()->user()->company_id)->first();
             $subscription = Subscription::where('id', $company->subscription_id)->first();
-            if($subscription->use_username == 1)
-            {
+            if ($subscription->use_username == 1) {
                 $use_username = 1;
             }
         }
@@ -138,7 +135,8 @@ class CardController extends Controller
         $data = compact('card', 'type', 'profile', 'company', 'countries', 'cities', 'use_username');
         return view('card_view_new')->with($data);
     }
-    function edit_card($id){
+    function edit_card($id)
+    {
         $card = Card::where('id', $id)->first();
         $profile = Profile::where('card_id', $id)->first();
         $countries = Country::all();
@@ -153,52 +151,49 @@ class CardController extends Controller
         $card = Card::where('id', $id)->delete();
         //delete profile
         $profiles = Profile::where('card_id', $id)->get();
-        if($profiles)
-        {
+        if ($profiles) {
             foreach ($profiles as $profile) {
                 $profile->delete();
             }
         }
         //delete user
-        if(auth()->user()->user_type=="company")
-        {
-            $user = User::where('email',$card_email)->get();
-            if($user)
-            {
+        if (auth()->user()->user_type == "company") {
+            $user = User::where('email', $card_email)->get();
+            if ($user) {
                 foreach ($user as $user) {
                     $user->delete();
                 }
             }
         }
-    //     if(auth()->user()->user_type=="company")
-    //     {
-    //         // $user = User::where('id',$card->company_user_id)->delete();
-    //         $card=Card::where('id',$id)->delete();
-        
-    //     $profile = Profile::where('card_id', $id)->first();
-    //     // $email=null;
-    //     // //send mail
-    //     // $mail = [
-    //     //     "title" => "Card Deleted",
-    //     //     "body" => "Your Card has been deleted. If you want to continue using our services please click on the Yes below. ",
-    //     //     'link' => route('continue_card', $id)
-    //     // ];
-    //     // if($profile->personal_email!=null)
-    //     // {
-    //     //     $email=$profile->personal_email;
-    //     // }
-    //     // else
-    //     // {
-    //     //     $email=$card->email;
-    //     // }
-    //     // $check = Mail::to($email)->send(new CardDeleteMailable($mail));
-    //     // print_r($check);
-    //     // die;
-    // }
-    // else
-    // {
-    //     $card=Card::where('id',$id)->delete();
-    // }
+        //     if(auth()->user()->user_type=="company")
+        //     {
+        //         // $user = User::where('id',$card->company_user_id)->delete();
+        //         $card=Card::where('id',$id)->delete();
+
+        //     $profile = Profile::where('card_id', $id)->first();
+        //     // $email=null;
+        //     // //send mail
+        //     // $mail = [
+        //     //     "title" => "Card Deleted",
+        //     //     "body" => "Your Card has been deleted. If you want to continue using our services please click on the Yes below. ",
+        //     //     'link' => route('continue_card', $id)
+        //     // ];
+        //     // if($profile->personal_email!=null)
+        //     // {
+        //     //     $email=$profile->personal_email;
+        //     // }
+        //     // else
+        //     // {
+        //     //     $email=$card->email;
+        //     // }
+        //     // $check = Mail::to($email)->send(new CardDeleteMailable($mail));
+        //     // print_r($check);
+        //     // die;
+        // }
+        // else
+        // {
+        //     $card=Card::where('id',$id)->delete();
+        // }
         return redirect('/home');
     }
 
@@ -235,7 +230,7 @@ class CardController extends Controller
         $card->primary_color = $request->primary_color;
         $card->secondary_color = $request->secondary_color;
         $card->text_color = $request->text_color;
-        $card->design_html=$request->design_html;
+        $card->design_html = $request->design_html;
         $card->save();
 
         return response()->json(['success' => 'Card Updated Successfully']);
@@ -243,12 +238,10 @@ class CardController extends Controller
     public function customize_card_index($card_id, $type)
     {
         $use_username = 0;
-        if(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
-        {
+        if (auth()->user()->role_id == 2 || auth()->user()->role_id == 3) {
             $company = Company::where('id', auth()->user()->company_id)->first();
             $subscription = Subscription::where('id', $company->subscription_id)->first();
-            if($subscription->use_username == 1)
-            {
+            if ($subscription->use_username == 1) {
                 $use_username = 1;
             }
         }
@@ -256,31 +249,30 @@ class CardController extends Controller
         $type = $type;
         $company_id = auth()->user()->company_id;
         $company = Company::where('id', $company_id)->first();
-        $data = compact('card', 'type', 'company','use_username');
+        $data = compact('card', 'type', 'company', 'use_username');
         return view('customize_card')->with($data);
     }
     public function validate_email(Request $request)
     {
         $user = User::where('email', $request->email)->first('email');
-        $user_type=auth()->user()->user_type;
+        $user_type = auth()->user()->user_type;
         if ($user) {
             $return = false;
         } else {
             $return = true;
         }
-        if($user_type == "individual")
-        {
+        if ($user_type == "individual") {
             $return = true;
         }
         echo json_encode($return);
         exit;
     }
-    public function company_user_card($card_id,$type,$is_profile)
+    public function company_user_card($card_id, $type, $is_profile)
     {
         $card = Card::where('id', $card_id)->first();
         $type = $type;
-        $is_profile=$is_profile;
-        $data = compact('card', 'type','is_profile');
+        $is_profile = $is_profile;
+        $data = compact('card', 'type', 'is_profile');
         return view('company_user')->with($data);
     }
     public function continue_card($card_id)
@@ -289,9 +281,9 @@ class CardController extends Controller
         Auth::logout();
         //retore card
         $card = Card::withTrashed()->find($card_id)->restore();
-        $profile = Profile::where('card_id',$card_id)->first();
+        $profile = Profile::where('card_id', $card_id)->first();
         //make new user
-        $user=new User();
+        $user = new User();
         $user->name = $profile->name;
         $user->email = $profile->personal_email;
         $password = Str::random(8);
@@ -301,31 +293,29 @@ class CardController extends Controller
         $user->save();
         //update user_id in card
         $card = Card::where('id', $card_id)->first();
-        $card->user_id=$user->id;
+        $card->user_id = $user->id;
         $card->save();
         //update user_id in profile
-        $profile->user_id=$user->id;
+        $profile->user_id = $user->id;
         $profile->save();
         //send mail
         $mail = [
             "title" => "Card Restored Successfully",
             "body" => "Your Card has been restored and your account has been created. Your Credentials are as follows: ",
             'email' => $user->email,
-            'password' => $password, 
+            'password' => $password,
             'link' => route('login')
         ];
         Mail::to($user->email)->send(new UserCreateMailable($mail));
         return view('continue_card');
     }
-    public function visting_card($card_id,$type)
+    public function visting_card($card_id, $type)
     {
         $use_username = 0;
-        if(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
-        {
+        if (auth()->user()->role_id == 2 || auth()->user()->role_id == 3) {
             $company = Company::where('id', auth()->user()->company_id)->first();
             $subscription = Subscription::where('id', $company->subscription_id)->first();
-            if($subscription->use_username == 1)
-            {
+            if ($subscription->use_username == 1) {
                 $use_username = 1;
             }
         }
@@ -333,8 +323,8 @@ class CardController extends Controller
         $type = $type;
         $company_id = auth()->user()->company_id;
         $company = Company::where('id', $company_id)->first();
-        $visting_card_backgrounds=VistingCardBackground::where('company_id',$company_id)->get();
-        $data = compact('card', 'type', 'company','visting_card_backgrounds','use_username');
+        $visting_card_backgrounds = VistingCardBackground::where('company_id', $company_id)->get();
+        $data = compact('card', 'type', 'company', 'visting_card_backgrounds', 'use_username');
         return view('visting_card_new')->with($data);
     }
     public function save_visting_card_backgrounds(Request $request)
@@ -353,11 +343,11 @@ class CardController extends Controller
             file_put_contents(public_path() . '/visting_card_images/' . $image_path, $image_decode);
         }
         $visting_card_backgrounds = VistingCardBackground::where('company_id', auth()->user()->company_id)->get();
-        if($visting_card_backgrounds->count() > 0){
-        foreach ($visting_card_backgrounds as $visting_card_background) {
-            $visting_card_background->is_active = 0;
-            $visting_card_background->save();
-        }
+        if ($visting_card_backgrounds->count() > 0) {
+            foreach ($visting_card_backgrounds as $visting_card_background) {
+                $visting_card_background->is_active = 0;
+                $visting_card_background->save();
+            }
         }
         $visting_card_background = new VistingCardBackground();
         $visting_card_background->company_id = auth()->user()->company_id;
@@ -366,28 +356,53 @@ class CardController extends Controller
         $visting_card_background->save();
         return response()->json(['success' => 'Visting Card Background Added Successfully']);
     }
+    public function deleteVisitingCardBackground(Request $request)
+    {
+        $filename = $request->input('filename');
+        $imagePath = public_path('visting_card_images/') . $filename;
 
-    public function import_csv_file(Request $request){
+        if (File::exists($imagePath)) {
+            if (File::delete($imagePath)) {
+                $background_image = VistingCardBackground::where('image', $filename)->first();
+                if ($background_image) {
+                    if ($background_image->delete()) {
+                        return response()->json(['success' => 'Image deleted successfully.']);
+                    } else {
+                        return response()->json(['error' => 'Failed to delete database entry.']);
+                    }
+                } else {
+                    return response()->json(['error' => 'Database entry not found.']);
+                }
+            } else {
+                return response()->json(['error' => 'Failed to delete image file.']);
+            }
+        } else {
+            return response()->json(['error' => 'Image not found.']);
+        }
+    }
+
+    public function import_csv_file(Request $request)
+    {
         $file = $request->file('csv_file');
         $handle = fopen($file, "r");
         $user_id = auth()->user()->id;
-        $user=User::where('id',$user_id)->first();
+        $user = User::where('id', $user_id)->first();
         $company = Company::where('id', $user->company_id)->first();
         $country_id = $company->country_id;
         $city_id = $company->city_id;
         $is_csv = 1;
-        $i=0;
+        $i = 0;
         $csv_file = fgetcsv($handle);
         //get no of rows in cvsfile
-        $row_count = count(file($file)) -1;
-        $company = Company::where('id',auth()->user()->company_id)->first();
-        $subscription = Subscription::where('id',$company->subscription_id)->first();
-        $cards = Card::where('user_id',auth()->user()->id)->count();
-        if($subscription->no_of_cards < $cards + $row_count){
-            return redirect()->back()->with('error', 'You can not upload more than '.$subscription->no_of_cards.' cards');
+        $row_count = count(file($file)) - 1;
+        $company = Company::where('id', auth()->user()->company_id)->first();
+        $subscription = Subscription::where('id', $company->subscription_id)->first();
+        $cards = Card::where('user_id', auth()->user()->id)->count();
+        if ($subscription->no_of_cards < $cards + $row_count) {
+            return redirect()->back()->with('error', 'You can not upload more than ' . $subscription->no_of_cards . ' cards');
         }
-        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE){
-            if($i==0){
+        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+            if ($i == 0) {
                 $i++;
                 continue;
             }
@@ -395,19 +410,19 @@ class CardController extends Controller
             $card->user_id = $user_id;
             $card->country_id = $country_id;
             $card->city_id = $city_id;
-            $card ->name = $data[0];
+            $card->name = $data[0];
             $card->email = $data[1];
             $card->phone = $data[2];
-            $card->username=$this->generate_username($data[0]);
+            $card->username = $this->generate_username($data[0]);
             $card->company = $company->company_name;
             $card->designation = $data[3];
             $card->address = $company->address;
             $card->linkedin = $company->linkedin;
             $card->website = $company->website;
             $card->is_csv = $is_csv;
-            $card->image_path="avatar.jpg";
+            $card->image_path = "avatar.jpg";
             $card->save();
-            
+
             // add profile via csv
             $profile = new Profile();
             $profile->card_id = $card->id;
@@ -415,7 +430,7 @@ class CardController extends Controller
             $profile->name = $data[0];
             $profile->email = $data[1];
             $profile->phone = $data[2];
-            $profile->card_username=$card->username;
+            $profile->card_username = $card->username;
             $profile->address = $company->address;
             $profile->country_id = $country_id;
             $profile->city_id = $city_id;
@@ -431,20 +446,20 @@ class CardController extends Controller
         $username = strtolower(str_replace(" ", "-", $full_name));
         // Check if username already exists in database
         while (Card::where('username', $username)->exists()) {
-        // Username already exists, generate a new one by appending a number
-        $i = 1;
-        while (Card::where('username', $username ."-". $i)->exists())
-            {
-              $i++;
+            // Username already exists, generate a new one by appending a number
+            $i = 1;
+            while (Card::where('username', $username . "-" . $i)->exists()) {
+                $i++;
             }
-        $username = $username ."-". $i;
+            $username = $username . "-" . $i;
         }
         return $username;
-     }
-     public function addContactLogs($id){
+    }
+    public function addContactLogs($id)
+    {
         $contactLog = new ContactLog();
         $contactLog->card_id = $id;
         $contactLog->save();
         return response()->json(['success' => 'Contact Log Added Successfully']);
-     }
+    }
 }
