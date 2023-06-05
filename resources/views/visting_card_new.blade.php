@@ -318,24 +318,6 @@
                 </div>
             @endif
         </div>
-        {{-- @if ($visting_card_backgrounds)
-            <div class="row ml-4">
-                <div class="col-md-12 ml-4 mt-2 mb-4">
-                    <h4 style="font-family: Palatino; font-weight: bold;">Company's Background Images:</h4>
-                </div>
-                @foreach ($visting_card_backgrounds as $image)
-                    <div class="col-md-4 uploaded-image">
-                        <input type="radio" name="background_image" id="background_image{{ $image->id }}"
-                            class="input-hidden" value="{{ asset('visting_card_images') }}/{{ $image->image }}">
-                        <label for="background_image{{ $image->id }}">
-                            <img src="{{ asset('visting_card_images') }}/{{ $image->image }}" alt=""
-                                class="back_image_temp">
-                            <button class="delete-button" data-filename="{{ $image->image }}">Delete</button>
-                        </label>
-                    </div>
-                @endforeach
-            </div>
-        @endif --}}
         @if ($visting_card_backgrounds)
             <div class="row ml-4">
                 <div class="col-md-12 ml-4 mt-2 mb-4">
