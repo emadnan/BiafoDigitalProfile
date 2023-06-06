@@ -572,10 +572,10 @@
                 height: 150,
                 type: "canvas",
                 data: url,
-                image: "{{ asset('frontend/img/qr_logo.svg') }}",
+                image: "{{ asset('frontend/img/favIcon.png') }}",
                 dotsOptions: {
                     color: "black",
-                    // type: "classy-rounded"
+                    // type: "classy-rounded"fav
                 },
                 backgroundOptions: {
                     color: "#ffffff",
