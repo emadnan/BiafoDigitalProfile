@@ -436,7 +436,7 @@
                                 <i class="fa-solid fa-map-marker-alt icon"></i>
                                 <p style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;"
                                     class="secondry-text">
-                                    {{ $card->address }}, {{ $country }}
+                                    {{ $card->address }}, {{$city}}, {{ $country }}
                                 </p>
                             </div>
                         </div>

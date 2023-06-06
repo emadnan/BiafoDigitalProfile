@@ -133,9 +133,10 @@ class CardController extends Controller
         $countries = Country::all();
         // to view country name
         $country = Country::where('id', $card->country_id)->value('name');
-        
+        $city = City::where('id', $card->city_id)->value('name');
+
         $cities = City::where('country_id', $card->country_id)->get();
-        $data = compact('card', 'type', 'profile', 'company', 'countries', 'cities', 'use_username', 'country');
+        $data = compact('card', 'type', 'profile', 'company', 'countries', 'cities', 'use_username', 'country','city');
         return view('card_view_new')->with($data);
     }
     function edit_card($id)
