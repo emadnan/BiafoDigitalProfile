@@ -131,8 +131,11 @@ class CardController extends Controller
         $company_id = auth()->user()->company_id;
         $company = Company::where('id', $company_id)->first();
         $countries = Country::all();
+        // to view country name
+        $country = Country::where('id', $card->country_id)->value('name');
+        
         $cities = City::where('country_id', $card->country_id)->get();
-        $data = compact('card', 'type', 'profile', 'company', 'countries', 'cities', 'use_username');
+        $data = compact('card', 'type', 'profile', 'company', 'countries', 'cities', 'use_username', 'country');
         return view('card_view_new')->with($data);
     }
     function edit_card($id)

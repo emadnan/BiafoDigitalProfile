@@ -301,7 +301,7 @@
                             <button class="navbar-toggler btn btn-primary" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation" style=""><i
-                                    class="fa-solid fa-bars"></i>
+                                    class="fa-solid fa-list-ul"></i>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
@@ -437,6 +437,13 @@
                                 <p style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;"
                                     class="secondry-text">
                                     {{ $card->address }}
+                                </p>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <i class="fa-solid fa-earth-americas icon"></i>
+                                <p style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;"
+                                    class="secondry-text">
+                                    {{ $country }}
                                 </p>
                             </div>
                         </div>
