@@ -436,14 +436,7 @@
                                 <i class="fa-solid fa-map-marker-alt icon"></i>
                                 <p style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;"
                                     class="secondry-text">
-                                    {{ $card->address }}
-                                </p>
-                            </div>
-                            <div style="display: flex; align-items: center;">
-                                <i class="fa-solid fa-earth-americas icon"></i>
-                                <p style="text-align: left; font-size: 15px; font-weight: bold; margin: 7px; max-width: 270px;"
-                                    class="secondry-text">
-                                    {{ $country }}
+                                    {{ $card->address }}, {{ $country }}
                                 </p>
                             </div>
                         </div>
