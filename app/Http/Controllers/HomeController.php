@@ -31,37 +31,38 @@ class HomeController extends Controller
     {
         // print_r("hello");
         // die;
-        $is_first=1;
-        $can_add_card=1;
-        $user_id=auth()->user()->id;
+        $is_first = 0;
+
+        if (auth()->user()->role_id == 2 && auth()->user()->company_id == null) {
+            $is_first = 1;
+        }
+        $can_add_card = 1;
+        $user_id = auth()->user()->id;
         // print_r($user_id);
         // die;
-        $cards = Card::where('user_id',$user_id)->orwhere('company_user_id',$user_id)->get();
+        $cards = Card::where('user_id', $user_id)->orwhere('company_user_id', $user_id)->get();
         $company_id = auth()->user()->company_id;
-        $company = Company::where('id',$company_id)->first();
+        $company = Company::where('id', $company_id)->first();
         $countries = Country::all();
-        if($company)
-        {
-        $cities=City::where('country_id',$company->country_id)->get();
-        } else{
-        $cities=null;
+        if ($company) {
+            $cities = City::where('country_id', $company->country_id)->get();
+        } else {
+            $cities = null;
         }
-        $role_id=auth()->user()->role_id;
-        if($role_id == 4 && $cards->count()>=1)
-        {
+        $role_id = auth()->user()->role_id;
+        if ($role_id == 4 && $cards->count() >= 1) {
             $can_add_card = 0;
         }
-        if($role_id == 2 && $cards->count()>=1 && $company->subscription_id == 1)
-        {
+        if ($role_id == 2 && $cards->count() >= 1 && $company->subscription_id == 1) {
             $can_add_card = 2;
         }
-       $permission_roles=PermissionRole::where('role_id',$role_id)->get();
-       $permissions=[];
-        foreach($permission_roles as $permission_role){
-            $permissions[$permission_role->permissions->permission]=$permission_role->permissions->permission;
-            }
-        session()->put('permissions',$permissions);
-        $data=compact('cards','company','countries','cities','can_add_card');
+        $permission_roles = PermissionRole::where('role_id', $role_id)->get();
+        $permissions = [];
+        foreach ($permission_roles as $permission_role) {
+            $permissions[$permission_role->permissions->permission] = $permission_role->permissions->permission;
+        }
+        session()->put('permissions', $permissions);
+        $data = compact('cards', 'company', 'countries', 'cities', 'can_add_card','is_first');
         // echo '<pre>';
         // print_r($data);
         // die;
@@ -69,7 +70,7 @@ class HomeController extends Controller
     }
     public function fetch_cities($country_id)
     {
-        $cities = City::where('country_id',$country_id)->get();
+        $cities = City::where('country_id', $country_id)->get();
         return response()->json($cities);
     }
 }
