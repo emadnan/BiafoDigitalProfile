@@ -324,7 +324,7 @@
                 <div class="details">
                     <div style="display: flex; align-items: center;">
                         <i class="fa-solid fa-envelope icon"></i>
-                        <p style="text-align: left; font-size: 16px; font-weight: bold; margin: 10px; max-width: 270px;"
+                        <p style="text-align: left; font-size: 16px; font-weight: bold; margin: 10px; max-width: 220px;word-wrap: break-word;"
                             id="card_email" class="secondry-text">
                             {{ $profile->email }}
                         </p>
