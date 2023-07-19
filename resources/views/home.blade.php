@@ -88,12 +88,12 @@
                         <div class='col-md-4'>
                             @if (isset($permissions['can_create_card']))
                                 @if (Auth::user()->user_type == 'company')
-                                    <a type="button" id="csv" class="anchor btn btn-primary">
+                                    <a type="button" id="csv" class="anchor btn btn-primary mb-2">
                                         <i class="fa-solid fa-arrow-up-from-bracket"></i> CSV Upload
                                     </a>
                                 @endif
                                 @if ($can_add_card == 1)
-                                    <a type="button" id="add_card" class="anchor btn btn-primary">
+                                    <a type="button" id="add_card" class="anchor btn btn-primary mb-2">
                                         @if (Auth::user()->user_type == 'company')
                                             Add Employee Card
                                         @else
@@ -102,7 +102,7 @@
                                     </a>
                                 @endif
                                 @if ($can_add_card == 2)
-                                    <a type="button" href="/stripe" class="anchor btn btn-primary">
+                                    <a type="button" href="/stripe" class="anchor btn btn-primary mb-2">
                                         Add Employee Card
                                     </a>
                                 @endif

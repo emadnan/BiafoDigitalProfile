@@ -535,7 +535,7 @@ tml {
                         </div>
                     </div>
                 </div>
-                <button type="button" id="saveButton" class="btn btn-primary float-right">Save changes</button>
+                <button type="button" id="saveButton" class="btn btn-primary float-right mb-3 mr-5">Save changes</button>
             </div>
         </div>
     </div>
