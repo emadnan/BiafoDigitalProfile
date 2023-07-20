@@ -219,7 +219,8 @@ class CardController extends Controller
             $image_decode = base64_decode($image);
             file_put_contents(public_path() . '/card_images/' . $image_path, $image_decode);
         }
-        $card->user_id = auth()->user()->id;
+
+        // $card->user_id = auth()->user()->id;
         $card->name = $request->name;
         $card->email = $request->email;
         $card->phone = $request->phone;
