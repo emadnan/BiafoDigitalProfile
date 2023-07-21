@@ -6,32 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Cardify - Login</title>
-    <script src="{{asset('frontend/js/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
         integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
     </script>
-    <script src="{{asset('frontend/js/countrypicker\js\countrypicker.js')}}"></script>
-    <script src="{{asset('frontend/js/countrypicker\js\countrypicker.min.js')}}"></script>
-    <script src="{{asset('frontend/js/bootstrap5.bundle.min.js')}}"></script>
-    <script src="{{asset('frontend/ckeditor/ckeditor.js')}}"></script>
-    <script type="text/javascript" src="{{asset('frontend/js/jquery.validate.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('frontend/js/jquery.multiselect.js')}}"></script>
-    <script type="text/javascript" src="{{asset('frontend/js/additional-methods.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('frontend/dist/min/dropzone.min.js')}}"></script>
+    <script src="{{ asset('frontend/js/countrypicker\js\countrypicker.js') }}"></script>
+    <script src="{{ asset('frontend/js/countrypicker\js\countrypicker.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/bootstrap5.bundle.min.js') }}"></script>
+    <script src="{{ asset('frontend/ckeditor/ckeditor.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/js/jquery.validate.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/js/jquery.multiselect.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/js/additional-methods.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/dist/min/dropzone.min.js') }}"></script>
     <script type="text/javascript">
-    jQuery.validator.setDefaults({
-        errorElement: 'span',
-        errorPlacement: function(error, element) {
-            error.addClass('invalid-feedback');
-            element.closest('.form-group').append(error);
-        },
-        highlight: function(element, errorClass, validClass) {
-            $(element).addClass('is-invalid');
-        },
-        unhighlight: function(element, errorClass, validClass) {
-            $(element).removeClass('is-invalid');
-        }
-    });
+        jQuery.validator.setDefaults({
+            errorElement: 'span',
+            errorPlacement: function(error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
     </script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -59,8 +59,8 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="blue-card">
-                                <img src="{{asset('frontend/img/cardify_white.png')}}" alt="logo" class="logo">
-                                <img src="{{asset('frontend/img/landing_3.png')}}" alt="banner" class="banner">
+                                <img src="{{ asset('frontend/img/cardify_white.png') }}" alt="logo" class="logo">
+                                <img src="{{ asset('frontend/img/landing_3.png') }}" alt="banner" class="banner">
                                 <div class="slug_div mb-5">
                                     <h3>Welcome to QR Generated Card Application </h3>
                                 </div>
@@ -80,9 +80,9 @@
                                                 autocomplete="name" autofocus>
 
                                             @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
                                             @enderror
                                         </div>
                                         <div class="form-group mt-2">
@@ -91,9 +91,9 @@
                                                 value="{{ old('email') }}" placeholder="Email" required
                                                 autocomplete="email" autofocus>
                                             @error('email')
-                                            <span class="invalid-feedback text-black" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                                                <span class="invalid-feedback text-black" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
                                             @enderror
                                         </div>
                                         <div class="form-group mt-2">
@@ -103,9 +103,9 @@
                                                 placeholder="Password">
 
                                             @error('password')
-                                            <span class="invalid-feedback text-black" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                                                <span class="invalid-feedback text-black" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
                                             @enderror
                                         </div>
                                         <div class="form-group mt-2">
@@ -128,7 +128,8 @@
                                             </div>
                                             <button type="submit" class="btn-blue mt-5">Register</button>
                                             <div class="privary-policy-text mt-3">
-                                                <p>By clicking Register, you agree to our <a href="#">Terms</a> and that
+                                                <p>By clicking Register, you agree to our <a href="#">Terms</a>
+                                                    and that
                                                     you have read our <a href="#">Data Policy</a>, including our
                                                     <a href="#">Cookie Use</a>.
                                                 </p>
@@ -144,8 +145,6 @@
         </div>
     </div>
     <div class="col-md-1"></div>
-    </div>
-    </div>
 </body>
 
 </html>
